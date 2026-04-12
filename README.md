@@ -47,7 +47,7 @@
 
 ## Project Report Collaboration Insights
 
-URL del repositorio del Project Report en GitHub: [https://github.com/betterclass-upc/eduspace-report](https://github.com/betterclass-upc/eduspace-report)
+URL del repositorio del Project Report en GitHub: [https://github.com/DesarrolloSolucionIoT/eduspace-report](https://github.com/DesarrolloSolucionIoT/eduspace-report)
 
 
 ---
