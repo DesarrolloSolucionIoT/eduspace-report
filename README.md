@@ -255,6 +255,34 @@ Como resultado del análisis, se identificaron seis bounded contexts. A continua
 
 #### 4.1.1.2. Domain Message Flows Modeling
 
+En esta sección el equipo modeló los flujos de mensajes entre los bounded contexts identificados, con el objetivo de visualizar cómo colaboran entre sí para resolver los casos de negocio más importantes del sistema. Para ello se aplicó la técnica de Domain Storytelling, que permite representar de forma narrativa y visual cómo los actores, los sistemas y los bounded contexts se comunican e intercambian información a través de work objects (documentos, datos o mensajes).
+
+Se modelaron los siguientes casos de negocio, seleccionados por su relevancia e impacto en el sistema:
+
+1. Registro de un docente y acceso a la plataforma
+2. Reserva de un espacio compartido por un docente
+3. Monitoreo IoT y generación de alertas
+
+A continuación se presentan los diagramas de Domain Storytelling para cada caso:
+
+**Caso 1: Registro de docentes y acceso a plataforma**
+
+Este flujo modela cómo el administrador registra la cuenta de un nuevo docente en el sistema y cómo este último accede a la plataforma. El bounded context de Identity, Access & Profile Management es el único involucrado, al ser el responsable tanto de la creación de cuentas como de la autenticación. El administrador envía las credenciales del docente al sistema, que confirma el registro. Posteriormente, el docente inicia sesión con sus credenciales y el sistema le carga el dashboard correspondiente a su rol.
+
+![Domain Message Flow Model 1](/assets/images/message-flow1.png)
+
+**Caso 2: Reserva de espacio compartido**
+
+Este flujo ilustra la colaboración entre los bounded contexts de Reservation & Scheduling y Space & Resource Management. El docente consulta la disponibilidad de un espacio compartido, el sistema le retorna el calendario de disponibilidad, y el docente realiza la solicitud de reserva. Para confirmarla, Reservation & Scheduling consulta los datos del espacio a Space & Resource Management, que le responde con la información necesaria. Finalmente, el sistema confirma la reserva al docente.
+
+![Domain Message Flow Model 2](/assets/images/message-flow2.png)
+
+**Caso 3: Monitoreo IoT y generación de alertas**
+
+Este flujo modela el nuevo proceso incorporado en esta iteración. El dispositivo ESP32 captura lecturas de los sensores y las envía al Edge API, que las procesa y las reenvía al bounded context de IoT Monitoring. Este contexto evalúa internamente los umbrales configurados y, en caso de detectar una condición anormal, genera una alerta que notifica al bounded context de Identity, Access & Profile Management para que informe a los usuarios correspondientes. Adicionalmente, tanto administradores como docentes pueden consultar el dashboard de IoT Monitoring para visualizar el estado ambiental de las aulas en tiempo real.
+
+![Domain Message Flow Model 3](/assets/images/message-flow3.png)
+
 #### 4.1.1.3. Bounded Context Canvases
 
 ### 4.1.2. Context Mapping
