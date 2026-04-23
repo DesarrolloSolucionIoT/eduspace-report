@@ -227,6 +227,8 @@ A continuación se presenta el diagrama resultante de la sesión:
 
 ## 4.1. Strategic-Level Domain-Driven Design
 
+En este capítulo, el equipo presenta las decisiones de diseño estratégico para la solución EduSpace IoT, aplicando los principios de Domain-Driven Design (DDD). El objetivo de este nivel de diseño es identificar y definir los bounded contexts que conforman el sistema, comprender cómo interactúan entre sí y establecer una arquitectura clara que soporte tanto las funcionalidades existentes de gestión de espacios como las nuevas capacidades de monitoreo IoT. Las secciones a continuación abarcan las sesiones de Design-Level EventStorming, el proceso de Candidate Context Discovery, el modelado de Domain Message Flows, los Bounded Context Canvases, el Context Mapping y los diagramas de Arquitectura de Software.
+
 ### 4.1.1. Design-Level EventStorming
 
 #### 4.1.1.1. Candidate Context Discovery
