@@ -1,0 +1,206 @@
+/* ==========================================
+   EduSpace IoT - Context Map
+   ========================================== */
+
+BoundedContext IAMAndProfileManagement {
+    type = SYSTEM
+    domainVisionStatement = "Manages user authentication, role-based access control and profile information."
+    implementationTechnology = "ASP.NET Core, C#"
+
+    Aggregate AccountAggregate {
+        Entity Account {
+            aggregateRoot
+            int id
+            String username
+            String passwordHash
+            String role
+        }
+    }
+
+    Aggregate ProfileAggregate {
+        Entity Profile {
+            aggregateRoot
+            int id
+            String firstName
+            String lastName
+            String emailAddress
+            String dniNumber
+        }
+    }
+}
+
+BoundedContext SpaceAndResourceManagement {
+    type = SYSTEM
+    domainVisionStatement = "Manages registration and administration of all physical spaces and resources."
+    implementationTechnology = "ASP.NET Core, C#"
+
+    Aggregate ClassroomAggregate {
+        Entity Classroom {
+            aggregateRoot
+            int id
+            String name
+            String classroomDescription
+            int teacherId
+        }
+    }
+
+    Aggregate SharedAreaAggregate {
+        Entity SharedArea {
+            aggregateRoot
+            int id
+            String name
+            int capacity
+            String areaDescription
+        }
+    }
+
+    Aggregate ResourceAggregate {
+        Entity ClassroomResource {
+            aggregateRoot
+            int id
+            String name
+            String kindOfResource
+            int classroomId
+        }
+    }
+}
+
+BoundedContext ReservationAndScheduling {
+    type = SYSTEM
+    domainVisionStatement = "Manages scheduling and reservation of shared areas and meetings."
+    implementationTechnology = "ASP.NET Core, C#"
+
+    Aggregate ReservationAggregate {
+        Entity Reservation {
+            aggregateRoot
+            int id
+            DateTime startTime
+            DateTime endTime
+            String title
+            int areaId
+        }
+    }
+
+    Aggregate MeetingAggregate {
+        Entity Meeting {
+            aggregateRoot
+            int id
+            String title
+            String meetingDescription
+            int classroomId
+            int administratorId
+        }
+    }
+}
+
+BoundedContext BreakdownManagement {
+    type = SYSTEM
+    domainVisionStatement = "Manages the complete lifecycle of breakdown reports."
+    implementationTechnology = "ASP.NET Core, C#"
+
+    Aggregate ReportAggregate {
+        Entity Report {
+            aggregateRoot
+            int id
+            String kindOfReport
+            String reportDescription
+            String status
+            int resourceId
+        }
+    }
+}
+
+BoundedContext IoTMonitoring {
+    type = SYSTEM
+    domainVisionStatement = "Manages capture, processing and visualization of IoT sensor data."
+    implementationTechnology = "ASP.NET Core, C#, Flask, MicroPython"
+
+    Aggregate SensorReadingAggregate {
+        Entity SensorReading {
+            aggregateRoot
+            int id
+            double temperature
+            double humidity
+            boolean occupancy
+            int classroomId
+        }
+    }
+
+    Aggregate ThresholdAggregate {
+        Entity Threshold {
+            aggregateRoot
+            int id
+            String variableName
+            double minValue
+            double maxValue
+            int classroomId
+        }
+    }
+
+    Aggregate AlertAggregate {
+        Entity Alert {
+            aggregateRoot
+            int id
+            String alertType
+            String alertMessage
+            int classroomId
+            boolean acknowledged
+        }
+    }
+}
+
+/* ==========================================
+   Context Map - Relaciones entre BCs
+   ========================================== */
+
+ContextMap EduSpaceIoTContextMap {
+    contains IAMAndProfileManagement
+    contains SpaceAndResourceManagement
+    contains ReservationAndScheduling
+    contains BreakdownManagement
+    contains IoTMonitoring
+
+    /* IAM es upstream de los contextos que necesitan autenticación */
+    IAMAndProfileManagement [U, OHS, PL] -> [D, CF] SpaceAndResourceManagement {
+        implementationTechnology = "RESTful HTTP"
+        exposedAggregates = AccountAggregate
+    }
+
+    IAMAndProfileManagement [U, OHS, PL] -> [D, CF] ReservationAndScheduling {
+        implementationTechnology = "RESTful HTTP"
+        exposedAggregates = AccountAggregate
+    }
+
+    IAMAndProfileManagement [U, OHS, PL] -> [D, CF] BreakdownManagement {
+        implementationTechnology = "RESTful HTTP"
+        exposedAggregates = AccountAggregate
+    }
+
+    /* Space & Resource es upstream de Reservation */
+    SpaceAndResourceManagement [U, OHS, PL] -> [D, CF] ReservationAndScheduling {
+        implementationTechnology = "RESTful HTTP"
+        exposedAggregates = ClassroomAggregate, SharedAreaAggregate
+    }
+
+    /* Contextos que notifican a IAM */
+    ReservationAndScheduling [U] -> [D, CF] IAMAndProfileManagement {
+        implementationTechnology = "RESTful HTTP"
+        exposedAggregates = ReservationAggregate, MeetingAggregate
+    }
+
+    BreakdownManagement [U] -> [D, CF] IAMAndProfileManagement {
+        implementationTechnology = "RESTful HTTP"
+        exposedAggregates = ReportAggregate
+    }
+
+    IoTMonitoring [U] -> [D, CF] IAMAndProfileManagement {
+        implementationTechnology = "RESTful HTTP"
+        exposedAggregates = AlertAggregate
+    }
+
+    /* IoT consulta Space & Resource con ACL */
+    SpaceAndResourceManagement [U, OHS, PL] -> [D, ACL] IoTMonitoring {
+        implementationTechnology = "RESTful HTTP"
+        exposedAggregates = ClassroomAggregate
+    }
+}

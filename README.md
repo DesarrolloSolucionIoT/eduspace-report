@@ -314,6 +314,18 @@ A continuación se presentan los cinco Bounded Context Canvases elaborados:
 
 ### 4.1.2. Context Mapping
 
+En esta sección el equipo elaboró el Context Map de la plataforma EduSpace IoT, con el objetivo de visualizar las relaciones estructurales entre los bounded contexts identificados y definir los patrones de integración que gobiernan dichas relaciones. Para ello se analizaron las dependencias entre contextos identificadas durante las sesiones de EventStorming y los Bounded Context Canvases, evaluando alternativas de integración y seleccionando los patrones más adecuados según la naturaleza de cada relación.
+
+Los patrones de relación entre Bounded Contexts aplicados en este Context Map son los siguientes:
+
+- Customer/Supplier (C/S): El contexto downstream (customer) depende del contexto upstream (supplier). El supplier define la interfaz y el customer la consume.
+- Conformist (CF): El contexto downstream adopta el modelo del upstream sin modificaciones, adaptándose completamente a él.
+- Anti-Corruption Layer (ACL): El contexto downstream traduce el modelo del upstream a través de una capa de traducción para proteger su propio modelo de dominio.
+
+A continuación se presenta el diagrama de Context Mapping resultante:
+
+![Context Map](/assets/images/context-map_ContextMap.png)
+
 ### 4.1.3. Software Architecture
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram
