@@ -178,11 +178,11 @@ El análisis competitivo permite identificar las soluciones existentes que abord
   </tr>
   <tr>
    <td colspan="2">Nombre y logo</td>
-    <td>EduSpace <img src="https://github.com/user-attachments/assets/aa72b842-fa31-4a24-b10b-7d3444705e3d" alt="logo-eduspace" width="50"/>  </td>
-    <td>Siemens Smart Infrastructure <img src="https://github.com/user-attachments/assets/1ff299ad-8e8f-4c1d-aa55-7c1ad7fd085c" alt="logo-siemens" width="50"/> </td>
-    <td>Cisco Spaces <img src="https://github.com/user-attachments/assets/d0ed6004-fbc8-4252-8b82-0b329cd4e83a" alt="logo-cisco" width="50"/> </td>
-    <td>Honeywell Building Tech <img src="https://github.com/user-attachments/assets/a25810df-41e8-41f5-879c-5ebe228763c0" alt="logo-honeywell" width="50"/> </td>
-    <td>Spacewell <img src="https://github.com/user-attachments/assets/a25810df-41e8-41f5-879c-5ebe228763c0" alt="logo-spacewell" width="50"/> </td> 
+    <td style="text-align: center;">EduSpace<br> <img src="https://github.com/user-attachments/assets/aa72b842-fa31-4a24-b10b-7d3444705e3d" alt="logo-eduspace" width="50"/>  </td>
+    <td style="text-align: center;">Siemens Smart Infrastructure<br> <img src="https://github.com/user-attachments/assets/1ff299ad-8e8f-4c1d-aa55-7c1ad7fd085c" alt="logo-siemens" width="50"/> </td>
+    <td style="text-align: center;">Cisco Spaces<br> <img src="https://github.com/user-attachments/assets/d0ed6004-fbc8-4252-8b82-0b329cd4e83a" alt="logo-cisco" width="50"/> </td>
+    <td style="text-align: center;">Honeywell Building Tech <img src="https://github.com/user-attachments/assets/a25810df-41e8-41f5-879c-5ebe228763c0" alt="logo-honeywell" width="50"/> </td>
+    <td style="text-align: center;">Spacewell<br> <img src="https://github.com/user-attachments/assets/a25810df-41e8-41f5-879c-5ebe228763c0" alt="logo-spacewell" width="50"/> </td> 
   </tr>
   <tr>
     <td rowspan="2">Perfil</td>
@@ -281,6 +281,54 @@ El análisis competitivo permite identificar las soluciones existentes que abord
 </table>
 
 ### 2.1.2. Estrategias y tácticas frente a competidores
+
+Con base en el análisis competitivo realizado, se identificaron las principales fortalezas, debilidades, oportunidades y amenazas de las soluciones actuales en el ámbito de smart buildings y gestión de espacios, como Siemens, Cisco Spaces, Honeywell y Spacewell. Este análisis permite definir un conjunto de estrategias y tácticas que orienten a Smart Campus IoT a posicionarse como una solución diferenciada, accesible y especializada en el sector educativo.
+
+A continuación, se detallan las estrategias y tácticas propuestas:
+
+#### **Frente a las fortalezas de los competidores**
+
+Los competidores analizados destacan por:
+
+* Alto nivel de automatización y precisión en sus sistemas
+* Soluciones integrales a gran escala (energía, seguridad, infraestructura)
+* Amplia experiencia y posicionamiento en el mercado
+* Uso de tecnologías avanzadas como IA, Big Data y analítica predictiva
+##### **Fortalezas de Smart Campus IoT:**
+* Especialización en el sector educativo
+* Integración con procesos académicos (aulas, horarios, docentes)
+* Bajo costo de implementación
+* Flexibilidad y escalabilidad modular
+* Enfoque en analítica aplicada a la toma de decisiones académicas
+##### **Estrategias**
+* Diferenciar la propuesta mediante un enfoque específico en educación.
+* Posicionar la solución como una herramienta de gestión académica basada en datos.
+* Priorizar la simplicidad y accesibilidad frente a soluciones complejas y costosas.
+##### **Tácticas**
+* Desarrollar dashboards orientados a indicadores académicos (uso de aulas, eficiencia).
+* Comunicar el valor del sistema en términos de mejora del aprendizaje y optimización de recursos.
+* Implementar módulos iniciales simples que puedan escalar progresivamente.
+
+#### **Frente a las debilidades de los competidores**
+
+Se identificaron las siguientes debilidades en los competidores:
+
+* Alto costo de implementación
+* Complejidad técnica e infraestructura pesada
+* Falta de enfoque en el sector educativo
+* Limitada adaptación a procesos académicos específicos
+##### **Debilidades de Smart Campus IoT:**
+* Menor precisión frente a soluciones industriales
+* Dependencia de sensores de bajo costo
+* Limitada validación en escenarios reales
+##### **Estrategias**
+* Aprovechar la falta de especialización educativa de los competidores.
+* Enfocar la solución en necesidades concretas de instituciones educativas.
+* Diseñar un sistema fácil de implementar y mantener.
+##### **Tácticas**
+* Desarrollar funcionalidades específicas como monitoreo por horario académico y score de aula.
+* Realizar pilotos en instituciones educativas para validar el sistema.
+* Optimizar el uso de sensores accesibles manteniendo precisión suficiente para el contexto educativo.
 
 ## 2.2. Entrevistas
 
