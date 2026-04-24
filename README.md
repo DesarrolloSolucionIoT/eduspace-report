@@ -163,7 +163,172 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
 
 ### 2.1.1. Análisis competitivo
 
+El análisis competitivo permite identificar las soluciones existentes que abordan el monitoreo de espacios, consumo energético y condiciones ambientales mediante tecnologías IoT. A partir de este análisis, se evalúan plataformas como Siemens, Cisco, Honeywell y Spacewell, las cuales ofrecen soluciones avanzadas orientadas a entornos corporativos.
+
+<table border="1" cellpadding="10" cellspacing="0" style="margin-left: auto; margin-right: auto;">
+  <tr>
+    <th colspan="7">Competitive Analysis Landscape</th>
+  </tr>
+  <tr>
+    <td colspan="2" rowspan="2">¿Por qué llevar a cabo este análisis?</td>
+    <td colspan="5">¿Cómo se posicionan las soluciones actuales de monitoreo inteligente de espacios frente a una propuesta enfocada en el entorno educativo, y qué oportunidades existen para diferenciarse mediante especialización y analítica en tiempo real?</td>
+  </tr>
+  <tr>
+    <td colspan="5">Identificar cómo las soluciones actuales de smart buildings gestionan espacios, energía y monitoreo, y determinar cómo una solución enfocada en entornos educativos puede diferenciarse mediante especialización, accesibilidad y lógica académica.</td>
+  </tr>
+  <tr>
+   <td colspan="2">Nombre y logo</td>
+    <td style="text-align: center;">EduSpace<br> <img src="https://github.com/user-attachments/assets/aa72b842-fa31-4a24-b10b-7d3444705e3d" alt="logo-eduspace" width="50"/>  </td>
+    <td style="text-align: center;">Siemens Smart Infrastructure<br> <img src="https://github.com/user-attachments/assets/1ff299ad-8e8f-4c1d-aa55-7c1ad7fd085c" alt="logo-siemens" width="50"/> </td>
+    <td style="text-align: center;">Cisco Spaces<br> <img src="https://github.com/user-attachments/assets/d0ed6004-fbc8-4252-8b82-0b329cd4e83a" alt="logo-cisco" width="50"/> </td>
+    <td style="text-align: center;">Honeywell Building Tech <img src="https://github.com/user-attachments/assets/a25810df-41e8-41f5-879c-5ebe228763c0" alt="logo-honeywell" width="50"/> </td>
+    <td style="text-align: center;">Spacewell<br> <img src="https://github.com/user-attachments/assets/a25810df-41e8-41f5-879c-5ebe228763c0" alt="logo-spacewell" width="50"/> </td> 
+  </tr>
+  <tr>
+    <td rowspan="2">Perfil</td>
+    <td>Overview</td>
+    <td>Plataforma IoT enfocada en instituciones educativas que monitorea ocupación, ambiente y consumo energético en aulas, generando analítica y alertas en tiempo real</td>
+    <td>Ecosistema integral de automatización de edificios inteligentes que incluye energía, seguridad, climatización y analítica avanzada</td>
+    <td>Plataforma de analítica de espacios basada en ubicación mediante WiFi, enfocada en comportamiento de usuarios</td>
+    <td>Plataforma de gestión de edificios que integra monitoreo ambiental, energía, seguridad y automatización</td>
+    <td>Plataforma de facility management que optimiza el uso de espacios de trabajo mediante IoT, sensores y analítica</td>
+  </tr>
+  <tr>
+    <td>Ventaja competitiva ¿Qué valor ofrece a los clientes?</td>
+    <td>Especialización en educación + integración con horarios académicos + modelo accesible + lógica de scoring y alertas inteligentes</td>
+    <td>Alta precisión, confiabilidad y soluciones completas a gran escala</td>
+    <td>Analítica avanzada de ocupación con mapas de calor y comportamiento</td>
+    <td>Integración completa de sistemas físicos del edificio + experiencia industrial</td>
+    <td>Enfoque en optimización de espacios de trabajo + integración de datos IoT + enfoque en experiencia del usuario</td>
+  </tr>
+  <tr>
+    <td rowspan="2">Perfil de Marketing</td>
+    <td>Mercado objetivo</td>
+    <td>Instituciones educativas con grandes y pequeñas infraestructuras que buscan optimizar la gestión de sus espacios y recursos.</td>
+    <td>Grandes empresas e instituciones que buscan centralizar la gestión de sus instalaciones con un enfoque en sostenibilidad.</td>
+    <td>Empresas, retail, oficinas corporativas, que requieren soluciones fáciles de usar para la gestión de instalaciones.</td>
+    <td>Grandes instituciones y empresas que necesitan una solución completa para la gestión de sus instalaciones y recursos.</td>
+    <td>Industrias, edificios comerciales, hospitales</td>
+  </tr>
+  <tr>
+    <td>Estrategias de marketing</td>
+    <td>Marketing dirigido a administradores de grandes y de pequeñas instituciones educativas, destacando la eficiencia y el control exhaustivo de recursos.</td>
+    <td>Enfoque en la sostenibilidad y la eficiencia, con campañas dirigidas a administradores de instalaciones y responsables de sostenibilidad.</td>
+    <td>Enfoque en la simplicidad y efectividad, con marketing dirigido a usuarios que buscan facilidad de uso en la gestión de instalaciones.</td>
+    <td>Posicionamiento como solución de analítica inteligente basada en datos</td>
+    <td>Campañas dirigidas a grandes organizaciones que necesitan una solución robusta y completa para la gestión de sus instalaciones.</td>
+  </tr>
+  <tr>
+    <td rowspan="3">Perfil de Producto</td>
+    <td>Productos & Servicios</td>
+    <td>Monitoreo de aulas, dashboard en tiempo real, sistema de alertas, score de eficiencia, analítica histórica, integración con backend académico</td>
+    <td>Automatización HVAC, control energético, seguridad, analítica avanzada, mantenimiento predictivo.</td>
+    <td>Mapas de calor, conteo de personas, analítica de comportamiento, optimización de espacios</td>
+    <td>Control de climatización, energía, seguridad, monitoreo ambiental, mantenimiento</td>
+    <td>Gestión de espacios, sensores de ocupación, reservas de espacios, analítica de uso, facility management</td>
+  </tr>
+  <tr>
+    <td>Precios & Costos</td>
+    <td>Planes de suscripción, basados en la escala de la institución educativa y el número de funcionalidades utilizadas. </td>
+    <td>Precios basados en suscripciones, ajustados según la cantidad de instalaciones y funcionalidades requeridas.</td>
+    <td>Planes de suscripción con diferentes niveles de servicio, ajustados según el tamaño de la institución y sus necesidades.</td>
+    <td>Precios altos por la adquisición de licencias e implementación de insfraestructuras.</td>
+    <td>Precios personalizados basados en la escala y complejidad de la implementación para grandes organizaciones.</td>
+  </tr>
+  <tr>
+    <td>Canales de distribución (Web y/o Móvil)</td>
+    <td>Plataforma web y aplicación móvil.</td>
+    <td>Plataforma web con soporte para aplicaciones móviles y monitoreo en tiempo real.</td>
+    <td>Plataforma SaaS basada en cloud</td>
+    <td>Soluciones empresariales personalizadas</td>
+    <td>Plataforma SaaS (web) + integraciones empresariales</td>
+  </tr>
+  <tr>
+    <td rowspan="5">Analisis SWOT</td>
+  </tr>
+ <tr>
+    <td>Fortalezas</td>
+    <td>Enfoque educativo; bajo costo; integración con horarios, aulas y docentes; dashboard con alertas y score; fácil adaptación a universidades/colegios.</td>
+    <td>Marca global; alta confiabilidad; soluciones completas; gran experiencia en automatización.</td>
+    <td>Analítica avanzada de ocupación; mapas de calor; uso de infraestructura WiFi existente.</td>
+    <td>Experiencia industrial; integración de energía, seguridad y ambiente; soluciones robustas.</td>
+    <td>Fuerte en gestión de espacios; usa IoT y analítica; modelo SaaS; enfoque en experiencia de usuario.</td>
+  </tr>
+  <tr>
+    <td>Debilidades</td>
+    <td>Menor precisión frente a soluciones industriales; dependencia de sensores básicos; requiere validación en campo; menor reputación inicial.</td>
+    <td>Costos muy altos; implementación compleja; poco enfoque específico en educación.</td>
+    <td>Depende de red WiFi robusta; menor enfoque en variables ambientales; no especializado en aulas.</td>
+    <td>Alto costo; instalación compleja; enfoque generalista, no educativo.</td>
+    <td>Orientado a oficinas/coworking; requiere integración empresarial; costo elevado para instituciones pequeñas.</td>
+  </tr>
+  <tr>
+    <td>Oportunidades</td>
+    <td>Crecimiento de smart campus; transformación digital educativa; optimización de aulas; integración futura con IA y predicción de uso.</td>
+    <td>Expansión de smart buildings y smart cities; demanda de eficiencia energética.</td>
+    <td>Mayor interés por analítica de espacios e híbrido laboral; expansión a campus.</td>
+    <td>Crecimiento de edificios sostenibles e inteligentes; mantenimiento predictivo.</td>
+    <td>Crecimiento del trabajo híbrido; demanda de optimización de espacios; posible expansión a educación.</td>
+  </tr>
+  <tr>
+    <td>Amenazas</td>
+    <td>Grandes empresas pueden adaptar sus soluciones al sector educativo; presupuestos limitados; resistencia al cambio tecnológico.</td>
+    <td>Startups más económicas y especializadas; soluciones modulares más accesibles.</td>
+    <td>Competidores IoT más completos; privacidad de datos de ubicación.</td>
+    <td>Soluciones ágiles más baratas; adopción lenta por costos altos.</td>
+    <td>Soluciones especializadas en educación; competidores con hardware más económico; barreras de adopción por costo.</td>
+  </tr>
+</table>
+
 ### 2.1.2. Estrategias y tácticas frente a competidores
+
+Con base en el análisis competitivo realizado, se identificaron las principales fortalezas, debilidades, oportunidades y amenazas de las soluciones actuales en el ámbito de smart buildings y gestión de espacios, como Siemens, Cisco Spaces, Honeywell y Spacewell. Este análisis permite definir un conjunto de estrategias y tácticas que orienten a Smart Campus IoT a posicionarse como una solución diferenciada, accesible y especializada en el sector educativo.
+
+A continuación, se detallan las estrategias y tácticas propuestas:
+
+#### **Frente a las fortalezas de los competidores**
+
+Los competidores analizados destacan por:
+
+* Alto nivel de automatización y precisión en sus sistemas
+* Soluciones integrales a gran escala (energía, seguridad, infraestructura)
+* Amplia experiencia y posicionamiento en el mercado
+* Uso de tecnologías avanzadas como IA, Big Data y analítica predictiva
+##### **Fortalezas de Smart Campus IoT:**
+* Especialización en el sector educativo
+* Integración con procesos académicos (aulas, horarios, docentes)
+* Bajo costo de implementación
+* Flexibilidad y escalabilidad modular
+* Enfoque en analítica aplicada a la toma de decisiones académicas
+##### **Estrategias**
+* Diferenciar la propuesta mediante un enfoque específico en educación.
+* Posicionar la solución como una herramienta de gestión académica basada en datos.
+* Priorizar la simplicidad y accesibilidad frente a soluciones complejas y costosas.
+##### **Tácticas**
+* Desarrollar dashboards orientados a indicadores académicos (uso de aulas, eficiencia).
+* Comunicar el valor del sistema en términos de mejora del aprendizaje y optimización de recursos.
+* Implementar módulos iniciales simples que puedan escalar progresivamente.
+
+#### **Frente a las debilidades de los competidores**
+
+Se identificaron las siguientes debilidades en los competidores:
+
+* Alto costo de implementación
+* Complejidad técnica e infraestructura pesada
+* Falta de enfoque en el sector educativo
+* Limitada adaptación a procesos académicos específicos
+##### **Debilidades de Smart Campus IoT:**
+* Menor precisión frente a soluciones industriales
+* Dependencia de sensores de bajo costo
+* Limitada validación en escenarios reales
+##### **Estrategias**
+* Aprovechar la falta de especialización educativa de los competidores.
+* Enfocar la solución en necesidades concretas de instituciones educativas.
+* Diseñar un sistema fácil de implementar y mantener.
+##### **Tácticas**
+* Desarrollar funcionalidades específicas como monitoreo por horario académico y score de aula.
+* Realizar pilotos en instituciones educativas para validar el sistema.
+* Optimizar el uso de sensores accesibles manteniendo precisión suficiente para el contexto educativo.
 
 ## 2.2. Entrevistas
 
