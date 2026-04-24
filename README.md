@@ -285,6 +285,33 @@ Este flujo modela el nuevo proceso incorporado en esta iteración. El dispositiv
 
 #### 4.1.1.3. Bounded Context Canvases
 
+Con el fin de detallar el diseño de cada bounded context identificado durante las sesiones de EventStorming, el equipo elaboró un Bounded Context Canvas por cada contexto, siguiendo la estructura propuesta por el DDD Crew (V4). Este artefacto permite documentar de forma estructurada la descripción del contexto, su clasificación estratégica, el lenguaje ubicuo específico, las decisiones de negocio clave y los flujos de comunicación entrante y saliente con otros colaboradores del sistema.
+
+Los canvases se presentan en orden de importancia para el negocio, comenzando por el contexto core de la nueva iteración IoT y continuando con los contextos de soporte existentes.
+
+A continuación se presentan los cinco Bounded Context Canvases elaborados:
+
+
+**Iot Monitoring**
+
+![Bounded Context Canvas IoT Monitoring](/assets/images/context-canvas-iot-monitoring.png)
+
+**Space & Resource Management**
+
+![Bounded Context Canvas Space and Resource Management](/assets/images/context-canvas-space-resource-management.png)
+
+**Reservation & Scheduling**
+
+![Bounded Context Canvas Reservation & Scheduling](/assets/images/context-canvas-reservation-scheduling.png)
+
+**Breakdown Management**
+
+![Bounded Context Canvas Breakdown Management](/assets/images/context-canvas-breakdown-management.png)
+
+**IAM & Profile Management**
+
+![Bounded Context Canvas IAM & Profile Management](/assets/images/context-canvas-iam-profile-management.png)
+
 ### 4.1.2. Context Mapping
 
 ### 4.1.3. Software Architecture
