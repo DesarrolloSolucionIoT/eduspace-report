@@ -16,7 +16,7 @@
 
 ## Informe de Trabajo Final
 
-**Nombre de la startup:** BetterClass
+**Nombre de la startup:** EduSolutions
 
 **Nombre del producto:** EduSpace
 
