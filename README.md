@@ -337,10 +337,11 @@ El producto debe de ser intuitivo, rápido, disponible durante el horario labora
 
 - Nosotros creemos que los usuarios necesitan una aplicación que les permita gestionar los espacios de su centro educativo de manera eficiente. Sabremos que es verdad cuando al menos el 50% de usuarios adquiera los planes de suscripción durante el primer mes.
 - Nosotros creemos que al contar con una interfaz intuitiva, visualmente atractiva y sea fácil de usar reducirá la tasa de abandono del sistema. Sabremos que es verdad cuando al menos el 70% de los usuarios continúen utilizando la plataforma después del primer mes.
-- Nosotros creemos que ofrecer la aplicación en múltiples idiomas incrementará la base de usuarios. Sabremos que es verdad cuando tengamos como mínimo un 30% de usuarios de otros países en el tercer mes.
 - Nosotros creemos que el monitoreo en tiempo real mediante tecnologías IoT (presencia, temperatura, humedad y consumo energético) aportará valor a los usuarios en la gestión de los espacios. Sabremos que es verdad cuando los usuarios utilicen activamente estas funcionalidades y las consideren relevantes en la toma de decisiones operativas.
 
 #### 1.2.2.4. Lean UX Canvas
+
+![Lean UX Canvas](assets/chapter-I/lean-ux-canvas.png)
 
 ## 1.3. Segmentos objetivo
 
