@@ -21,15 +21,16 @@
 **Nombre del producto:** EduSpace
 
 ---
+
 **Integrantes:**
 
-| Código | Apellidos y Nombres |
-|--------|---------------------|
-| u202310877| Alva Abanto, Luis Andrés |
-| u20191e414| Antayhua Castillo, Josué Oscar |
-| u202110385 | Loli Ramirez, Camila Cristina |
-| u202220528 | Torres García, Andrés Alberto |
-| u202312504 | Yalán Zhang, Angie Christina |
+| Código     | Apellidos y Nombres            |
+| ---------- | ------------------------------ |
+| u202310877 | Alva Abanto, Luis Andrés       |
+| u20191e414 | Antayhua Castillo, Josué Oscar |
+| u202110385 | Loli Ramirez, Camila Cristina  |
+| u202220528 | Torres García, Andrés Alberto  |
+| u202312504 | Yalán Zhang, Angie Christina   |
 
 **Lima - abril 2026**
 
@@ -39,9 +40,9 @@
 
 ## Registro de Versiones del Informe
 
-| Versión | Fecha | Autor | Descripción de modificación |
-|---------|-------|-------|-----------------------------|
-| 1.0 | 11/04/2026 | Equipo | Creación del informe. |
+| Versión | Fecha      | Autor  | Descripción de modificación |
+| ------- | ---------- | ------ | --------------------------- |
+| 1.0     | 11/04/2026 | Equipo | Creación del informe.       |
 
 ---
 
@@ -49,14 +50,10 @@
 
 URL del repositorio del Project Report en GitHub: [https://github.com/DesarrolloSolucionIoT/eduspace-report](https://github.com/DesarrolloSolucionIoT/eduspace-report)
 
-
 ---
 
 ## Contenido
 
-- [Registro de Versiones del Informe](#registro-de-versiones-del-informe)
-- [Project Report Collaboration Insights](#project-report-collaboration-insights)
-- [Student Outcome](#student-outcome)
 - [Capítulo I: Introducción](#capítulo-i-introducción)
   - [1.1. Startup Profile](#11-startup-profile)
     - [1.1.1. Descripción de la Startup](#111-descripción-de-la-startup)
@@ -65,14 +62,28 @@ URL del repositorio del Project Report en GitHub: [https://github.com/Desarrollo
     - [1.2.1. Antecedentes y problemática](#121-antecedentes-y-problemática)
     - [1.2.2. Lean UX Process](#122-lean-ux-process)
       - [1.2.2.1. Lean UX Problem Statements](#1221-lean-ux-problem-statements)
+        - [**a. DOMAIN**](#a-domain)
+        - [**b. CUSTOMER SEGMENTS**](#b-customer-segments)
+        - [**c. PAIN POINTS**](#c-pain-points)
+        - [**d. GAP**](#d-gap)
+        - [**e. VISION/STRATEGY**](#e-visionstrategy)
+        - [**f. INITIAL SEGMENT**](#f-initial-segment)
       - [1.2.2.2. Lean UX Assumptions](#1222-lean-ux-assumptions)
       - [1.2.2.3. Lean UX Hypothesis Statements](#1223-lean-ux-hypothesis-statements)
       - [1.2.2.4. Lean UX Canvas](#1224-lean-ux-canvas)
   - [1.3. Segmentos objetivo](#13-segmentos-objetivo)
-- [Capítulo II: Requirements Elicitation & Analysis](#capítulo-ii-requirements-elicitation--analysis)
+- [Capítulo II: Requirements Elicitation \& Analysis](#capítulo-ii-requirements-elicitation--analysis)
   - [2.1. Competidores](#21-competidores)
     - [2.1.1. Análisis competitivo](#211-análisis-competitivo)
     - [2.1.2. Estrategias y tácticas frente a competidores](#212-estrategias-y-tácticas-frente-a-competidores)
+      - [**Frente a las fortalezas de los competidores**](#frente-a-las-fortalezas-de-los-competidores)
+        - [**Fortalezas de Smart Campus IoT:**](#fortalezas-de-smart-campus-iot)
+        - [**Estrategias**](#estrategias)
+        - [**Tácticas**](#tácticas)
+      - [**Frente a las debilidades de los competidores**](#frente-a-las-debilidades-de-los-competidores)
+        - [**Debilidades de Smart Campus IoT:**](#debilidades-de-smart-campus-iot)
+        - [**Estrategias**](#estrategias-1)
+        - [**Tácticas**](#tácticas-1)
   - [2.2. Entrevistas](#22-entrevistas)
     - [2.2.1. Diseño de entrevistas](#221-diseño-de-entrevistas)
     - [2.2.2. Registro de entrevistas](#222-registro-de-entrevistas)
@@ -111,8 +122,11 @@ URL del repositorio del Project Report en GitHub: [https://github.com/Desarrollo
         - [4.2.X.6.1. Bounded Context Domain Layer Class Diagrams](#42x61-bounded-context-domain-layer-class-diagrams)
         - [4.2.X.6.2. Bounded Context Database Design Diagram](#42x62-bounded-context-database-design-diagram)
 - [Conclusiones](#conclusiones)
+  - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
 - [Bibliografía](#bibliografía)
 - [Anexos](#anexos)
+  - [Anexo A: Estructura para la sección Student Outcome](#anexo-a-estructura-para-la-sección-student-outcome)
+  - [Anexo B: Videos de Exposiciones](#anexo-b-videos-de-exposiciones)
 
 ---
 
@@ -124,9 +138,9 @@ El curso contribuye al cumplimiento del Student Outcome ABET:
 
 En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 5.
 
-| Criterio específico | Acciones realizadas | Conclusiones |
-|---------------------|---------------------|--------------|
-| Trabaja en equipo para proporcionar liderazgo en forma conjunta | \<Apellido, Nombre\> **AV1** \<descripción de acciones\> | \<Conclusiones grupales\> |
+| Criterio específico                                                                             | Acciones realizadas                                      | Conclusiones              |
+| ----------------------------------------------------------------------------------------------- | -------------------------------------------------------- | ------------------------- |
+| Trabaja en equipo para proporcionar liderazgo en forma conjunta                                 | \<Apellido, Nombre\> **AV1** \<descripción de acciones\> | \<Conclusiones grupales\> |
 | Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos. | \<Apellido, Nombre\> **AV1** \<descripción de acciones\> | \<Conclusiones grupales\> |
 
 ---
@@ -151,11 +165,10 @@ De esta manera, EduSpace permite a las instituciones educativas optimizar su efi
 
 **Visión:** Liderar en el rubro de servicios educativos en Latinoamérica con nuestra startup por ofrecer soluciones sostenibles y accesibles, destacando por la innovación en la gestión inteligente de espacios.
 
-
 ### 1.1.2. Perfiles de integrantes del equipo
 
 | Foto del Participante                                                                                                                                                                                     | Nombres y Apellidos           | Código de Estudiante | Descripción de Carrera | Resumen de Conocimientos y Habilidades                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------|----------------------|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- | -------------------- | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [![Andrés Torres](https://github.com/DesarrolloSolucionIoT/report/raw/main/assets/chapter1/team/andres.jpeg)](https://github.com/DesarrolloSolucionIoT/report/blob/main/assets/chapter1/team/andres.jpeg) | Andrés Alberto Torres García  | u202220528           | Ingeniería de Software | Hola, soy Andrés Alberto Torres García, tengo 20 años y curso el séptimo ciclo de Ingeniería de Software. Me apasiona la tecnología y siempre busco entender cómo funcionan las cosas, lo que me ha permitido adquirir experiencia en C++, Python, JavaScript y TypeScript, así como en el desarrollo de aplicaciones web con Next.js, TailwindCSS y Firebase, bases de datos como MySQL, MongoDB y Firestore, y el uso de herramientas como Docker y GitHub. Además, el fútbol es otra de mis grandes pasiones, disciplina que me ha enseñado valores como el trabajo en equipo, la perseverancia y la constancia, que aplico también en mi vida académica y profesional. |
 | [![Camila Loli](assets/chapter-I/CamilaLoli.jpg)                                                                                                                                                          | Camila Cristina Loli Ramirez  | u202110385           | Ingeniería de Software | Soy Camila Cristina Loli Ramirez, tengo 21 años y soy estudiante de la carrera Ingeniería de Software. Mi carrera se basa en los conocimientos y técnicas científicas para crear un programa informático. Tengo experiencia con el trabajo en equipo, creación de proyectos y creación de programas básicos. Aportaré al equipo mi creatividad, compromiso de trabajo en equipo, puntualidad y responsabilidad. Me comprometo a trabajar constantemente para mejorar nuestro proyecto y a generar un entorno de trabajo sano con mi grupo.                                                                                                                                 |
 |                                                                                                                                                                                                           | Josué Oscar Antayhua Castillo | u20191e414           | Ingeniería de Software |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
@@ -205,7 +218,7 @@ En la problemática abordada, los afectados son los docentes, personal administr
 Este problema puede abordarse mediante la implementación de una solución tecnológica centralizada que permita gestionar de manera eficiente los espacios, recursos y personal. El uso de herramientas digitales facilitaría la automatización de procesos, mejora en la comunicación interna y monitoreo en tiempo real de los ambientes educativos.
 
 - ### _HOW MUCH?_
-El consumo energético de instituciones educativos puede representar entre el 20% y 30% de sus costos operativos (Birimisa, 2025), lo que evidencia que una gestión ineficiente de los recursos puede generar un impacto económico significativo.
+  El consumo energético de instituciones educativos puede representar entre el 20% y 30% de sus costos operativos (Birimisa, 2025), lo que evidencia que una gestión ineficiente de los recursos puede generar un impacto económico significativo.
 
 ### 1.2.2. Lean UX Process
 
@@ -265,14 +278,13 @@ Business Assumptions: 
 - **Sabremos que hemos tenido éxito cuando uno de estos cambios en el comportamiento de nuestro cliente:** El usuario logra gestionar la asignación de espacios y recursos en menor tiempo, reduzcan errores en la coordinación de actividades y utilicen activamente el sistema para monitorear el ambiente de las aulas.
 - **Qué otras suposiciones tenemos que, de probarse falsas pueden causar que nuestro proyecto fracase:** suponer que los segmentos objetivos prefieren mantener el uso de sistemas manuales para monitorear los ambientes y recursos disponibles.
 
-
 **Business Outcomes:** 
 
-* Mejorar la eficiencia operativa de las instituciones educativas un 25% en sus primeros 4 meses de uso del sistema.
-* Se espera que al menos el 30% de nuestros clientes nos recomienden a otras instituciones dentro de los primeros 6 meses.
-* Ofrecer la aplicación en múltiples idiomas incrementará la base de usuarios en un 25% en los primeros seis meses, permitiendo que más instituciones educativas de diferentes regiones utilicen la plataforma y contribuyendo a un crecimiento anual del 15%
-*  Crear interfaz fácil de usar y visualmente atractiva que retenga al menos el 50% de usuarios después de los primeros 7 meses.
-* Conseguir que más del 65% de usuarios pague la suscripción (anual o mensual) ofrecida. 
+- Mejorar la eficiencia operativa de las instituciones educativas un 25% en sus primeros 4 meses de uso del sistema.
+- Se espera que al menos el 30% de nuestros clientes nos recomienden a otras instituciones dentro de los primeros 6 meses.
+- Ofrecer la aplicación en múltiples idiomas incrementará la base de usuarios en un 25% en los primeros seis meses, permitiendo que más instituciones educativas de diferentes regiones utilicen la plataforma y contribuyendo a un crecimiento anual del 15%
+-  Crear interfaz fácil de usar y visualmente atractiva que retenga al menos el 50% de usuarios después de los primeros 7 meses.
+- Conseguir que más del 65% de usuarios pague la suscripción (anual o mensual) ofrecida. 
 
 **User Assumptions:** 
 
@@ -280,8 +292,8 @@ Business Assumptions: 
 
 Nuestros usuarios principales son: 
 
-* Docentes y auxiliares entre las edades de 22 a 65 años que buscan una solución que facilite el monitoreo de ambientes y mejore la comunicación con los administradores.
-* Administradores de instituciones educativas entre 35 a 60 años que necesitan una herramienta que permita gestionar eficazmente los espacios y recursos.
+- Docentes y auxiliares entre las edades de 22 a 65 años que buscan una solución que facilite el monitoreo de ambientes y mejore la comunicación con los administradores.
+- Administradores de instituciones educativas entre 35 a 60 años que necesitan una herramienta que permita gestionar eficazmente los espacios y recursos.
 
 **¿Dónde encaja nuestro producto en su vida o trabajo?** 
 
@@ -305,15 +317,15 @@ El producto debe de ser intuitivo, rápido, disponible durante el horario labora
 
 **El valor principal que un usuario quiere obtener de nuestra funcionalidad es:**
 
-* Mejora en la gestión de los espacios y recursos, junto con una comunicación más eficiente entre los trabajadores.
+- Mejora en la gestión de los espacios y recursos, junto con una comunicación más eficiente entre los trabajadores.
 
 **Los usuarios también pueden obtener estos beneficios adicionales:**
 
-* Acceso rápido a la información en cualquier momento y desde cualquier dispositivo.
+- Acceso rápido a la información en cualquier momento y desde cualquier dispositivo.
 
 **El mayor riesgo para el usuario es:**
 
-* Que la aplicación no se adapte correctamente a diferentes dispositivos o que no facilite la comunicación interna como se espera.
+- Que la aplicación no se adapte correctamente a diferentes dispositivos o que no facilite la comunicación interna como se espera.
 
 **User Outcomes:**
 
@@ -329,9 +341,9 @@ El producto debe de ser intuitivo, rápido, disponible durante el horario labora
   - Interfaz Intuitiva y Fácil de Usar: Desarrollar una interfaz que sea simple e intuitiva, reduciendo el tiempo de aprendizaje en un 30%. Se espera que el 90% de los usuarios puedan dominar las funciones principales en menos de una semana sin necesidad de capacitación adicional.
 - Mejora en el Control de Inventarios:
   - Gestión de Inventarios de Recursos: Crear una funcionalidad que permita a los usuarios registrar y gestionar el inventario de equipos y recursos en su centro educativo. Esto incrementará el control y monitoreo de los recursos en un 25%, mejorando la productividad en un 20% al optimizar el uso de los mismos.
-* Monitoreo del ambiente mediante IoT:
-  * Incorporación de sensores que permitan detectar la presencia de personas, así como medir la temperatura y humedad en los ambientes educativos.
 
+* Monitoreo del ambiente mediante IoT:
+  - Incorporación de sensores que permitan detectar la presencia de personas, así como medir la temperatura y humedad en los ambientes educativos.
 
 #### 1.2.2.3. Lean UX Hypothesis Statements
 
@@ -349,11 +361,11 @@ Nuestra aplicación se enfoca en optimizar la gestión de espacios educativos y 
 
 **Administradores de instituciones educativas**
 
-* Edad: 35 a 60 años
-* Perfil: Directivos, coordinadores académicos, personal administrativo encargados de la gestión operativo de institución educativa.
-* Uso de tecnología: Intermedio
-* Necesidad principal: Optimizar la gestión de espacios, recursos y personal de manera centralizada.
-* Beneficios buscados: Tener mayor control operativo, reducción de errores, ahorro de tiempo y mejora en la toma de decisiones.
+- Edad: 35 a 60 años
+- Perfil: Directivos, coordinadores académicos, personal administrativo encargados de la gestión operativo de institución educativa.
+- Uso de tecnología: Intermedio
+- Necesidad principal: Optimizar la gestión de espacios, recursos y personal de manera centralizada.
+- Beneficios buscados: Tener mayor control operativo, reducción de errores, ahorro de tiempo y mejora en la toma de decisiones.
 
 **Características demográficas:** Profesionales entre 35 a 60 años, de género masculino y femenino, con formación en gestión educativa, administración o especialidades afines, que trabajan solamente en instituciones educativas.
 
@@ -361,16 +373,15 @@ Nuestra aplicación se enfoca en optimizar la gestión de espacios educativos y 
 
 **Docentes y auxiliares**
 
-* Edad: 22 a 65 años
-* Perfil: Profesores y personal de apoyo que utilizan los espacios educativos de las instituciones donde trabajan para desarrollar sus actividades diarias.
-* Uso de tecnología: Básico a intermedio
-* Necesidad principal: Acceder rápidamente a información sobre la disponibilidad de espacios y coordinar actividades sin complicaciones.
-* Beneficios buscados: Acceso rápido a la información sobre los recursos y espacios disponibles, mejor comunicación y menos errores en la asignación de espacios.
+- Edad: 22 a 65 años
+- Perfil: Profesores y personal de apoyo que utilizan los espacios educativos de las instituciones donde trabajan para desarrollar sus actividades diarias.
+- Uso de tecnología: Básico a intermedio
+- Necesidad principal: Acceder rápidamente a información sobre la disponibilidad de espacios y coordinar actividades sin complicaciones.
+- Beneficios buscados: Acceso rápido a la información sobre los recursos y espacios disponibles, mejor comunicación y menos errores en la asignación de espacios.
 
 **Características demográficas:** Profesionales del sector educativo entre 22 a 65 años, de género masculino y femenino, con formación académica en sus respectivas disciplinas (ciencias, literatura, entre otros), con experiencia en enseñanza.
 
 **Características geográficas:** Principalmente ubicados en instituciones educativas con infraestructura compleja de zonas urbanas o semiurbanas de Perú, especialmente Lima Metropolitana.
-
 
 ---
 
@@ -507,45 +518,57 @@ A continuación, se detallan las estrategias y tácticas propuestas:
 
 Los competidores analizados destacan por:
 
-* Alto nivel de automatización y precisión en sus sistemas
-* Soluciones integrales a gran escala (energía, seguridad, infraestructura)
-* Amplia experiencia y posicionamiento en el mercado
-* Uso de tecnologías avanzadas como IA, Big Data y analítica predictiva
+- Alto nivel de automatización y precisión en sus sistemas
+- Soluciones integrales a gran escala (energía, seguridad, infraestructura)
+- Amplia experiencia y posicionamiento en el mercado
+- Uso de tecnologías avanzadas como IA, Big Data y analítica predictiva
+
 ##### **Fortalezas de Smart Campus IoT:**
-* Especialización en el sector educativo
-* Integración con procesos académicos (aulas, horarios, docentes)
-* Bajo costo de implementación
-* Flexibilidad y escalabilidad modular
-* Enfoque en analítica aplicada a la toma de decisiones académicas
+
+- Especialización en el sector educativo
+- Integración con procesos académicos (aulas, horarios, docentes)
+- Bajo costo de implementación
+- Flexibilidad y escalabilidad modular
+- Enfoque en analítica aplicada a la toma de decisiones académicas
+
 ##### **Estrategias**
-* Diferenciar la propuesta mediante un enfoque específico en educación.
-* Posicionar la solución como una herramienta de gestión académica basada en datos.
-* Priorizar la simplicidad y accesibilidad frente a soluciones complejas y costosas.
+
+- Diferenciar la propuesta mediante un enfoque específico en educación.
+- Posicionar la solución como una herramienta de gestión académica basada en datos.
+- Priorizar la simplicidad y accesibilidad frente a soluciones complejas y costosas.
+
 ##### **Tácticas**
-* Desarrollar dashboards orientados a indicadores académicos (uso de aulas, eficiencia).
-* Comunicar el valor del sistema en términos de mejora del aprendizaje y optimización de recursos.
-* Implementar módulos iniciales simples que puedan escalar progresivamente.
+
+- Desarrollar dashboards orientados a indicadores académicos (uso de aulas, eficiencia).
+- Comunicar el valor del sistema en términos de mejora del aprendizaje y optimización de recursos.
+- Implementar módulos iniciales simples que puedan escalar progresivamente.
 
 #### **Frente a las debilidades de los competidores**
 
 Se identificaron las siguientes debilidades en los competidores:
 
-* Alto costo de implementación
-* Complejidad técnica e infraestructura pesada
-* Falta de enfoque en el sector educativo
-* Limitada adaptación a procesos académicos específicos
+- Alto costo de implementación
+- Complejidad técnica e infraestructura pesada
+- Falta de enfoque en el sector educativo
+- Limitada adaptación a procesos académicos específicos
+
 ##### **Debilidades de Smart Campus IoT:**
-* Menor precisión frente a soluciones industriales
-* Dependencia de sensores de bajo costo
-* Limitada validación en escenarios reales
+
+- Menor precisión frente a soluciones industriales
+- Dependencia de sensores de bajo costo
+- Limitada validación en escenarios reales
+
 ##### **Estrategias**
-* Aprovechar la falta de especialización educativa de los competidores.
-* Enfocar la solución en necesidades concretas de instituciones educativas.
-* Diseñar un sistema fácil de implementar y mantener.
+
+- Aprovechar la falta de especialización educativa de los competidores.
+- Enfocar la solución en necesidades concretas de instituciones educativas.
+- Diseñar un sistema fácil de implementar y mantener.
+
 ##### **Tácticas**
-* Desarrollar funcionalidades específicas como monitoreo por horario académico y score de aula.
-* Realizar pilotos en instituciones educativas para validar el sistema.
-* Optimizar el uso de sensores accesibles manteniendo precisión suficiente para el contexto educativo.
+
+- Desarrollar funcionalidades específicas como monitoreo por horario académico y score de aula.
+- Realizar pilotos en instituciones educativas para validar el sistema.
+- Optimizar el uso de sensores accesibles manteniendo precisión suficiente para el contexto educativo.
 
 ## 2.2. Entrevistas
 
@@ -592,16 +615,16 @@ A continuación se presenta el diagrama resultante de la sesión:
 ## 3.1. User Stories
 
 | Epic / Story ID | Título | Descripción | Criterios de Aceptación | Relacionado con (Epic ID) |
-|-----------------|--------|-------------|------------------------|--------------------------|
-| | | | | |
+| --------------- | ------ | ----------- | ----------------------- | ------------------------- |
+|                 |        |             |                         |                           |
 
 ## 3.2. Impact Mapping
 
 ## 3.3. Product Backlog
 
 | # Orden | User Story ID | Título | Descripción | Story Points (1/2/3/5/8) |
-|---------|--------------|--------|-------------|--------------------------|
-| | | | | |
+| ------- | ------------- | ------ | ----------- | ------------------------ |
+|         |               |        |             |                          |
 
 ---
 
@@ -627,13 +650,13 @@ A partir del Design-Level EventStorming realizado, el equipo llevó a cabo el pr
 
 Como resultado del análisis, se identificaron seis bounded contexts. A continuación se presenta cada uno con su justificación:
 
-| # | Bounded Context | Eventos pivote que delimitan su frontera | Justificación |
-|---|----------------|------------------------------------------|---------------|
-| 1 | **Identity, Access & Profile Management** | `AdminAccountCreated`, `TeacherAccountCreated`, `SessionStarted` | Agrupa todo lo relacionado con la autenticación, control de acceso y gestión de perfiles de usuario. Es el contexto de entrada obligatorio para cualquier usuario y concentra tanto las credenciales de acceso como la información personal asociada a cada cuenta. |
-| 2 | **Space & Resource Management** | `ClassroomRegistered`, `SharedAreaRegistered`, `ResourceAddedToClassroom`, `TeacherAssignedToClassroom` | Agrupa la configuración y administración de todos los espacios físicos e inventario de recursos de la institución. Es el contexto core del negocio original. |
-| 3 | **Reservation & Scheduling** | `SharedAreaReserved`, `ReservationConfirmed`, `MeetingScheduled`, `TeacherInvitedToMeeting` | Gestiona la planificación y reserva de espacios compartidos y reuniones. Se separa de Space & Resource Management porque opera sobre disponibilidad y tiempo, no sobre el registro de espacios. |
-| 4 | **Breakdown Management** | `BreakdownReported`, `ReportStatusUpdated` | Concentra el ciclo de vida completo de los reportes de averías, desde su creación por un docente hasta su resolución por el administrador. |
-| 5 | **IoT Monitoring** | `SensorReadingCaptured`, `EnvironmentalThresholdExceeded`, `OccupancyStatusChanged`, `AlertGenerated` | Contexto nuevo incorporado en esta iteración. Gestiona la captura, procesamiento y visualización de datos provenientes de los dispositivos IoT instalados en las aulas, así como la generación de alertas automáticas. Se delimita como contexto independiente debido a que introduce nuevos actores (ESP32, Edge API), un flujo de datos completamente distinto al resto del sistema y requisitos técnicos propios del mundo embebido. |
+| #   | Bounded Context                           | Eventos pivote que delimitan su frontera                                                                | Justificación                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| --- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | **Identity, Access & Profile Management** | `AdminAccountCreated`, `TeacherAccountCreated`, `SessionStarted`                                        | Agrupa todo lo relacionado con la autenticación, control de acceso y gestión de perfiles de usuario. Es el contexto de entrada obligatorio para cualquier usuario y concentra tanto las credenciales de acceso como la información personal asociada a cada cuenta.                                                                                                                                                                     |
+| 2   | **Space & Resource Management**           | `ClassroomRegistered`, `SharedAreaRegistered`, `ResourceAddedToClassroom`, `TeacherAssignedToClassroom` | Agrupa la configuración y administración de todos los espacios físicos e inventario de recursos de la institución. Es el contexto core del negocio original.                                                                                                                                                                                                                                                                            |
+| 3   | **Reservation & Scheduling**              | `SharedAreaReserved`, `ReservationConfirmed`, `MeetingScheduled`, `TeacherInvitedToMeeting`             | Gestiona la planificación y reserva de espacios compartidos y reuniones. Se separa de Space & Resource Management porque opera sobre disponibilidad y tiempo, no sobre el registro de espacios.                                                                                                                                                                                                                                         |
+| 4   | **Breakdown Management**                  | `BreakdownReported`, `ReportStatusUpdated`                                                              | Concentra el ciclo de vida completo de los reportes de averías, desde su creación por un docente hasta su resolución por el administrador.                                                                                                                                                                                                                                                                                              |
+| 5   | **IoT Monitoring**                        | `SensorReadingCaptured`, `EnvironmentalThresholdExceeded`, `OccupancyStatusChanged`, `AlertGenerated`   | Contexto nuevo incorporado en esta iteración. Gestiona la captura, procesamiento y visualización de datos provenientes de los dispositivos IoT instalados en las aulas, así como la generación de alertas automáticas. Se delimita como contexto independiente debido a que introduce nuevos actores (ESP32, Edge API), un flujo de datos completamente distinto al resto del sistema y requisitos técnicos propios del mundo embebido. |
 
 #### 4.1.1.2. Domain Message Flows Modeling
 
@@ -672,7 +695,6 @@ Con el fin de detallar el diseño de cada bounded context identificado durante l
 Los canvases se presentan en orden de importancia para el negocio, comenzando por el contexto core de la nueva iteración IoT y continuando con los contextos de soporte existentes.
 
 A continuación se presentan los cinco Bounded Context Canvases elaborados:
-
 
 **Iot Monitoring**
 
@@ -782,10 +804,9 @@ La Landing Page se despliega en GitHub Pages por su naturaleza estática y gratu
 
 # Bibliografía
 
-
 Birimisa, A. (2025, 19 febrero). _El consumo de energía en los Colegios y cómo el FM puede generar ahorros_. https://www.linkedin.com/pulse/el-consumo-de-energ%C3%ADa-en-los-colegios-y-c%C3%B3mo-fm-puede-birimisa-ncnpe/
 
-Córdova Negrete, M. G., Domínguez Toala, G. del P., & Córdova Cabrera, D. J. (2025). Retos y perspectivas de la gestión administrativa en la educación superior: fortalecimiento institucional, calidad educativa y liderazgo académico en el contexto globalizado. *Multidisciplinary Journal of Sciences, Discoveries, and Society*, *2*(2), e-207. https://doi.org/10.71068/xzb5wn45
+Córdova Negrete, M. G., Domínguez Toala, G. del P., & Córdova Cabrera, D. J. (2025). Retos y perspectivas de la gestión administrativa en la educación superior: fortalecimiento institucional, calidad educativa y liderazgo académico en el contexto globalizado. _Multidisciplinary Journal of Sciences, Discoveries, and Society_, _2_(2), e-207. https://doi.org/10.71068/xzb5wn45
 
 Expertos En Educación. (2025, 22 septiembre). _Gestión educativa en el Perú: claves, retos y soluciones_. VIU Universidad Online. https://www.universidadviu.com/pe/actualidad/nuestros-expertos/gestion-educativa-en-el-peru-claves-retos-y-soluciones
 
@@ -794,7 +815,6 @@ Diaz, H. (2024, 25 junio). _Infraestructura escolar: soluciones frente al défic
 Valencia, C., & Almeida, V. (2024). La tecnología en la gestión educativa. _Revista de Investigación Latinoamericana En Competitividad Organizacional_, _6_(23), 9859863. https://dialnet.unirioja.es/descarga/articulo/9859863.pdf#:~:text=En%20resumen%2C%20la%20integraci%C3%B3n%20de%20la%20tecnolog%C3%ADa,a%20la%20mejora%20de%20la%20calidad%20educativa.
 
 Shanganlall, A. (2025, 21 febrero). _Los 7 mayores retos que afectan a la gestión de la educación_. Classter. https://www.classter.com/es/blog/edtech-es/los-7-mayores-retos-que-afectan-a-la-gestion-de-la-educacion/
-
 
 ---
 
@@ -805,5 +825,5 @@ Shanganlall, A. (2025, 21 febrero). _Los 7 mayores retos que afectan a la gesti�
 ## Anexo B: Videos de Exposiciones
 
 | Entrega | Título | URL |
-|---------|--------|-----|
-| AV1 | | |
+| ------- | ------ | --- |
+| AV1     |        |     |
