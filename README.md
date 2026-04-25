@@ -178,11 +178,11 @@ El análisis competitivo permite identificar las soluciones existentes que abord
   </tr>
   <tr>
    <td colspan="2">Nombre y logo</td>
-    <td style="text-align: center;">EduSpace<br> <img src="https://github.com/user-attachments/assets/aa72b842-fa31-4a24-b10b-7d3444705e3d" alt="logo-eduspace" width="50"/>  </td>
-    <td style="text-align: center;">Siemens Smart Infrastructure<br> <img src="https://github.com/user-attachments/assets/1ff299ad-8e8f-4c1d-aa55-7c1ad7fd085c" alt="logo-siemens" width="50"/> </td>
-    <td style="text-align: center;">Cisco Spaces<br> <img src="https://github.com/user-attachments/assets/d0ed6004-fbc8-4252-8b82-0b329cd4e83a" alt="logo-cisco" width="50"/> </td>
-    <td style="text-align: center;">Honeywell Building Tech <img src="https://github.com/user-attachments/assets/a25810df-41e8-41f5-879c-5ebe228763c0" alt="logo-honeywell" width="50"/> </td>
-    <td style="text-align: center;">Spacewell<br> <img src="https://github.com/user-attachments/assets/a25810df-41e8-41f5-879c-5ebe228763c0" alt="logo-spacewell" width="50"/> </td> 
+    <td align= "center"><div>EduSpace</div><img src="https://github.com/user-attachments/assets/aa72b842-fa31-4a24-b10b-7d3444705e3d" alt="logo-eduspace" width="50"/>  </td>
+    <td align= "center"><div>Siemens Smart Infrastructure</div> <img src="/assets/images/siemens_logo.png" alt="logo-siemens" width="50"/> </td>
+    <td align= "center"><div>Cisco Spaces</div> <img src="/assets/images/cisco_logo.png" alt="logo-cisco" width="50"/> </td>
+    <td align= "center"><div>Honeywell Building Tech</div><img src="/assets/images/honeywell_logo.png" alt="logo-honeywell" width="50"/> </td>
+    <td align= "center"><div>Spacewell</div> <img src="/assets/images/spacewell_logo.png" alt="logo-spacewell" width="50"/> </td> 
   </tr>
   <tr>
     <td rowspan="2">Perfil</td>
@@ -334,6 +334,38 @@ Se identificaron las siguientes debilidades en los competidores:
 
 ### 2.2.1. Diseño de entrevistas
 
+Las entrevistas permitirán recolectar información cualitativa sobre cómo se gestionan actualmente los espacios académicos, recursos e infraestructura en instituciones educativas, identificando problemas, necesidades y oportunidades para validar la propuesta de EduSpace.
+
+#### Segmento 1: Administradores de instituciones educativas
+
+Objetivo: Comprender cómo los administradores gestionan aulas y recursos, qué dificultades enfrentan y qué valor perciben en una solución basada en monitoreo en tiempo real.
+
+* ¿Cómo verifican si las aulas están siendo utilizadas correctamente?
+* ¿Qué herramientas utilizan para el control de espacios y recursos?
+* ¿Cómo monitorean el consumo de energía o mantenimiento de aulas?
+* ¿Qué dificultades enfrentan en la gestión de aulas?
+* ¿Qué tan frecuente es el desperdicio de recursos (luces, equipos encendidos)?
+* ¿Tienen visibilidad en tiempo real de lo que ocurre en las aulas?
+* ¿Qué tan importante sería contar con datos en tiempo real sobre uso de aulas?
+* ¿Te sería útil recibir alertas sobre ineficiencias o problemas?
+* ¿Qué opinas de un sistema que monitoree aulas en tiempo real?
+* ¿Qué funcionalidades considerarías más importantes?
+* ¿Qué te generaría más valor: ahorro de costos, control o mejora académica?
+* ¿Implementarías una solución así en tu institución? ¿Por qué?
+* ¿Qué barreras ves para su implementación? (costo, tecnología, cultura, etc.)
+
+#### Segmento 2: Docentes y auxiliares
+
+Objetivo: Comprender cómo perciben el uso de aulas, condiciones del entorno y problemas que afectan el desarrollo de clases.
+
+* ¿Has tenido problemas con temperatura, ruido o equipos?
+* ¿Qué te gustaría mejorar en las aulas?
+* ¿Te sería útil conocer el estado de un aula antes de ingresar?
+* ¿Qué opinas de un sistema que monitoree las condiciones del aula?
+* ¿Te ayudaría saber si un aula está disponible o en buenas condiciones?
+* ¿Qué funcionalidad te sería más útil como docente?
+* ¿Crees que un sistema así mejoraría tu experiencia al enseñar?
+
 ### 2.2.2. Registro de entrevistas
 
 ### 2.2.3. Análisis de entrevistas
@@ -349,6 +381,22 @@ Se identificaron las siguientes debilidades en los competidores:
 ### 2.3.4. Empathy Mapping
 
 ## 2.4. Big Picture EventStorming
+
+Para comprender el dominio del negocio de EduSpace en su totalidad, el equipo llevó a cabo una sesión de Big Picture EventStorming de manera colaborativa. El objetivo principal fue identificar los eventos de dominio más relevantes del sistema, mapear a los actores involucrados y descubrir los bounded contexts de forma natural a partir del flujo de eventos.
+
+La sesión se desarrolló de forma remota utilizando LucidChart como herramienta de trabajo colaborativo. El proceso siguió las siguientes etapas:
+
+1. **Exploración caótica:** Cada miembro del equipo colocó libremente todos los Domain Events que consideró relevantes para el negocio de EduSpace, sin ningún orden establecido. Se utilizaron sticky notes naranjas siguiendo la convención estándar de EventStorming.
+2. **Ordenamiento cronológico:** Una vez generados los eventos, el equipo los ordenó en una línea de tiempo de izquierda a derecha, agrupándolos según su secuencia natural dentro del flujo del negocio.
+3. **Identificación de actores y sistemas externos:** Se asoció a cada evento el actor que lo origina, ya sea una persona (Admin o Teacher) o un sistema externo (ESP32, Edge API, Web API), utilizando sticky notes amarillas para personas y rojas para sistemas.
+4. **Identificación de hotspots:** El equipo marcó con sticky notes rosas los puntos de duda, conflicto o incertidumbre que requieren decisiones de diseño o aclaraciones futuras.
+5. **Descubrimiento de Bounded Contexts:** Finalmente, se agruparon los eventos relacionados en bounded contexts, delimitados con rectángulos punteados. Este paso permitió identificar las fronteras naturales del dominio y sirvió como base para el diseño estratégico del sistema.
+
+Como resultado de la sesión se identificaron seis bounded contexts: Identity & Access Management, Profile Management, Space & Resource Management, Reservation & Scheduling, Breakdown Management y el nuevo IoT Monitoring, incorporado para soportar el monitoreo en tiempo real de condiciones ambientales y ocupación de aulas mediante dispositivos IoT.
+
+A continuación se presenta el diagrama resultante de la sesión:
+
+![Big Picture Event Storming](/assets/images/big-picture-event-storming.png)
 
 ## 2.5. Ubiquitous Language
 
@@ -376,25 +424,148 @@ Se identificaron las siguientes debilidades en los competidores:
 
 ## 4.1. Strategic-Level Domain-Driven Design
 
+En este capítulo, el equipo presenta las decisiones de diseño estratégico para la solución EduSpace IoT, aplicando los principios de Domain-Driven Design (DDD). El objetivo de este nivel de diseño es identificar y definir los bounded contexts que conforman el sistema, comprender cómo interactúan entre sí y establecer una arquitectura clara que soporte tanto las funcionalidades existentes de gestión de espacios como las nuevas capacidades de monitoreo IoT. Las secciones a continuación abarcan las sesiones de Design-Level EventStorming, el proceso de Candidate Context Discovery, el modelado de Domain Message Flows, los Bounded Context Canvases, el Context Mapping y los diagramas de Arquitectura de Software.
+
 ### 4.1.1. Design-Level EventStorming
+
+Tomando como base el Big Picture EventStorming realizado en el Capítulo II, el equipo llevó a cabo una serie de sesiones de Design-Level EventStorming con el objetivo de modelar cada bounded context con mayor nivel de detalle. A diferencia de la sesión de Big Picture, que se enfocó en comprender el dominio del negocio a alto nivel, el Design-Level EventStorming profundiza en la mecánica interna de cada contexto, incorporando Commands, Aggregates, Policies y Read Models junto a los Domain Events.
+
+Las sesiones se realizaron de forma colaborativa utilizando LucidChart como herramienta de modelado, y abarcaron los seis bounded contexts identificados durante la sesión de Big Picture: Identity & Access Management, Space & Resource Management, Reservation & Scheduling, Breakdown Management y el nuevo contexto de IoT Monitoring. Se prestó especial atención al contexto de IoT Monitoring, al ser la incorporación principal de esta iteración e introducir nuevos actores como el dispositivo ESP32 y el Edge API.
+
+A continuación se presentan los diagramas resultantes para cada bounded context.
+
+![Design Level Event Storming](/assets/images/design-level-event-storming.png)
 
 #### 4.1.1.1. Candidate Context Discovery
 
+A partir del Design-Level EventStorming realizado, el equipo llevó a cabo el proceso de Candidate Context Discovery con el objetivo de identificar y delimitar los bounded contexts del sistema. Para ello se aplicó la técnica look-for-pivotal-events, que consiste en identificar los eventos clave del negocio que marcan cambios de estado significativos entre diferentes partes del proceso, y que naturalmente señalan las fronteras entre contextos.
+
+Como resultado del análisis, se identificaron seis bounded contexts. A continuación se presenta cada uno con su justificación:
+
+| # | Bounded Context | Eventos pivote que delimitan su frontera | Justificación |
+|---|----------------|------------------------------------------|---------------|
+| 1 | **Identity, Access & Profile Management** | `AdminAccountCreated`, `TeacherAccountCreated`, `SessionStarted` | Agrupa todo lo relacionado con la autenticación, control de acceso y gestión de perfiles de usuario. Es el contexto de entrada obligatorio para cualquier usuario y concentra tanto las credenciales de acceso como la información personal asociada a cada cuenta. |
+| 2 | **Space & Resource Management** | `ClassroomRegistered`, `SharedAreaRegistered`, `ResourceAddedToClassroom`, `TeacherAssignedToClassroom` | Agrupa la configuración y administración de todos los espacios físicos e inventario de recursos de la institución. Es el contexto core del negocio original. |
+| 3 | **Reservation & Scheduling** | `SharedAreaReserved`, `ReservationConfirmed`, `MeetingScheduled`, `TeacherInvitedToMeeting` | Gestiona la planificación y reserva de espacios compartidos y reuniones. Se separa de Space & Resource Management porque opera sobre disponibilidad y tiempo, no sobre el registro de espacios. |
+| 4 | **Breakdown Management** | `BreakdownReported`, `ReportStatusUpdated` | Concentra el ciclo de vida completo de los reportes de averías, desde su creación por un docente hasta su resolución por el administrador. |
+| 5 | **IoT Monitoring** | `SensorReadingCaptured`, `EnvironmentalThresholdExceeded`, `OccupancyStatusChanged`, `AlertGenerated` | Contexto nuevo incorporado en esta iteración. Gestiona la captura, procesamiento y visualización de datos provenientes de los dispositivos IoT instalados en las aulas, así como la generación de alertas automáticas. Se delimita como contexto independiente debido a que introduce nuevos actores (ESP32, Edge API), un flujo de datos completamente distinto al resto del sistema y requisitos técnicos propios del mundo embebido. |
+
 #### 4.1.1.2. Domain Message Flows Modeling
+
+En esta sección el equipo modeló los flujos de mensajes entre los bounded contexts identificados, con el objetivo de visualizar cómo colaboran entre sí para resolver los casos de negocio más importantes del sistema. Para ello se aplicó la técnica de Domain Storytelling, que permite representar de forma narrativa y visual cómo los actores, los sistemas y los bounded contexts se comunican e intercambian información a través de work objects (documentos, datos o mensajes).
+
+Se modelaron los siguientes casos de negocio, seleccionados por su relevancia e impacto en el sistema:
+
+1. Registro de un docente y acceso a la plataforma
+2. Reserva de un espacio compartido por un docente
+3. Monitoreo IoT y generación de alertas
+
+A continuación se presentan los diagramas de Domain Storytelling para cada caso:
+
+**Caso 1: Registro de docentes y acceso a plataforma**
+
+Este flujo modela cómo el administrador registra la cuenta de un nuevo docente en el sistema y cómo este último accede a la plataforma. El bounded context de Identity, Access & Profile Management es el único involucrado, al ser el responsable tanto de la creación de cuentas como de la autenticación. El administrador envía las credenciales del docente al sistema, que confirma el registro. Posteriormente, el docente inicia sesión con sus credenciales y el sistema le carga el dashboard correspondiente a su rol.
+
+![Domain Message Flow Model 1](/assets/images/message-flow1.png)
+
+**Caso 2: Reserva de espacio compartido**
+
+Este flujo ilustra la colaboración entre los bounded contexts de Reservation & Scheduling y Space & Resource Management. El docente consulta la disponibilidad de un espacio compartido, el sistema le retorna el calendario de disponibilidad, y el docente realiza la solicitud de reserva. Para confirmarla, Reservation & Scheduling consulta los datos del espacio a Space & Resource Management, que le responde con la información necesaria. Finalmente, el sistema confirma la reserva al docente.
+
+![Domain Message Flow Model 2](/assets/images/message-flow2.png)
+
+**Caso 3: Monitoreo IoT y generación de alertas**
+
+Este flujo modela el nuevo proceso incorporado en esta iteración. El dispositivo ESP32 captura lecturas de los sensores y las envía al Edge API, que las procesa y las reenvía al bounded context de IoT Monitoring. Este contexto evalúa internamente los umbrales configurados y, en caso de detectar una condición anormal, genera una alerta que notifica al bounded context de Identity, Access & Profile Management para que informe a los usuarios correspondientes. Adicionalmente, tanto administradores como docentes pueden consultar el dashboard de IoT Monitoring para visualizar el estado ambiental de las aulas en tiempo real.
+
+![Domain Message Flow Model 3](/assets/images/message-flow3.png)
 
 #### 4.1.1.3. Bounded Context Canvases
 
+Con el fin de detallar el diseño de cada bounded context identificado durante las sesiones de EventStorming, el equipo elaboró un Bounded Context Canvas por cada contexto, siguiendo la estructura propuesta por el DDD Crew (V4). Este artefacto permite documentar de forma estructurada la descripción del contexto, su clasificación estratégica, el lenguaje ubicuo específico, las decisiones de negocio clave y los flujos de comunicación entrante y saliente con otros colaboradores del sistema.
+
+Los canvases se presentan en orden de importancia para el negocio, comenzando por el contexto core de la nueva iteración IoT y continuando con los contextos de soporte existentes.
+
+A continuación se presentan los cinco Bounded Context Canvases elaborados:
+
+
+**Iot Monitoring**
+
+![Bounded Context Canvas IoT Monitoring](/assets/images/context-canvas-iot-monitoring.png)
+
+**Space & Resource Management**
+
+![Bounded Context Canvas Space and Resource Management](/assets/images/context-canvas-space-resource-management.png)
+
+**Reservation & Scheduling**
+
+![Bounded Context Canvas Reservation & Scheduling](/assets/images/context-canvas-reservation-scheduling.png)
+
+**Breakdown Management**
+
+![Bounded Context Canvas Breakdown Management](/assets/images/context-canvas-breakdown-management.png)
+
+**IAM & Profile Management**
+
+![Bounded Context Canvas IAM & Profile Management](/assets/images/context-canvas-iam-profile-management.png)
+
 ### 4.1.2. Context Mapping
+
+En esta sección el equipo elaboró el Context Map de la plataforma EduSpace IoT, con el objetivo de visualizar las relaciones estructurales entre los bounded contexts identificados y definir los patrones de integración que gobiernan dichas relaciones. Para ello se analizaron las dependencias entre contextos identificadas durante las sesiones de EventStorming y los Bounded Context Canvases, evaluando alternativas de integración y seleccionando los patrones más adecuados según la naturaleza de cada relación.
+
+Los patrones de relación entre Bounded Contexts aplicados en este Context Map son los siguientes:
+
+- Customer/Supplier (C/S): El contexto downstream (customer) depende del contexto upstream (supplier). El supplier define la interfaz y el customer la consume.
+- Conformist (CF): El contexto downstream adopta el modelo del upstream sin modificaciones, adaptándose completamente a él.
+- Anti-Corruption Layer (ACL): El contexto downstream traduce el modelo del upstream a través de una capa de traducción para proteger su propio modelo de dominio.
+
+A continuación se presenta el diagrama de Context Mapping resultante:
+
+![Context Map](/assets/images/context-map_ContextMap.png)
 
 ### 4.1.3. Software Architecture
 
+Para la representación de la arquitectura de software de la plataforma EduSpace IoT, el equipo aplicó el modelo C4 (Context, Container, Component, Code), utilizando Structurizr DSL como herramienta de modelado. Este modelo permite describir la arquitectura en diferentes niveles de abstracción, facilitando la comunicación entre los distintos stakeholders del proyecto. A continuación se presentan los diagramas correspondientes a los niveles de System Landscape, System Context, Container y Deployment.
+
 #### 4.1.3.1. Software Architecture System Landscape Diagram
+
+El diagrama de System Landscape presenta una visión general del ecosistema de la plataforma EduSpace IoT, mostrando el sistema principal en relación con los actores que lo utilizan y los sistemas externos con los que interactúa. En este nivel de abstracción, el sistema se representa como una caja única sin detallar su estructura interna.
+
+Los actores identificados son el Administrador, responsable de la gestión institucional y la configuración del monitoreo IoT, y el Docente, quien utiliza la plataforma para reservar espacios, reportar averías y consultar el estado ambiental de las aulas. El único sistema externo con el que interactúa EduSpace IoT es SendGrid, servicio de entrega de correos electrónicos utilizado para el envío de notificaciones y verificaciones a los usuarios.
+
+![System Landscape Diagram Key](/assets/images/c4-system-landscape-key.png)
+
+![System Landscape Diagram](/assets/images/c4-system-landscape.png)
 
 #### 4.1.3.2. Software Architecture Context Level Diagrams
 
+El diagrama de System Context profundiza en las relaciones directas entre la plataforma EduSpace IoT, sus usuarios y los sistemas externos. A diferencia del System Landscape, este diagrama se centra exclusivamente en el sistema principal y sus interacciones inmediatas.
+
+Dado que EduSpace IoT es una plataforma independiente que no se integra con otros sistemas institucionales externos más allá de SendGrid, el diagrama de System Context coincide con el System Landscape en términos de elementos representados. Esta situación es consistente con el alcance del proyecto, que no contempla integraciones con sistemas de gestión universitaria externos como ERP o SIS institucionales.
+
+![System Context Diagram Key](/assets/images/c4-system-context-key.png)
+
+![System Context Diagram](/assets/images/c4-system-context.png)
+
 #### 4.1.3.3. Software Architecture Container Level Diagrams
 
+El diagrama de Containers desglosa la estructura interna de la plataforma EduSpace IoT, mostrando los contenedores de software que la componen, sus responsabilidades y las relaciones entre ellos. Este nivel de abstracción permite visualizar las principales decisiones tecnológicas y la distribución de responsabilidades entre los distintos componentes del sistema.
+
+La plataforma está compuesta por los siguientes contenedores: la Landing Page como sitio web estático, la Web Application como SPA desarrollada en Vue.js, la Mobile Application desarrollada en Flutter, el Web API como backend RESTful desarrollado en ASP.NET Core que implementa la lógica de negocio de todos los bounded contexts, el Edge API desarrollado en Flask que actúa como intermediario entre los dispositivos IoT y el Web API, la Embedded Application en MicroPython que corre directamente en el ESP32, la Base de Datos principal en PostgreSQL y la Edge Database en SQLite para el almacenamiento local en el Edge API.
+
+![Container Diagram Key](/assets/images/c4-container-key.png)
+
+![Container Diagram](/assets/images/c4-container.png)
+
 #### 4.1.3.4. Software Architecture Deployment Diagrams
+
+El diagrama de Deployment muestra cómo los contenedores de la plataforma EduSpace IoT se distribuyen en la infraestructura de despliegue. Este diagrama refleja las decisiones de infraestructura tomadas para el entorno de producción del proyecto.
+
+La Landing Page se despliega en GitHub Pages por su naturaleza estática y gratuidad. La Web Application se despliega en Netlify, plataforma que ofrece despliegue continuo desde GitHub. La Mobile Application se distribuye mediante Firebase App Distribution para pruebas en dispositivos físicos. El Web API, el Edge API, la Edge Database y la Base de Datos PostgreSQL se despliegan en Railway, plataforma de hosting en la nube que permite gestionar múltiples servicios en un mismo entorno. Finalmente, la Embedded Application reside directamente en el microcontrolador ESP32, instalado físicamente en el aula monitoreada.
+
+![Deplyment Diagram Key](/assets/images/c4-deployment-key.png)
+
+![Deployment Diagram](/assets/images/c4-deployment.png)
 
 ## 4.2. Tactical-Level Domain-Driven Design
 
