@@ -211,6 +211,42 @@ El consumo energético de instituciones educativos puede representar entre el 20
 
 #### 1.2.2.1. Lean UX Problem Statements
 
+En el estado actual de la gestión administrativa en centros educativos con grandes infraestructuras es deficiente. En ambos segmentos, es complicado seguir un orden de procesos, ya que los procesos administrativos suelen depender de métodos manuales o sistemas desintegrados. Esto dificulta la coordinación del personal, el control de la disponibilidad de los espacios y correcta gestión de recursos.
+
+Esta situación se ve agravada por la falta de herramientas tecnológicas accesibles que permitan monitorear en tiempo real el uso de los ambientes educativos, y factores relevantes como el consumo energético y las condiciones ambientales dentro de las aulas, bibliotecas, laboratorios, entre otros.
+
+En consecuencia, las instituciones sufren de diferentes problemas, como retrasos en la forma de decisiones, uso ineficiente de recursos, aumento en costos operativos y una limitada capacidad de respuesta ante incidentes.
+
+¿Cómo podríamos mejorar la gestión y monitoreo de espacios educativos para optimizar el uso de recursos, reducir costos operativos y elevar la eficiencia en la coordinación del personal?
+
+##### **a. DOMAIN**
+
+Gestión de espacios educativos y recursos en instituciones con infraestructuras complejas que requieren coordinación eficiente del personal, control de ambientes y optimización del uso de recursos.
+
+##### **b. CUSTOMER SEGMENTS**
+
+Administradores de instituciones educativas y docentes y auxiliares que gestionan múltiples espacios físicos y necesitan mejorar su organización y control.
+
+##### **c. PAIN POINTS**
+
+- Coordinación ineficaz del personal entre diferentes espacios.
+- Comunicación deficiente entre trabajadores y supervisores.
+- Procesos administrativos manuales y propensos a errores.
+- Dificultad en el seguimiento y mantenimiento de equipos e inventarios.
+- Falta de disponibilidad y uso de os espacios educativos.
+
+##### **d. GAP**
+
+No existe una solución integrada que permita centralizar la gestión de espacios, recursos y personal, y monitorear en tiempo real el uso de los ambientes educativos, esto limita la eficiencia operativa de las instituciones.
+
+##### **e. VISION/STRATEGY**
+
+Desarrollar una plataforma integral que permita facilitar la gestión eficiente de espacios educativos, automatizar tareas administrativas, mejorar la comunicación y coordinación del personal y el monitoreo en tiempo real de recursos, esto contribuye a un funcionamiento más eficiente y sostenible.
+
+##### **f. INITIAL SEGMENT**
+
+Las grandes instituciones educativas que enfrentan problemas en la coordinación de espacios y la administración de personal están buscando una solución digital para optimizar estos procesos.
+
 #### 1.2.2.2. Lean UX Assumptions
 
 #### 1.2.2.3. Lean UX Hypothesis Statements
