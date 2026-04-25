@@ -344,6 +344,8 @@ El producto debe de ser intuitivo, rápido, disponible durante el horario labora
 
 ## 1.3. Segmentos objetivo
 
+Nuestra aplicación se enfoca en optimizar la gestión de espacios educativos y la coordinación del personal a través de una plataforma integral. EduSpace facilita la grabación de aulas, espacios deportivos y entornos personales, y permite una gestión detallada de los recursos. Además, automatiza la nómina y proporciona un control completo del inventario de equipos y recursos con valoraciones contables. Los usuarios capturan información sobre sus actividades y necesidades operativas para mejorar la eficiencia y la comunicación. Así, nuestros segmentos objetivo serán los siguientes:
+
 **Administradores de instituciones educativas**
 
 * Edad: 35 a 60 años
