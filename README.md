@@ -344,6 +344,31 @@ El producto debe de ser intuitivo, rápido, disponible durante el horario labora
 
 ## 1.3. Segmentos objetivo
 
+**Administradores de instituciones educativas**
+
+* Edad: 35 a 60 años
+* Perfil: Directivos, coordinadores académicos, personal administrativo encargados de la gestión operativo de institución educativa.
+* Uso de tecnología: Intermedio
+* Necesidad principal: Optimizar la gestión de espacios, recursos y personal de manera centralizada.
+* Beneficios buscados: Tener mayor control operativo, reducción de errores, ahorro de tiempo y mejora en la toma de decisiones.
+
+**Características demográficas:** Profesionales entre 35 a 60 años, de género masculino y femenino, con formación en gestión educativa, administración o especialidades afines, que trabajan solamente en instituciones educativas.
+
+**Características geográficas:** Principalmente ubicados en zonas urbanas de Perú, especialmente Lima Metropolitana, donde existen instituciones educativas con infraestructuras grandes y complejas.
+
+**Docentes y auxiliares**
+
+* Edad: 22 a 65 años
+* Perfil: Profesores y personal de apoyo que utilizan los espacios educativos de las instituciones donde trabajan para desarrollar sus actividades diarias.
+* Uso de tecnología: Básico a intermedio
+* Necesidad principal: Acceder rápidamente a información sobre la disponibilidad de espacios y coordinar actividades sin complicaciones.
+* Beneficios buscados: Acceso rápido a la información sobre los recursos y espacios disponibles, mejor comunicación y menos errores en la asignación de espacios.
+
+**Características demográficas:** Profesionales del sector educativo entre 22 a 65 años, de género masculino y femenino, con formación académica en sus respectivas disciplinas (ciencias, literatura, entre otros), con experiencia en enseñanza.
+
+**Características geográficas:** Principalmente ubicados en instituciones educativas con infraestructura compleja de zonas urbanas o semiurbanas de Perú, especialmente Lima Metropolitana.
+
+
 ---
 
 # Capítulo II: Requirements Elicitation & Analysis
