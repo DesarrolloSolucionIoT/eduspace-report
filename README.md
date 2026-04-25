@@ -774,25 +774,1291 @@ La Landing Page se despliega en GitHub Pages por su naturaleza estática y gratu
 
 ![Deployment Diagram](/assets/images/c4-deployment.png)
 
-## 4.2. Tactical-Level Domain-Driven Design
+# 4.2. Tactical-Level Domain-Driven Design
 
-### 4.2.X. Bounded Context: \<Nombre\>
+## Bounded Contexts válidos
 
-#### 4.2.X.1. Domain Layer
+1. Identity, Access & Profile Management  
+2. Space & Resource Management  
+3. Reservation & Scheduling  
+4. Breakdown Management  
+5. IoT Monitoring  
 
-#### 4.2.X.2. Interface Layer
+### 4.2.1. Identity, Access & Profile Management
 
-#### 4.2.X.3. Application Layer
+#### 4.2.1.1. Domain Layer
 
-#### 4.2.X.4. Infrastructure Layer
+Este bounded context gestiona la identidad digital de los usuarios, sus credenciales, roles, permisos y datos de perfil dentro de EduSpace IoT.
 
-#### 4.2.X.5. Bounded Context Software Architecture Component Level Diagrams
+**Entities**
 
-#### 4.2.X.6. Bounded Context Software Architecture Code Level Diagrams
+- **User**
+  - Propósito: representa a un usuario registrado en la plataforma.
+  - Atributos principales: `id`, `email`, `passwordHash`, `status`, `createdAt`, `updatedAt`.
+  - Métodos principales: `activate()`, `deactivate()`, `changePassword()`, `assignRole()`, `removeRole()`.
+  - Relaciones clave: posee un `Profile` y mantiene asociación con uno o más `Role`.
 
-##### 4.2.X.6.1. Bounded Context Domain Layer Class Diagrams
+- **Profile**
+  - Propósito: almacena información personal e institucional del usuario.
+  - Atributos principales: `id`, `userId`, `firstName`, `lastName`, `institutionalCode`, `phoneNumber`.
+  - Métodos principales: `updatePersonalInformation()`, `updateContactInformation()`.
+  - Relaciones clave: pertenece a un único `User`.
 
-##### 4.2.X.6.2. Bounded Context Database Design Diagram
+- **Role**
+  - Propósito: define el nivel de acceso funcional del usuario.
+  - Atributos principales: `id`, `name`, `description`.
+  - Métodos principales: `addPermission()`, `removePermission()`.
+  - Relaciones clave: agrupa múltiples `Permission`.
+
+- **Permission**
+  - Propósito: representa una acción autorizada dentro del sistema.
+  - Atributos principales: `id`, `code`, `description`.
+  - Métodos principales: `matchesAction()`.
+  - Relaciones clave: se asocia a uno o más `Role`.
+
+**Value Objects**
+
+- **EmailAddress**
+  - Propósito: encapsula y valida el correo electrónico institucional.
+  - Atributos principales: `value`.
+  - Métodos principales: `validateFormat()`.
+
+- **PasswordHash**
+  - Propósito: representa una contraseña cifrada.
+  - Atributos principales: `value`, `algorithm`.
+  - Métodos principales: `verify()`.
+
+**Aggregates / Aggregate Roots**
+
+- **User** es el aggregate root principal.
+  - Controla la consistencia de credenciales, estado, perfil y roles asignados.
+  - Garantiza que un usuario inactivo no pueda autenticarse ni ejecutar acciones protegidas.
+
+**Domain Services**
+
+- **AuthenticationDomainService**
+  - Propósito: valida credenciales y estado del usuario.
+  - Métodos principales: `authenticate(email, password)`.
+
+- **AuthorizationDomainService**
+  - Propósito: verifica si un usuario posee permisos para una acción determinada.
+  - Métodos principales: `canPerform(user, permissionCode)`.
+
+**Repository Interfaces**
+
+- **UserRepository**
+  - Métodos: `findById()`, `findByEmail()`, `save()`, `existsByEmail()`.
+
+- **RoleRepository**
+  - Métodos: `findByName()`, `findById()`, `save()`.
+
+**Enumerations**
+
+- **UserStatus**
+  - Valores: `ACTIVE`, `INACTIVE`, `LOCKED`.
+
+- **RoleName**
+  - Valores sugeridos: `ADMINISTRATOR`, `TEACHER`, `STUDENT`, `MAINTENANCE_STAFF`.
+
+**Reglas de negocio**
+
+- No puede existir más de un usuario con el mismo correo electrónico.
+- Solo usuarios activos pueden iniciar sesión.
+- Un usuario debe tener al menos un rol asignado para acceder a funciones protegidas.
+- Las operaciones administrativas requieren permisos explícitos.
+
+#### 4.2.1.2. Interface Layer
+
+**Controllers / Endpoints**
+
+- `POST /api/auth/login`
+- `POST /api/auth/logout`
+- `POST /api/users`
+- `GET /api/users/{id}`
+- `PUT /api/users/{id}/profile`
+- `PUT /api/users/{id}/roles`
+
+**Requests y Responses**
+
+- `LoginRequest`: `email`, `password`.
+- `LoginResponse`: `accessToken`, `userId`, `roles`, `permissions`.
+- `CreateUserRequest`: `email`, `password`, `firstName`, `lastName`, `roleIds`.
+- `UserResponse`: `id`, `email`, `status`, `profile`, `roles`.
+
+**Interacción con aplicaciones**
+
+- La Web Application consume la Web API para autenticación, administración de usuarios y gestión de perfiles.
+- La Mobile Application consume la Web API para autenticación y consulta del perfil del usuario.
+- La RESTful Web API expone los endpoints del contexto.
+- No requiere interacción directa con Edge API ni Embedded Application.
+
+**Actores involucrados**
+
+- Administrador
+- Docente
+- Estudiante
+- Personal de mantenimiento
+
+#### 4.2.1.3. Application Layer
+
+**Application Services**
+
+- **AuthenticationApplicationService**
+  - Coordina el inicio de sesión, validación de credenciales y emisión de tokens.
+
+- **UserManagementApplicationService**
+  - Gestiona creación, actualización, activación y desactivación de usuarios.
+
+- **ProfileApplicationService**
+  - Coordina la actualización de datos de perfil.
+
+**Command Handlers**
+
+- `CreateUserCommandHandler`
+- `UpdateProfileCommandHandler`
+- `AssignRoleCommandHandler`
+- `ChangePasswordCommandHandler`
+
+**Query Services**
+
+- `UserQueryService`
+  - Consultas: búsqueda por identificador, correo electrónico, rol o estado.
+
+**Casos de uso principales**
+
+- Registrar usuario.
+- Autenticar usuario.
+- Actualizar perfil.
+- Asignar roles.
+- Consultar permisos.
+
+**Coordinación**
+
+La capa de aplicación invoca servicios de dominio para validar reglas de autenticación y autorización. Luego utiliza interfaces de repositorio para persistir cambios mediante implementaciones de infraestructura.
+
+#### 4.2.1.4. Infrastructure Layer
+
+**Repository Implementations**
+
+- `SQLiteUserRepository`
+- `SQLiteRoleRepository`
+
+**Persistencia**
+
+- Base de datos principal: SQLite.
+- Mapeo ORM sugerido: entidades `users`, `profiles`, `roles`, `permissions`, `user_roles`, `role_permissions`.
+
+**Integraciones**
+
+- Servicio externo de correo para recuperación de contraseña y notificaciones de cuenta.
+
+**Adaptadores**
+
+- `EmailNotificationAdapter`
+  - Envía correos de activación, recuperación de contraseña o cambios críticos de cuenta.
+
+#### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
+
+![IAM Component Diagram Key](assets/images/iam-components-dark-key.png)
+
+![IAM Component Diagram](assets/images/iam-components-dark.png)
+
+Componentes principales:
+
+- **Auth Controller**
+  - Container: Web API.
+  - Expone operaciones de autenticación.
+
+- **User Controller**
+  - Container: Web API.
+  - Expone operaciones de administración de usuarios y perfiles.
+
+- **Authentication Application Service**
+  - Container: Web API.
+  - Coordina autenticación y generación de tokens.
+
+- **User Management Application Service**
+  - Container: Web API.
+  - Coordina casos de uso de usuarios, roles y perfiles.
+
+- **Domain Model**
+  - Container: Web API.
+  - Contiene entidades, value objects, servicios de dominio y reglas de negocio.
+
+- **SQLite Repository Adapter**
+  - Container: Web API.
+  - Implementa persistencia en SQLite.
+
+- **External Email Adapter**
+  - Container: Web API.
+  - Integra el servicio externo de correo.
+
+#### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagram
+
+![Identity, Access & Profile Management Domain Layer Class Diagram](assets/images/Identity-Access-&-Profile-Management-Bounded-Context-Domain-Layer-Class-Diagram.png)
+
+
+##### 4.2.1.6.2. Bounded Context Database Design Diagram
+
+![Identity, Access & Profile Management Database Design Diagram](assets/images/Identity-Access-&-Profile-Management-Bounded-Context-Database-Design-Diagram.png)
+
+
+### 4.2.2. Space & Resource Management
+
+#### 4.2.2.1. Domain Layer
+
+Este bounded context administra los espacios físicos de la institución educativa y los recursos disponibles para reserva, operación académica y monitoreo.
+
+**Entities**
+
+- **Space**
+  - Propósito: representa un ambiente físico, como aula, laboratorio o sala.
+  - Atributos principales: `id`, `name`, `code`, `capacity`, `type`, `status`, `location`.
+  - Métodos principales: `enable()`, `disable()`, `updateCapacity()`, `assignResource()`.
+  - Relaciones clave: contiene recursos y puede estar asociado a dispositivos IoT.
+
+- **Resource**
+  - Propósito: representa un recurso disponible dentro de un espacio.
+  - Atributos principales: `id`, `name`, `type`, `status`, `spaceId`.
+  - Métodos principales: `markAvailable()`, `markUnavailable()`, `moveToSpace()`.
+  - Relaciones clave: pertenece a un `Space`.
+
+- **Location**
+  - Propósito: representa la ubicación física del espacio dentro de la institución.
+  - Atributos principales: `building`, `floor`, `roomNumber`.
+  - Métodos principales: `fullDescription()`.
+
+**Value Objects**
+
+- **SpaceCode**
+  - Propósito: identifica de forma única un espacio físico.
+  - Atributos principales: `value`.
+  - Métodos principales: `validateFormat()`.
+
+- **Capacity**
+  - Propósito: encapsula la capacidad máxima permitida.
+  - Atributos principales: `value`.
+  - Métodos principales: `isExceededBy(quantity)`.
+
+**Aggregates / Aggregate Roots**
+
+- **Space** es el aggregate root.
+  - Controla la consistencia de estado, capacidad, ubicación y recursos asociados.
+
+**Domain Services**
+
+- **SpaceAvailabilityDomainService**
+  - Propósito: determina si un espacio está habilitado para ser utilizado o reservado.
+  - Métodos principales: `isUsable(space)`.
+
+**Repository Interfaces**
+
+- **SpaceRepository**
+  - Métodos: `findById()`, `findByCode()`, `save()`, `searchAvailableSpaces()`.
+
+- **ResourceRepository**
+  - Métodos: `findById()`, `findBySpaceId()`, `save()`.
+
+**Enumerations**
+
+- **SpaceType**
+  - Valores: `CLASSROOM`, `LABORATORY`, `AUDITORIUM`, `MEETING_ROOM`.
+
+- **SpaceStatus**
+  - Valores: `AVAILABLE`, `UNAVAILABLE`, `MAINTENANCE`.
+
+- **ResourceStatus**
+  - Valores: `AVAILABLE`, `UNAVAILABLE`, `IN_MAINTENANCE`.
+
+**Reglas de negocio**
+
+- Cada espacio debe tener un código único.
+- Un espacio en mantenimiento no puede ser reservado.
+- La capacidad de un espacio debe ser mayor que cero.
+- Un recurso no disponible no debe considerarse como parte de la oferta operativa del espacio.
+
+#### 4.2.2.2. Interface Layer
+
+**Controllers / Endpoints**
+
+- `POST /api/spaces`
+- `GET /api/spaces`
+- `GET /api/spaces/{id}`
+- `PUT /api/spaces/{id}`
+- `PUT /api/spaces/{id}/status`
+- `POST /api/spaces/{id}/resources`
+- `GET /api/spaces/{id}/resources`
+
+**Requests y Responses**
+
+- `CreateSpaceRequest`: `name`, `code`, `capacity`, `type`, `location`.
+- `SpaceResponse`: `id`, `name`, `code`, `capacity`, `type`, `status`, `location`.
+- `CreateResourceRequest`: `name`, `type`, `spaceId`.
+- `ResourceResponse`: `id`, `name`, `type`, `status`.
+
+**Interacción con aplicaciones**
+
+- La Web Application permite administrar espacios y recursos.
+- La Mobile Application consulta espacios disponibles.
+- La Web API centraliza las operaciones del contexto.
+- IoT Monitoring puede referenciar espacios para asociar dispositivos y lecturas.
+
+**Actores involucrados**
+
+- Administrador
+- Docente
+- Estudiante
+- Personal de mantenimiento
+
+#### 4.2.2.3. Application Layer
+
+**Application Services**
+
+- **SpaceApplicationService**
+  - Gestiona creación, actualización, habilitación y deshabilitación de espacios.
+
+- **ResourceApplicationService**
+  - Gestiona alta, actualización, movimiento y estado de recursos.
+
+**Command Handlers**
+
+- `CreateSpaceCommandHandler`
+- `UpdateSpaceCommandHandler`
+- `ChangeSpaceStatusCommandHandler`
+- `AssignResourceToSpaceCommandHandler`
+
+**Query Services**
+
+- `SpaceQueryService`
+  - Consulta espacios por estado, tipo, capacidad y ubicación.
+
+- `ResourceQueryService`
+  - Consulta recursos por espacio o estado.
+
+**Casos de uso principales**
+
+- Registrar espacio.
+- Actualizar datos de espacio.
+- Consultar espacios disponibles.
+- Registrar recurso.
+- Cambiar estado de recurso.
+
+**Coordinación**
+
+La capa de aplicación valida reglas del dominio antes de persistir espacios o recursos. También proporciona información a Reservation & Scheduling para determinar disponibilidad base de los espacios.
+
+#### 4.2.2.4. Infrastructure Layer
+
+**Repository Implementations**
+
+- `SQLiteSpaceRepository`
+- `SQLiteResourceRepository`
+
+**Persistencia**
+
+- Base de datos principal: SQLite.
+- Tablas principales: `spaces`, `resources`.
+
+**ORM / Mapeo**
+
+- `SpaceEntity`
+- `ResourceEntity`
+- Conversión entre modelos persistentes y objetos de dominio.
+
+**Integraciones**
+
+- No requiere integración directa con servicios externos.
+- Puede ser referenciado por IoT Monitoring para asociar dispositivos con espacios físicos.
+
+#### 4.2.2.5. Bounded Context Software Architecture Component Level Diagrams
+
+![Space & Resource Management Component Diagram Key](assets/images/space-resource-components-dark-key.png)
+
+![Space & Resource Management Component Diagram](assets/images/space-resource-components-dark.png)
+
+Componentes principales:
+
+- **Space Controller**
+  - Container: Web API.
+  - Expone endpoints para gestión de espacios.
+
+- **Resource Controller**
+  - Container: Web API.
+  - Expone endpoints para gestión de recursos.
+
+- **Space Application Service**
+  - Container: Web API.
+  - Coordina casos de uso sobre espacios.
+
+- **Resource Application Service**
+  - Container: Web API.
+  - Coordina casos de uso sobre recursos.
+
+- **Domain Model**
+  - Container: Web API.
+  - Contiene reglas de consistencia del espacio y sus recursos.
+
+- **SQLite Repository Adapter**
+  - Container: Web API.
+  - Implementa persistencia del contexto.
+
+#### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 4.2.2.6.1. Bounded Context Domain Layer Class Diagram
+
+![Space & Resource Management Domain Layer Class Diagram](assets/images/Space-&-Resource-Management-Bounded-Context-Domain-Layer-Class-Diagram.png)
+
+
+##### 4.2.2.6.2. Bounded Context Database Design Diagram
+
+![Space & Resource Management Database Design Diagram](assets/images/Space-&-Resource-Management-Bounded-Context-Database-Design-Diagram.png)
+
+
+### 4.2.3. Reservation & Scheduling
+
+#### 4.2.3.1. Domain Layer
+
+Este bounded context gestiona reservas de espacios compartidos, reuniones institucionales, disponibilidad, programación horaria y conflictos de calendario.
+
+**Entities**
+
+- **Reservation**
+  - Propósito: representa la solicitud o asignación de uso de un shared area.
+  - Atributos principales: `id`, `sharedAreaId`, `requestedByUserId`, `schedule`, `purpose`, `status`.
+  - Métodos principales: `confirm()`, `cancel()`, `reject()`, `reschedule()`.
+  - Relaciones clave: referencia un shared area y al usuario solicitante mediante identificadores.
+
+- **Meeting**
+  - Propósito: representa una reunión programada por un administrador o responsable académico.
+  - Atributos principales: `id`, `organizerId`, `classroomId`, `meetingDate`, `session`, `topic`, `status`.
+  - Métodos principales: `schedule()`, `reschedule()`, `cancel()`, `inviteTeacher()`.
+  - Relaciones clave: agrupa una colección de `MeetingInvitation`.
+
+- **MeetingInvitation**
+  - Propósito: representa la invitación cursada a un docente para participar en una reunión.
+  - Atributos principales: `id`, `meetingId`, `teacherId`, `status`, `sentAt`, `respondedAt`.
+  - Métodos principales: `send()`, `accept()`, `decline()`.
+  - Relaciones clave: pertenece a un `Meeting`.
+
+- **Schedule**
+  - Propósito: representa el intervalo temporal de una reserva de espacio.
+  - Atributos principales: `startDateTime`, `endDateTime`.
+  - Métodos principales: `overlapsWith()`, `duration()`.
+
+**Value Objects**
+
+- **ReservationPurpose**
+  - Propósito: describe el motivo académico o institucional de la reserva.
+  - Atributos principales: `description`.
+  - Métodos principales: `validateLength()`.
+
+- **MeetingDate**
+  - Propósito: representa la fecha calendario de una reunión.
+  - Atributos principales: `value`.
+  - Métodos principales: `isInPast()`.
+
+- **MeetingSession**
+  - Propósito: representa el bloque horario asignado a la reunión.
+  - Atributos principales: `startTime`, `endTime`.
+  - Métodos principales: `overlapsWith(otherSession)`, `duration()`.
+
+**Aggregates / Aggregate Roots**
+
+- **Reservation** es el aggregate root.
+  - Controla estado, horario y reglas de modificación de una reserva.
+
+- **Meeting** es un aggregate root independiente.
+  - Controla la programación de la reunión, la coherencia temporal y el ciclo de vida de sus invitaciones.
+
+**Domain Services**
+
+- **ReservationConflictDomainService**
+  - Propósito: determina si existe superposición de horarios para un mismo espacio.
+  - Métodos principales: `hasConflict(spaceId, schedule)`.
+
+- **ReservationPolicyDomainService**
+  - Propósito: valida reglas de reserva según estado del espacio y usuario.
+  - Métodos principales: `canCreateReservation(userId, spaceId, schedule)`.
+
+- **MeetingSchedulingDomainService**
+  - Propósito: valida disponibilidad del aula y del bloque horario para programar reuniones.
+  - Métodos principales: `canScheduleMeeting(classroomId, meetingDate, session)`.
+
+- **TeacherInvitationDomainService**
+  - Propósito: valida si un docente puede ser invitado a una reunión sin duplicidad ni conflicto evidente.
+  - Métodos principales: `canInviteTeacher(meetingId, teacherId)`.
+
+**Repository Interfaces**
+
+- **ReservationRepository**
+  - Métodos: `findById()`, `findBySpaceAndSchedule()`, `findByUserId()`, `save()`.
+
+- **MeetingRepository**
+  - Métodos: `findById()`, `findByClassroomAndSession()`, `findByOrganizerId()`, `save()`.
+
+**Enumerations**
+
+- **ReservationStatus**
+  - Valores: `PENDING`, `CONFIRMED`, `CANCELLED`, `REJECTED`.
+
+- **MeetingStatus**
+  - Valores: `SCHEDULED`, `RESCHEDULED`, `CANCELLED`, `COMPLETED`.
+
+- **InvitationStatus**
+  - Valores: `PENDING`, `SENT`, `ACCEPTED`, `DECLINED`.
+
+**Reglas de negocio**
+
+- No se permiten reservas con horarios superpuestos para el mismo espacio.
+- Una reserva cancelada no puede confirmarse.
+- El horario de fin debe ser posterior al horario de inicio.
+- Solo espacios disponibles pueden ser reservados.
+- Un usuario autenticado debe ser responsable de cada reserva.
+- No se puede programar una reunión en un aula ocupada en la misma franja horaria.
+- Una reunión debe tener un organizador válido y al menos un objetivo definido.
+- Un docente no debe recibir invitaciones duplicadas para la misma reunión.
+- La invitación a docentes solo puede emitirse cuando la reunión ya fue programada.
+
+#### 4.2.3.2. Interface Layer
+
+**Controllers / Endpoints**
+
+- `POST /api/reservations`
+- `GET /api/reservations/{id}`
+- `GET /api/reservations?userId={userId}`
+- `GET /api/spaces/{spaceId}/reservations`
+- `PUT /api/reservations/{id}/confirm`
+- `PUT /api/reservations/{id}/cancel`
+- `PUT /api/reservations/{id}/reschedule`
+- `POST /api/meetings`
+- `GET /api/meetings/{id}`
+- `PUT /api/meetings/{id}/reschedule`
+- `PUT /api/meetings/{id}/cancel`
+- `POST /api/meetings/{id}/invitations`
+
+**Requests y Responses**
+
+- `CreateReservationRequest`: `spaceId`, `startDateTime`, `endDateTime`, `purpose`.
+- `ReservationResponse`: `id`, `spaceId`, `userId`, `schedule`, `purpose`, `status`.
+- `RescheduleReservationRequest`: `startDateTime`, `endDateTime`.
+- `ScheduleMeetingRequest`: `classroomId`, `meetingDate`, `startTime`, `endTime`, `topic`, `teacherIds`.
+- `MeetingResponse`: `id`, `organizerId`, `classroomId`, `meetingDate`, `session`, `topic`, `status`, `invitations`.
+- `InviteTeacherRequest`: `teacherId`.
+
+**Interacción con aplicaciones**
+
+- La Web Application permite administrar y aprobar reservas, programar reuniones e invitar docentes.
+- La Mobile Application permite consultar y crear reservas, así como revisar reuniones e invitaciones.
+- La Web API ejecuta validaciones de disponibilidad, conflictos de horario y emisión de invitaciones.
+- Consulta información de Space & Resource Management para validar estado del espacio.
+
+**Actores involucrados**
+
+- Administrador
+- Docente
+- Estudiante
+
+#### 4.2.3.3. Application Layer
+
+**Application Services**
+
+- **ReservationApplicationService**
+  - Coordina creación, confirmación, cancelación y reprogramación de reservas.
+
+- **MeetingSchedulingApplicationService**
+  - Coordina programación, reprogramación y cancelación de reuniones.
+
+- **MeetingInvitationApplicationService**
+  - Coordina la emisión y seguimiento de invitaciones a docentes.
+
+**Command Handlers**
+
+- `CreateReservationCommandHandler`
+- `ConfirmReservationCommandHandler`
+- `CancelReservationCommandHandler`
+- `RescheduleReservationCommandHandler`
+- `ScheduleMeetingCommandHandler`
+- `RescheduleMeetingCommandHandler`
+- `CancelMeetingCommandHandler`
+- `InviteTeacherToMeetingCommandHandler`
+
+**Query Services**
+
+- `ReservationQueryService`
+  - Consulta reservas por usuario, espacio, fecha o estado.
+
+- `MeetingQueryService`
+  - Consulta reuniones por aula, organizador, fecha o estado.
+
+**Event Handlers**
+
+- `ReservationConfirmedEventHandler`
+  - Puede activar notificaciones al usuario.
+
+- `ReservationCancelledEventHandler`
+  - Puede notificar cambios de disponibilidad.
+
+- `MeetingScheduledEventHandler`
+  - Emite el evento pivote `MeetingScheduled` y desencadena invitaciones iniciales.
+
+- `TeacherInvitedToMeetingEventHandler`
+  - Emite el evento pivote `TeacherInvitedToMeeting` y coordina notificaciones.
+
+**Casos de uso principales**
+
+- Crear reserva.
+- Confirmar reserva.
+- Cancelar reserva.
+- Reprogramar reserva.
+- Consultar calendario de espacio.
+- Programar reunión.
+- Reprogramar reunión.
+- Invitar docente a reunión.
+- Consultar agenda de reuniones.
+
+**Coordinación**
+
+La capa de aplicación consulta repositorios de reserva y reunión, además de servicios del contexto Space & Resource Management, para validar disponibilidad. Luego persiste reservas y reuniones, y emite los eventos pivote `SharedAreaReserved`, `ReservationConfirmed`, `MeetingScheduled` y `TeacherInvitedToMeeting` cuando corresponde.
+
+#### 4.2.3.4. Infrastructure Layer
+
+**Repository Implementations**
+
+- `SQLiteReservationRepository`
+- `SQLiteMeetingRepository`
+
+**Persistencia**
+
+- Base de datos principal: SQLite.
+- Tablas principales: `reservations`, `meetings`, `meeting_invitations`.
+
+**Integraciones**
+
+- Adaptador de consulta hacia Space & Resource Management para verificar estado del espacio.
+- Adaptador de notificación/correo para avisos de confirmación, cancelación o cambios.
+- Adaptador SendGrid para remitir invitaciones y actualizaciones de reuniones a docentes.
+
+**Mensajería**
+
+- Eventos internos de aplicación para confirmaciones, cancelaciones, programación de reuniones e invitaciones.
+
+#### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams
+
+![Reservation & Scheduling Component Diagram Key](assets/images/reservation-components-dark-key.png)
+
+![Reservation & Scheduling Component Diagram](assets/images/reservation-components-dark.png)
+
+Componentes principales:
+
+- **Reservation Controller**
+  - Container: Web API.
+  - Expone endpoints de reservas.
+
+- **Meeting Controller**
+  - Container: Web API.
+  - Expone endpoints para programación de reuniones e invitaciones.
+
+- **Reservation Application Service**
+  - Container: Web API.
+  - Coordina el ciclo de vida de una reserva.
+
+- **Meeting Scheduling Application Service**
+  - Container: Web API.
+  - Coordina la agenda de reuniones y la emisión de invitaciones.
+
+- **Reservation Domain Model**
+  - Container: Web API.
+  - Contiene reglas de conflicto, estado y programación de reservas.
+
+- **Meeting Domain Model**
+  - Container: Web API.
+  - Contiene reglas de calendario, reuniones e invitaciones.
+
+- **Space Availability Adapter**
+  - Container: Web API.
+  - Consulta información del contexto Space & Resource Management.
+
+- **SQLite Reservation Repository**
+  - Container: Web API.
+  - Persiste reservas, reuniones e invitaciones.
+
+- **Notification Adapter**
+  - Container: Web API.
+  - Envía comunicaciones sobre cambios de reserva y reuniones.
+
+#### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 4.2.3.6.1. Bounded Context Domain Layer Class Diagram
+
+![Reservation & Scheduling Domain Layer Class Diagram](assets/images/Reservation-&-Scheduling-Bounded-Context-Domain-Layer-Class-Diagram.png)
+
+
+##### 4.2.3.6.2. Bounded Context Database Design Diagram
+
+![Reservation & Scheduling Database Design Diagram](assets/images/Reservation-&-Scheduling-Bounded-Context-Database-Design-Diagram.png)
+
+
+### 4.2.4. Breakdown Management
+
+#### 4.2.4.1. Domain Layer
+
+Este bounded context administra reportes de fallas, incidencias y atención de problemas relacionados con espacios, recursos o dispositivos IoT.
+
+**Entities**
+
+- **BreakdownReport**
+  - Propósito: representa un reporte de falla generado por un usuario o por monitoreo IoT.
+  - Atributos principales: `id`, `reportedByUserId`, `spaceId`, `resourceId`, `deviceId`, `description`, `priority`, `status`.
+  - Métodos principales: `assignTechnician()`, `markInProgress()`, `resolve()`, `close()`.
+  - Relaciones clave: puede asociarse a espacio, recurso o dispositivo IoT.
+
+- **MaintenanceAssignment**
+  - Propósito: representa la asignación de atención a personal responsable.
+  - Atributos principales: `id`, `breakdownReportId`, `technicianUserId`, `assignedAt`.
+  - Métodos principales: `reassign()`.
+
+- **ResolutionRecord**
+  - Propósito: registra la solución aplicada.
+  - Atributos principales: `id`, `breakdownReportId`, `description`, `resolvedAt`.
+  - Métodos principales: `updateDescription()`.
+
+**Value Objects**
+
+- **BreakdownDescription**
+  - Propósito: encapsula la descripción de la falla.
+  - Atributos principales: `value`.
+  - Métodos principales: `validateMinimumLength()`.
+
+**Aggregates / Aggregate Roots**
+
+- **BreakdownReport** es el aggregate root.
+  - Controla estado, prioridad, asignación y resolución.
+
+**Domain Services**
+
+- **BreakdownPriorityDomainService**
+  - Propósito: calcula prioridad según impacto, espacio afectado o alerta IoT.
+  - Métodos principales: `calculatePriority()`.
+
+**Repository Interfaces**
+
+- **BreakdownReportRepository**
+  - Métodos: `findById()`, `findByStatus()`, `findBySpaceId()`, `save()`.
+
+**Enumerations**
+
+- **BreakdownStatus**
+  - Valores: `REPORTED`, `ASSIGNED`, `IN_PROGRESS`, `RESOLVED`, `CLOSED`.
+
+- **BreakdownPriority**
+  - Valores: `LOW`, `MEDIUM`, `HIGH`, `CRITICAL`.
+
+**Reglas de negocio**
+
+- Un reporte cerrado no puede modificarse.
+- Un reporte debe tener descripción y al menos una referencia válida: espacio, recurso o dispositivo.
+- Solo un reporte asignado puede pasar a estado en progreso.
+- Todo reporte resuelto debe tener un registro de resolución.
+
+#### 4.2.4.2. Interface Layer
+
+**Controllers / Endpoints**
+
+- `POST /api/breakdowns`
+- `GET /api/breakdowns`
+- `GET /api/breakdowns/{id}`
+- `PUT /api/breakdowns/{id}/assign`
+- `PUT /api/breakdowns/{id}/in-progress`
+- `PUT /api/breakdowns/{id}/resolve`
+- `PUT /api/breakdowns/{id}/close`
+
+**Requests y Responses**
+
+- `CreateBreakdownReportRequest`: `spaceId`, `resourceId`, `deviceId`, `description`.
+- `AssignBreakdownRequest`: `technicianUserId`.
+- `ResolveBreakdownRequest`: `resolutionDescription`.
+- `BreakdownReportResponse`: `id`, `description`, `priority`, `status`, `assignedTechnician`, `createdAt`.
+
+**Interacción con aplicaciones**
+
+- La Web Application permite gestionar reportes y asignaciones.
+- La Mobile Application permite reportar fallas y consultar estado.
+- IoT Monitoring puede generar reportes automáticos ante alertas críticas.
+- La Web API centraliza la operación del contexto.
+
+**Actores involucrados**
+
+- Administrador
+- Docente
+- Estudiante
+- Personal de mantenimiento
+
+#### 4.2.4.3. Application Layer
+
+**Application Services**
+
+- **BreakdownApplicationService**
+  - Coordina creación, asignación, avance y cierre de reportes.
+
+**Command Handlers**
+
+- `CreateBreakdownReportCommandHandler`
+- `AssignBreakdownCommandHandler`
+- `StartBreakdownWorkCommandHandler`
+- `ResolveBreakdownCommandHandler`
+- `CloseBreakdownCommandHandler`
+
+**Query Services**
+
+- `BreakdownQueryService`
+  - Consulta reportes por estado, prioridad, espacio o técnico asignado.
+
+**Event Handlers**
+
+- `IoTAlertRaisedEventHandler`
+  - Crea reportes de falla cuando una alerta IoT supera criterios críticos.
+
+- `BreakdownResolvedEventHandler`
+  - Notifica resolución al usuario que reportó la incidencia.
+
+**Casos de uso principales**
+
+- Registrar falla.
+- Asignar personal de mantenimiento.
+- Actualizar estado de atención.
+- Resolver falla.
+- Cerrar reporte.
+
+**Coordinación**
+
+La capa de aplicación valida transiciones de estado mediante el aggregate root. También puede consumir eventos de IoT Monitoring para crear reportes automáticos.
+
+#### 4.2.4.4. Infrastructure Layer
+
+**Repository Implementations**
+
+- `SQLiteBreakdownReportRepository`
+
+**Persistencia**
+
+- Base de datos principal: SQLite.
+- Tablas principales: `breakdown_reports`, `maintenance_assignments`, `resolution_records`.
+
+**Integraciones**
+
+- Adaptador con servicio externo de notificaciones/correo.
+- Adaptador de eventos internos desde IoT Monitoring.
+
+**Mensajería**
+
+- Eventos de aplicación para alertas críticas, asignación de reportes y resolución de fallas.
+
+#### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams
+
+![Breakdown Management Component Diagram Key](assets/images/breakdown-components-dark-key.png)
+
+![Breakdown Management Component Diagram](assets/images/breakdown-components-dark.png)
+
+Componentes principales:
+
+- **Breakdown Controller**
+  - Container: Web API.
+  - Expone operaciones de reportes de fallas.
+
+- **Breakdown Application Service**
+  - Container: Web API.
+  - Coordina el flujo de atención.
+
+- **Breakdown Domain Model**
+  - Container: Web API.
+  - Define reglas de estado, prioridad y resolución.
+
+- **IoT Alert Event Consumer**
+  - Container: Web API.
+  - Recibe alertas críticas desde IoT Monitoring.
+
+- **SQLite Breakdown Repository**
+  - Container: Web API.
+  - Persiste reportes, asignaciones y resoluciones.
+
+- **Notification Adapter**
+  - Container: Web API.
+  - Notifica asignaciones y cambios de estado.
+
+#### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 4.2.4.6.1. Bounded Context Domain Layer Class Diagram
+
+![Breakdown Management Domain Layer Class Diagram](assets/images/Breakdown-Management-Bounded-Context-Domain-Layer-Class-Diagram.png)
+
+
+##### 4.2.4.6.2. Bounded Context Database Design Diagram
+
+![Breakdown Management Database Design Diagram](assets/images/Breakdown-Management-Bounded-Context-Database-Design-Diagram.png)
+
+
+### 4.2.5. IoT Monitoring
+
+#### 4.2.5.1. Domain Layer
+
+Este bounded context gestiona dispositivos IoT, sensores, lecturas ambientales, ocupación, umbrales, alertas y sincronización entre Edge API, Embedded Application y Web API.
+
+**Entities**
+
+- **IoTDevice**
+  - Propósito: representa un dispositivo físico instalado en un espacio educativo.
+  - Atributos principales: `id`, `deviceCode`, `spaceId`, `status`, `lastConnectionAt`.
+  - Métodos principales: `registerConnection()`, `markOffline()`, `assignToSpace()`.
+  - Relaciones clave: contiene uno o más sensores.
+
+- **Sensor**
+  - Propósito: representa un sensor físico o lógico del dispositivo.
+  - Atributos principales: `id`, `deviceId`, `type`, `unit`, `status`.
+  - Métodos principales: `activate()`, `deactivate()`, `recordReading()`.
+  - Relaciones clave: pertenece a un `IoTDevice`.
+
+- **SensorReading**
+  - Propósito: representa una lectura capturada por un sensor.
+  - Atributos principales: `id`, `sensorId`, `metricType`, `value`, `recordedAt`, `syncedAt`.
+  - Métodos principales: `markAsSynced()`, `isPendingSync()`.
+  - Relaciones clave: pertenece a un `Sensor`.
+
+- **Threshold**
+  - Propósito: define límites operativos para una métrica ambiental o de ocupación.
+  - Atributos principales: `id`, `spaceId`, `metricType`, `minValue`, `maxValue`, `enabled`.
+  - Métodos principales: `evaluate(reading)`, `enable()`, `disable()`.
+
+- **Alert**
+  - Propósito: representa una condición anómala detectada por lecturas IoT.
+  - Atributos principales: `id`, `deviceId`, `sensorId`, `spaceId`, `metricType`, `severity`, `status`, `message`.
+  - Métodos principales: `acknowledge()`, `resolve()`, `escalate()`.
+  - Relaciones clave: se origina por una o más lecturas fuera de umbral.
+
+- **SyncBatch**
+  - Propósito: agrupa lecturas pendientes enviadas desde Edge API hacia Web API.
+  - Atributos principales: `id`, `edgeNodeId`, `status`, `createdAt`, `sentAt`.
+  - Métodos principales: `markSent()`, `markFailed()`, `markProcessed()`.
+
+**Value Objects**
+
+- **DeviceCode**
+  - Propósito: identifica de manera única un dispositivo IoT.
+  - Atributos principales: `value`.
+  - Métodos principales: `validateFormat()`.
+
+- **MetricValue**
+  - Propósito: encapsula el valor numérico de una métrica.
+  - Atributos principales: `value`, `unit`.
+  - Métodos principales: `isWithin(min, max)`.
+
+- **OccupancyValue**
+  - Propósito: representa cantidad o porcentaje de ocupación.
+  - Atributos principales: `value`.
+  - Métodos principales: `exceedsCapacity(capacity)`.
+
+**Aggregates / Aggregate Roots**
+
+- **IoTDevice**
+  - Aggregate root para sensores y estado operativo del dispositivo.
+
+- **Alert**
+  - Aggregate root para el ciclo de vida de alertas.
+
+- **SyncBatch**
+  - Aggregate root para consistencia de sincronización Edge-Servidor.
+
+**Domain Services**
+
+- **ThresholdEvaluationDomainService**
+  - Propósito: evalúa lecturas contra umbrales configurados.
+  - Métodos principales: `evaluate(reading, threshold)`.
+
+- **OccupancyCalculationDomainService**
+  - Propósito: calcula ocupación a partir de lecturas del sensor.
+  - Métodos principales: `calculateOccupancy(readings)`.
+
+- **SyncPolicyDomainService**
+  - Propósito: determina si una lectura requiere sincronización.
+  - Métodos principales: `shouldSync(reading)`.
+
+**Repository Interfaces**
+
+- **IoTDeviceRepository**
+  - Métodos: `findById()`, `findByDeviceCode()`, `save()`.
+
+- **SensorReadingRepository**
+  - Métodos: `save()`, `findPendingSync()`, `findBySensorAndDateRange()`.
+
+- **ThresholdRepository**
+  - Métodos: `findBySpaceAndMetricType()`, `save()`.
+
+- **AlertRepository**
+  - Métodos: `save()`, `findActiveBySpaceId()`, `findById()`.
+
+- **SyncBatchRepository**
+  - Métodos: `save()`, `findPending()`, `findById()`.
+
+**Enumerations**
+
+- **DeviceStatus**
+  - Valores: `ONLINE`, `OFFLINE`, `MAINTENANCE`.
+
+- **SensorType**
+  - Valores: `TEMPERATURE`, `HUMIDITY`, `CO2`, `MOTION`, `OCCUPANCY`, `LIGHT`.
+
+- **MetricType**
+  - Valores: `TEMPERATURE`, `HUMIDITY`, `CO2_LEVEL`, `OCCUPANCY`, `LIGHT_LEVEL`.
+
+- **AlertSeverity**
+  - Valores: `LOW`, `MEDIUM`, `HIGH`, `CRITICAL`.
+
+- **AlertStatus**
+  - Valores: `ACTIVE`, `ACKNOWLEDGED`, `RESOLVED`.
+
+- **SyncStatus**
+  - Valores: `PENDING`, `SENT`, `PROCESSED`, `FAILED`.
+
+**Reglas de negocio**
+
+- Un dispositivo debe estar asociado a un espacio válido para reportar métricas operativas.
+- Una lectura debe conservar fecha, sensor y tipo de métrica.
+- Las lecturas capturadas en Edge deben almacenarse localmente antes de sincronizarse.
+- Una lectura fuera de umbral debe generar o actualizar una alerta activa.
+- Las lecturas sincronizadas no deben duplicarse en SQLite.
+- Una alerta crítica puede originar un reporte en Breakdown Management.
+- La pérdida de conexión del dispositivo no debe impedir la captura local si el Edge API sigue disponible.
+
+#### 4.2.5.2. Interface Layer
+
+**Controllers / Consumers / Endpoints**
+
+En Edge API:
+
+- `POST /edge/readings`
+- `GET /edge/readings/pending-sync`
+- `POST /edge/sync`
+
+En Web API:
+
+- `POST /api/iot/readings/sync`
+- `GET /api/iot/devices`
+- `GET /api/iot/devices/{id}`
+- `GET /api/iot/spaces/{spaceId}/metrics`
+- `POST /api/iot/thresholds`
+- `PUT /api/iot/thresholds/{id}`
+- `GET /api/iot/alerts`
+- `PUT /api/iot/alerts/{id}/acknowledge`
+- `PUT /api/iot/alerts/{id}/resolve`
+
+**Requests y Responses**
+
+- `RegisterSensorReadingRequest`: `deviceCode`, `sensorId`, `metricType`, `value`, `unit`, `recordedAt`.
+- `SyncReadingsRequest`: `edgeNodeId`, `batchId`, `readings`.
+- `SensorReadingResponse`: `id`, `sensorId`, `metricType`, `value`, `recordedAt`, `syncStatus`.
+- `ThresholdRequest`: `spaceId`, `metricType`, `minValue`, `maxValue`.
+- `AlertResponse`: `id`, `spaceId`, `deviceId`, `metricType`, `severity`, `status`, `message`.
+
+**Interacción con aplicaciones**
+
+- La Embedded Application captura datos desde sensores y los envía a Edge API.
+- Edge API almacena lecturas en SQLite y sincroniza con Web API.
+- Web API persiste el histórico en SQLite.
+- Web Application visualiza métricas, alertas, dispositivos y configuración de umbrales.
+- Mobile Application puede consultar alertas y estado de espacios.
+- Breakdown Management puede recibir eventos de alertas críticas.
+
+**Actores involucrados**
+
+- Administrador
+- Personal de mantenimiento
+- Docente
+- Estudiante, principalmente como consumidor de disponibilidad o estado del espacio
+
+#### 4.2.5.3. Application Layer
+
+**Application Services**
+
+- **EdgeReadingApplicationService**
+  - Ejecuta la recepción local de lecturas desde la Embedded Application.
+
+- **ReadingSynchronizationApplicationService**
+  - Coordina el envío de lecturas pendientes desde SQLite hacia Web API.
+
+- **IoTMonitoringApplicationService**
+  - Procesa lecturas sincronizadas, evalúa umbrales y registra histórico.
+
+- **ThresholdApplicationService**
+  - Gestiona configuración de umbrales.
+
+- **AlertApplicationService**
+  - Gestiona creación, reconocimiento y resolución de alertas.
+
+**Command Handlers**
+
+- `RegisterSensorReadingCommandHandler`
+- `SynchronizeReadingsCommandHandler`
+- `CreateThresholdCommandHandler`
+- `UpdateThresholdCommandHandler`
+- `AcknowledgeAlertCommandHandler`
+- `ResolveAlertCommandHandler`
+
+**Query Services**
+
+- `DeviceQueryService`
+- `SensorReadingQueryService`
+- `EnvironmentalMetricQueryService`
+- `AlertQueryService`
+
+**Event Handlers**
+
+- `SensorReadingRecordedEventHandler`
+  - Evalúa umbrales localmente o prepara sincronización.
+
+- `ThresholdExceededEventHandler`
+  - Crea o actualiza alertas.
+
+- `CriticalAlertRaisedEventHandler`
+  - Publica evento para Breakdown Management.
+
+**Casos de uso principales**
+
+- Registrar dispositivo IoT.
+- Capturar lectura de sensor.
+- Almacenar lectura local en Edge.
+- Sincronizar lecturas con servidor.
+- Consultar métricas ambientales históricas.
+- Configurar umbrales.
+- Generar alertas por valores fuera de rango.
+- Resolver alertas.
+
+**Coordinación**
+
+La capa de aplicación en Edge API coordina captura local y persistencia en SQLite. La capa de aplicación en Web API recibe lotes sincronizados, evita duplicados, persiste en SQLite, evalúa umbrales y genera alertas o eventos para otros contextos.
+
+#### 4.2.5.4. Infrastructure Layer
+
+**Repository Implementations**
+
+En Edge API:
+
+- `SQLiteSensorReadingRepository`
+- `SQLiteSyncBatchRepository`
+
+En Web API:
+
+- `SQLiteIoTDeviceRepository`
+- `SQLiteSensorReadingRepository`
+- `SQLiteThresholdRepository`
+- `SQLiteAlertRepository`
+- `SQLiteSyncBatchRepository`
+
+**Persistencia**
+
+- SQLite en Edge API:
+  - Almacena lecturas locales, estado de sincronización y lotes pendientes.
+- SQLite en Web API:
+  - Almacena dispositivos, sensores, histórico de lecturas, umbrales y alertas.
+
+**Integraciones**
+
+- Embedded Application hacia Edge API mediante endpoints locales.
+- Edge API hacia Web API mediante sincronización HTTP.
+- Web API hacia servicio externo de notificaciones/correo para alertas relevantes.
+- Web API hacia Breakdown Management mediante evento interno para alertas críticas.
+
+**Adaptadores**
+
+- `EmbeddedDeviceAdapter`
+  - Recibe datos generados por sensores físicos.
+
+- `EdgeSyncHttpAdapter`
+  - Envía lotes de lecturas hacia Web API.
+
+- `NotificationAdapter`
+  - Envía alertas a responsables.
+
+**Mensajería**
+
+- Eventos internos:
+  - `SensorReadingRecorded`
+  - `ThresholdExceeded`
+  - `CriticalAlertRaised`
+  - `ReadingsSynchronized`
+
+#### 4.2.5.5. Bounded Context Software Architecture Component Level Diagrams
+
+**IoT Monitoring - Edge API Component Diagram**
+
+![IoT Monitoring Edge Component Diagram Key](assets/images/iot-edge-components-dark-key.png)
+
+![IoT Monitoring Edge Component Diagram](assets/images/iot-edge-components-dark.png)
+
+**IoT Monitoring - Web API Component Diagram**
+
+![IoT Monitoring Web API Component Diagram Key](assets/images/iot-webapi-components-dark-key.png)
+
+![IoT Monitoring Web API Component Diagram](assets/images/iot-webapi-components-dark.png)
+
+Componentes principales:
+
+- **Embedded Sensor Collector**
+  - Container: Embedded Application.
+  - Captura datos físicos desde sensores.
+
+- **Edge Reading Controller**
+  - Container: Edge API.
+  - Recibe lecturas desde el dispositivo IoT.
+
+- **Edge Reading Application Service**
+  - Container: Edge API.
+  - Valida y almacena lecturas localmente.
+
+- **SQLite Reading Repository**
+  - Container: Edge API.
+  - Persiste lecturas y lotes pendientes en SQLite.
+
+- **Edge Sync Service**
+  - Container: Edge API.
+  - Envía lecturas pendientes a la Web API.
+
+- **IoT Sync Controller**
+  - Container: Web API.
+  - Recibe lotes de lecturas sincronizadas.
+
+- **IoT Monitoring Application Service**
+  - Container: Web API.
+  - Procesa histórico, evalúa umbrales y genera alertas.
+
+- **Alert Controller**
+  - Container: Web API.
+  - Expone operaciones para consultar y gestionar alertas.
+
+- **SQLite IoT Repository**
+  - Container: Web API.
+  - Persiste dispositivos, sensores, lecturas, umbrales y alertas.
+
+- **Web Dashboard Components**
+  - Container: Web Application.
+  - Visualizan métricas, alertas y estado de dispositivos.
+
+- **Mobile Monitoring Views**
+  - Container: Mobile Application.
+  - Consultan alertas y condiciones relevantes de espacios.
+
+#### 4.2.5.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 4.2.5.6.1. Bounded Context Domain Layer Class Diagram
+
+![IoT Monitoring Domain Layer Class Diagram](assets/images/IoT-Monitoring-Bounded-Context-Domain-Layer-Class-Diagram.png)
+
+
+##### 4.2.5.6.2. Bounded Context Database Design Diagram
+
+![IoT Monitoring Database Design Diagram](assets/images/IoT-Monitoring-Bounded-Context-Database-DesignDiagram.png)
+
+
 
 ---
 
