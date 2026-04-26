@@ -2469,6 +2469,8 @@ Componentes principales:
 
 ## Conclusiones y recomendaciones
 
+En conclusión, el diseño de la arquitectura de software para el sistema de gestión de espacios educativos ha sido abordado con un enfoque integral, se consideran aspectos técnicos, operativos y estratégicos. Se han definido claramente los bounded contexts, entidades, servicios y componentes necesarios para garantizar una solución robusta, escalable y alineada con las necesidades de los usuarios finales.
+
 ---
 
 # Bibliografía
@@ -2493,6 +2495,6 @@ Shanganlall, A. (2025, 21 febrero). _Los 7 mayores retos que afectan a la gesti�
 
 ## Anexo B: Videos de Exposiciones
 
-| Entrega | Título | URL |
-| ------- | ------ | --- |
-| AV1     |        |     |
+| Entrega | Título                                             | URL                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |     |
+| ------- | -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+| AV1     | upc-pre-202610-1asi0572-6776-edusolutions-expo-av1 | [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202110385_upc_edu_pe/IQBIiMX0AJRMSaQEIAnGe6olAZdW2wzqMkFe6cLaolmhgB0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=PJLtw2](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202110385_upc_edu_pe/IQBIiMX0AJRMSaQEIAnGe6olAZdW2wzqMkFe6cLaolmhgB0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=PJLtw2) |     |
