@@ -40,9 +40,11 @@
 
 ## Registro de Versiones del Informe
 
-| Versión | Fecha      | Autor  | Descripción de modificación |
-| ------- | ---------- | ------ | --------------------------- |
-| 1.0     | 11/04/2026 | Equipo | Creación del informe.       |
+| Versión | Fecha      | Autor          | Descripción de modificación                                                                       |
+| ------- | ---------- | -------------- | ------------------------------------------------------------------------------------------------- |
+| 1.0     | 11/04/2026 | Equipo         | Creación del informe.                                                                             |
+| 1.1     | 25/04/2026 | Andrés Torres  | Se redactó la sección 4.2.5 (Tactical-Level DDD) del Bounded Context IoT Monitoring.             |
+| 1.2     | 25/04/2026 | Andrés Torres  | Se redactaron las secciones 4.2.1, 4.2.2, 4.2.3 y 4.2.4 del Tactical-Level DDD. Se alineó el motor de base de datos a MySQL en 4.2.5. |
 
 ---
 
@@ -112,15 +114,31 @@ URL del repositorio del Project Report en GitHub: [https://github.com/Desarrollo
       - [4.1.3.3. Software Architecture Container Level Diagrams](#4133-software-architecture-container-level-diagrams)
       - [4.1.3.4. Software Architecture Deployment Diagrams](#4134-software-architecture-deployment-diagrams)
   - [4.2. Tactical-Level Domain-Driven Design](#42-tactical-level-domain-driven-design)
-    - [4.2.X. Bounded Context: \<Nombre\>](#42x-bounded-context-nombre)
-      - [4.2.X.1. Domain Layer](#42x1-domain-layer)
-      - [4.2.X.2. Interface Layer](#42x2-interface-layer)
-      - [4.2.X.3. Application Layer](#42x3-application-layer)
-      - [4.2.X.4. Infrastructure Layer](#42x4-infrastructure-layer)
-      - [4.2.X.5. Bounded Context Software Architecture Component Level Diagrams](#42x5-bounded-context-software-architecture-component-level-diagrams)
-      - [4.2.X.6. Bounded Context Software Architecture Code Level Diagrams](#42x6-bounded-context-software-architecture-code-level-diagrams)
-        - [4.2.X.6.1. Bounded Context Domain Layer Class Diagrams](#42x61-bounded-context-domain-layer-class-diagrams)
-        - [4.2.X.6.2. Bounded Context Database Design Diagram](#42x62-bounded-context-database-design-diagram)
+    - [4.2.1. Bounded Context: IAM & Profile Management](#421-bounded-context-iam--profile-management)
+      - [4.2.1.1. Domain Layer](#4211-domain-layer)
+      - [4.2.1.2. Interface Layer](#4212-interface-layer)
+      - [4.2.1.3. Application Layer](#4213-application-layer)
+      - [4.2.1.4. Infrastructure Layer](#4214-infrastructure-layer)
+    - [4.2.2. Bounded Context: Space & Resource Management](#422-bounded-context-space--resource-management)
+      - [4.2.2.1. Domain Layer](#4221-domain-layer)
+      - [4.2.2.2. Interface Layer](#4222-interface-layer)
+      - [4.2.2.3. Application Layer](#4223-application-layer)
+      - [4.2.2.4. Infrastructure Layer](#4224-infrastructure-layer)
+    - [4.2.3. Bounded Context: Reservation & Scheduling](#423-bounded-context-reservation--scheduling)
+      - [4.2.3.1. Domain Layer](#4231-domain-layer)
+      - [4.2.3.2. Interface Layer](#4232-interface-layer)
+      - [4.2.3.3. Application Layer](#4233-application-layer)
+      - [4.2.3.4. Infrastructure Layer](#4234-infrastructure-layer)
+    - [4.2.4. Bounded Context: Breakdown Management](#424-bounded-context-breakdown-management)
+      - [4.2.4.1. Domain Layer](#4241-domain-layer)
+      - [4.2.4.2. Interface Layer](#4242-interface-layer)
+      - [4.2.4.3. Application Layer](#4243-application-layer)
+      - [4.2.4.4. Infrastructure Layer](#4244-infrastructure-layer)
+    - [4.2.5. Bounded Context: IoT Monitoring](#425-bounded-context-iot-monitoring)
+      - [4.2.5.1. Domain Layer](#4251-domain-layer)
+      - [4.2.5.2. Interface Layer](#4252-interface-layer)
+      - [4.2.5.3. Application Layer](#4253-application-layer)
+      - [4.2.5.4. Infrastructure Layer](#4254-infrastructure-layer)
 - [Conclusiones](#conclusiones)
   - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
 - [Bibliografía](#bibliografía)
@@ -776,23 +794,422 @@ La Landing Page se despliega en GitHub Pages por su naturaleza estática y gratu
 
 ## 4.2. Tactical-Level Domain-Driven Design
 
-### 4.2.X. Bounded Context: \<Nombre\>
+En este capítulo el equipo presenta el diseño táctico de la solución EduSpace IoT, aplicando los principios y patrones de Domain-Driven Design a nivel de bounded context. Para cada contexto delimitado identificado en la sección 4.1 se describe el conjunto de clases que lo componen, organizadas en cuatro capas: Domain Layer, Interface Layer, Application Layer e Infrastructure Layer. Este nivel de diseño permite establecer con precisión las responsabilidades de cada componente del sistema, las invariantes del dominio y los mecanismos de comunicación entre capas, proporcionando una base sólida para la implementación posterior.
 
-#### 4.2.X.1. Domain Layer
+La numeración de los bounded contexts en esta sección sigue el orden de importancia estratégica definido durante el proceso de diseño estratégico. El contexto de IoT Monitoring recibe el número 4.2.5 por tratarse del quinto contexto en dicho ordenamiento, siendo al mismo tiempo el de mayor novedad en esta iteración del proyecto al incorporar la capa IoT de la solución.
 
-#### 4.2.X.2. Interface Layer
+### 4.2.1. Bounded Context: IAM & Profile Management
 
-#### 4.2.X.3. Application Layer
+El contexto de IAM & Profile Management concentra la responsabilidad de autenticación, autorización y gestión del ciclo de vida de los perfiles de usuario en la plataforma EduSpace IoT. Es el punto de entrada que toda sesión de usuario debe atravesar antes de acceder a cualquier otro contexto, y es el custodio de la identidad tanto de administradores como de docentes. Internamente se compone de dos sub-dominios coordinados mediante una ACL bidireccional: el sub-dominio **IAM** (Identity & Access Management), que gobierna credenciales, roles y el flujo de autenticación de dos factores por correo electrónico; y el sub-dominio **Profiles**, que gestiona los datos personales y la vinculación entre una cuenta de sistema y el perfil de persona que la representa. IAM expone la fachada `IIamContextFacade` (operación `CreateAccount`) para que Profiles pueda aprovisionar cuentas en nombre de un nuevo usuario. Profiles, a su vez, expone `IProfilesContextFacade` (operaciones `ValidateTeacherProfileIdExistence` y `ValidateAdminProfileIdExistence`) para que otros bounded contexts puedan verificar la existencia de un perfil sin acceder directamente a su modelo.
 
-#### 4.2.X.4. Infrastructure Layer
+La incorporación del aggregate `VerificationCode` constituyó la adición propia de esta iteración IoT: el flujo de autenticación pasó de una verificación directa de credenciales a un proceso de dos pasos en el que el sistema emite un código numérico de seis dígitos con expiración de diez minutos y lo entrega al usuario mediante correo electrónico antes de emitir el JWT de sesión.
 
-#### 4.2.X.5. Bounded Context Software Architecture Component Level Diagrams
+#### 4.2.1.1. Domain Layer
 
-#### 4.2.X.6. Bounded Context Software Architecture Code Level Diagrams
+El Domain Layer de este bounded context define las reglas de identidad y de composición de perfiles que ninguna otra capa debe vulnerar: qué constituye una cuenta válida, cuáles son los roles posibles del sistema, cuándo un código de verificación puede considerarse vigente, y cuál es la estructura mínima que un perfil de administrador o docente debe satisfacer. Esta capa es independiente de toda infraestructura y publica los contratos de repositorio que la Infrastructure Layer debe implementar.
 
-##### 4.2.X.6.1. Bounded Context Domain Layer Class Diagrams
+Los aggregates centrales de IAM son `Account`, que porta las credenciales hasheadas y el rol del usuario, y `VerificationCode`, incorporado en la iteración actual para soportar el flujo 2FA. En el sub-dominio Profiles, la clase base `Profile` concentra los datos comunes de persona (nombre, información privada y referencia a la cuenta), de la cual heredan los aggregates concretos `AdminProfile` y `TeacherProfile`; este último extiende el modelo con el atributo `AdministratorId`, que establece la relación de supervisión entre ambos roles. Los value objects `ProfileName`, `ProfilePrivateInformation` y `AccountId` encapsulan invariantes de composición y evitan la exposición de primitivos en las firmas del modelo.
 
-##### 4.2.X.6.2. Bounded Context Database Design Diagram
+| Clase | Tipo | Responsabilidad |
+| --- | --- | --- |
+| `Account` | Aggregate Root | Gestiona las credenciales de acceso al sistema. Atributos: `Id`, `Username`, `PasswordHash` (serializado con `[JsonIgnore]`), `Role` (ERoles). Expone métodos `UpdateUsername`, `UpdatePasswordHash` y `GetRole`. |
+| `VerificationCode` | Aggregate Root (adición IoT) | Representa el código numérico de 6 dígitos generado durante el flujo 2FA por email. Atributos: `Id`, `AccountId` (FK), `Code`, `ExpirationDate`, `IsUsed`. Vinculado a `Account` mediante navegación. Su ciclo de vida comienza al iniciarse sesión y concluye al ser consumido (`IsUsed = true`) o al vencer `ExpirationDate`. |
+| `AdminProfile` | Aggregate Root | Perfil de administrador. Hereda de `Profile`. Implementa `Update(UpdateAdminProfileCommand)` para actualizar `ProfileName` y `ProfilePrivateInformation`. |
+| `TeacherProfile` | Aggregate Root | Perfil de docente. Hereda de `Profile`. Añade `AdministratorId` (int) que establece la relación de supervisión. Implementa `Update(UpdateTeacherProfileCommand)`. |
+| `Profile` | Entity (clase base) | Base abstracta con los datos comunes de persona: `ProfileName`, `ProfilePrivateInformation`, `AccountId`. Implementa `IEntityWithCreatedUpdatedDate` para campos de auditoría `CreatedAt` / `UpdatedAt`. Expone propiedades de lectura `ProfileFullName`, `ProfileEmail` y `ProfileDni`. |
+| `ERoles` | Value Object (enum) | Define los dos roles posibles del sistema: `RoleAdmin` y `RoleTeacher`. |
+| `ProfileName` | Value Object (record) | Encapsula `FirstName`, `LastName` y la propiedad calculada `FullName`. |
+| `ProfilePrivateInformation` | Value Object (record) | Encapsula `Email`, `Dni`, `Address`, `Phone`. Expone `ObtainEmail` y `ObtainDni` como accesores explícitos. |
+| `AccountId` | Value Object (record) | Envoltorio de `int Id` que referencia la cuenta IAM desde el modelo de Profiles. Evita el uso de primitivos en las asociaciones cross-aggregate. |
+| `IAccountRepository` | Repository Interface | Contrato para persistir y consultar `Account`. Operaciones: `AddAsync`, `FindByUsername`, `ExistsByUsername`, `FindByIdAsync`. |
+| `ITeacherProfileRepository` | Repository Interface | Contrato para persistir y consultar `TeacherProfile`. Operaciones: `AddAsync`, `ListAsync`, `FindByIdAsync`, `FindAllTeachersByAdministratorIdAsync`, `ExistsByTeacherProfileId`, `Update`, `Remove`. |
+| `IAdminProfileRepository` | Repository Interface | Contrato para persistir y consultar `AdminProfile`. Operaciones: `AddAsync`, `ListAsync`, `FindByIdAsync`, `ExistsByAdminProfileId`, `Update`, `Remove`. |
+| `GetAllTeachersByAdministratorIdQuery` | Query | Definida en Domain para recuperar los docentes supervisados por un administrador dado. En la iteración actual esta query no es manejada por ningún command/query service expuesto en la Interface Layer; su lógica equivalente es resuelta directamente por `TeacherProfileRepository.FindAllTeachersByAdministratorIdAsync()`. |
+
+#### 4.2.1.2. Interface Layer
+
+La Interface Layer de este bounded context expone tres conjuntos de endpoints REST. El primero, `AuthenticationController`, gestiona el flujo completo de autenticación de dos factores: registro de cuenta, inicio de sesión con emisión del código de verificación, y validación del código con retorno del JWT y el perfil completo del usuario. Los controladores de Profiles, `AdministratorProfilesController` y `TeachersProfilesController`, exponen operaciones CRUD sobre los perfiles de ambos roles. Esta capa no contiene lógica de dominio: su responsabilidad se limita a traducir los cuerpos HTTP en resources, delegar a la Application Layer y construir la respuesta adecuada.
+
+Los assemblers de transformación (sufijo `FromResourceAssembler` y `FromEntityAssembler`) separan el modelo de transporte del modelo de dominio, siguiendo el patrón de ensamblado explícito adoptado en todo el Web API.
+
+| Clase | Tipo | Endpoints / Operaciones |
+| --- | --- | --- |
+| `AuthenticationController` | Controller | `POST /api/v1/authentication/sign-up` — crea una cuenta de sistema (requiere autenticación de administrador). `POST /api/v1/authentication/sign-in` — valida credenciales y envía el código 2FA al correo del perfil asociado; responde con mensaje de confirmación. `POST /api/v1/authentication/verify-code` — valida el código recibido, marca el `VerificationCode` como usado y retorna un `AuthenticatedAccountResource` con el JWT, el `profileId`, y los datos cruzados del perfil (aulas y reuniones para docentes). |
+| `AdministratorProfilesController` | Controller | `POST /api/v1/administrator-profiles` — crea un perfil de administrador y aprovisiona su cuenta IAM vía ACL. `GET /api/v1/administrator-profiles` — lista todos los perfiles de administrador. `GET /api/v1/administrator-profiles/{administratorId}` — obtiene un perfil por ID. `PUT /api/v1/administrator-profiles/{administratorId}` — actualiza nombre e información privada. `DELETE /api/v1/administrator-profiles/{administratorId}` — elimina el perfil. |
+| `TeachersProfilesController` | Controller | `POST /api/v1/teachers-profiles` — crea un perfil de docente y aprovisiona su cuenta IAM vía ACL. `GET /api/v1/teachers-profiles` — lista todos los perfiles de docentes. `GET /api/v1/teachers-profiles/{teacherId}` — obtiene un perfil por ID. `PUT /api/v1/teachers-profiles/{teacherId}` — actualiza nombre e información privada. `DELETE /api/v1/teachers-profiles/{teacherId}` — elimina el perfil. |
+| `SignUpResource` / `SignUpCommandFromResourceAssembler` | Resource / Assembler | Transporta `username`, `password` y `role` para el registro. |
+| `SignInResource` / `SignInCommandFromResourceAssembler` | Resource / Assembler | Transporta `username` y `password` para el inicio de sesión. |
+| `VerifyCodeResource` / `VerifyCodeCommandFromResourceAssembler` | Resource / Assembler | Transporta `username` y `code` para la verificación 2FA. |
+| `AuthenticatedAccountResource` / `AuthenticatedAccountResourceFromEntityAssembler` | Resource / Assembler | Respuesta completa del flujo de verificación: `id`, `username`, `role`, `token`, `profileId`, datos de perfil (docente o administrador), aulas y reuniones asociadas. |
+| `AccountResource` / `AccountResourceFromEntityAssembler` | Resource / Assembler | Representación simple de una cuenta (sin token); usada para consultas internas. |
+| `CreateAdminProfileResource` / `CreateAdminProfileCommandFromResourceAssembler` | Resource / Assembler | Transporta los datos de creación de perfil de administrador (`firstName`, `lastName`, `email`, `dni`, `address`, `phone`, `password`). |
+| `CreateTeacherProfileResource` / `CreateTeacherProfileCommandFromResourceAssembler` | Resource / Assembler | Transporta los datos de creación de perfil de docente, incluyendo `administratorId`. |
+| `UpdateAdminProfileResource` / `UpdateAdminProfileCommandFromResourceAssembler` | Resource / Assembler | Transporta campos actualizables del perfil de administrador. |
+| `UpdateTeacherProfileResource` / `UpdateTeacherProfileCommandFromResourceAssembler` | Resource / Assembler | Transporta campos actualizables del perfil de docente. |
+| `AdminProfileResource` / `AdminProfileResourceFromEntityAssembler` | Resource / Assembler | Representación de lectura del perfil de administrador. |
+| `TeacherProfileResource` / `TeacherProfileResourceFromEntityAssembler` | Resource / Assembler | Representación de lectura del perfil de docente. |
+| `IIamContextFacade` / `IamContextFacade` | ACL (saliente de Profiles) | Interfaz + implementación que expone `CreateAccount(username, password, role)`. Consumida por `AdminProfileCommandService` y `TeacherProfileCommandService` para aprovisionar la cuenta IAM al crear un perfil. |
+| `IProfilesContextFacade` / `ProfilesContextFacade` | ACL (saliente de IAM) | Interfaz + implementación que expone `ValidateTeacherProfileIdExistence(id)` y `ValidateAdminProfileIdExistence(id)`. Consumida por otros bounded contexts para verificar la existencia de un perfil sin acoplar sus modelos. |
+
+#### 4.2.1.3. Application Layer
+
+La Application Layer orquesta los flujos de proceso sin contener reglas de dominio propias. Los command services del sub-dominio IAM coordinan el ciclo de autenticación de dos pasos: `AccountCommandService` es el servicio central y maneja los tres comandos del flujo de autenticación. El manejo de `SignInCommand` genera el `VerificationCode`, lo persiste y delega el envío del correo al outbound service `IEmailService`. El manejo de `VerifyCodeCommand` valida el código, genera el JWT y realiza una orquestación de aplicación cross-BC: consulta `ITeacherProfileRepository` y `IAdminProfileRepository` para resolver el perfil asociado a la cuenta, y —para cuentas con rol `RoleTeacher`— invoca adicionalmente `IClassroomQueryService` y `IMeetingQueryService` de otros bounded contexts para componer la respuesta completa de sesión. Esta decisión concentra la carga de inicialización de sesión en un único punto, retornando una tupla de siete elementos que la Interface Layer serializa directamente en el `AuthenticatedAccountResource`.
+
+En el sub-dominio Profiles, los command services `AdminProfileCommandService` y `TeacherProfileCommandService` coordinan las operaciones CRUD y la creación de cuenta IAM mediante la ACL `IExternalIamService`. Los query services `AdminProfileQueryService` y `TeacherProfileQueryService` resuelven las consultas de solo lectura expuestas en los controllers. Cabe señalar que `TeacherProfileQueryService` implementa la interfaz `ITeacherQueryService` —cuyo nombre omite el sufijo `Profile` respecto a su implementación— y que `GetAllTeachersByAdministratorIdQuery`, definida en el Domain Layer, no cuenta con un handler en esta capa; la funcionalidad equivalente se resuelve directamente en el repositorio.
+
+| Clase | Tipo | Responsabilidad |
+| --- | --- | --- |
+| `AccountCommandService` | Command Service | Implementa `IAccountCommandService`. Maneja `SignUpCommand` (crea `Account` con contraseña hasheada), `SignInCommand` (valida credenciales, genera y persiste `VerificationCode`, envía código por email vía `IEmailService`) y `VerifyCodeCommand` (valida código, genera JWT, resuelve perfil y datos asociados, retorna tupla cross-BC). |
+| `AccountQueryService` | Query Service | Implementa `IAccountQueryService`. Maneja `GetAccountByIdQuery` y `GetAccountByUsernameQuery` delegando a `IAccountRepository`. |
+| `AdminProfileCommandService` | Command Service | Implementa `IAdminProfileCommandService`. Maneja `CreateAdministratorProfileCommand` (crea `AdminProfile` y aprovisiona cuenta IAM vía `IExternalIamService`), `UpdateAdminProfileCommand` y `DeleteAdminProfileCommand`. |
+| `TeacherProfileCommandService` | Command Service | Implementa `ITeacherProfileCommandService`. Maneja `CreateTeacherProfileCommand`, `UpdateTeacherProfileCommand` y `DeleteTeacherProfileCommand`, con aprovisionamiento de cuenta IAM análogo al del servicio de administrador. |
+| `AdminProfileQueryService` | Query Service | Implementa `IAdminProfileQueryService`. Maneja `GetAllAdministratorsProfileQuery` y `GetAdministratorProfileByIdQuery`. |
+| `TeacherProfileQueryService` | Query Service | Implementa `ITeacherQueryService`. Maneja `GetAllTeachersProfileQuery` y `GetTeacherProfileByIdQuery`. La interfaz que implementa (`ITeacherQueryService`) presenta un nombre inconsistente respecto a su implementación; se considera una deuda de nomenclatura de la iteración actual. |
+| `IEmailService` | Outbound Service (interfaz) | Contrato del servicio de envío de correo electrónico. Método: `SendEmailAsync(to, subject, body)`. Consumida por `AccountCommandService` para la entrega del código 2FA. |
+| `IHashingService` | Outbound Service (interfaz) | Contrato del servicio de hashing. Métodos: `HashPassword(password)` y `VerifyPassword(password, hash)`. Consumida por `AccountCommandService` durante el registro y el inicio de sesión. |
+| `ITokenService` | Outbound Service (interfaz) | Contrato del servicio de generación y validación de JWT. Métodos: `GenerateToken(account)` y `ValidateToken(token)`. Consumida por `AccountCommandService` y por el middleware de autorización. |
+| `IExternalIamService` | Outbound Service / ACL (interfaz, sub-dominio Profiles) | Contrato que Profiles usa para invocar la creación de cuenta en IAM sin depender directamente de su modelo. Método: `CreateAccount(username, password, role)`. |
+| `ExternalIamService` | Outbound Service / ACL (implementación) | Implementación de `IExternalIamService`. Invoca `IIamContextFacade.CreateAccount` para aprovisionar la cuenta IAM desde el sub-dominio Profiles. |
+
+#### 4.2.1.4. Infrastructure Layer
+
+La Infrastructure Layer provee las implementaciones concretas de los contratos definidos en el Domain Layer, utilizando Entity Framework Core como ORM sobre una base de datos MySQL 8.0, consistente con la decisión de infraestructura adoptada para todo el Web API de la plataforma EduSpace IoT. Los repositorios heredan de `BaseRepository<T>` y acceden al `AppDbContext` compartido en `Shared/Infrastructure/Persistence/EFC/Configuration/`, el cual centraliza los `DbSet` de todos los bounded contexts y aplica convenciones de nomenclatura en snake_case mediante Humanizer. Los repositorios de `TeacherProfile` y `AdminProfile` sobreescriben `ListAsync()` para incluir la carga explícita del value object `AccountId` mediante `.Include(p => p.AccountId)`, necesaria para resolver la vinculación entre el perfil y la cuenta IAM durante el flujo de autenticación.
+
+El adaptador `TokenService` implementa la generación y validación de JWT mediante `JsonWebTokenHandler` (Microsoft.IdentityModel). La configuración de validación establece `ValidateIssuer = false` y `ValidateAudience = false`, con expiración de siete días y sin mecanismo de refresh; esta configuración responde a las decisiones de implementación del ciclo académico actual. Para el envío de correo electrónico, la infraestructura registra condicionalmente dos implementaciones de `IEmailService` según el entorno de ejecución: `MockEmailService` en desarrollo (registra el código en el log sin enviar ningún correo) y `EmailService` en producción (integración con SendGrid API mediante HTTPS, configurada vía variables de entorno `SENDGRID_API_KEY` y `SMTP_USER`). El servicio de hashing `HashingService` encapsula BCrypt.Net para la generación y verificación de contraseñas.
+
+| Clase | Tipo | Tecnología / Responsabilidad |
+| --- | --- | --- |
+| `AccountRepository` | Repository (implementación) | Entity Framework Core + MySQL. Implementa `IAccountRepository`. Extiende `BaseRepository<Account>`. Añade `FindByUsername` (consulta LINQ por `Username`) y `ExistsByUsername` (verificación de unicidad). |
+| `TeacherProfileRepository` | Repository (implementación) | Entity Framework Core + MySQL. Implementa `ITeacherProfileRepository`. Extiende `BaseRepository<TeacherProfile>`. Sobreescribe `ListAsync()` con `.Include(p => p.AccountId)`. Añade `FindAllTeachersByAdministratorIdAsync(id)` para filtrar docentes por administrador, y `ExistsByTeacherProfileId(id)` para validación ACL. |
+| `AdminProfileRepository` | Repository (implementación) | Entity Framework Core + MySQL. Implementa `IAdminProfileRepository`. Extiende `BaseRepository<AdminProfile>`. Sobreescribe `ListAsync()` con `.Include(p => p.AccountId)`. Añade `ExistsByAdminProfileId(id)` para validación ACL. |
+| `AppDbContext` | DbContext (compartido) | Entity Framework Core. Contexto compartido con todos los bounded contexts del API, ubicado en `Shared/Infrastructure/Persistence/EFC/Configuration/`. Define los `DbSet` para `Account`, `VerificationCode`, `AdminProfile`, `TeacherProfile` y otras entidades del sistema. Aplica convenciones snake_case mediante Humanizer. |
+| `TokenService` | External Adapter (JWT) | Microsoft.IdentityModel.JsonWebTokens + HMAC SHA256. Implementa `ITokenService`. Genera tokens firmados con expiración de 7 días. Valida tokens con `ValidateIssuer = false` y `ValidateAudience = false`. Sin mecanismo de refresh en la implementación actual. |
+| `HashingService` | External Adapter (BCrypt) | BCrypt.Net. Implementa `IHashingService`. Encapsula `HashPassword` y `VerifyPassword` para el ciclo de vida de contraseñas de `Account`. |
+| `EmailService` | External Adapter (SendGrid — producción) | SendGrid API (HTTPS). Implementa `IEmailService`. Registrado condicionalmente en entorno de producción. Lee `SENDGRID_API_KEY`, `SMTP_USER` y `SENDGRID_FROM_NAME` de las variables de entorno. Envía el correo con el código 2FA al usuario durante el flujo `SignInCommand`. |
+| `MockEmailService` | External Adapter (mock — desarrollo) | ILogger. Implementa `IEmailService`. Registrado condicionalmente en entorno de desarrollo. No realiza envíos reales; registra destinatario, asunto y cuerpo del correo mediante `ILogger<MockEmailService>` para facilitar la verificación del flujo durante el desarrollo local. |
+| `RequestAuthorizationMiddleware` | Middleware (Pipeline) | Middleware de autorización basado en el atributo `[Authorize]` / `[AllowAnonymous]`. Invoca `ITokenService.ValidateToken` en cada solicitud para extraer el `accountId` del JWT y lo inyecta en el contexto HTTP. Los endpoints marcados con `[AllowAnonymous]` omiten esta validación (usados en `sign-in` y `verify-code`). |
+
+### 4.2.2. Bounded Context: Space & Resource Management
+
+El contexto de Space & Resource Management concentra la responsabilidad sobre la gestión de los espacios físicos del establecimiento educativo: aulas (Classroom), recursos materiales asociados a ellas (Resource) y áreas comunes disponibles para toda la institución (SharedArea). Este bounded context actúa como el registro canónico del inventario espacial de la plataforma EduSpace IoT: cualquier otro contexto que necesite validar la existencia de un aula debe consultarlo a través de su fachada ACL pública, y el propio contexto valida la identidad del docente responsable de cada aula mediante una consulta al bounded context Profiles. Los eventos de dominio identificados durante el Design-Level EventStorming que delimitan este contexto son `ClassroomCreated`, `ClassroomUpdated`, `ClassroomDeleted`, `ResourceCreated`, `ResourceUpdated`, `ResourceDeleted`, `SharedAreaCreated`, `SharedAreaUpdated` y `SharedAreaDeleted`; sin embargo, en la implementación actual estos eventos no se materializan como objetos de dominio explícitos, dado que el equipo optó por una coordinación directa entre capas vía servicios de comando y consulta.
+
+El contexto interactúa con dos vecinos inmediatos: recibe llamadas entrantes desde BreakdownManagement (que necesita confirmar que el aula afectada por una avería existe) y emite llamadas salientes hacia Profiles (para verificar que el docente asignado a un aula tiene un perfil registrado). Ambas interacciones se canalizan exclusivamente a través de interfaces ACL, respetando el principio de autonomía de bounded context.
+
+#### 4.2.2.1. Domain Layer
+
+El Domain Layer del contexto Space & Resource Management encapsula las reglas de negocio relativas a la creación y modificación de espacios físicos. Las invariantes principales son: el nombre de un `Classroom` no puede estar duplicado en el sistema; la asignación de un docente a un aula requiere que ese docente exista en el bounded context Profiles (validación inyectada mediante `Func<int, bool>`); y un `Resource` solo puede pertenecer a un `Classroom` existente. Las interfaces de repositorio abstraen la persistencia de cada aggregate, permitiendo que la Infrastructure Layer provea implementaciones concretas sin contaminar el dominio.
+
+Como decisión técnica complementaria, el equipo introdujo tres mixins de auditoría —`ClassroomAudit`, `ResourceAudit` y `SharedAreaAudit`— que encapsulan los campos `CreatedAt` y `UpdatedAt` requeridos por la librería `EntityFrameworkCore.CreatedUpdatedDate`. `ClassroomAudit` y `ResourceAudit` implementan la interfaz `IEntityWithCreatedUpdatedDate`, lo que habilita el poblado automático de fechas por parte del interceptor de EF Core. `SharedAreaAudit` declara las mismas columnas pero no implementa dicha interfaz, lo que constituye una inconsistencia menor de implementación: los campos están presentes en el esquema pero el interceptor no los pobla automáticamente para ese aggregate. El contexto no publica Domain Events.
+
+Los Commands y Queries se definen dentro del propio Domain Layer en las carpetas `Domain/Model/Commands` y `Domain/Model/Queries`, siguiendo la convención del proyecto de mantener los mensajes junto al modelo que los consume.
+
+| Clase | Tipo | Responsabilidad |
+| --- | --- | --- |
+| `Classroom` | Aggregate Root | Representa un aula del establecimiento. Atributos: `Id`, `Name`, `Description`, `TeacherId` (Value Object), colección de navegación `Resources`. Expone `UpdateTeacherId(int? teacherId, Func<int, bool> verifyProfile)` como mecanismo de validación inyectada al momento de actualizar el docente responsable. Sus propiedades utilizan `private set`. |
+| `Resource` | Aggregate Root | Representa un recurso físico asociado a un aula. Atributos: `Id`, `Name`, `KindOfResource`, `ClassroomId` (FK), `Classroom` (navigation property). Sus propiedades utilizan `private set` excepto `Id` que usa `set` por requerimiento de EF Core. |
+| `SharedArea` | Aggregate Root | Representa un área común de la institución. Atributos: `Id`, `Name`, `Capacity`, `Description`. A diferencia de `Classroom` y `Resource`, todas sus propiedades utilizan `public set`. |
+| `TeacherId` | Value Object | Record C# que encapsula el identificador de un docente. Atributo: `TeacherIdentifier: int`. |
+| `ClassroomAudit` | Mixin de auditoría | Implementa `IEntityWithCreatedUpdatedDate`. Declara `CreatedDate` (`CreatedAt`) y `UpdatedDate` (`UpdatedAt`) como `DateTimeOffset?`. Habilita el poblado automático de fechas vía interceptor EF Core. |
+| `ResourceAudit` | Mixin de auditoría | Implementa `IEntityWithCreatedUpdatedDate`. Mismo comportamiento que `ClassroomAudit`. |
+| `SharedAreaAudit` | Mixin de auditoría | No implementa `IEntityWithCreatedUpdatedDate`. Declara `CreatedDate` y `UpdatedDate` con las mismas columnas que los otros mixins, pero el interceptor no las pobla automáticamente. |
+| `IClassroomRepository` | Repository Interface | Contrato de persistencia para `Classroom`. Operaciones: `AddAsync`, `FindByIdAsync`, `ListAsync`, `FindByTeacherIdAsync`, `ExistsByNameAsync`, `ExistsByClassroomId`, `Update`, `Remove`. |
+| `IResourceRepository` | Repository Interface | Contrato de persistencia para `Resource`. Operaciones: `AddAsync`, `FindByIdAsync`, `ListAsync`, `FindByClassroomIdAsync`, `ExistsByNameAsync`, `Update`, `Remove`. |
+| `ISharedAreaRepository` | Repository Interface | Contrato de persistencia para `SharedArea`. Operaciones: `AddAsync`, `FindByIdAsync`, `ListAsync`, `Update`, `Remove`. |
+| `CreateClassroomCommand` | Command | Comando para crear un `Classroom`. Campos: `Name`, `Description`, `TeacherId`. |
+| `UpdateClassroomCommand` | Command | Comando para actualizar un `Classroom`. Incluye `ClassroomId` como identificador de la instancia a modificar. |
+| `DeleteClassroomCommand` | Command | Comando para eliminar un `Classroom` por su `ClassroomId`. |
+| `CreateResourceCommand` | Command | Comando para crear un `Resource`. Campos: `Name`, `KindOfResource`, `ClassroomId`. |
+| `UpdateResourceCommand` | Command | Comando para actualizar un `Resource`. Incluye `Id` como identificador de la instancia a modificar. |
+| `DeleteResourceCommand` | Command | Comando para eliminar un `Resource` por su `ResourceId`. |
+| `CreateSharedAreaCommand` | Command | Comando para crear un `SharedArea`. Campos: `Name`, `Capacity`, `Description`. |
+| `UpdateSharedAreaCommand` | Command | Comando para actualizar un `SharedArea`. Incluye `Id` como identificador de la instancia a modificar. |
+| `DeleteSharedAreaCommand` | Command | Comando para eliminar un `SharedArea` por su `Id`. |
+| `GetClassroomByIdQuery` | Query | Consulta de un `Classroom` por su `ClassroomId`. |
+| `GetAllClassroomsQuery` | Query | Consulta del listado completo de aulas. |
+| `GetAllClassroomsByTeacherIdQuery` | Query | Consulta de aulas filtradas por `TeacherId`. |
+| `GetResourceByIdQuery` | Query | Consulta de un `Resource` por su `Id`. |
+| `GetAllResourcesQuery` | Query | Consulta del listado completo de recursos. |
+| `GetAllResourcesByClassroomIdQuery` | Query | Consulta de recursos pertenecientes a un aula específica. |
+| `GetSharedAreaByIdQuery` | Query | Consulta de un `SharedArea` por su `Id`. |
+| `GetAllSharedAreasQuery` | Query | Consulta del listado completo de áreas comunes. |
+
+#### 4.2.2.2. Interface Layer
+
+La Interface Layer del contexto Space & Resource Management expone tres conjuntos de endpoints REST que constituyen los puntos de entrada HTTP al bounded context. `ClassroomsController` gestiona el ciclo de vida completo de las aulas; `ResourcesController` administra los recursos físicos bajo una ruta anidada en el aula propietaria (`/api/v1/classrooms/{classroomId}/resources`); y `SharedAreaController` cubre las áreas comunes. Esta capa traduce las solicitudes HTTP en comandos o consultas, delega su ejecución íntegramente a la Application Layer y serializa la respuesta. No contiene reglas de dominio. Los assembladores de transformación (`*Assembler`) desacoplan la representación HTTP (Resources DTOs) del modelo de dominio.
+
+Adicionalmente, esta capa aloja la fachada ACL de entrada `SpacesAndResourceManagementFacade`, que expone al bounded context BreakdownManagement el contrato `ValidateClassroomIdExistence(int classroomId)` sin revelar el modelo interno del contexto.
+
+| Clase | Tipo | Endpoints / Operaciones |
+| --- | --- | --- |
+| `ClassroomsController` | Controller (`/api/v1/classrooms`) | `GET /api/v1/classrooms` — lista todas las aulas. `GET /api/v1/classrooms/{id}` — obtiene un aula por su Id. `GET /api/v1/classrooms/teachers/{teacherId}` — lista aulas por docente. `POST /api/v1/classrooms/teachers/{teacherId}` — crea un aula asignando un docente responsable. `PUT /api/v1/classrooms/{id}` — actualiza nombre, descripción y docente de un aula. `DELETE /api/v1/classrooms/{id}` — elimina un aula. |
+| `ResourcesController` | Controller (`/api/v1/classrooms/{classroomId}/resources`) | `GET .../resources` — lista recursos del aula. `GET .../resources/{resourceId}` — obtiene un recurso validando pertenencia al aula. `POST .../resources` — crea un recurso asociado al aula. `PUT .../resources/{resourceId}` — actualiza nombre, tipo y aula de un recurso. `DELETE .../resources/{resourceId}` — elimina un recurso. |
+| `SharedAreaController` | Controller (`/api/v1/shared-area`) | `GET /api/v1/shared-area` — lista todas las áreas comunes. `GET /api/v1/shared-area/{id}` — obtiene un área por su Id. `POST /api/v1/shared-area` — crea un área común. `PUT /api/v1/shared-area/{id}` — actualiza nombre, capacidad y descripción. `DELETE /api/v1/shared-area/{id}` — elimina un área común. |
+| `ClassroomResource` | Resource (DTO de salida) | Representación JSON de un `Classroom` para respuestas GET/POST/PUT. |
+| `CreateClassroomResource` | Resource (DTO de entrada) | Payload de creación de aula (sin Id, sin TeacherId — llega por ruta). |
+| `UpdateClassroomResource` | Resource (DTO de entrada) | Payload de actualización de aula. |
+| `ResourceResource` | Resource (DTO de salida) | Representación JSON de un `Resource`. |
+| `CreateResourceResource` | Resource (DTO de entrada) | Payload de creación de recurso. |
+| `UpdateResourceResource` | Resource (DTO de entrada) | Payload de actualización de recurso. |
+| `SharedAreaResource` | Resource (DTO de salida) | Representación JSON de un `SharedArea`. |
+| `CreateSharedAreaResource` | Resource (DTO de entrada) | Payload de creación de área común. |
+| `UpdateSharedAreaResource` | Resource (DTO de entrada) | Payload de actualización de área común. |
+| `ClassroomResourceFromEntityAssembler` | Assembler | Convierte una entidad `Classroom` en `ClassroomResource`. |
+| `CreateClassroomCommandFromResourceAssembler` | Assembler | Convierte `CreateClassroomResource` + `teacherId` de ruta en `CreateClassroomCommand`. |
+| `UpdateClassroomCommandFromResourceAssembler` | Assembler | Convierte `UpdateClassroomResource` + `id` de ruta en `UpdateClassroomCommand`. |
+| `ResourceResourceFromEntityAssembler` | Assembler | Convierte una entidad `Resource` en `ResourceResource`. |
+| `CreateResourceCommandFromResourceAssembler` | Assembler | Convierte `CreateResourceResource` + `classroomId` de ruta en `CreateResourceCommand`. |
+| `UpdateResourceCommandFromResourceAssembler` | Assembler | Convierte `UpdateResourceResource` + `resourceId` de ruta en `UpdateResourceCommand`. |
+| `SharedAreaResourceFromEntityAssembler` | Assembler | Convierte una entidad `SharedArea` en `SharedAreaResource`. |
+| `CreateSharedAreaCommandFromResourceAssembler` | Assembler | Convierte `CreateSharedAreaResource` en `CreateSharedAreaCommand`. |
+| `UpdateSharedAreaCommandFromResourceAssembler` | Assembler | Convierte `UpdateSharedAreaResource` + `id` de ruta en `UpdateSharedAreaCommand`. |
+| `ISpacesAndResourceManagementFacade` | ACL Interface (inbound) | Contrato expuesto a BreakdownManagement BC. Operación: `ValidateClassroomIdExistence(int classroomId): bool`. |
+| `SpacesAndResourceManagementFacade` | ACL Service (inbound) | Implementación de `ISpacesAndResourceManagementFacade`. Delega a `IClassroomRepository.ExistsByClassroomId`. |
+
+#### 4.2.2.3. Application Layer
+
+La Application Layer orquesta los flujos de proceso del bounded context sin contener reglas de dominio propias. Esta capa contiene los command services y query services que coordinan la interacción entre el Domain Layer y la Infrastructure Layer. Los command services reciben comandos provenientes de la Interface Layer, aplican validaciones de integridad (existencia de entidades relacionadas, unicidad de nombres) y delegan las operaciones de escritura en los repositorios del dominio. Los query services atienden consultas de solo lectura, delegando directamente en las operaciones de lectura de los repositorios. Dado que el contexto no publica Domain Events, no existen event handlers ni policies en esta capa.
+
+Cabe destacar que `ClassroomCommandService` recibe por inyección de dependencias a `IExternalProfileService` —el adaptador ACL saliente hacia Profiles BC— y lo utiliza tanto en la creación de aulas (verificación directa previa a la persistencia) como en la actualización (pasado como `Func<int, bool>` al método `Classroom.UpdateTeacherId`). Esta decisión desacopla la lógica de validación externa del aggregate, manteniendo al aggregate libre de dependencias hacia infraestructura.
+
+| Clase | Tipo | Responsabilidad |
+| --- | --- | --- |
+| `ClassroomCommandService` | Command Service | Implementa `IClassroomCommandService`. Maneja `CreateClassroomCommand` (verifica TeacherId vía `IExternalProfileService`, verifica unicidad de nombre, persiste el aggregate), `UpdateClassroomCommand` (carga, actualiza campos y delega la validación del docente como `Func<int, bool>` a `Classroom.UpdateTeacherId`) y `DeleteClassroomCommand` (carga y elimina). |
+| `ResourceCommandService` | Command Service | Implementa `IResourceCommandService`. Maneja `CreateResourceCommand` (verifica existencia del aula asociada, verifica unicidad de nombre, persiste), `UpdateResourceCommand` (carga y actualiza campos) y `DeleteResourceCommand` (carga y elimina). |
+| `SharedAreaCommandService` | Command Service | Implementa `ISharedAreaCommandService`. Maneja `CreateSharedAreaCommand`, `UpdateSharedAreaCommand` y `DeleteSharedAreaCommand` sobre el aggregate `SharedArea`. |
+| `ClassroomQueryService` | Query Service | Implementa `IClassroomQueryService`. Maneja `GetClassroomByIdQuery`, `GetAllClassroomsQuery` y `GetAllClassroomsByTeacherIdQuery` delegando en `IClassroomRepository`. |
+| `ResourceQueryService` | Query Service | Implementa `IResourceQueryService`. Maneja `GetResourceByIdQuery`, `GetAllResourcesQuery` y `GetAllResourcesByClassroomIdQuery` delegando en `IResourceRepository`. |
+| `SharedAreaQueryService` | Query Service | Implementa `ISharedAreaQueryService`. Maneja `GetSharedAreaByIdQuery` y `GetAllSharedAreasQuery` delegando en `ISharedAreaRepository`. |
+| `IExternalProfileService` | ACL Interface (outbound) | Contrato del adaptador saliente hacia Profiles BC. Operación: `VerifyProfile(int profileId): bool`. |
+| `ExternalProfileService` | ACL Service (outbound) | Implementación de `IExternalProfileService`. Delega en `IProfilesContextFacade.ValidateTeacherProfileIdExistence`, el contrato que el bounded context Profiles expone hacia sus consumidores. |
+
+#### 4.2.2.4. Infrastructure Layer
+
+La Infrastructure Layer del contexto Space & Resource Management provee las implementaciones concretas de los contratos definidos en el Domain Layer, utilizando Entity Framework Core como ORM sobre una base de datos MySQL, de manera consistente con la decisión de infraestructura adoptada para el Web API de la plataforma EduSpace IoT (véase sección 4.1.3.3). Las implementaciones de repositorio extienden la clase base `BaseRepository<T>` del proyecto compartido y traducen las operaciones de dominio en consultas LINQ sobre el `AppDbContext`.
+
+Como nota técnica relevante, los tres aggregates de este bounded context —`Classroom`, `Resource` y `SharedArea`— no se registran mediante propiedades `DbSet<T>` explícitas en `AppDbContext`. En su lugar, son descubiertos y configurados a través del método `OnModelCreating` mediante la API de configuración fluida de Entity Framework Core, siguiendo la misma convención aplicada en todos los contextos del proyecto. Las convenciones de nomenclatura en snake_case se aplican automáticamente a través de Humanizer.
+
+| Clase | Tipo | Tecnología / Responsabilidad |
+| --- | --- | --- |
+| `ClassroomRepository` | Repository (implementación) | Entity Framework Core + MySQL. Implementa `IClassroomRepository`. Extiende `BaseRepository<Classroom>`. Operaciones propias: `FindByTeacherIdAsync` (filtra por `TeacherId.TeacherIdentifier`), `ExistsByNameAsync`, `ExistsByClassroomId`, `ExistsByClassroomName`. Sobrescribe `FindByIdAsync` y `ListAsync`. |
+| `ResourceRepository` | Repository (implementación) | Entity Framework Core + MySQL. Implementa `IResourceRepository`. Extiende `BaseRepository<Resource>`. Gestiona la persistencia y consulta de instancias de `Resource`, incluyendo filtrado por `ClassroomId`. |
+| `SharedAreaRepository` | Repository (implementación) | Entity Framework Core + MySQL. Implementa `ISharedAreaRepository`. Extiende `BaseRepository<SharedArea>`. Gestiona la persistencia y consulta de instancias de `SharedArea`. |
+| `AppDbContext` | DbContext (compartido) | Entity Framework Core. Los aggregates `Classroom`, `Resource` y `SharedArea` se configuran mediante `OnModelCreating` (sin `DbSet<T>` explícito). Las relaciones, índices, conversiones de tipo y los mixins de auditoría (`ClassroomAudit`, `ResourceAudit`, `SharedAreaAudit`) se configuran en este método usando la API fluida. |
+
+### 4.2.3. Bounded Context: Reservation & Scheduling
+
+El contexto de Reservation & Scheduling concentra toda la responsabilidad relacionada con la planificación temporal de las actividades académicas de la institución: la creación y gestión de reuniones (meetings) entre administradores y docentes en aulas específicas, y la reserva de áreas comunes (shared areas) por parte de los docentes para uso no curricular. Este bounded context es el guardián de las invariantes de solapamiento horario y disponibilidad de espacio; ningún otro contexto puede crear o modificar bloques de tiempo sin pasar por sus contratos de dominio.
+
+En la implementación actual del Web API, este bounded context se materializa en dos sub-módulos físicos: `ReservationScheduling/`, que contiene el aggregate `Meeting` bajo el namespace `FULLSTACKFURY.EduSpace.API.ReservationScheduling.*`, y `Reservations/`, que contiene el aggregate `Reservation`. Este segundo sub-módulo declara sus capas de Domain, Application e Infrastructure bajo el namespace `FULLSTACKFURY.EduSpace.API.EventsScheduling.*` por una decisión histórica de organización; sus contratos REST sí utilizan el namespace `Reservations.Interface.REST`. El equipo prevé reconciliar la nomenclatura física en una iteración posterior. Estratégicamente, ambos sub-módulos forman un único bounded context unificado en el modelo de dominio (véase sección 4.1), dado que comparten la misma política de negocio central: garantizar que ningún espacio o docente quede asignado a dos eventos simultáneos en el mismo rango horario.
+
+#### 4.2.3.1. Domain Layer
+
+El Domain Layer del contexto Reservation & Scheduling encapsula las reglas de negocio que gobiernan la asignación de tiempo sobre espacios y personas: qué constituye un bloque horario válido, cuándo existe un conflicto de ocupación, y cómo se registra la participación de un docente en una reunión. Esta capa es completamente independiente de la infraestructura y define los contratos que las capas superiores deben respetar a través de interfaces de repositorio y servicios de dominio.
+
+El aggregate `Meeting` (sub-módulo `ReservationScheduling/`) representa una reunión programada por un administrador en un aula concreta para uno o más docentes. Gestiona su propia colección de participantes a través de la entidad `MeetingSession` y expone operaciones de negocio para añadir o remover docentes, validando la ausencia de conflictos horarios antes de persistir el cambio. El aggregate `Reservation` (sub-módulo `Reservations/`) representa la reserva de un área común por parte de un docente; incorpora en sí mismo la lógica de verificación de disponibilidad mediante el método `CanReserve`, que evalúa solapamientos contra las reservas existentes del área en el mismo día. Ambos aggregates comparten una invariante de negocio idéntica para las ventanas horarias: inicio anterior al fin, duración máxima de dos horas, y franja permitida entre las 07:00 y las 20:00 horas.
+
+| Clase | Tipo | Responsabilidad / Atributos clave |
+| --- | --- | --- |
+| `Meeting` | Aggregate Root | Representa una reunión programada por un administrador en un aula. Atributos: `Id`, `Title`, `Description`, `Date` (DateOnly), `StartTime` (TimeOnly), `EndTime` (TimeOnly), `AdministratorId`, `ClassroomId`. Expone `AddTeacherToMeeting` y `RemoveTeacherFromMeeting` sobre la colección `MeetingParticipants`. Implementado como clase parcial distribuida en `Meeting.cs` y `MeetingManagement.cs`. |
+| `Reservation` | Aggregate Root | Representa la reserva de un área común por un docente. Atributos: `Id`, `Title`, `ReservationDate`, `AreaId`, `TeacherId`. Contiene el método de dominio `CanReserve(IEnumerable<Reservation>)` que valida la ausencia de solapamiento horario contra reservas existentes. |
+| `MeetingSession` | Entity | Entidad de unión entre `Meeting` y un docente participante. Atributos: `MeetingId`, `TeacherId`, referencias de navegación a `Meeting` y `TeacherProfile` (del BC Profiles). |
+| `MeetingAudit` | Audit Class | Clase de trazabilidad de cambios sobre reuniones. Atributos: `MeetingAuditId` (Guid), `MeetingId` (Guid), `Action`, `ActionPerformedBy`, `CreatedDate`, `UpdatedDate`, `PreviousState`, `NewState`. |
+| `MeetingDate` | Value Object | Encapsula el rango temporal de una reunión con invariantes estrictas: inicio ≠ fin, inicio < fin, ninguno de los dos en el pasado, duración máxima de 2 horas, franja horaria entre 07:00 y 20:00. Atributos: `Start` (DateTime), `End` (DateTime). |
+| `ReservationDate` | Value Object | Encapsula el rango temporal de una reserva de área común. Comparte las mismas invariantes que `MeetingDate`. Atributos: `Start` (DateTime), `End` (DateTime). Implementado como `record`. |
+| `Teacher` | Value Object | Representa los datos identificatorios de un docente en el contexto de una reunión. Atributos: `Id` (int), `FirstName` (string), `LastName` (string). |
+| `AdministratorId` | Value Object | Envuelve el identificador del administrador que programa la reunión. Atributo: `AdministratorIdentifier` (int). |
+| `ClassroomId` | Value Object | Envuelve el identificador del aula asignada a la reunión. Atributo: `ClassroomIdentifier` (int). |
+| `AreaId` | Value Object | Envuelve el identificador del área común reservada. Atributo: `Identifier` (int). |
+| `TeacherId` (ReservationScheduling) | Value Object | Envuelve el identificador del docente en el contexto del sub-módulo Meeting. |
+| `TeacherId` (Reservations) | Value Object | Envuelve el identificador del docente en el contexto del sub-módulo Reservation. Atributo: `TeacherIdentifier` (int). |
+| `IMeetingRepository` | Repository Interface | Contrato para persistir y consultar `Meeting`. Operaciones: `AddAsync`, `FindByIdAsync` (con participantes), `ListAsync`, `FindAllByAdminIdAsync`, `FindAllByTeacherIdAsync`, `Remove`, `Update`. |
+| `IReservationRepository` | Repository Interface | Contrato para persistir y consultar `Reservation`. Operaciones: `AddAsync`, `FindByIdAsync`, `ListAsync`, `FindAllByAreaIdAsync`, `FindAllByAreaIdMonthAndDayAsync`, `Remove`, `Update`. |
+| `IMeetingCommandService` | Domain Service Interface | Contrato de operaciones de escritura sobre `Meeting`: crear, actualizar, eliminar, añadir/remover participante. |
+| `IMeetingQueryService` | Domain Service Interface | Contrato de consultas sobre `Meeting`: por Id, por administrador, por docente, listado general. |
+| `IReservationCommandService` | Domain Service Interface | Contrato de operaciones de escritura sobre `Reservation`: crear, actualizar, eliminar. |
+| `IReservationQueryService` | Domain Service Interface | Contrato de consultas sobre `Reservation`: por Id, por área, por área/mes/día, listado general. |
+| `IExternalClassroomService` | ACL Interface (outbound) | Contrato interno del sub-módulo Meeting para validar la existencia de un aula contra el BC Spaces & Resource Management. |
+| `IRExternalProfileService` | ACL Interface (outbound) | Contrato interno del sub-módulo Meeting para validar la existencia de administradores y docentes contra el BC Profiles. |
+| `IExternalProfileService` | ACL Interface (outbound) | Contrato interno del sub-módulo Reservation para validar la existencia de un docente contra el BC Profiles. |
+
+#### 4.2.3.2. Interface Layer
+
+La Interface Layer del contexto Reservation & Scheduling expone tres controladores REST que sirven como puertos de entrada al bounded context. `MeetingsController` atiende el ciclo de vida completo de las reuniones; `MeetingParticipantsController` gestiona exclusivamente la asignación y remoción de docentes participantes en una reunión existente; y `ReservationsController` atiende el ciclo de vida de las reservas de áreas comunes. Los controladores delegan la totalidad de la lógica de negocio hacia la Application Layer y se limitan a la traducción entre representaciones HTTP y comandos o consultas de dominio mediante los ensambladores del paquete `Transform`.
+
+Cada controlador utiliza el patrón Resource/Assembler: los recursos de entrada (`CreateMeetingResource`, `UpdateMeetingResource`, `CreateReservationResource`, `UpdateReservationResource`) son mapeados a comandos de dominio por los `CommandFromResourceAssembler` correspondientes, mientras que los aggregates resultantes son proyectados a recursos de salida (`MeetingResource`, `ReservationResource`) por los `EntityFromAssembler` respectivos.
+
+| Clase | Tipo | Endpoints / Operaciones |
+| --- | --- | --- |
+| `MeetingsController` | Controller | `POST /api/v1/administrators/{administratorId}/classrooms/{classroomId}/meetings` — crea una reunión en un aula para un administrador. `GET /api/v1/meetings` — lista todas las reuniones. `GET /api/v1/teachers/{teacherId}/meetings` — lista reuniones de un docente. `GET /api/v1/meetings/{id}` — obtiene una reunión por Id. `PUT /api/v1/meetings/{id}` — actualiza una reunión. `DELETE /api/v1/meetings/{id}` — elimina una reunión. |
+| `MeetingParticipantsController` | Controller | `POST /api/v1/meetings/{meetingId}/teachers/{teacherId}` — agrega un docente a la lista de participantes de una reunión. `DELETE /api/v1/meetings/{meetingId}/teachers/{teacherId}` — remueve un docente de la lista de participantes. |
+| `ReservationsController` | Controller | `POST /api/v1/teachers/{teacherId}/areas/{areaId}/reservations` — crea una reserva de área común. `GET /api/v1/reservations` — lista todas las reservas. `GET /api/v1/areas/{areaId}/reservations` — lista reservas de un área. `GET /api/v1/reservations/{id}` — obtiene una reserva por Id. `PUT /api/v1/reservations/{id}` — actualiza una reserva. `DELETE /api/v1/reservations/{id}` — elimina una reserva. |
+
+#### 4.2.3.3. Application Layer
+
+La Application Layer orquesta los flujos de proceso del bounded context sin contener reglas de dominio propias. Esta capa aloja los servicios de comando y consulta que coordinan la interacción entre el Domain Layer y la Infrastructure Layer, y es el único punto donde se invocan los adaptadores ACL para validar referencias cruzadas hacia otros bounded contexts antes de ejecutar operaciones sobre los aggregates.
+
+`MeetingCommandService` coordina la creación, actualización y eliminación de reuniones, así como la gestión de participantes. Antes de crear o actualizar una reunión, valida la existencia del administrador responsable a través de `IRExternalProfileService` y la existencia del aula asignada a través de `IExternalClassroomService`. Al añadir un participante, valida la existencia del docente y detecta conflictos horarios consultando sus reuniones previas. `ReservationCommandService` coordina el ciclo de vida de las reservas; valida la existencia del docente reservante a través de `IExternalProfileService` y delega al método de dominio `CanReserve` la detección de solapamientos en el área solicitada.
+
+| Clase | Tipo | Responsabilidad |
+| --- | --- | --- |
+| `MeetingCommandService` | Command Service | Implementa `IMeetingCommandService`. Coordina la creación, actualización y eliminación de `Meeting`, y la gestión de participantes (`AddTeacherToMeeting`, `RemoveTeacherFromMeeting`). Invoca `IRExternalProfileService` para validar administrador y docente, e `IExternalClassroomService` para validar el aula. Detecta conflictos horarios entre reuniones al agregar participantes o actualizar horarios. |
+| `MeetingQueryService` | Query Service | Implementa `IMeetingQueryService`. Resuelve consultas de solo lectura sobre `Meeting` delegando a `IMeetingRepository`: listado general, por Id, por administrador y por docente. |
+| `ReservationCommandService` | Command Service | Implementa `IReservationCommandService`. Coordina la creación, actualización y eliminación de `Reservation`. Valida la existencia del docente vía `IExternalProfileService`. Delega la verificación de solapamiento al método `CanReserve` del aggregate antes de persistir. |
+| `ReservationQueryService` | Query Service | Implementa `IReservationQueryService`. Resuelve consultas de solo lectura sobre `Reservation`: listado general, por área, por área/mes/día y por Id. |
+| `ExternalClassroomServices` | ACL Adapter (outbound) | Implementa `IExternalClassroomService`. Traduce la llamada `ValidateClassroomId` hacia `ISpacesAndResourceManagementFacade.ValidateClassroomIdExistence`, desacoplando el sub-módulo Meeting del BC Spaces & Resource Management. |
+| `RExternalProfileServices` | ACL Adapter (outbound) | Implementa `IRExternalProfileService`. Traduce las llamadas de validación de docente y administrador hacia `IProfilesContextFacade`, desacoplando el sub-módulo Meeting del BC Profiles. |
+| `ExternalProfileServices` | ACL Adapter (outbound) | Implementa `IExternalProfileService` (sub-módulo Reservation). Traduce la validación de existencia de docente hacia `IProfilesContextFacade`, desacoplando el sub-módulo Reservation del BC Profiles. |
+
+#### 4.2.3.4. Infrastructure Layer
+
+La Infrastructure Layer del contexto Reservation & Scheduling provee las implementaciones concretas de los contratos de repositorio definidos en el Domain Layer, utilizando Entity Framework Core como ORM sobre una base de datos MySQL, consistente con la decisión de infraestructura adoptada para el Web API de la plataforma EduSpace IoT (véase sección 4.1.3.3). Las implementaciones de repositorio extienden la clase base genérica `BaseRepository<T>` y sobrescriben las operaciones que requieren la carga de entidades relacionadas mediante `Include`/`ThenInclude` para materializar el grafo de objetos completo del aggregate.
+
+`MeetingRepository` carga la colección de participantes (`MeetingParticipants`) junto con sus referencias a `TeacherProfile` en cada consulta, lo que garantiza que la Application Layer reciba siempre el aggregate `Meeting` con su estado completo. `ReservationRepository` implementa las consultas filtradas por área y por fecha que soportan la validación de solapamiento horario. El `AppDbContext` compartido del proyecto configura los `DbSet` para ambos aggregates y aplica las convenciones de nomenclatura en snake_case mediante Humanizer.
+
+| Clase | Tipo | Tecnología / Responsabilidad |
+| --- | --- | --- |
+| `MeetingRepository` | Repository (implementación) | Entity Framework Core + MySQL. Implementa `IMeetingRepository`. Sobrescribe `FindByIdAsync` y `ListAsync` para incluir `MeetingParticipants` y `Teacher` mediante eager loading. Provee `FindAllByAdminIdAsync` y `FindAllByTeacherIdAsync` con filtros LINQ sobre los Value Objects `AdministratorId` y `TeacherId`. |
+| `ReservationRepository` | Repository (implementación) | Entity Framework Core + MySQL. Implementa `IReservationRepository`. Provee `FindAllByAreaIdAsync` y `FindAllByAreaIdMonthAndDayAsync` con filtros LINQ sobre los campos del Value Object `ReservationDate`, permitiendo la detección diaria de solapamientos en el aggregate. |
+| `AppDbContext` | DbContext (compartido) | Entity Framework Core. Incluye `DbSet<Meeting>` y `DbSet<Reservation>` junto con los del resto de bounded contexts. Configura los mappings, índices y conversiones de tipo requeridos para ambos aggregates mediante la API de configuración fluida. Aplica snake_case en nombres de columnas y tablas vía Humanizer. |
+
+### 4.2.4. Bounded Context: Breakdown Management
+
+El contexto de Breakdown Management concentra toda la responsabilidad relacionada con el registro, seguimiento y resolución de incidencias sobre recursos físicos de la institución. Su misión es permitir que el personal autorizado reporte fallas o averías en equipos y espacios, y que el estado de cada incidencia sea actualizado a lo largo de su ciclo de vida hasta su resolución. Este bounded context es el punto de entrada para la gestión reactiva del mantenimiento: recibe reportes de recursos dañados o fuera de servicio, los asocia a la entidad de recurso correspondiente en el BC Space & Resource Management mediante una referencia tipada, y expone su estado a la plataforma para que otros contextos puedan consultarlo.
+
+Los eventos de dominio identificados durante el Design-Level EventStorming que delimitan este contexto incluyen `ReportCreated` (una nueva incidencia es registrada sobre un recurso) y `ReportResolutionNotified` (la incidencia es marcada como resuelta). El actor principal que interactúa con él es el Administrador, quien crea reportes ante una avería y los actualiza conforme avanza la gestión.
+
+#### 4.2.4.1. Domain Layer
+
+El Domain Layer del contexto Breakdown Management encapsula las reglas de negocio que gobiernan el ciclo de vida de un reporte de avería: qué constituye un reporte válido, qué estados puede adoptar y cómo se referencia el recurso afectado de forma tipada. Esta capa es independiente de toda infraestructura y define los contratos que las capas superiores deben respetar.
+
+El aggregate raíz `Report` representa la entidad central del contexto. Contiene el tipo de incidencia (`KindOfReport`), una descripción libre (`Description`), la referencia tipada al recurso afectado (`ResourceId`) y la fecha de creación (`CreatedAt`). El estado del reporte es modelado por el Value Object `ReportStatus`, que define el ciclo de vida de la incidencia. La referencia al recurso externo es modelada por el Value Object `ResourceId`, que encapsula y valida el identificador entero del recurso correspondiente al BC Space & Resource Management.
+
+Como nota de consistencia de naming: los archivos físicos de los Value Objects presentan naming inconsistente con sus clases — `Reportstatus.cs` (con 's' minúscula) y `Resourceid.cs` (con 'i' minúscula) — mientras que las clases declaradas en su interior utilizan correctamente `ReportStatus` y `ResourceId` en PascalCase.
+
+El modelo conceptual del Strategic-Level (sección 4.1) introduce el evento `ReportResolutionNotified`. La implementación actual del BC contempla este evento como compromiso de diseño a materializar en una iteración posterior, una vez se integre la infraestructura de eventos de dominio.
+
+| Clase | Tipo | Responsabilidad |
+| --- | --- | --- |
+| `Report` | Aggregate Root | Entidad raíz que registra una incidencia sobre un recurso físico. Atributos: `Id`, `KindOfReport`, `Description`, `ResourceId`, `CreatedAt`, `Status`. Se inicializa siempre con estado `EnProceso`. Expone el método `Update` para modificar tipo, descripción y estado. |
+| `ReportStatus` | Value Object | Define el ciclo de vida de un reporte mediante dos estados: `EnProceso` (valor interno: `"in progress"`) y `Completado` (valor interno: `"completed"`). La factoría `FromString` lanza `ArgumentException` ante cualquier valor no reconocido. Esta iteración define el ciclo de vida en dos estados; iteraciones posteriores podrán ampliar el modelo. |
+| `ResourceId` | Value Object | Referencia tipada al recurso afectado, perteneciente al BC Space & Resource Management. Encapsula un entero positivo (`Id`) e impone la invariante de que el valor sea mayor que cero. Se mapea como columna escalar mediante `HasConversion` en `AppDbContext`, a diferencia de otros Value Objects del proyecto que utilizan `OwnsOne`. |
+| `IReportRepository` | Repository Interface | Contrato de persistencia para el aggregate `Report`. Hereda de `IBaseRepository<Report>` (operaciones genéricas: `AddAsync`, `Update`, `Remove`, `FindByIdAsync`, `ListAsync`). Además expone `FindAllAsync()` — método específico que duplica la funcionalidad del genérico heredado `ListAsync()` — y `FindAllByResourceIdAsync(int resourceId)` para consultar reportes por recurso afectado. |
+| `IReportCommandService` | Service Interface | Contrato de aplicación para comandos de escritura. Operaciones: `Handle(CreateReportCommand)`, `Handle(UpdateReportCommand)`, `Handle(DeleteReportCommand)`. |
+| `IReportQueryService` | Service Interface | Contrato de aplicación para consultas de solo lectura. Operaciones: `Handle(GetAllReportsQuery)`, `Handle(GetAllReportsByResourceIdQuery)`, `Handle(GetReportByIdQuery)`. |
+| `CreateReportCommand` | Command | Transporta los datos necesarios para crear un reporte: `KindOfReport`, `Description`, `ResourceId`, `CreatedAt`. Valida en construcción que `KindOfReport` no sea nulo y que `ResourceId` sea mayor que cero. |
+| `UpdateReportCommand` | Command | Transporta los datos para actualizar un reporte existente: `Id`, `KindOfReport`, `Description`, `Status` (string que será convertido a `ReportStatus` vía `FromString`). |
+| `DeleteReportCommand` | Command | Identifica el reporte a eliminar por su `Id`. |
+| `GetAllReportsQuery` | Query | Consulta sin parámetros que solicita la lista completa de reportes. |
+| `GetAllReportsByResourceIdQuery` | Query | Consulta parametrizada por `ResourceId` para obtener los reportes asociados a un recurso específico. |
+| `GetReportByIdQuery` | Query | Consulta por `Id` para obtener un reporte individual. |
+
+#### 4.2.4.2. Interface Layer
+
+La Interface Layer del contexto Breakdown Management expone un único controlador REST que sirve como puerto de entrada al bounded context. Este controlador atiende las operaciones de creación, consulta, actualización y eliminación de reportes de avería, traduciendo las solicitudes HTTP en comandos o consultas que son procesados por la Application Layer y devolviendo respuestas serializadas en JSON. La implementación actual no incluye decoradores de autorización por rol en los endpoints; el control de acceso queda pendiente para una iteración posterior.
+
+Los recursos de transferencia (`CreateReportResource`, `UpdateReportResource`, `ReportResource`) y los ensambladores de transformación (`CreateReportCommandFromResourceAssembler`, `UpdateReportCommandFromResourceAssembler`, `ReportResourceFromEntityAssembler`) completan la capa, manteniendo la lógica de mapeo separada del controlador. Como detalle de implementación, el endpoint `POST /api/v1/reports` devuelve `200 OK` en lugar del `201 Created` semánticamente correcto para una operación de creación de recurso; la anotación Swagger del método declara `201` pero el código retorna `Ok(...)`.
+
+| Clase | Tipo | Endpoints / Operaciones |
+| --- | --- | --- |
+| `ReportsController` | Controller | `POST /api/v1/reports` — crea un nuevo reporte de avería. `GET /api/v1/reports` — lista todos los reportes. `GET /api/v1/reports/{id}` — obtiene un reporte por su ID. `GET /api/v1/reports/resources/{resourceId}` — obtiene todos los reportes asociados a un recurso. `PUT /api/v1/reports/{id}` — actualiza tipo, descripción y estado de un reporte. `DELETE /api/v1/reports/{id}` — elimina un reporte. |
+| `CreateReportResource` | Resource (entrada) | DTO de entrada para la creación: `KindOfReport`, `Description`, `ResourceId`, `CreatedAt`. |
+| `UpdateReportResource` | Resource (entrada) | DTO de entrada para la actualización: `KindOfReport`, `Description`, `Status` (string). |
+| `ReportResource` | Resource (salida) | DTO de salida con la representación completa del reporte: `Id`, `KindOfReport`, `Description`, `ResourceId`, `CreatedAt`, `Status`. |
+| `CreateReportCommandFromResourceAssembler` | Assembler | Transforma `CreateReportResource` en `CreateReportCommand`. |
+| `UpdateReportCommandFromResourceAssembler` | Assembler | Transforma `UpdateReportResource` y el `id` de ruta en `UpdateReportCommand`. |
+| `ReportResourceFromEntityAssembler` | Assembler | Transforma el aggregate `Report` en `ReportResource` para la respuesta HTTP. |
+
+#### 4.2.4.3. Application Layer
+
+La Application Layer del contexto Breakdown Management orquesta los flujos de proceso sin contener reglas de dominio propias. Implementa el patrón Command/Query mediante dos servicios: `ReportCommandService`, responsable de los flujos de escritura, y `ReportQueryService`, responsable de los flujos de lectura. Ambos servicios dependen únicamente de las interfaces definidas en el Domain Layer (`IReportRepository`, `IUnitOfWork`) y no tienen referencias directas a la infraestructura.
+
+El BC también define la posición de un servicio de salida (`ExternalProfileServices`) orientado a la integración con el BC Profiles para escenarios de notificación futura; su estado en la implementación actual se describe en la Infrastructure Layer.
+
+| Clase | Tipo | Responsabilidad |
+| --- | --- | --- |
+| `ReportCommandService` | Command Service | Implementa `IReportCommandService`. Gestiona los tres flujos de escritura: (1) `Handle(CreateReportCommand)` — instancia un nuevo `Report`, lo persiste vía `IReportRepository.AddAsync` y confirma la unidad de trabajo. (2) `Handle(UpdateReportCommand)` — carga el `Report` por Id, invoca `Report.Update(command)` para aplicar las modificaciones e invoca `ReportStatus.FromString` para la transición de estado, luego confirma el cambio. Lanza `ArgumentException` si el reporte no existe o si el estado proporcionado no es válido. (3) `Handle(DeleteReportCommand)` — carga el `Report`, lo elimina del repositorio y confirma la unidad de trabajo. |
+| `ReportQueryService` | Query Service | Implementa `IReportQueryService`. Gestiona los tres flujos de lectura: `Handle(GetAllReportsQuery)` delega en `IReportRepository.ListAsync()`; `Handle(GetAllReportsByResourceIdQuery)` delega en `FindAllByResourceIdAsync(resourceId)`; `Handle(GetReportByIdQuery)` delega en `FindByIdAsync(id)`. |
+
+#### 4.2.4.4. Infrastructure Layer
+
+La Infrastructure Layer del contexto Breakdown Management provee la implementación concreta del contrato de repositorio definido en el Domain Layer, utilizando Entity Framework Core como ORM sobre una base de datos MySQL, consistente con la decisión de infraestructura adoptada para toda la plataforma EduSpace IoT. La implementación de repositorio hereda de `BaseRepository<Report>` (infraestructura compartida del proyecto) y especializa las operaciones de consulta propias del BC.
+
+La configuración del aggregate `Report` se centraliza directamente en `AppDbContext`, sin un archivo de configuración separado por bounded context (a diferencia del enfoque `IEntityTypeConfiguration<T>` que podría adoptarse por consistencia). Esta configuración define la clave primaria, las propiedades obligatorias y, de forma notable, dos conversiones de tipo mediante la API fluida de EF Core: `ReportStatus` se mapea como columna de cadena (`HasConversion` entre `ReportStatus` y `string`) y `ResourceId` se mapea como columna escalar entera (`HasConversion` entre `ResourceId` y `int`, con nombre de columna explícito `ResourceId`). Este último punto diferencia a `ResourceId` del patrón `OwnsOne` utilizado para otros Value Objects del proyecto, dado que su naturaleza de referencia externa hace preferible el almacenamiento escalar.
+
+El BC define además la posición de la ACL outbound `ExternalProfileServices` hacia el BC Profiles, cuya implementación queda pendiente para integraciones futuras de notificación. El archivo `ExternalProfileServices.cs` existe como placeholder (stub vacío) que marca la frontera de integración.
+
+| Clase | Tipo | Tecnología / Responsabilidad |
+| --- | --- | --- |
+| `ReportRepository` | Repository (implementación) | Entity Framework Core + MySQL. Implementa `IReportRepository`. Hereda de `BaseRepository<Report>`. Sobreescribe `FindByIdAsync` para consultar directamente sobre `DbSet<Report>`. Implementa `FindAllAsync()` para obtener todos los reportes (paralelo funcional de `ListAsync()` del base) y `FindAllByResourceIdAsync(int resourceId)` para filtrar por `ResourceId` mediante comparación de Value Object. |
+| `AppDbContext` (configuración Report) | DbContext | Entity Framework Core. Define el `DbSet<Report>` del BC dentro del contexto compartido de la plataforma. Configura `ReportStatus` con `HasConversion<string>` (serialización a `"in progress"` / `"completed"`) y `ResourceId` con `HasConversion<int>` como columna escalar `ResourceId`, en lugar de `OwnsOne`. |
+| `ExternalProfileServices` | ACL Stub (outbound) | Placeholder sin implementación. Marca la posición de la ACL outbound hacia el BC Profiles para futuros escenarios de notificación al resolver una incidencia. |
+
+### 4.2.5. Bounded Context: IoT Monitoring
+
+El contexto de IoT Monitoring concentra toda la responsabilidad relacionada con la captura, persistencia, evaluación y visualización de datos ambientales y de ocupación provenientes de los dispositivos ESP32 instalados en las aulas. Este bounded context es el punto de convergencia entre el mundo embebido y la lógica de negocio de la plataforma: recibe lecturas agregadas desde el Edge API, evalúa los umbrales configurados por el administrador y gestiona el ciclo de vida completo de las alertas generadas cuando se detecta una condición anormal. Los eventos de dominio que delimitan este contexto, identificados durante el Design-Level EventStorming, son `SensorReadingCaptured`, `EnvironmentalThresholdExceeded`, `OccupancyStatusChanged` y `AlertGenerated`. Los actores que interactúan directamente con él son el Administrador (quien configura umbrales y gestiona alertas), el Docente (quien consulta el dashboard ambiental en modo lectura) y el Edge API (que actúa como productor de lecturas agregadas).
+
+#### 4.2.5.1. Domain Layer
+
+El Domain Layer del contexto IoT Monitoring encapsula las reglas de negocio fundamentales que gobiernan el monitoreo ambiental: qué constituye una lectura válida, cuándo una condición ambiental viola un umbral configurado, y cuál es el ciclo de vida de una alerta desde su generación hasta su resolución. Esta capa es independiente de toda infraestructura y define los contratos que las capas superiores deben respetar.
+
+Los tres aggregates principales son `SensorReading`, que representa la lectura agregada recibida desde el Edge API (con los valores de promedio, mínimo, máximo y conteo del minuto correspondiente); `Alert`, aggregate root con estado y ciclo de vida propio (`Active`, `Acknowledged`, `Dismissed`); y `MonitoringConfiguration`, que persiste los umbrales configurados por el administrador para cada sensor o espacio. Los eventos de dominio `EnvironmentalThresholdExceeded` y `AlertGenerated` se publican desde el aggregate `SensorReading` y `Alert` respectivamente cuando se cumplen las condiciones de negocio correspondientes. El evento `ThresholdConfigured` se publica al persistir o actualizar una configuración de umbrales. Las interfaces de repositorio abstraen la persistencia de cada aggregate, permitiendo que la Infrastructure Layer provea las implementaciones concretas sin contaminar el dominio.
+
+| Clase | Tipo | Responsabilidad / Atributos clave |
+| --- | --- | --- |
+| `SensorReading` | Aggregate Root | Representa una lectura agregada recibida del Edge API. Atributos: `Id`, `sensorId`, `classroomId`, `averageValue`, `minValue`, `maxValue`, `readingCount`, `capturedAt`, `sensorType` (temperatura, humedad, ocupación). Publica `EnvironmentalThresholdExceeded` si el valor viola un umbral activo. |
+| `Alert` | Aggregate Root | Gestiona el ciclo de vida de una alerta ambiental. Atributos: `Id`, `sensorId`, `triggerValue`, `thresholdViolated`, `status` (AlertStatus), `generatedAt`, `acknowledgedAt`, `dismissedAt`. Publica `AlertGenerated` al crearse. |
+| `MonitoringConfiguration` | Aggregate Root | Almacena la configuración de umbrales por sensor o espacio. Atributos: `Id`, `classroomId`, `sensorType`, `thresholds` (colección de `Threshold`), `lastUpdatedAt`. Publica `ThresholdConfigured` al guardarse. |
+| `AlertStatus` | Value Object | Enumeración de estados de una alerta: `Active`, `Acknowledged`, `Dismissed`. |
+| `Threshold` | Value Object | Define un umbral de alerta. Atributos: `minValue`, `maxValue`, `severity`. Contiene la invariante de que `minValue` debe ser menor que `maxValue`. |
+| `SensorType` | Value Object | Enumeración del tipo de sensor: `Temperature`, `Humidity`, `Occupancy`. |
+| `EnvironmentalThresholdExceeded` | Domain Event | Publicado por `SensorReading` cuando el valor promedio de una lectura supera los límites configurados. Payload: `sensorReadingId`, `sensorType`, `triggerValue`, `thresholdViolated`, `classroomId`. |
+| `AlertGenerated` | Domain Event | Publicado por `Alert` cuando una nueva alerta es creada en estado `Active`. Payload: `alertId`, `sensorId`, `classroomId`, `triggerValue`. |
+| `ThresholdConfigured` | Domain Event | Publicado por `MonitoringConfiguration` al crear o actualizar umbrales. Payload: `configurationId`, `classroomId`, `sensorType`. |
+| `ISensorReadingRepository` | Repository Interface | Contrato para persistir y consultar `SensorReading`. Operaciones: `save`, `findById`, `findByClassroomIdAndPeriod`. |
+| `IAlertRepository` | Repository Interface | Contrato para persistir y consultar `Alert`. Operaciones: `save`, `findById`, `findActiveAlerts`, `findByClassroomId`. |
+| `IMonitoringConfigurationRepository` | Repository Interface | Contrato para persistir y consultar `MonitoringConfiguration`. Operaciones: `save`, `findByClassroomIdAndSensorType`, `findAll`. |
+
+#### 4.2.5.2. Interface Layer
+
+La Interface Layer del contexto IoT Monitoring expone tres conjuntos de endpoints REST que sirven como puertos de entrada al bounded context. El primero atiende la ingesta de lecturas provenientes del Edge API; el segundo permite la consulta y actualización del estado de las alertas por parte del Administrador; y el tercero gestiona la configuración de umbrales. Esta capa traduce las solicitudes HTTP en comandos o consultas que son procesados por la Application Layer, devolviendo respuestas serializadas en JSON. Todos los endpoints que modifican estado requieren el rol `Admin`; los de solo lectura del dashboard están disponibles también para el rol `Teacher`.
+
+Los controladores delegan la lógica de negocio completamente hacia la Application Layer y no contienen reglas de dominio; su responsabilidad se limita a la validación de formato de entrada, la resolución de autorización por atributo de rol y la construcción de la respuesta HTTP adecuada.
+
+| Clase | Tipo | Endpoints / Operaciones |
+| --- | --- | --- |
+| `SensorReadingsController` | Controller | `POST /api/v1/sensor-readings` — ingesta de lectura agregada desde Edge API. `GET /api/v1/sensor-readings?classroomId={id}&from={date}&to={date}` — consulta histórico para dashboard (roles: Admin, Teacher). |
+| `AlertsController` | Controller | `GET /api/v1/alerts` — lista alertas activas (roles: Admin, Teacher). `GET /api/v1/alerts/{id}` — detalle de alerta. `PATCH /api/v1/alerts/{id}/acknowledge` — cambia estado a `Acknowledged` (rol: Admin). `PATCH /api/v1/alerts/{id}/dismiss` — cambia estado a `Dismissed` (rol: Admin). |
+| `MonitoringConfigurationsController` | Controller | `GET /api/v1/monitoring-configurations` — lista configuraciones existentes (rol: Admin). `POST /api/v1/monitoring-configurations` — crea configuración de umbrales (rol: Admin). `PUT /api/v1/monitoring-configurations/{id}` — actualiza umbrales (rol: Admin). `GET /api/v1/monitoring-configurations/{classroomId}` — obtiene configuración por aula (rol: Admin). |
+
+#### 4.2.5.3. Application Layer
+
+La Application Layer orquesta los flujos de proceso del bounded context IoT Monitoring sin contener reglas de dominio propias. Esta capa contiene los command handlers, query handlers y event handlers (policies) que coordinan la interacción entre el Domain Layer y la Infrastructure Layer. Los command handlers reciben comandos provenientes de la Interface Layer y los traducen en operaciones sobre los aggregates del dominio. Los query handlers atienden consultas de solo lectura y pueden acceder directamente a proyecciones optimizadas para la visualización en el dashboard. Los event handlers actúan como políticas reactivas: en particular, el handler `GenerateAlertOnThresholdExceededHandler` reacciona al evento de dominio `EnvironmentalThresholdExceeded` y orquesta la creación de una nueva `Alert`, manteniendo así la responsabilidad de detección y emisión de alerta dentro de la Application Layer y no en la Interface Layer.
+
+Esta separación garantiza que la lógica de evaluación de umbrales y generación de alertas sea completamente testeable de forma aislada y no esté acoplada al mecanismo de transporte HTTP.
+
+| Clase | Tipo | Responsabilidad |
+| --- | --- | --- |
+| `IngestSensorReadingCommandHandler` | Command Handler | Recibe el comando `IngestSensorReadingCommand` con los datos de la lectura agregada, crea una instancia de `SensorReading`, la persiste a través de `ISensorReadingRepository` y publica los eventos de dominio resultantes. |
+| `AcknowledgeAlertCommandHandler` | Command Handler | Recibe `AcknowledgeAlertCommand`, carga el `Alert` correspondiente por su Id, invoca la transición de estado a `Acknowledged` y persiste el cambio. |
+| `DismissAlertCommandHandler` | Command Handler | Análogo a `AcknowledgeAlertCommandHandler` para la transición al estado `Dismissed`. |
+| `ConfigureThresholdCommandHandler` | Command Handler | Recibe `ConfigureThresholdCommand`, crea o actualiza una `MonitoringConfiguration` y persiste los cambios. Publica `ThresholdConfigured`. |
+| `GenerateAlertOnThresholdExceededHandler` | Event Handler (Policy) | Reacciona al evento `EnvironmentalThresholdExceeded`. Crea una nueva instancia de `Alert` en estado `Active` y la persiste. Publica `AlertGenerated`. |
+| `GetActiveAlertsQueryHandler` | Query Handler | Devuelve la lista de alertas en estado `Active`, opcionalmente filtrada por aula o tipo de sensor. Utiliza `IAlertRepository`. |
+| `GetReadingsHistoryQueryHandler` | Query Handler | Devuelve el historial de lecturas para un aula en un rango de tiempo dado, utilizando `ISensorReadingRepository`. Empleado por el dashboard de monitoreo. |
+| `GetMonitoringConfigurationQueryHandler` | Query Handler | Devuelve la configuración de umbrales activa para un aula y tipo de sensor. Utiliza `IMonitoringConfigurationRepository`. |
+
+#### 4.2.5.4. Infrastructure Layer
+
+La Infrastructure Layer del contexto IoT Monitoring provee las implementaciones concretas de los contratos definidos en el Domain Layer, utilizando Entity Framework Core como ORM sobre una base de datos MySQL, consistente con la decisión de infraestructura tomada para el Web API de la plataforma EduSpace IoT (véase sección 4.1.3.3). Las implementaciones de repositorio traducen las operaciones de dominio en consultas LINQ sobre el `DbContext` correspondiente, garantizando que el modelo de dominio permanezca desacoplado del motor de persistencia. Adicionalmente, esta capa aloja el adaptador de comunicación saliente con el servicio de correo electrónico, invocado cuando se genera una alerta para notificar al Administrador.
+
+El `IoTMonitoringDbContext` define los `DbSet` para los tres aggregates persistibles y configura las relaciones, índices y conversiones de tipos necesarios mediante la API de configuración fluida de Entity Framework Core, siguiendo las convenciones de nomenclatura en snake_case aplicadas en el resto del proyecto mediante Humanizer.
+
+| Clase | Tipo | Tecnología / Responsabilidad |
+| --- | --- | --- |
+| `SensorReadingRepository` | Repository (implementación) | Entity Framework Core + MySQL. Implementa `ISensorReadingRepository`. Gestiona la persistencia y consulta de instancias de `SensorReading`. |
+| `AlertRepository` | Repository (implementación) | Entity Framework Core + MySQL. Implementa `IAlertRepository`. Gestiona persistencia, consulta por estado y filtrado por aula de instancias de `Alert`. |
+| `MonitoringConfigurationRepository` | Repository (implementación) | Entity Framework Core + MySQL. Implementa `IMonitoringConfigurationRepository`. Gestiona la persistencia y consulta de configuraciones de umbrales. |
+| `IoTMonitoringDbContext` | DbContext | Entity Framework Core. Define los `DbSet<SensorReading>`, `DbSet<Alert>` y `DbSet<MonitoringConfiguration>`. Configura mappings, índices y conversiones del Value Object `AlertStatus`. |
+| `AlertEmailNotificationAdapter` | External Adapter | SendGrid (HTTP). Implementa la interfaz `IAlertNotificationService`. Se invoca desde `GenerateAlertOnThresholdExceededHandler` para enviar una notificación por correo electrónico al Administrador cuando se genera una alerta `Active`. |
 
 ---
 
