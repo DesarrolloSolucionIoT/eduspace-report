@@ -931,16 +931,94 @@ A continuación se presenta el diagrama resultante de la sesión:
 ## 3.1. User Stories
 
 | Epic / Story ID | Título | Descripción | Criterios de Aceptación | Relacionado con (Epic ID) |
-| --------------- | ------ | ----------- | ----------------------- | ------------------------- |
-|                 |        |             |                         |                           |
+|-----------------|--------|-------------|--------------------------|----------------------------|
+| EP01 / US01 | Visualizar estado de aulas | Como administrador, quiero ver el estado de las aulas en tiempo real para tomar decisiones. | Given el sistema operativo<br>When el administrador consulta aulas<br>Then el sistema muestra estado actualizado de ocupación | EP01 |
+| EP01 / US02 | Ver disponibilidad de aulas | Como administrador, quiero conocer la disponibilidad para planificar horarios. | Given aulas registradas<br>When se consulta disponibilidad<br>Then el sistema muestra aulas libres y ocupadas | EP01 |
+| EP01 / US03 | Detectar aulas vacías | Como administrador, quiero identificar aulas no utilizadas para optimizar recursos. | Given aulas asignadas<br>When no hay ocupación detectada<br>Then el sistema marca aula como ineficiente | EP01 |
+| EP01 / US04 | Recibir alertas de uso ineficiente | Como administrador, quiero recibir alertas para actuar rápidamente. | Given una condición anómala<br>When se detecta ineficiencia<br>Then el sistema genera alerta | EP01 |
+| EP01 / US05 | Ver reportes de uso | Como administrador, quiero analizar datos históricos. | Given datos almacenados<br>When se solicita reporte<br>Then el sistema muestra información histórica | EP01 |
+| EP01 / US06 | Filtrar información | Como administrador, quiero filtrar datos por aula o fecha. | Given múltiples registros<br>When se aplican filtros<br>Then el sistema muestra resultados filtrados | EP01 |
+| EP01 / US07 | Monitorear ocupación | Como administrador, quiero supervisar ocupación general. | Given sensores activos<br>When se consulta estado<br>Then el sistema muestra ocupación en tiempo real | EP01 |
+| EP01 / US08 | Evaluar eficiencia | Como administrador, quiero medir eficiencia del uso de aulas. | Given datos de uso<br>When se calcula eficiencia<br>Then el sistema muestra indicadores | EP01 |
+| EP01 / US09 | Tomar decisiones | Como administrador, quiero usar datos para optimizar espacios. | Given datos disponibles<br>When se analizan métricas<br>Then el sistema facilita la toma de decisiones | EP01 |
+| EP01 / US10 | Centralizar información | Como administrador, quiero ver todo en una sola plataforma. | Given múltiples fuentes<br>When se accede al sistema<br>Then la información está centralizada | EP01 |
+| EP02 / US11 | Ver estado del aula | Como docente, quiero conocer el estado del aula antes de usarla. | Given aula asignada<br>When el docente consulta<br>Then el sistema muestra estado actual | EP02 |
+| EP02 / US12 | Ver disponibilidad previa | Como docente, quiero verificar disponibilidad antes de clase. | Given horario definido<br>When consulta aula<br>Then el sistema indica disponibilidad | EP02 |
+| EP02 / US13 | Detectar problemas | Como docente, quiero saber si hay fallas antes de ingresar. | Given sensores activos<br>When existe problema<br>Then el sistema lo informa | EP02 |
+| EP02 / US14 | Reportar incidencias | Como docente, quiero reportar problemas. | Given problema detectado<br>When se reporta<br>Then el sistema registra incidencia | EP02 |
+| EP02 / US15 | Recibir alertas | Como docente, quiero recibir notificaciones de problemas. | Given condición crítica<br>When ocurre evento<br>Then el sistema envía alerta | EP02 |
+| EP02 / US16 | Consultar condiciones | Como docente, quiero conocer condiciones ambientales. | Given sensores activos<br>When consulta aula<br>Then el sistema muestra métricas | EP02 |
+| EP02 / US17 | Reducir retrasos | Como docente, quiero evitar retrasos en clases. | Given información disponible<br>When inicia clase<br>Then el docente no presenta inconvenientes | EP02 |
+| EP02 / US18 | Adaptar clase | Como docente, quiero adaptar clase según condiciones. | Given condiciones variables<br>When se detectan<br>Then el docente puede ajustar actividad | EP02 |
+| EP02 / US19 | Mejorar experiencia | Como docente, quiero mejorar el entorno educativo. | Given condiciones adecuadas<br>When se realiza clase<br>Then mejora la experiencia | EP02 |
+| EP02 / US20 | Optimizar tiempo | Como docente, quiero aprovechar mejor el tiempo. | Given información previa<br>When inicia clase<br>Then no se pierde tiempo | EP02 |
+| EP03 / US21 | Monitorear consumo | Como administrador, quiero controlar consumo energético. | Given sensores activos<br>When se monitorea consumo<br>Then el sistema registra datos | EP03 |
+| EP03 / US22 | Detectar consumo excesivo | Como administrador, quiero identificar consumo alto. | Given umbrales definidos<br>When se supera límite<br>Then el sistema alerta | EP03 |
+| EP03 / US23 | Registrar mantenimiento | Como administrador, quiero registrar mantenimientos. | Given mantenimiento realizado<br>When se registra<br>Then el sistema guarda información | EP03 |
+| EP03 / US24 | Gestionar incidencias | Como administrador, quiero gestionar problemas. | Given incidencia registrada<br>When se gestiona<br>Then cambia su estado | EP03 |
+| EP03 / US25 | Asignar técnico | Como administrador, quiero asignar responsables. | Given incidencia<br>When se asigna técnico<br>Then queda registrado | EP03 |
+| EP03 / US26 | Ver historial | Como administrador, quiero ver historial de fallas. | Given registros previos<br>When se consulta<br>Then se muestra historial | EP03 |
+| EP03 / US27 | Evaluar mantenimiento | Como administrador, quiero evaluar efectividad. | Given datos históricos<br>When se analiza<br>Then se obtiene desempeño | EP03 |
+| EP03 / US28 | Reducir fallas | Como administrador, quiero minimizar incidencias. | Given análisis previo<br>When se aplican mejoras<br>Then disminuyen fallas | EP03 |
+| EP03 / US29 | Automatizar alertas | Como administrador, quiero automatizar alertas. | Given condición anómala<br>When ocurre evento<br>Then se genera alerta automática | EP03 |
+| EP03 / US30 | Optimizar recursos | Como administrador, quiero optimizar recursos. | Given datos disponibles<br>When se analizan<br>Then se mejora eficiencia | EP03 |
+| EP04 / US31 | Ver landing page | Como visitante, quiero acceder a la web para conocer EduSpace. | Given sitio disponible<br>When accede<br>Then se muestra información | EP04 |
+| EP04 / US32 | Conocer beneficios | Como visitante, quiero conocer ventajas del sistema. | Given contenido disponible<br>When navega<br>Then identifica beneficios | EP04 |
+| EP04 / US33 | Ver funcionalidades | Como visitante, quiero ver funcionalidades. | Given sección activa<br>When accede<br>Then se muestran features | EP04 |
+| EP04 / US34 | Contactar equipo | Como visitante, quiero comunicarme con el equipo. | Given formulario<br>When se envía<br>Then se registra contacto | EP04 |
+| EP04 / US35 | Ver casos de uso | Como visitante, quiero entender aplicaciones reales. | Given contenido<br>When navega<br>Then ve casos reales | EP04 |
+| EP05 / US36 | Obtener datos de sensores | Como developer, quiero recibir datos IoT vía API. | Given request válido<br>When se consulta API<br>Then retorna datos correctos | EP05 |
+| EP05 / US37 | Registrar datos | Como developer, quiero almacenar datos de sensores. | Given datos válidos<br>When se envían<br>Then se almacenan correctamente | EP05 |
+| EP05 / US38 | Generar alertas API | Como developer, quiero emitir alertas vía API. | Given condición crítica<br>When se detecta<br>Then se envía respuesta de alerta | EP05 |
+| EP05 / US39 | Consultar historial | Como developer, quiero consultar datos históricos. | Given request válido<br>When se consulta<br>Then retorna historial | EP05 |
+| EP05 / US40 | Validar requests | Como developer, quiero validar solicitudes. | Given request inválido<br>When se procesa<br>Then retorna error controlado | EP05 |
 
 ## 3.2. Impact Mapping
 
 ## 3.3. Product Backlog
 
-| # Orden | User Story ID | Título | Descripción | Story Points (1/2/3/5/8) |
-| ------- | ------------- | ------ | ----------- | ------------------------ |
-|         |               |        |             |                          |
+| Prioridad | Story ID | Título | Descripción | Story Points | Justificación de Valor |
+|----------|---------|--------|-------------|--------------|------------------------|
+| 1 | US11 | Ver estado del aula | Docente visualiza estado del aula antes de clase | 5 | Impacto directo en experiencia educativa |
+| 2 | US04 | Recibir alertas de uso ineficiente | Administrador recibe alertas | 5 | Reduce desperdicio inmediato |
+| 3 | US01 | Visualizar estado de aulas | Administrador monitorea aulas en tiempo real | 8 | Base del sistema |
+| 4 | US12 | Ver disponibilidad previa | Docente verifica disponibilidad | 5 | Evita conflictos de uso |
+| 5 | US16 | Consultar condiciones | Docente revisa condiciones ambientales | 5 | Mejora calidad de clase |
+| 6 | US31 | Ver landing page | Visitante accede a EduSpace | 3 | Primer contacto con el producto |
+| 7 | US32 | Conocer beneficios | Visitante entiende valor | 3 | Conversión y validación |
+| 8 | US34 | Contactar equipo | Visitante envía contacto | 3 | Generación de leads |
+| 9 | US03 | Detectar aulas vacías | Administrador identifica ineficiencia | 5 | Optimización de espacios |
+| 10 | US02 | Ver disponibilidad de aulas | Administrador planifica mejor | 5 | Mejora operativa |
+| 11 | US05 | Ver reportes de uso | Administrador analiza datos | 8 | Decisiones estratégicas |
+| 12 | US14 | Reportar incidencias | Docente reporta problemas | 5 | Mejora mantenimiento |
+| 13 | US21 | Monitorear consumo | Administrador controla energía | 8 | Ahorro de costos |
+| 14 | US22 | Detectar consumo excesivo | Identificar sobreuso | 5 | Optimización económica |
+| 15 | US30 | Optimizar recursos | Administrador mejora eficiencia | 8 | Valor estratégico |
+| 16 | US33 | Ver funcionalidades | Visitante explora sistema | 3 | Marketing digital |
+| 17 | US35 | Ver casos de uso | Visitante comprende aplicación | 3 | Validación de producto |
+| 18 | US07 | Monitorear ocupación | Ver uso general | 5 | Control operativo |
+| 19 | US08 | Evaluar eficiencia | Medir desempeño | 8 | Mejora continua |
+| 20 | US17 | Reducir retrasos | Docente evita demoras | 5 | Experiencia directa |
+| 21 | US18 | Adaptar clase | Ajustar según condiciones | 5 | Flexibilidad docente |
+| 22 | US19 | Mejorar experiencia | Mejor entorno educativo | 8 | Impacto en usuario |
+| 23 | US20 | Optimizar tiempo | Uso eficiente del tiempo | 5 | Productividad |
+| 24 | US23 | Registrar mantenimiento | Registrar tareas | 5 | Control operativo |
+| 25 | US24 | Gestionar incidencias | Administrar problemas | 5 | Continuidad |
+| 26 | US25 | Asignar técnico | Delegar mantenimiento | 3 | Organización |
+| 27 | US26 | Ver historial | Revisar fallas pasadas | 5 | Análisis |
+| 28 | US27 | Evaluar mantenimiento | Medir eficiencia | 5 | Mejora continua |
+| 29 | US28 | Reducir fallas | Minimizar incidencias | 8 | Estabilidad |
+| 30 | US29 | Automatizar alertas | Alertas automáticas | 5 | Automatización |
+| 31 | US06 | Filtrar información | Filtrar datos | 3 | Usabilidad |
+| 32 | US09 | Tomar decisiones | Soporte estratégico | 8 | Valor institucional |
+| 33 | US10 | Centralizar información | Todo en un sistema | 8 | Integración |
+| 34 | US13 | Detectar problemas | Identificar fallas | 5 | Prevención |
+| 35 | US15 | Recibir alertas docente | Notificaciones docente | 3 | Mejora UX |
+| 36 | US36 | Obtener datos sensores | API IoT | 8 | Base técnica |
+| 37 | US37 | Registrar datos | Almacenamiento | 8 | Persistencia |
+| 38 | US38 | Generar alertas API | Backend alertas | 5 | Integración |
+| 39 | US39 | Consultar historial API | API histórica | 5 | Soporte |
+| 40 | US40 | Validar requests | Validación API | 3 | Control técnico |
 
 ---
 
