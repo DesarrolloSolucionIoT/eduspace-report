@@ -636,10 +636,10 @@ Objetivo: Comprender cómo perciben el uso de aulas, condiciones del entorno y p
 
 
 ##### Datos del Entrevistado #3
-- **Nombre completo:** 
+- **Nombre completo:** Jairo Anderson Escobar Coronado
 - **Segmento Objetivo:** Administradores de instituciones educativas
-- **Edad:** 
-- **Distrito:** 
+- **Edad:** 27
+- **Distrito:** Miraflores
 - **Inicio de la entrevista:** 
 - **Duración:** 
 - **Screenshot del cuadro de video:** ![Entrevista3](foto)
@@ -680,12 +680,12 @@ Objetivo: Comprender cómo perciben el uso de aulas, condiciones del entorno y p
 - **Segmento Objetivo:** Docentes y auxiliares
 - **Edad:** 
 - **Distrito:** 
-- **Inicio de la entrevista:** 
+- **Inicio de la entrevista:** 00:00
 - **Duración:** 
 - **Screenshot del cuadro de video:** ![Entrevista3](foto)
 - **URL del video (Microsoft Stream):** *[Entrevista 03](link)*
 
-**Resumen:** La entrevistada indica que el estado de las aulas influye directamente en la calidad de la enseñanza y en la atención de los estudiantes. Menciona que en varias ocasiones ha tenido que adaptarse a espacios no adecuados, lo que afecta su planificación. Considera que el uso de tecnología puede mejorar significativamente la experiencia docente, siempre que sea fácil de usar. Destaca que EduSpace podría aportar valor si brinda información clara, rápida y accesible sobre disponibilidad y condiciones de los espacios.
+**Resumen:** El entrevistado indica que el estado de las aulas influye directamente en la calidad de la enseñanza y en la atención de los estudiantes. Menciona que en varias ocasiones ha tenido que adaptarse a espacios no adecuados, lo que afecta su planificación. Considera que el uso de tecnología puede mejorar significativamente la experiencia docente, siempre que sea fácil de usar. Destaca que EduSpace podría aportar valor si brinda información clara, rápida y accesible sobre disponibilidad y condiciones de los espacios.
 
 ### 2.2.3. Análisis de entrevistas
 
