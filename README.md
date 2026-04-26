@@ -737,7 +737,7 @@ Objetivo: Comprender cómo perciben el uso de aulas, condiciones del entorno y p
 - **Distrito:** Huamanga
 - **Inicio de la entrevista:** 00:00
 - **Duración:** 5:15
-- **Screenshot del cuadro de video:** ![Entrevista3](/assets/chapter2/karina.png)
+- **Screenshot del cuadro de video:** <img src="/assets/chapter2/karina.png" alt="Entrevista3" width="100"/>
 - **URL del video (Microsoft Stream):** *[Entrevista 03](https://upcedupe-my.sharepoint.com/:l:/g/personal/u202312504_upc_edu_pe/JABq1Tk15HtaSqVGyJ4LGDFXAXKjrk2rXKsj0pI6lrjvc5M?e=zQ8JTi)*
 
 **Resumen:** La entrevistada indica que el estado de las aulas influye directamente en la calidad de la enseñanza y en la atención de los estudiantes. Menciona que en varias ocasiones ha tenido que adaptarse a espacios no adecuados, lo que afecta su planificación. Considera que el uso de tecnología puede mejorar significativamente la experiencia docente, siempre que sea fácil de usar. Destaca que EduSpace podría aportar valor si brinda información clara, rápida y accesible sobre disponibilidad y condiciones de los espacios.
