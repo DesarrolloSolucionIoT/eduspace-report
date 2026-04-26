@@ -671,7 +671,7 @@ Objetivo: Comprender cómo perciben el uso de aulas, condiciones del entorno y p
 - **Distrito:** Lurigancho - Chosica
 - **Inicio de la entrevista:** 00:00
 - **Duración:** 
-- **Screenshot del cuadro de video:** ![Entrevista3](foto)
+- **Screenshot del cuadro de video:** ![Entrevista3](/assets/chapter2/victor.png)
 - **URL del video (Microsoft Stream):** *[Entrevista 03](link)*
 
 **Resumen:** El entrevistado señala que actualmente la gestión de aulas se realiza mediante hojas de cálculo y coordinación manual entre áreas, lo que genera errores frecuentes y poca visibilidad del uso real de los espacios. Indica que no cuentan con información en tiempo real sobre ocupación ni consumo energético, lo que ocasiona desperdicio de recursos como luces y equipos encendidos. Considera que una solución como EduSpace sería valiosa, especialmente si permite visualizar el estado de las aulas y recibir alertas automáticas. Sin embargo, menciona que el principal reto sería el costo de implementación y la adaptación del personal al cambio tecnológico.
@@ -697,7 +697,7 @@ Objetivo: Comprender cómo perciben el uso de aulas, condiciones del entorno y p
 - **Distrito:** Miraflores
 - **Inicio de la entrevista:** 
 - **Duración:** 
-- **Screenshot del cuadro de video:** ![Entrevista3](foto)
+- **Screenshot del cuadro de video:** ![Entrevista3](/assets/chapter2/jairo.png)
 - **URL del video (Microsoft Stream):** *[Entrevista 03](link)*
 
 **Resumen:** El entrevistado indica que su institución ha crecido rápidamente y la gestión de espacios se ha vuelto cada vez más compleja. Actualmente no cuentan con herramientas integradas, lo que genera retrasos en la toma de decisiones. Menciona que el consumo energético es un problema importante y que no existe un control eficiente. Considera que EduSpace podría aportar valor al centralizar la información y ofrecer datos en tiempo real. Destaca que la facilidad de uso será clave para su adopción.
@@ -885,6 +885,46 @@ A continuación se presenta el diagrama resultante de la sesión:
 ## 2.5. Ubiquitous Language
 
 ---
+
+| Term (English) | Término (Español) | Definition |
+|----------------|------------------|-----------|
+| User | Usuario | Persona que interactúa con la gestión de espacios educativos, como administradores o docentes. |
+| Administrator | Administrador | Usuario encargado de gestionar aulas, horarios y recursos dentro de la institución educativa. |
+| Teacher | Docente | Usuario que utiliza las aulas para dictar clases y desarrollar actividades académicas. |
+| Classroom | Aula | Espacio físico destinado al desarrollo de clases o actividades educativas. |
+| Shared Area | Espacio compartido | Espacio dentro de la institución que puede ser reservado para actividades no necesariamente académicas. |
+| Schedule | Horario | Organización de tiempos en los que se asignan aulas o espacios para actividades. |
+| Class Session | Sesión de clase | Periodo específico en el que se dicta una clase en un aula determinada. |
+| Assignment | Asignación de aula | Proceso mediante el cual se designa un aula a una sesión de clase. |
+| Reservation | Reserva | Proceso mediante el cual se solicita o asigna el uso de un espacio en un periodo determinado. |
+| Meeting | Reunión | Actividad programada en un espacio educativo con un propósito específico institucional. |
+| Occupancy | Ocupación | Estado que indica si un aula está siendo utilizada en un momento determinado. |
+| Occupancy Status | Estado de ocupación | Condición actual del uso del aula (ocupada o libre) en tiempo real. |
+| Availability | Disponibilidad | Condición que indica si un espacio está libre para ser utilizado. |
+| Space Utilization | Uso de espacios | Nivel de aprovechamiento de los espacios en función de su ocupación y asignación. |
+| Resource Usage | Uso de recursos | Consumo de recursos dentro de un aula, como iluminación o equipos electrónicos. |
+| Resource | Recurso | Elemento físico disponible dentro de un espacio, como equipos o mobiliario. |
+| Capacity | Aforo | Número máximo de personas que puede albergar un espacio. |
+| Condition | Condición del aula | Estado ambiental o funcional del aula, como temperatura, ventilación o equipos disponibles. |
+| Environmental Metric | Métrica ambiental | Variable medida en el aula como temperatura, humedad o nivel de luz. |
+| Sensor | Sensor | Dispositivo que mide condiciones ambientales o presencia dentro de un espacio. |
+| Sensor Reading | Lectura de sensor | Dato capturado por un sensor en un momento específico. |
+| IoT Device | Dispositivo IoT | Equipo físico instalado en un aula que integra sensores para monitoreo. |
+| Threshold | Umbral | Valor límite que define condiciones normales o anómalas dentro del aula. |
+| Monitoring | Monitoreo | Proceso de seguimiento continuo del estado y uso de los espacios educativos. |
+| Real-time Data | Datos en tiempo real | Información actualizada inmediatamente sobre el estado de aulas y recursos. |
+| Alert | Alerta | Notificación generada ante condiciones anómalas o ineficiencias detectadas. |
+| Alert Severity | Severidad de alerta | Nivel de importancia de una alerta según su impacto (bajo, medio, alto, crítico). |
+| Incident | Incidencia | Evento que afecta el uso normal de un aula o recurso. |
+| Breakdown Report | Reporte de falla | Registro formal de un problema detectado en un espacio, recurso o dispositivo. |
+| Maintenance | Mantenimiento | Proceso de reparación o mejora de espacios, equipos o dispositivos. |
+| Technician | Técnico | Persona encargada de resolver incidencias o realizar mantenimiento. |
+| Inefficiency | Ineficiencia | Situación en la que los recursos o espacios no se utilizan de manera óptima. |
+| Resource Optimization | Optimización de recursos | Mejora en el uso de espacios y recursos para reducir desperdicio. |
+| Operational Efficiency | Eficiencia operativa | Capacidad de gestionar espacios y recursos de manera efectiva. |
+| Academic Planning | Planificación académica | Organización de horarios, aulas y actividades educativas. |
+| Decision-making | Toma de decisiones | Proceso de uso de datos para mejorar la gestión de espacios. |
+| User Experience | Experiencia del usuario | Percepción del usuario sobre el uso y condiciones de los espacios educativos. |
 
 # Capítulo III: Requirements Specification
 
