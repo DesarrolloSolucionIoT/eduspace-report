@@ -77,11 +77,11 @@ URL del repositorio del Project Report en GitHub: [https://github.com/Desarrollo
     - [2.1.1. Análisis competitivo](#211-análisis-competitivo)
     - [2.1.2. Estrategias y tácticas frente a competidores](#212-estrategias-y-tácticas-frente-a-competidores)
       - [**Frente a las fortalezas de los competidores**](#frente-a-las-fortalezas-de-los-competidores)
-        - [**Fortalezas de Smart Campus IoT:**](#fortalezas-de-smart-campus-iot)
+        - [**Fortalezas de EduSpace:**](#fortalezas-de-eduspace)
         - [**Estrategias**](#estrategias)
         - [**Tácticas**](#tácticas)
       - [**Frente a las debilidades de los competidores**](#frente-a-las-debilidades-de-los-competidores)
-        - [**Debilidades de Smart Campus IoT:**](#debilidades-de-smart-campus-iot)
+        - [**Debilidades de EduSpace:**](#debilidades-de-eduspace)
         - [**Estrategias**](#estrategias-1)
         - [**Tácticas**](#tácticas-1)
   - [2.2. Entrevistas](#22-entrevistas)
@@ -110,7 +110,11 @@ URL del repositorio del Project Report en GitHub: [https://github.com/Desarrollo
     - [User persona 2: Docentes y auxiliares](#user-persona-2-docentes-y-auxiliares)
     - [2.3.2. User Task Matrix](#232-user-task-matrix)
     - [2.3.3. User Journey Mapping](#233-user-journey-mapping)
+      - [User persona 1: Administradores de instituciones educativas](#user-persona-1-administradores-de-instituciones-educativas-1)
+    - [User persona 2: Docentes y auxiliares](#user-persona-2-docentes-y-auxiliares-1)
     - [2.3.4. Empathy Mapping](#234-empathy-mapping)
+      - [User persona 1: Administradores de instituciones educativas](#user-persona-1-administradores-de-instituciones-educativas-2)
+    - [User persona 2: Docentes y auxiliares](#user-persona-2-docentes-y-auxiliares-2)
   - [2.4. Big Picture EventStorming](#24-big-picture-eventstorming)
   - [2.5. Ubiquitous Language](#25-ubiquitous-language)
 - [Capítulo III: Requirements Specification](#capítulo-iii-requirements-specification)
@@ -193,10 +197,10 @@ El curso contribuye al cumplimiento del Student Outcome ABET:
 
 En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 5.
 
-| Criterio específico                                                                             | Acciones realizadas                                      | Conclusiones              |
-| ----------------------------------------------------------------------------------------------- | -------------------------------------------------------- | ------------------------- |
-| Trabaja en equipo para proporcionar liderazgo en forma conjunta                                 | Angie Christina Yalán Zhang **AV1** Durante el desarrollo de EduSpace, trabajé de manera colaborativa con mi equipo, aportando ideas y participando activamente en la toma de decisiones. Asumí un rol de liderazgo compartido, apoyando en la organización de entregables y asegurando que todos contribuyamos al avance del proyecto. | \<Conclusiones grupales\> |
-| Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos. | Angie Christina Yalán Zhang **AV1** Contribuí a generar un ambiente de trabajo colaborativo, donde se respetaron las ideas de todos. Participé en la planificación de tareas y en el cumplimiento de los objetivos, lo que permitió avanzar de forma ordenada en entregables como entrevistas, user personas y modelos del sistema. | \<Conclusiones grupales\> |
+| Criterio específico | Acciones realizadas | Conclusiones |
+|---------------------|---------------------|--------------|
+| Trabaja en equipo para proporcionar liderazgo en forma conjunta | Angie Christina Yalán Zhang **AV1** Durante el desarrollo de EduSpace, trabajé de manera colaborativa con mi equipo, aportando ideas y participando activamente en la toma de decisiones. Asumí un rol de liderazgo compartido, apoyando en la organización de entregables y asegurando que todos contribuyamos al avance del proyecto. Luis Alva **AV1** Participé activamente en la definición de la arquitectura de software del sistema EduSpace IoT, liderando el diseño estratégico basado en Domain-Driven Design. Contribuí en la identificación de bounded contexts, la elaboración del Design-Level EventStorming y la construcción de los diagramas C4, asegurando que las decisiones arquitectónicas fueran consistentes con los requerimientos del sistema y los lineamientos del curso. | \<Conclusiones grupales\> |
+| Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos. | Angie Christina Yalán Zhang **AV1** Contribuí a generar un ambiente de trabajo colaborativo, donde se respetaron las ideas de todos. Participé en la planificación de tareas y en el cumplimiento de los objetivos, lo que permitió avanzar de forma ordenada en entregables como entrevistas, user personas y modelos del sistema. Luis Alva **AV1** Colaboré en la planificación y distribución de tareas del equipo para la primera entrega, estableciendo un orden de trabajo por secciones del informe. Participé en sesiones de trabajo colaborativo para la elaboración del Big Picture EventStorming y los Bounded Context Canvases, promoviendo un entorno de discusión inclusivo donde cada decisión de diseño fue consensuada con el equipo. | \<Conclusiones grupales\> |
 
 ---
 
