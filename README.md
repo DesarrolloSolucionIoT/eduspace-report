@@ -608,7 +608,156 @@ Objetivo: Comprender cómo perciben el uso de aulas, condiciones del entorno y p
 
 ### 2.2.2. Registro de entrevistas
 
+### Segmento objetivo #1: Administradores de instituciones educativas
+##### Datos del Entrevistado #1
+- **Nombre completo:** Victor Otto Reinoso Díaz
+- **Segmento Objetivo:** Administradores de instituciones educativas
+- **Edad:** 28
+- **Distrito:** Lurigancho - Chosica
+- **Inicio de la entrevista:** 00:00
+- **Duración:** 
+- **Screenshot del cuadro de video:** ![Entrevista3](foto)
+- **URL del video (Microsoft Stream):** *[Entrevista 03](link)*
+
+**Resumen:** El entrevistado señala que actualmente la gestión de aulas se realiza mediante hojas de cálculo y coordinación manual entre áreas, lo que genera errores frecuentes y poca visibilidad del uso real de los espacios. Indica que no cuentan con información en tiempo real sobre ocupación ni consumo energético, lo que ocasiona desperdicio de recursos como luces y equipos encendidos. Considera que una solución como EduSpace sería valiosa, especialmente si permite visualizar el estado de las aulas y recibir alertas automáticas. Sin embargo, menciona que el principal reto sería el costo de implementación y la adaptación del personal al cambio tecnológico.
+
+
+##### Datos del Entrevistado #2
+- **Nombre completo:** Juan José Huamaní
+- **Segmento Objetivo:** Administradores de instituciones educativas
+- **Edad:** 26
+- **Distrito:** Huachipa  
+- **Inicio de la entrevista:** 00:00
+- **Duración:** 
+- **Screenshot del cuadro de video:** ![Entrevista3](foto)
+- **URL del video (Microsoft Stream):** *[Entrevista 03](link)*
+
+**Resumen:** El entrevistado menciona que uno de los principales problemas es la falta de coordinación entre docentes y administración, lo que genera conflictos en la asignación de aulas. Señala que muchas veces las aulas están vacías o mal utilizadas sin que el sistema lo detecte. Considera importante contar con indicadores claros para la toma de decisiones y mejorar la eficiencia operativa. Percibe alto valor en una plataforma como EduSpace, especialmente en la automatización de procesos y monitoreo ambiental, ya que esto permitiría mejorar tanto la gestión como la experiencia educativa.
+
+
+##### Datos del Entrevistado #3
+- **Nombre completo:** 
+- **Segmento Objetivo:** Administradores de instituciones educativas
+- **Edad:** 
+- **Distrito:** 
+- **Inicio de la entrevista:** 
+- **Duración:** 
+- **Screenshot del cuadro de video:** ![Entrevista3](foto)
+- **URL del video (Microsoft Stream):** *[Entrevista 03](link)*
+
+**Resumen:** El entrevistado indica que su institución ha crecido rápidamente y la gestión de espacios se ha vuelto cada vez más compleja. Actualmente no cuentan con herramientas integradas, lo que genera retrasos en la toma de decisiones. Menciona que el consumo energético es un problema importante y que no existe un control eficiente. Considera que EduSpace podría aportar valor al centralizar la información y ofrecer datos en tiempo real. Destaca que la facilidad de uso será clave para su adopción.
+
+
+### Segmento objetivo #2: Docentes y auxiliares
+##### Datos del Entrevistado #1
+- **Nombre completo:** Mariano Melgar
+- **Segmento Objetivo:** Docentes y auxiliares
+- **Edad:** 
+- **Distrito:** San Juan de Miraflores
+- **Inicio de la entrevista:** 
+- **Duración:** 
+- **Screenshot del cuadro de video:** ![Entrevista3](foto)
+- **URL del video (Microsoft Stream):** *[Entrevista 03](link)*
+
+**Resumen:** El docente menciona que frecuentemente encuentra problemas en las aulas, como equipos que no funcionan o condiciones ambientales inadecuadas (calor, poca ventilación). Indica que esto afecta el desarrollo de sus clases y genera pérdida de tiempo. Considera que sería muy útil conocer el estado del aula antes de ingresar. Percibe positivamente la propuesta de EduSpace, especialmente si permite anticipar problemas y mejorar las condiciones del entorno educativo.
+
+  
+##### Datos del Entrevistado #2
+- **Nombre completo:** Jostin Ninamango
+- **Segmento Objetivo:** Docentes y auxiliares
+- **Edad:** 
+- **Distrito:** Surco
+- **Inicio de la entrevista:** 
+- **Duración:** 
+- **Screenshot del cuadro de video:** ![Entrevista3](foto)
+- **URL del video (Microsoft Stream):** *[Entrevista 03](link)*
+
+**Resumen:** El entrevistado señala que uno de los principales inconvenientes es la falta de organización en la asignación de aulas, lo que genera confusiones o retrasos al inicio de clases. También menciona que no existe un canal claro para reportar problemas en los ambientes. Considera que una plataforma como EduSpace podría mejorar la comunicación con el área administrativa y facilitar la gestión de incidencias. Valora especialmente la posibilidad de recibir notificaciones y acceder a información en tiempo real.
+
+
+##### Datos del Entrevistado #3
+- **Nombre completo:** 
+- **Segmento Objetivo:** Docentes y auxiliares
+- **Edad:** 
+- **Distrito:** 
+- **Inicio de la entrevista:** 
+- **Duración:** 
+- **Screenshot del cuadro de video:** ![Entrevista3](foto)
+- **URL del video (Microsoft Stream):** *[Entrevista 03](link)*
+
+**Resumen:** La entrevistada indica que el estado de las aulas influye directamente en la calidad de la enseñanza y en la atención de los estudiantes. Menciona que en varias ocasiones ha tenido que adaptarse a espacios no adecuados, lo que afecta su planificación. Considera que el uso de tecnología puede mejorar significativamente la experiencia docente, siempre que sea fácil de usar. Destaca que EduSpace podría aportar valor si brinda información clara, rápida y accesible sobre disponibilidad y condiciones de los espacios.
+
 ### 2.2.3. Análisis de entrevistas
+
+A partir de las entrevistas realizadas a los dos segmentos objetivo (administradores y docentes/auxiliares), se identificaron patrones claros en relación a los problemas actuales, necesidades y percepción de valor frente a la solución propuesta EduSpace.
+
+#### Principales hallazgos (insights)
+
+**Administradores:** 
+* Existe una dependencia alta de procesos manuales (Excel, coordinación verbal).
+* No cuentan con visibilidad en tiempo real del uso de aulas.
+* Se presentan ineficiencias en la asignación de espacios (aulas vacías o duplicadas).
+* El consumo energético no es monitoreado adecuadamente, generando costos innecesarios.
+* Hay una necesidad fuerte de centralización de información.
+* Perciben alto valor en: Alertas automáticas, dashboard en tiempo real e indicadores para toma de decisiones
+
+**Docentes y auxiliares**
+
+Frecuentes problemas en aulas:
+* Temperatura inadecuada
+* Equipos que no funcionan
+* Aulas ocupadas o mal asignadas
+* Se pierde tiempo al inicio de clases por problemas logísticos.
+* No existe un sistema eficiente para:
+* Reportar incidencias
+* Ver estado del aula previamente
+* Existe alta disposición a usar tecnología, siempre que sea simple.
+* Valoran: Información rápida, notificaciones y mejora en condiciones del aula
+
+#### Patrones identificados
+
+Se identifican patrones comunes en ambos segmentos:
+
+* Falta de información en tiempo real
+* Problemas de coordinación entre áreas
+* Uso ineficiente de espacios y recursos
+* Procesos desarticulados
+* Ausencia de monitoreo ambiental
+
+Esto confirma directamente el problema planteado en el proyecto.
+
+#### Pain Points validados
+
+Los principales dolores del usuario son:
+
+* No saber si un aula está disponible o en condiciones adecuadas
+* Pérdida de tiempo por desorganización
+* Falta de control sobre recursos (energía, equipos)
+* Comunicación ineficiente entre personal
+* Dificultad para tomar decisiones rápidas
+
+#### Oportunidades detectadas
+
+Las entrevistas revelan oportunidades claras para EduSpace:
+
+* Implementar monitoreo en tiempo real de aulas
+* Crear un dashboard centralizado de gestión
+* Integrar alertas inteligentes (IoT)
+* Facilitar la comunicación entre docentes y administración
+* Incorporar un sistema de reportes de incidencias
+* Generar indicadores de eficiencia (score de aulas)
+
+#### Riesgos identificados
+* Resistencia al cambio en personal administrativo
+* Limitaciones presupuestarias en instituciones educativas
+* Necesidad de capacitación inicial
+* Dependencia de infraestructura tecnológica
+
+#### Conclusión del análisis
+
+Las entrevistas confirman que existe una problemática real y relevante en la gestión de espacios educativos, caracterizada por la falta de integración tecnológica, monitoreo en tiempo real y coordinación eficiente.
+
+En este contexto, EduSpace se posiciona como una solución con alto potencial de adopción, al responder directamente a las necesidades identificadas, mediante una propuesta basada en automatización, centralización de información y uso de tecnologías IoT para optimizar recursos y mejorar la eficiencia operativa en instituciones educativas.
 
 ## 2.3. Needfinding
 
