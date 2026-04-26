@@ -195,8 +195,8 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
 
 | Criterio específico                                                                             | Acciones realizadas                                      | Conclusiones              |
 | ----------------------------------------------------------------------------------------------- | -------------------------------------------------------- | ------------------------- |
-| Trabaja en equipo para proporcionar liderazgo en forma conjunta                                 | \<Apellido, Nombre\> **AV1** \<descripción de acciones\> | \<Conclusiones grupales\> |
-| Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos. | \<Apellido, Nombre\> **AV1** \<descripción de acciones\> | \<Conclusiones grupales\> |
+| Trabaja en equipo para proporcionar liderazgo en forma conjunta                                 | Angie Christina Yalán Zhang **AV1** Durante el desarrollo de EduSpace, trabajé de manera colaborativa con mi equipo, aportando ideas y participando activamente en la toma de decisiones. Asumí un rol de liderazgo compartido, apoyando en la organización de entregables y asegurando que todos contribuyamos al avance del proyecto. | \<Conclusiones grupales\> |
+| Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos. | Angie Christina Yalán Zhang **AV1** Contribuí a generar un ambiente de trabajo colaborativo, donde se respetaron las ideas de todos. Participé en la planificación de tareas y en el cumplimiento de los objetivos, lo que permitió avanzar de forma ordenada en entregables como entrevistas, user personas y modelos del sistema. | \<Conclusiones grupales\> |
 
 ---
 
