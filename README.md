@@ -86,10 +86,28 @@ URL del repositorio del Project Report en GitHub: [https://github.com/Desarrollo
         - [**Tácticas**](#tácticas-1)
   - [2.2. Entrevistas](#22-entrevistas)
     - [2.2.1. Diseño de entrevistas](#221-diseño-de-entrevistas)
+      - [Segmento 1: Administradores de instituciones educativas](#segmento-1-administradores-de-instituciones-educativas)
+      - [Segmento 2: Docentes y auxiliares](#segmento-2-docentes-y-auxiliares)
     - [2.2.2. Registro de entrevistas](#222-registro-de-entrevistas)
+    - [Segmento objetivo #1: Administradores de instituciones educativas](#segmento-objetivo-1-administradores-de-instituciones-educativas)
+        - [Datos del Entrevistado #1](#datos-del-entrevistado-1)
+        - [Datos del Entrevistado #2](#datos-del-entrevistado-2)
+        - [Datos del Entrevistado #3](#datos-del-entrevistado-3)
+    - [Segmento objetivo #2: Docentes y auxiliares](#segmento-objetivo-2-docentes-y-auxiliares)
+        - [Datos del Entrevistado #1](#datos-del-entrevistado-1-1)
+        - [Datos del Entrevistado #2](#datos-del-entrevistado-2-1)
+        - [Datos del Entrevistado #3](#datos-del-entrevistado-3-1)
     - [2.2.3. Análisis de entrevistas](#223-análisis-de-entrevistas)
+      - [Principales hallazgos (insights)](#principales-hallazgos-insights)
+      - [Patrones identificados](#patrones-identificados)
+      - [Pain Points validados](#pain-points-validados)
+      - [Oportunidades detectadas](#oportunidades-detectadas)
+      - [Riesgos identificados](#riesgos-identificados)
+      - [Conclusión del análisis](#conclusión-del-análisis)
   - [2.3. Needfinding](#23-needfinding)
     - [2.3.1. User Personas](#231-user-personas)
+      - [User persona 1: Administradores de instituciones educativas](#user-persona-1-administradores-de-instituciones-educativas)
+    - [User persona 2: Docentes y auxiliares](#user-persona-2-docentes-y-auxiliares)
     - [2.3.2. User Task Matrix](#232-user-task-matrix)
     - [2.3.3. User Journey Mapping](#233-user-journey-mapping)
     - [2.3.4. Empathy Mapping](#234-empathy-mapping)
@@ -111,16 +129,53 @@ URL del repositorio del Project Report en GitHub: [https://github.com/Desarrollo
       - [4.1.3.2. Software Architecture Context Level Diagrams](#4132-software-architecture-context-level-diagrams)
       - [4.1.3.3. Software Architecture Container Level Diagrams](#4133-software-architecture-container-level-diagrams)
       - [4.1.3.4. Software Architecture Deployment Diagrams](#4134-software-architecture-deployment-diagrams)
-  - [4.2. Tactical-Level Domain-Driven Design](#42-tactical-level-domain-driven-design)
-    - [4.2.X. Bounded Context: \<Nombre\>](#42x-bounded-context-nombre)
-      - [4.2.X.1. Domain Layer](#42x1-domain-layer)
-      - [4.2.X.2. Interface Layer](#42x2-interface-layer)
-      - [4.2.X.3. Application Layer](#42x3-application-layer)
-      - [4.2.X.4. Infrastructure Layer](#42x4-infrastructure-layer)
-      - [4.2.X.5. Bounded Context Software Architecture Component Level Diagrams](#42x5-bounded-context-software-architecture-component-level-diagrams)
-      - [4.2.X.6. Bounded Context Software Architecture Code Level Diagrams](#42x6-bounded-context-software-architecture-code-level-diagrams)
-        - [4.2.X.6.1. Bounded Context Domain Layer Class Diagrams](#42x61-bounded-context-domain-layer-class-diagrams)
-        - [4.2.X.6.2. Bounded Context Database Design Diagram](#42x62-bounded-context-database-design-diagram)
+- [4.2. Tactical-Level Domain-Driven Design](#42-tactical-level-domain-driven-design)
+  - [Bounded Contexts válidos](#bounded-contexts-válidos)
+    - [4.2.1. Identity, Access \& Profile Management](#421-identity-access--profile-management)
+      - [4.2.1.1. Domain Layer](#4211-domain-layer)
+      - [4.2.1.2. Interface Layer](#4212-interface-layer)
+      - [4.2.1.3. Application Layer](#4213-application-layer)
+      - [4.2.1.4. Infrastructure Layer](#4214-infrastructure-layer)
+      - [4.2.1.5. Bounded Context Software Architecture Component Level Diagrams](#4215-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.1.6. Bounded Context Software Architecture Code Level Diagrams](#4216-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.1.6.1. Bounded Context Domain Layer Class Diagram](#42161-bounded-context-domain-layer-class-diagram)
+        - [4.2.1.6.2. Bounded Context Database Design Diagram](#42162-bounded-context-database-design-diagram)
+    - [4.2.2. Space \& Resource Management](#422-space--resource-management)
+      - [4.2.2.1. Domain Layer](#4221-domain-layer)
+      - [4.2.2.2. Interface Layer](#4222-interface-layer)
+      - [4.2.2.3. Application Layer](#4223-application-layer)
+      - [4.2.2.4. Infrastructure Layer](#4224-infrastructure-layer)
+      - [4.2.2.5. Bounded Context Software Architecture Component Level Diagrams](#4225-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.2.6. Bounded Context Software Architecture Code Level Diagrams](#4226-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.2.6.1. Bounded Context Domain Layer Class Diagram](#42261-bounded-context-domain-layer-class-diagram)
+        - [4.2.2.6.2. Bounded Context Database Design Diagram](#42262-bounded-context-database-design-diagram)
+    - [4.2.3. Reservation \& Scheduling](#423-reservation--scheduling)
+      - [4.2.3.1. Domain Layer](#4231-domain-layer)
+      - [4.2.3.2. Interface Layer](#4232-interface-layer)
+      - [4.2.3.3. Application Layer](#4233-application-layer)
+      - [4.2.3.4. Infrastructure Layer](#4234-infrastructure-layer)
+      - [4.2.3.5. Bounded Context Software Architecture Component Level Diagrams](#4235-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.3.6. Bounded Context Software Architecture Code Level Diagrams](#4236-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.3.6.1. Bounded Context Domain Layer Class Diagram](#42361-bounded-context-domain-layer-class-diagram)
+        - [4.2.3.6.2. Bounded Context Database Design Diagram](#42362-bounded-context-database-design-diagram)
+    - [4.2.4. Breakdown Management](#424-breakdown-management)
+      - [4.2.4.1. Domain Layer](#4241-domain-layer)
+      - [4.2.4.2. Interface Layer](#4242-interface-layer)
+      - [4.2.4.3. Application Layer](#4243-application-layer)
+      - [4.2.4.4. Infrastructure Layer](#4244-infrastructure-layer)
+      - [4.2.4.5. Bounded Context Software Architecture Component Level Diagrams](#4245-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.4.6. Bounded Context Software Architecture Code Level Diagrams](#4246-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.4.6.1. Bounded Context Domain Layer Class Diagram](#42461-bounded-context-domain-layer-class-diagram)
+        - [4.2.4.6.2. Bounded Context Database Design Diagram](#42462-bounded-context-database-design-diagram)
+    - [4.2.5. IoT Monitoring](#425-iot-monitoring)
+      - [4.2.5.1. Domain Layer](#4251-domain-layer)
+      - [4.2.5.2. Interface Layer](#4252-interface-layer)
+      - [4.2.5.3. Application Layer](#4253-application-layer)
+      - [4.2.5.4. Infrastructure Layer](#4254-infrastructure-layer)
+      - [4.2.5.5. Bounded Context Software Architecture Component Level Diagrams](#4255-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.5.6. Bounded Context Software Architecture Code Level Diagrams](#4256-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.5.6.1. Bounded Context Domain Layer Class Diagram](#42561-bounded-context-domain-layer-class-diagram)
+        - [4.2.5.6.2. Bounded Context Database Design Diagram](#42562-bounded-context-database-design-diagram)
 - [Conclusiones](#conclusiones)
   - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
 - [Bibliografía](#bibliografía)
@@ -170,9 +225,9 @@ De esta manera, EduSpace permite a las instituciones educativas optimizar su efi
 | Foto del Participante                                                                                                                                                                                     | Nombres y Apellidos           | Código de Estudiante | Descripción de Carrera | Resumen de Conocimientos y Habilidades                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- | -------------------- | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [![Andrés Torres](https://github.com/DesarrolloSolucionIoT/report/raw/main/assets/chapter1/team/andres.jpeg)](https://github.com/DesarrolloSolucionIoT/report/blob/main/assets/chapter1/team/andres.jpeg) | Andrés Alberto Torres García  | u202220528           | Ingeniería de Software | Hola, soy Andrés Alberto Torres García, tengo 20 años y curso el séptimo ciclo de Ingeniería de Software. Me apasiona la tecnología y siempre busco entender cómo funcionan las cosas, lo que me ha permitido adquirir experiencia en C++, Python, JavaScript y TypeScript, así como en el desarrollo de aplicaciones web con Next.js, TailwindCSS y Firebase, bases de datos como MySQL, MongoDB y Firestore, y el uso de herramientas como Docker y GitHub. Además, el fútbol es otra de mis grandes pasiones, disciplina que me ha enseñado valores como el trabajo en equipo, la perseverancia y la constancia, que aplico también en mi vida académica y profesional. |
-| [![Camila Loli](assets/chapter-I/CamilaLoli.jpg)                                                                                                                                                          | Camila Cristina Loli Ramirez  | u202110385           | Ingeniería de Software | Soy Camila Cristina Loli Ramirez, tengo 21 años y soy estudiante de la carrera Ingeniería de Software. Mi carrera se basa en los conocimientos y técnicas científicas para crear un programa informático. Tengo experiencia con el trabajo en equipo, creación de proyectos y creación de programas básicos. Aportaré al equipo mi creatividad, compromiso de trabajo en equipo, puntualidad y responsabilidad. Me comprometo a trabajar constantemente para mejorar nuestro proyecto y a generar un entorno de trabajo sano con mi grupo.                                                                                                                                 |
+| ![Camila Loli](assets/chapter-I/CamilaLoli.jpg)                                                                                                                                                          | Camila Cristina Loli Ramirez  | u202110385           | Ingeniería de Software | Soy Camila Cristina Loli Ramirez, tengo 21 años y soy estudiante de la carrera Ingeniería de Software. Mi carrera se basa en los conocimientos y técnicas científicas para crear un programa informático. Tengo experiencia con el trabajo en equipo, creación de proyectos y creación de programas básicos. Aportaré al equipo mi creatividad, compromiso de trabajo en equipo, puntualidad y responsabilidad. Me comprometo a trabajar constantemente para mejorar nuestro proyecto y a generar un entorno de trabajo sano con mi grupo.                                                                                                                                 |
 |                                                                                                                                                                                                           | Josué Oscar Antayhua Castillo | u20191e414           | Ingeniería de Software |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-|                                                                                                                                                                                                           | Luis Andrés Alva Abanto       | u202310877           | Ingeniería de Software |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|                                                                                                                                                     ![foto](/assets/images/profilepic.png)                                                      | Luis Andrés Alva Abanto       | u202310877           | Ingeniería de Software |    Mi nombre es Luis Andrés Alva Abanto, tengo 20 años y estudio ingeniería de software.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 |   ![Angie Yalán](assets/chapter-I/angie.jpg)                                                                                                                                                                                                        | Angie Christina Yalán Zhang   | u202312504           | Ingeniería de Software | Mi nombre es Angie Yalán. Soy estudiante de la carrera Ingeniería de Software y tengo 20 años. Me considero una persona proactiva que le gustan nuevas experiencias y aprender cosas diferentes. Sigo en el proceso de mejora en cuanto a la programación y cuento con toda la iniciativa para ser cada día mejor en ello.  |
 
 ## 1.2. Solution Profile
@@ -947,7 +1002,7 @@ Dado que EduSpace IoT es una plataforma independiente que no se integra con otro
 
 El diagrama de Containers desglosa la estructura interna de la plataforma EduSpace IoT, mostrando los contenedores de software que la componen, sus responsabilidades y las relaciones entre ellos. Este nivel de abstracción permite visualizar las principales decisiones tecnológicas y la distribución de responsabilidades entre los distintos componentes del sistema.
 
-La plataforma está compuesta por los siguientes contenedores: la Landing Page como sitio web estático, la Web Application como SPA desarrollada en Vue.js, la Mobile Application desarrollada en Flutter, el Web API como backend RESTful desarrollado en ASP.NET Core que implementa la lógica de negocio de todos los bounded contexts, el Edge API desarrollado en Flask que actúa como intermediario entre los dispositivos IoT y el Web API, la Embedded Application en MicroPython que corre directamente en el ESP32, la Base de Datos principal en PostgreSQL y la Edge Database en SQLite para el almacenamiento local en el Edge API.
+La plataforma está compuesta por los siguientes contenedores: la Landing Page como sitio web estático, la Web Application como SPA desarrollada en Vue.js, la Mobile Application desarrollada en Flutter, el Web API como backend RESTful desarrollado en ASP.NET Core que implementa la lógica de negocio de todos los bounded contexts, el Edge API desarrollado en Flask que actúa como intermediario entre los dispositivos IoT y el Web API, la Embedded Application en MicroPython que corre directamente en el ESP32, la Base de Datos principal en MySQL y la Edge Database en SQLite para el almacenamiento local en el Edge API.
 
 ![Container Diagram Key](/assets/images/c4-container-key.png)
 
@@ -957,7 +1012,7 @@ La plataforma está compuesta por los siguientes contenedores: la Landing Page c
 
 El diagrama de Deployment muestra cómo los contenedores de la plataforma EduSpace IoT se distribuyen en la infraestructura de despliegue. Este diagrama refleja las decisiones de infraestructura tomadas para el entorno de producción del proyecto.
 
-La Landing Page se despliega en GitHub Pages por su naturaleza estática y gratuidad. La Web Application se despliega en Netlify, plataforma que ofrece despliegue continuo desde GitHub. La Mobile Application se distribuye mediante Firebase App Distribution para pruebas en dispositivos físicos. El Web API, el Edge API, la Edge Database y la Base de Datos PostgreSQL se despliegan en Railway, plataforma de hosting en la nube que permite gestionar múltiples servicios en un mismo entorno. Finalmente, la Embedded Application reside directamente en el microcontrolador ESP32, instalado físicamente en el aula monitoreada.
+La Landing Page se despliega en GitHub Pages por su naturaleza estática y gratuidad. La Web Application se despliega en Netlify, plataforma que ofrece despliegue continuo desde GitHub. La Mobile Application se distribuye mediante Firebase App Distribution para pruebas en dispositivos físicos. El Web API, el Edge API, la Edge Database y la Base de Datos MySQL se despliegan en Railway, plataforma de hosting en la nube que permite gestionar múltiples servicios en un mismo entorno. Finalmente, la Embedded Application reside directamente en el microcontrolador ESP32, instalado físicamente en el aula monitoreada.
 
 ![Deplyment Diagram Key](/assets/images/c4-deployment-key.png)
 
