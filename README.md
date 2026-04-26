@@ -42,7 +42,7 @@
 
 | Versión | Fecha      | Autor  | Descripción de modificación |
 | ------- | ---------- | ------ | --------------------------- |
-| 1.0     | 11/04/2026 | Equipo | Creación del informe.       |
+| AV1     | 11/04/2026 | Alva Abanto, Luis Andrés <br> Antayhua Castillo, Josué Oscar <br> Loli Ramirez, Camila Cristina <br> Torres García, Andrés Alberto <br> Yalán Zhang, Angie Christina| Se han incluído los siguientes capítulos: <br>Capítulo I: Introducción <br> Capítulo II: Requirements Elicitation & Analysis <br> Capítulo III: Requirements Specification <br> Capítulo IV: Solution Software Design      |
 
 ---
 
