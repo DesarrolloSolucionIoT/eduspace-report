@@ -828,6 +828,22 @@ En este contexto, EduSpace se posiciona como una solución con alto potencial de
 
 ### 2.3.2. User Task Matrix
 
+| Tareas/Tasks | Frecuencia (Administrador - Carlos) | Importancia (Administrador - Carlos) | Frecuencia (Docente - Ana) | Importancia (Docente - Ana) |
+|-------------|--------------------------------------|--------------------------------------|-----------------------------|-----------------------------|
+| Revisar programación y asignación de aulas | Alta | Muy Alta | Media | Alta |
+| Verificar disponibilidad de aulas antes de uso | Alta | Muy Alta | Alta | Muy Alta |
+| Detectar problemas en aulas (equipos, temperatura, ruido) | Media | Muy Alta | Alta | Muy Alta |
+| Coordinar cambios de aula o reasignaciones | Media | Alta | Media | Alta |
+| Monitorear uso real de aulas (ocupación) | Alta | Muy Alta | Baja | Media |
+| Supervisar consumo de recursos (energía, equipos) | Media | Alta | Baja | Baja |
+| Reportar incidencias en aulas | Media | Alta | Alta | Alta |
+| Recibir alertas sobre problemas en tiempo real | Alta | Muy Alta | Media | Muy Alta |
+| Tomar decisiones para optimizar uso de espacios | Alta | Muy Alta | Baja | Media |
+| Adaptarse a condiciones del aula durante la clase | Baja | Media | Alta | Muy Alta |
+| Buscar información previa del estado del aula | Media | Alta | Alta | Muy Alta |
+| Comunicar problemas a administración | Media | Alta | Media | Alta |
+| Evaluar eficiencia en uso de aulas (reportes históricos) | Media | Alta | Baja | Baja |
+
 ### 2.3.3. User Journey Mapping
 
 ### 2.3.4. Empathy Mapping
