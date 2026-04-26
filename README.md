@@ -979,6 +979,9 @@ A continuación se presenta el diagrama resultante de la sesión:
 
 ## 3.2. Impact Mapping
 
+<div align="center"><img src="/assets/chapter3/impact-map1.jpg"></div>
+<div align="center"><img src="/assets/chapter3/impact-map2.jpg"></div>
+
 ## 3.3. Product Backlog
 
 | Prioridad | Story ID | Título | Descripción | Story Points | Justificación de Valor |
@@ -1023,6 +1026,8 @@ A continuación se presenta el diagrama resultante de la sesión:
 | 38 | US38 | Generar alertas API | Backend alertas | 5 | Integración |
 | 39 | US39 | Consultar historial API | API histórica | 5 | Soporte |
 | 40 | US40 | Validar requests | Validación API | 3 | Control técnico |
+
+Link del trello: https://trello.com/invite/b/69edfb314ab741198fef7020/ATTI0d12cd13b753e0c11971c7322f7821d32297D49D/iot
 
 ---
 
