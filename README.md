@@ -832,6 +832,14 @@ En este contexto, EduSpace se posiciona como una solución con alto potencial de
 
 ### 2.3.4. Empathy Mapping
 
+#### User persona 1: Administradores de instituciones educativas
+
+<div align="center"><img src="/assets/chapter2/empathy-map1.png"></div>
+
+### User persona 2: Docentes y auxiliares
+
+<div align="center"><img src="/assets/chapter2/empathy-map2.png"></div>
+
 ## 2.4. Big Picture EventStorming
 
 Para comprender el dominio del negocio de EduSpace en su totalidad, el equipo llevó a cabo una sesión de Big Picture EventStorming de manera colaborativa. El objetivo principal fue identificar los eventos de dominio más relevantes del sistema, mapear a los actores involucrados y descubrir los bounded contexts de forma natural a partir del flujo de eventos.
