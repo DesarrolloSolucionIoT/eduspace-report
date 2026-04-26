@@ -763,6 +763,14 @@ En este contexto, EduSpace se posiciona como una solución con alto potencial de
 
 ### 2.3.1. User Personas
 
+#### User persona 1: Administradores de instituciones educativas
+
+<div align="center"><img src="/assets/chapter2/user-persona1.png"></div>
+
+### User persona 2: Docentes y auxiliares
+
+<div align="center"><img src="/assets/chapter2/user-persona2.png"></div>
+
 ### 2.3.2. User Task Matrix
 
 ### 2.3.3. User Journey Mapping
