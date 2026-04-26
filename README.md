@@ -574,6 +574,38 @@ Se identificaron las siguientes debilidades en los competidores:
 
 ### 2.2.1. Diseño de entrevistas
 
+Las entrevistas permitirán recolectar información cualitativa sobre cómo se gestionan actualmente los espacios académicos, recursos e infraestructura en instituciones educativas, identificando problemas, necesidades y oportunidades para validar la propuesta de EduSpace.
+
+#### Segmento 1: Administradores de instituciones educativas
+
+Objetivo: Comprender cómo los administradores gestionan aulas y recursos, qué dificultades enfrentan y qué valor perciben en una solución basada en monitoreo en tiempo real.
+
+* ¿Cómo verifican si las aulas están siendo utilizadas correctamente?
+* ¿Qué herramientas utilizan para el control de espacios y recursos?
+* ¿Cómo monitorean el consumo de energía o mantenimiento de aulas?
+* ¿Qué dificultades enfrentan en la gestión de aulas?
+* ¿Qué tan frecuente es el desperdicio de recursos (luces, equipos encendidos)?
+* ¿Tienen visibilidad en tiempo real de lo que ocurre en las aulas?
+* ¿Qué tan importante sería contar con datos en tiempo real sobre uso de aulas?
+* ¿Te sería útil recibir alertas sobre ineficiencias o problemas?
+* ¿Qué opinas de un sistema que monitoree aulas en tiempo real?
+* ¿Qué funcionalidades considerarías más importantes?
+* ¿Qué te generaría más valor: ahorro de costos, control o mejora académica?
+* ¿Implementarías una solución así en tu institución? ¿Por qué?
+* ¿Qué barreras ves para su implementación? (costo, tecnología, cultura, etc.)
+
+#### Segmento 2: Docentes y auxiliares
+
+Objetivo: Comprender cómo perciben el uso de aulas, condiciones del entorno y problemas que afectan el desarrollo de clases.
+
+* ¿Has tenido problemas con temperatura, ruido o equipos?
+* ¿Qué te gustaría mejorar en las aulas?
+* ¿Te sería útil conocer el estado de un aula antes de ingresar?
+* ¿Qué opinas de un sistema que monitoree las condiciones del aula?
+* ¿Te ayudaría saber si un aula está disponible o en buenas condiciones?
+* ¿Qué funcionalidad te sería más útil como docente?
+* ¿Crees que un sistema así mejoraría tu experiencia al enseñar?
+
 ### 2.2.2. Registro de entrevistas
 
 ### 2.2.3. Análisis de entrevistas
