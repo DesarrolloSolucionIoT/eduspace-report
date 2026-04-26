@@ -846,6 +846,14 @@ En este contexto, EduSpace se posiciona como una solución con alto potencial de
 
 ### 2.3.3. User Journey Mapping
 
+#### User persona 1: Administradores de instituciones educativas
+
+<div align="center"><img src="/assets/chapter2/journey-map1.png"></div>
+
+### User persona 2: Docentes y auxiliares
+
+<div align="center"><img src="/assets/chapter2/journey-map2.png"></div>
+
 ### 2.3.4. Empathy Mapping
 
 #### User persona 1: Administradores de instituciones educativas
