@@ -578,7 +578,7 @@ Los competidores analizados destacan por:
 - Amplia experiencia y posicionamiento en el mercado
 - Uso de tecnologías avanzadas como IA, Big Data y analítica predictiva
 
-##### **Fortalezas de Smart Campus IoT:**
+##### **Fortalezas de EduSpace:**
 
 - Especialización en el sector educativo
 - Integración con procesos académicos (aulas, horarios, docentes)
@@ -607,7 +607,7 @@ Se identificaron las siguientes debilidades en los competidores:
 - Falta de enfoque en el sector educativo
 - Limitada adaptación a procesos académicos específicos
 
-##### **Debilidades de Smart Campus IoT:**
+##### **Debilidades de EduSpace:**
 
 - Menor precisión frente a soluciones industriales
 - Dependencia de sensores de bajo costo
