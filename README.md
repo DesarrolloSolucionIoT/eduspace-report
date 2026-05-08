@@ -43,6 +43,7 @@
 | Versión | Fecha      | Autor  | Descripción de modificación |
 | ------- | ---------- | ------ | --------------------------- |
 | AV1     | 11/04/2026 | Alva Abanto, Luis Andrés <br> Antayhua Castillo, Josué Oscar <br> Loli Ramirez, Camila Cristina <br> Torres García, Andrés Alberto <br> Yalán Zhang, Angie Christina| Se han incluído los siguientes capítulos: <br>Capítulo I: Introducción <br> Capítulo II: Requirements Elicitation & Analysis <br> Capítulo III: Requirements Specification <br> Capítulo IV: Solution Software Design      |
+| TB1     | 08/05/2026 | Torres García, Andrés Alberto | Se ha incluído la sección 6.2.1 (Sprint 1) del Capítulo VI: <br> 6.2.1.1. Sprint Planning 1 <br> 6.2.1.2. Aspect Leaders and Collaborators <br> 6.2.1.3. Sprint Backlog 1 |
 
 ---
 
@@ -180,6 +181,12 @@ URL del repositorio del Project Report en GitHub: [https://github.com/Desarrollo
       - [4.2.5.6. Bounded Context Software Architecture Code Level Diagrams](#4256-bounded-context-software-architecture-code-level-diagrams)
         - [4.2.5.6.1. Bounded Context Domain Layer Class Diagram](#42561-bounded-context-domain-layer-class-diagram)
         - [4.2.5.6.2. Bounded Context Database Design Diagram](#42562-bounded-context-database-design-diagram)
+- [Capítulo VI: Product Implementation, Validation \& Deployment](#capítulo-vi-product-implementation-validation--deployment)
+  - [6.2. Landing Page, Services \& Applications Implementation](#62-landing-page-services--applications-implementation)
+    - [6.2.1. Sprint 1](#621-sprint-1)
+      - [6.2.1.1. Sprint Planning 1](#6211-sprint-planning-1)
+      - [6.2.1.2. Aspect Leaders and Collaborators](#6212-aspect-leaders-and-collaborators)
+      - [6.2.1.3. Sprint Backlog 1](#6213-sprint-backlog-1)
 - [Conclusiones](#conclusiones)
   - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
 - [Bibliografía](#bibliografía)
@@ -199,8 +206,8 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
 
 | Criterio específico | Acciones realizadas | Conclusiones |
 |---------------------|---------------------|--------------|
-| Trabaja en equipo para proporcionar liderazgo en forma conjunta | Angie Christina Yalán Zhang **AV1** Durante el desarrollo de EduSpace, trabajé de manera colaborativa con mi equipo, aportando ideas y participando activamente en la toma de decisiones. Asumí un rol de liderazgo compartido, apoyando en la organización de entregables y asegurando que todos contribuyamos al avance del proyecto. <br> Luis Alva **AV1** Participé activamente en la definición de la arquitectura de software del sistema EduSpace IoT, liderando el diseño estratégico basado en Domain-Driven Design. Contribuí en la identificación de bounded contexts, la elaboración del Design-Level EventStorming y la construcción de los diagramas C4, asegurando que las decisiones arquitectónicas fueran consistentes con los requerimientos del sistema y los lineamientos del curso. <br> Camila Cristina Loli Ramirez **AV1** Realicé la organización del capítulo 1, me enfoqué en mejorar la estructura del Lean UX, se corrigieron puntos como el Problem Statement, 5W2H, segmentos objetivo y canvas. Asimismo, contribuí en la preparación de la presentación. | \<Conclusiones grupales\> |
-| Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos. | Angie Christina Yalán Zhang **AV1** Contribuí a generar un ambiente de trabajo colaborativo, donde se respetaron las ideas de todos. Participé en la planificación de tareas y en el cumplimiento de los objetivos, lo que permitió avanzar de forma ordenada en entregables como entrevistas, user personas y modelos del sistema. Luis Alva **AV1** Colaboré en la planificación y distribución de tareas del equipo para la primera entrega, estableciendo un orden de trabajo por secciones del informe. Participé en sesiones de trabajo colaborativo para la elaboración del Big Picture EventStorming y los Bounded Context Canvases, promoviendo un entorno de discusión inclusivo donde cada decisión de diseño fue consensuada con el equipo. Camila Cristina Loli Ramirez **AV1** Colaboré en la revisión y mejora de los contenidos del proyecto. Esto permitió actualizar el Lean UX acorde a la nueva propuesta de solución. Cumplimos el objetivo de mantener coherencia a lo largo del informe mediante la realización de cada tarea.| \<Conclusiones grupales\> |
+| Trabaja en equipo para proporcionar liderazgo en forma conjunta | Angie Christina Yalán Zhang **AV1** Durante el desarrollo de EduSpace, trabajé de manera colaborativa con mi equipo, aportando ideas y participando activamente en la toma de decisiones. Asumí un rol de liderazgo compartido, apoyando en la organización de entregables y asegurando que todos contribuyamos al avance del proyecto. <br> Luis Alva **AV1** Participé activamente en la definición de la arquitectura de software del sistema EduSpace IoT, liderando el diseño estratégico basado en Domain-Driven Design. Contribuí en la identificación de bounded contexts, la elaboración del Design-Level EventStorming y la construcción de los diagramas C4, asegurando que las decisiones arquitectónicas fueran consistentes con los requerimientos del sistema y los lineamientos del curso. <br> Camila Cristina Loli Ramirez **AV1** Realicé la organización del capítulo 1, me enfoqué en mejorar la estructura del Lean UX, se corrigieron puntos como el Problem Statement, 5W2H, segmentos objetivo y canvas. Asimismo, contribuí en la preparación de la presentación. <br> Andrés Alberto Torres García **AV1** Asumí el liderazgo técnico del bounded context IoT Monitoring, nuevo contexto incorporado en esta iteración para soportar el monitoreo ambiental de las aulas. Conduje el modelado del bounded context en sesiones colaborativas de Design-Level EventStorming, elaboré el Bounded Context Canvas correspondiente y diseñé el caso de Domain Message Flow asociado al monitoreo IoT y generación de alertas (sec. 4.1.1.2). Lideré además la documentación íntegra del Tactical-Level DDD para el bounded context IoT Monitoring (sec. 4.2.5), cubriendo Domain, Application, Interface e Infrastructure Layers junto con los diagramas de componentes y código. **TB1** Asumí el rol de Líder de los aspectos IAM e IoT Monitoring, y de Colaborador en Landing Page y Space & Resource Management según la matriz LACX (sec. 6.2.1.2). Validé y dejé operativo el flujo de autenticación del bounded context IAM heredado (T-IAM-01: endpoints de sign-in/sign-up con JWT) y conduje el scaffolding del nuevo bounded context IoT Monitoring (T-IoT-01: estructura de carpetas alineada al Capítulo 4.2.5; T-IoT-02: entidades de dominio Sensor, Reading y Alert según los Aggregates definidos en sec. 4.2.5.1), dejando la base lista para integrar telemetría real en el Sprint 2. Adicionalmente, redacté íntegramente la sección 6.2.1 del Capítulo VI (Sprint Planning, matriz LACX y Sprint Backlog) y coordiné la creación del tablero de proyecto en Jira con el detalle de tasks, asignaciones y trazabilidad hacia las User Stories del Product Backlog. | El equipo distribuyó el liderazgo técnico de forma coherente con la organización del informe en bounded contexts y capítulos. Cada integrante asumió la responsabilidad principal de un aspecto del diseño estratégico o táctico, mientras las decisiones arquitectónicas transversales se tomaron en sesiones grupales de EventStorming y Context Mapping. Esta distribución permitió avanzar en paralelo sin perder coherencia y demuestra que el equipo es capaz de proporcionar liderazgo de forma conjunta, sin depender de una única figura central. |
+| Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos. | Angie Christina Yalán Zhang **AV1** Contribuí a generar un ambiente de trabajo colaborativo, donde se respetaron las ideas de todos. Participé en la planificación de tareas y en el cumplimiento de los objetivos, lo que permitió avanzar de forma ordenada en entregables como entrevistas, user personas y modelos del sistema. <br> Luis Alva **AV1** Colaboré en la planificación y distribución de tareas del equipo para la primera entrega, estableciendo un orden de trabajo por secciones del informe. Participé en sesiones de trabajo colaborativo para la elaboración del Big Picture EventStorming y los Bounded Context Canvases, promoviendo un entorno de discusión inclusivo donde cada decisión de diseño fue consensuada con el equipo. <br> Camila Cristina Loli Ramirez **AV1** Colaboré en la revisión y mejora de los contenidos del proyecto. Esto permitió actualizar el Lean UX acorde a la nueva propuesta de solución. Cumplimos el objetivo de mantener coherencia a lo largo del informe mediante la realización de cada tarea. <br> Andrés Alberto Torres García **AV1** Participé en la planificación inicial del ciclo, alineando la incorporación del componente IoT con el alcance heredado de la plataforma EduSpace. Coordiné con el equipo la distribución de bounded contexts entre los integrantes y propuse el cronograma de entregables del Capítulo IV. Cumplí con los objetivos asignados de modelar el bounded context IoT Monitoring de extremo a extremo y de aportar en la consolidación de los diagramas C4 de Container y Deployment, integrando el Edge API y los dispositivos ESP32 al landscape de la solución. **TB1** Aporté en la planificación del Sprint 1 redactando el acta de la reunión y consolidando la matriz LACX de Aspect Leaders & Collaborators, garantizando que cada aspecto del producto contara con al menos un Líder y un Colaborador para evitar puntos únicos de falla. Cumplí con los entregables comprometidos como Líder de IAM e IoT Monitoring (T-IAM-01, T-IoT-01, T-IoT-02), revisé los avances de Camila en T-IAM-02 y de Josué en T-IoT-03 antes de mergear a `main`, y mantuve la trazabilidad entre el Sprint Backlog del informe y el tablero de Jira para asegurar consistencia entre la evidencia escrita y la herramienta de gestión. | El equipo estableció al inicio de AV1 metas claras en términos de capítulos del informe a entregar (Capítulos I-IV) y artefactos por sección, distribuyéndolos según la afinidad de cada integrante. Las decisiones de diseño se tomaron de forma consensuada en sesiones colaborativas, respetando las propuestas de todos los miembros y garantizando un entorno inclusivo. El cumplimiento de los entregables — Lean UX, User Stories, Big Picture y Design-Level EventStorming, Bounded Context Canvases, Context Map, diagramas C4 y los cinco bounded contexts documentados a nivel táctico — confirma que el equipo planificó adecuadamente y ejecutó conforme a lo planificado. |
 
 ---
 
@@ -2462,6 +2469,85 @@ Componentes principales:
 ![IoT Monitoring Database Design Diagram](assets/images/IoT-Monitoring-Bounded-Context-Database-DesignDiagram.png)
 
 
+
+---
+
+# Capítulo VI: Product Implementation, Validation & Deployment
+
+En este capítulo el equipo documenta el proceso de implementación, pruebas, despliegue y validación de los productos digitales que conforman la solución EduSpace IoT —Landing Page, Web Application y RESTful API— organizados en Sprints. Para TB1 se reporta el avance correspondiente al Sprint 1, que sienta la línea base operativa heredada del ciclo previo y prepara el bounded context IoT Monitoring para recibir telemetría real en el Sprint 2.
+
+## 6.2. Landing Page, Services & Applications Implementation
+
+Esta sección concentra la evidencia de implementación, testing, ejecución, documentación de servicios, despliegue y colaboración en equipo, agrupada por Sprint. Cada Sprint incluye sus propias subsecciones de Sprint Planning, Aspect Leaders & Collaborators, Sprint Backlog y la evidencia correspondiente para el Sprint Review.
+
+### 6.2.1. Sprint 1
+
+El Sprint 1 corresponde a la primera iteración formal del ciclo 2026-1. Su propósito es re-establecer la línea base desplegada de la plataforma EduSpace y dejar listo el scaffolding del nuevo bounded context IoT Monitoring, evitando comprometer historias de usuario que requieran datos reales de sensores —diferidas al Sprint 2—. Las subsecciones a continuación documentan la planificación, la asignación de líderes y colaboradores por aspecto, y el backlog del Sprint.
+
+#### 6.2.1.1. Sprint Planning 1
+
+Para este primer Sprint, el equipo se enfocó en consolidar la base de la plataforma heredada del ciclo previo —Landing Page, Web Application y RESTful API que cubren los bounded contexts IAM, Space & Resource Management, Reservation & Scheduling y Breakdown Management— y crear el scaffolding inicial del nuevo bounded context IoT Monitoring (estructura de carpetas alineada al Capítulo 4.2.5, entidades de dominio y contratos REST documentados con OpenAPI). La decisión responde a una estrategia explícita de estabilizar primero la base operativa antes de incorporar los flujos de telemetría IoT, programados para el Sprint 2. La reunión de Sprint Planning se realizó al inicio del ciclo siguiendo el formato establecido por Scrum, y el cuadro resumen se presenta a continuación.
+
+| **Sprint #** | **Sprint 1** |
+| --- | --- |
+| **Sprint Planning Background** | |
+| Date | 2026-05-08 |
+| Time | 07:00 PM (GMT-5) |
+| Location | Servidor de Discord del equipo FullStack Fury |
+| Prepared By | Loli Ramirez, Camila Cristina |
+| Attendees (to planning meeting) | Alva Abanto, Luis Andrés <br> Antayhua Castillo, Josué Oscar <br> Loli Ramirez, Camila Cristina <br> Torres García, Andrés Alberto <br> Yalán Zhang, Angie Christina |
+| Sprint n – 1 Review Summary | No aplica. Sprint 1 corresponde a la primera iteración formal del ciclo 2026-1. Como insumo se tomó la base de código heredada del ciclo previo (EduSpace sin IoT), validada en AV1, junto con los artefactos de diseño definidos en los Capítulos III y IV de este informe (User Stories, Product Backlog, Bounded Context Canvases y diagramas C4). |
+| Sprint n – 1 Retrospective Summary | No aplica por ser el primer Sprint formal. Tomando como base las lecciones aprendidas del ciclo anterior, el equipo acordó adoptar Conventional Commits, GitFlow con ramas por capítulo/feature y revisiones cruzadas entre líderes y colaboradores de cada aspecto definidos en la matriz LACX (sec. 6.2.1.2). |
+| **Sprint Goal & User Stories** | |
+| Sprint 1 Goal | Nuestro foco está en re-establecer la línea base desplegada de la plataforma EduSpace —Landing Page, Web Application y RESTful API que cubren los bounded contexts IAM, Space & Resource Management, Reservation & Scheduling y Breakdown Management— y crear el scaffolding inicial del bounded context IoT Monitoring (estructura de carpetas, entidades de dominio y contratos REST documentados con OpenAPI). Creemos que esto entrega a administradores y docentes una plataforma estable y accesible públicamente, y le entrega al equipo una base lista para integrar telemetría real en el Sprint 2. Lo confirmaremos cuando el Landing Page y la Web Application estén desplegados con URL pública, los cuatro bounded contexts preexistentes pasen pruebas de humo end-to-end, y el scaffolding del bounded context IoT Monitoring esté mergeado a `main` con sus endpoints visibles en Swagger. |
+| Sprint 1 Velocity | 40 Story Points. El equipo estableció esta velocidad como referencia inicial alineada al desempeño del ciclo anterior (~42 SP/sprint), descontando overhead esperado por el alta del nuevo bounded context IoT Monitoring. |
+| Sum of Story Points | 40 Story Points. |
+
+#### 6.2.1.2. Aspect Leaders and Collaborators
+
+En esta sección se presenta la matriz de Liderazgo y Colaboración (LACX) del Sprint 1. Los aspectos considerados se derivan directamente del modelo estratégico definido en el Capítulo IV.1: los cinco bounded contexts validados —IAM, Space & Resource Management, Reservation & Scheduling, Breakdown Management e IoT Monitoring— y, adicionalmente, el aspecto Landing Page, que aunque no constituye un bounded context, agrupa la entrega del producto digital de visibilidad pública requerido para TB1. Cada miembro del equipo asume rol de Líder (L) en uno o más aspectos —siendo responsable de la coherencia técnica del aspecto, la coordinación de tareas y la integración a `main`— y rol de Colaborador (C) en otros, donde aporta implementación, revisión de código y validación. La asignación se construyó alineando la experiencia previa de cada integrante con el aspecto más afín, garantizando además que cada aspecto cuente con al menos un Líder y un Colaborador para evitar puntos únicos de falla. Esta organización se respeta en la asignación de tasks del Sprint Backlog (sec. 6.2.1.3): cada Work-item se asigna al Líder o a un Colaborador del aspecto al que pertenece la User Story correspondiente.
+
+| Apellidos y Nombres | GitHub Username | Landing Page | IAM | Space & Resource Management | Reservation & Scheduling | Breakdown Management | IoT Monitoring |
+| --- | --- | :---: | :---: | :---: | :---: | :---: | :---: |
+| Torres García, Andrés Alberto | andrest04 | C | L | C | — | — | L |
+| Loli Ramirez, Camila Cristina | CamilaLoli | L | C | — | — | C | C |
+| Antayhua Castillo, Josué Oscar | Azsher | — | C | L | C | — | C |
+| Alva Abanto, Luis Andrés | luis-alva0 | — | — | C | L | C | — |
+| Yalán Zhang, Angie Christina | aaaaangie | C | — | — | C | L | — |
+
+Leyenda: **L** = Leader (responsable del aspecto durante el Sprint), **C** = Collaborator (aporta implementación y revisión), **—** = no participa en ese aspecto durante el Sprint 1.
+
+#### 6.2.1.3. Sprint Backlog 1
+
+El objetivo principal del Sprint 1 es consolidar la línea base desplegada de EduSpace y dejar el scaffolding del bounded context IoT Monitoring listo para recibir telemetría en el Sprint 2. La selección de User Stories prioriza el aspecto Landing Page (US31, US32, US34) por ser entregable obligatorio de TB1, junto con un subconjunto de las historias del Product Backlog (sec. 3.3) cuya entrega depende exclusivamente de funcionalidad ya disponible en la base de código heredada —es decir, historias que pueden completarse sin requerir aún el flujo de datos IoT real—. Las historias de visualización en tiempo real basadas en sensores (US01, US04, US11, US12, US16) se difieren al Sprint 2 una vez que el bounded context IoT Monitoring esté operativo. Adicionalmente se incluyen tareas técnicas (T-IAM-*, T-IoT-*) que materializan la validación de la autenticación heredada y el scaffolding del nuevo bounded context, alineadas a los diagramas de componentes presentados en las secciones 4.2.1.5 y 4.2.5.5.
+
+A continuación se presenta la captura del Sprint Board y el enlace público al tablero del equipo.
+
+URL público del tablero (Jira): <https://upc-team-awnysuez.atlassian.net/jira/software/projects/SCRUM/boards/1>
+
+![Sprint 1 Board en Jira](assets/chapter-VI/sprint-1-board-jira.png)
+
+| Sprint # | Sprint 1 | | | | | | |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| **User Story** | | **Work-Item / Task** | | | | | |
+| **Id** | **Title** | **Id** | **Title** | **Description** | **Estimation (Hours)** | **Assigned To** | **Status** |
+| US31 | Ver landing page | T-31-01 | Maquetar secciones del Landing Page | Implementar header, hero, secciones de propósito y footer en `landing-page/` siguiendo los mockups validados. | 6 | Loli Ramirez, Camila | Done |
+| US31 | Ver landing page | T-31-02 | Desplegar Landing Page bilingüe | Configurar despliegue público (GitHub Pages) para `index.html` (EN) e `index-es.html` (ES). | 3 | Loli Ramirez, Camila | To-Review |
+| US32 | Conocer beneficios | T-32-01 | Implementar sección "Beneficios" con copy validado | Redactar y maquetar la sección de propuesta de valor, alineada al Lean UX Canvas (sec. 1.2.2.4). | 4 | Yalán Zhang, Angie | Done |
+| US34 | Contactar equipo | T-34-01 | Implementar formulario de contacto | Maquetar el formulario y aplicar validación cliente-side. | 4 | Loli Ramirez, Camila | In-Process |
+| US08 | Evaluar eficiencia (CRUD base de aulas) | T-08-01 | Endpoint REST CRUD de Classrooms | Endpoints `GET/POST/PUT/DELETE /api/v1/classrooms` en bounded context Space & Resource Management. | 6 | Antayhua Castillo, Josué | Done |
+| US08 | Evaluar eficiencia (CRUD base de aulas) | T-08-02 | Vista admin de Classrooms en Web App | Listado y formulario de altas/bajas en `eduspace-frontend-web-app/src/classroom-space-resource-management/`. | 5 | Antayhua Castillo, Josué | To-Review |
+| US12 | Ver disponibilidad previa (vista base) | T-12-01 | Endpoint REST de reservas y disponibilidad | Endpoints CRUD de reservas en bounded context Reservation & Scheduling. | 6 | Alva Abanto, Luis | Done |
+| US12 | Ver disponibilidad previa (vista base) | T-12-02 | Vista de calendario de reservas | Componente de calendario en `reservation-management/` mostrando reservas existentes (sin telemetría aún). | 5 | Alva Abanto, Luis | In-Process |
+| US14 | Reportar incidencias | T-14-01 | Endpoint REST de incidencias | Endpoints CRUD de breakdowns en bounded context Breakdown Management. | 5 | Yalán Zhang, Angie | Done |
+| US14 | Reportar incidencias | T-14-02 | Formulario de reporte de incidencias | Implementar formulario en `breakdown-report-management/`. | 4 | Yalán Zhang, Angie | To-Review |
+| (sin US — task técnico) | Autenticación base | T-IAM-01 | Validar endpoints de sign-in / sign-up con JWT | Validar y desplegar el flujo de autenticación con JWT del bounded context IAM heredado. | 5 | Torres García, Andrés | Done |
+| (sin US — task técnico) | Autenticación base | T-IAM-02 | Vista de Login / Sign-up en Web App | Conectar la vista existente con el endpoint de IAM y manejar el almacenamiento del token. | 4 | Loli Ramirez, Camila | Done |
+| (sin US — task técnico) | Scaffolding IoT Monitoring | T-IoT-01 | Crear estructura de carpetas del bounded context IoT Monitoring | Crear `IoTMonitoring/{Domain,Application,Infrastructure,Interfaces}` siguiendo Clean Architecture, alineado al Capítulo 4.2.5. | 3 | Torres García, Andrés | In-Process |
+| (sin US — task técnico) | Scaffolding IoT Monitoring | T-IoT-02 | Definir entidades de dominio iniciales (Sensor, Reading, Alert) | Implementar Aggregates y Value Objects definidos en sec. 4.2.5.1. | 4 | Torres García, Andrés | In-Process |
+| (sin US — task técnico) | Scaffolding IoT Monitoring | T-IoT-03 | Definir contratos REST iniciales y documentar en OpenAPI | Endpoints stub `/api/v1/iot-monitoring/{readings,alerts}` documentados con Swagger. | 4 | Antayhua Castillo, Josué | To-do |
+
+**Story Points totales del Sprint:** 40 SP, distribuidos en 27 SP de historias del Product Backlog (US31 + US32 + US34 + US08 + US12 + US14) más 13 SP equivalentes en tareas técnicas (autenticación base + scaffolding del bounded context IoT Monitoring).
 
 ---
 
