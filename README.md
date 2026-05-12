@@ -196,11 +196,10 @@ El curso contribuye al cumplimiento del Student Outcome ABET:
 **ABET – EAC - Student Outcome 5:** La capacidad de funcionar efectivamente en un equipo cuyos miembros juntos proporcionan liderazgo, crean un entorno de colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen objetivos.
 
 En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 5.
-
-| Criterio específico | Acciones realizadas | Conclusiones |
-|---------------------|---------------------|--------------|
-| Trabaja en equipo para proporcionar liderazgo en forma conjunta | Angie Christina Yalán Zhang **AV1** Durante el desarrollo de EduSpace, trabajé de manera colaborativa con mi equipo, aportando ideas y participando activamente en la toma de decisiones. Asumí un rol de liderazgo compartido, apoyando en la organización de entregables y asegurando que todos contribuyamos al avance del proyecto. Luis Alva **AV1** Participé activamente en la definición de la arquitectura de software del sistema EduSpace IoT, liderando el diseño estratégico basado en Domain-Driven Design. Contribuí en la identificación de bounded contexts, la elaboración del Design-Level EventStorming y la construcción de los diagramas C4, asegurando que las decisiones arquitectónicas fueran consistentes con los requerimientos del sistema y los lineamientos del curso. | \<Conclusiones grupales\> |
-| Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos. | Angie Christina Yalán Zhang **AV1** Contribuí a generar un ambiente de trabajo colaborativo, donde se respetaron las ideas de todos. Participé en la planificación de tareas y en el cumplimiento de los objetivos, lo que permitió avanzar de forma ordenada en entregables como entrevistas, user personas y modelos del sistema. Luis Alva **AV1** Colaboré en la planificación y distribución de tareas del equipo para la primera entrega, estableciendo un orden de trabajo por secciones del informe. Participé en sesiones de trabajo colaborativo para la elaboración del Big Picture EventStorming y los Bounded Context Canvases, promoviendo un entorno de discusión inclusivo donde cada decisión de diseño fue consensuada con el equipo. | \<Conclusiones grupales\> |
+| Criterio específico                                                                             | Acciones realizadas                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Conclusiones                                                                                                                                                                                                                                 |
+| ----------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Trabaja en equipo para proporcionar liderazgo en forma conjunta                                 | Angie Christina Yalán Zhang **AV1** Durante el desarrollo de EduSpace, trabajé de manera colaborativa con mi equipo, aportando ideas y participando activamente en la toma de decisiones. Asumí un rol de liderazgo compartido, apoyando en la organización de entregables y asegurando que todos contribuyamos al avance del proyecto.<br>Luis Alva **AV1** Participé activamente en la definición de la arquitectura de software del sistema EduSpace IoT, liderando el diseño estratégico basado en Domain-Driven Design. Contribuí en la identificación de bounded contexts, la elaboración del Design-Level EventStorming y la construcción de los diagramas C4, asegurando que las decisiones arquitectónicas fueran consistentes con los requerimientos del sistema y los lineamientos del curso.<br><br>Camila Cristina Loli Ramirez<br>**AV1**<br>Realicé la organización del capítulo 1, me enfoqué en mejorar la estructura del Lean UX, se corrigieron puntos como el Problem Statement, 5W2H, segmentos objetivo y canvas). Asimismo, contribuí en la preparación de la presentación. | <br>El equipo logró distribuir responsabilidades de manera efectiva, donde cada integrante aportó desde su rol, permitiendo una mejora significativa en la calidad del trabajo y evidenciando liderazgo compartido en la toma de decisiones. |
+| Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos. | Angie Christina Yalán Zhang **AV1** Contribuí a generar un ambiente de trabajo colaborativo, donde se respetaron las ideas de todos. Participé en la planificación de tareas y en el cumplimiento de los objetivos, lo que permitió avanzar de forma ordenada en entregables como entrevistas, user personas y modelos del sistema. <br>Luis Alva **AV1** Colaboré en la planificación y distribución de tareas del equipo para la primera entrega, estableciendo un orden de trabajo por secciones del informe. Participé en sesiones de trabajo colaborativo para la elaboración del Big Picture EventStorming y los Bounded Context Canvases, promoviendo un entorno de discusión inclusivo donde cada decisión de diseño fue consensuada con el equipo.<br><br><br>Camila Cristina Loli Ramirez<br>**AV1**<br><br>Colaboré en la revisión y mejora de los contenidos del proyecto. Esto permitió actualizar el Lean UX acorde a la nueva propuesta de solución. Cumplimos el objetivo de mantener coherencia a lo largo del informe mediante la realización de cada tarea.                     | <br>El equipo mantuvo una comunicación constante y colaborativa, lo que permitió establecer metas claras, organizar tareas de manera eficiente y cumplir con los entregables en el tiempo previsto.<br><br>                                  |
 
 ---
 
@@ -2457,12 +2456,244 @@ Componentes principales:
 ![IoT Monitoring Database Design Diagram](assets/images/IoT-Monitoring-Bounded-Context-Database-DesignDiagram.png)
 
 
+# Capítulo VI: Product Implementation, Validation & Deployment
+
+## 6.1. Software Configuration Management.
+
+### 6.1.1. Software Development Environment Configuration.
+
+**Project management**
+* Google Meet: Plataforma de videollamadas utilizada para coordinar reuniones entre los integrantes del equipo. A través de esta herramienta se llevan a cabo discusiones sobre los avances del proyecto, la toma de decisiones relacionadas con los productos y la revisión de las tareas completadas.
+  * Ruta de Referencia: (https://meet.google.com/landing)[https://meet.google.com/landing]
+
+* WhatsApp: Aplicación de mensajería empleada para la comunicación interna del equipo, esto nos permite organizar las reuniones, asignar tareas y recordar las fechas de entrega correspondientes a cada avance del proyecto.
+  * Ruta de Referencia: (https://web.whatsapp.com/)[https://web.whatsapp.com/]
+
+* GitHub: Una plataforma en la nube que hospedará los repositorios de código del proyecto. Permitirá la colaboración en tiempo real y la revisión de contribuciones de cada miembro del equipo. Los integrantes del equipo podrán acceder a través de sus navegadores web.
+  * Ruta de Referencia: (https://github.com/)[https://github.com/]
+
+
+**Requirements management**
+* Jira: Esta plataforma es utilizada para gestionar el proyecto de manera ágil, así manejamos el Product Backlog, y asignar las tareas correspondientes.
+  * Ruta de Referencia: (https://www.atlassian.com/software/jira.5)[https://www.atlassian.com/software/jira.5]
+
+
+**Product Design**
+* UX Pressia: Plataforma orientada al diseño de mapas de experiencia de usuario y recorridos de interacción dentro del producto. Con estos diagramas y mapas, identificamos las necesidades de los usuarios y la comprensión de cómo van a actuar con el producto propuesto.
+  * Ruta de Referencia: (https://uxpressia.com/)[https://uxpressia.com/]
+
+* Figma: Herramienta colaborativa utilizada para el diseño de las interfaces de EduSpace. Además, permite desarrollar prototipos interactivos, lo que ayuda a simular y evaluar el flujo de navegación y la experiencia de uso de la aplicación.
+  * Ruta de Preferencia: (https://www.figma.com/)[https://www.figma.com/]
+
+
+**Software Development**
+* WebStorm - Frontend: Entorno de desarrollo integrado elegido por su soporte completo para tecnologías web como JavaScript, HTML, CSS y frameworks como React y Angular. Ofrece refactorización avanzada, depuración, integración con Git y la posibilidad de agregar plugins. Es compatible con varios sistemas operativos, facilitando la colaboración en equipo.
+  * Ruta de Referencia: [https://www.jetbrains.com/webstorm/](https://www.jetbrains.com/webstorm/)
+
+* Visual Studio Code - Backend, IoT: Entorno de desarrollo integrado utilizado para la implementación de los componentes de software del proyecto. Se escogió por el soporte que ofrece para múltiples lenguajes de programación, integración con GitHub y disponibilidad de extensiones para desarrollo, pruebas y depuración.
+  * Ruta de Referencia: (https://code.visualstudio.com/)[https://code.visualstudio.com/]
+
+* Wokwi: Plataforma de simulación utilizada para el desarrollo y prueba de los componentes IoT del proyecto. Se escogió debido a que permite simular sensores, microcontroladores y circuitos electrónicos en un entorno virtual, lo que simplifica la validación del comportamiento de los dispositivos y la interacción con la solución antes de una implementación física.
+  * Ruta de Referencia: (https://wokwi.com/)[https://wokwi.com/]
+
+* HTML5: HyperText Markup Language, o por sus siglas HTML, es un lenguaje de etiquetado para páginas web. Será empleado en el desarrollo del proyecto para la presentación del contenido en la aplicación.
+  * Ruta de Referencia: [https://www.w3schools.com/html/html5_syntax.asp](https://www.w3schools.com/html/html5_syntax.asp)
+
+* CSS: Cascading Style Sheets es un lenguaje que maneja el diseño y presentación de las páginas web, el cual va de la mano con HTML.
+  * Ruta de Referencia: [https://google.github.io/styleguide/htmlcssguide.html](https://google.github.io/styleguide/htmlcssguide.html)
+
+* JavaScript: Es un lenguaje de programación interpretado y orientado a objetos. Se utilizará para elaborar la interfaz de usuario dentro de la aplicación.
+  * Ruta de Referencia: [https://developer.mozilla.org/es/docs/Web/JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript)
+
+* C++: Es un lenguaje de programación que se utiliza para el desarrollo de la lógica de los dispositivos IoT y la interacción con sensores simulados dentro de la solución. Este permite controlar el comportamiento de los componentes embebidos y procesar la información recolectada por los sensores.
+  * Ruta de Referencia: (https://devdocs.io/cpp/)[https://devdocs.io/cpp/]
+
+* Git: Una herramienta de control de versiones que facilita el registro y la gestión de las distintas versiones del programa. Su propósito es mantener un historial de cambios y simplificar la corrección de errores. Los integrantes del equipo accederán a través de la línea de comandos en sus sistemas locales.
+  * Ruta de Referencia: [https://git-scm.com/](https://git-scm.com/)
+
+* ESP32: Es un microcontrolador que se utiliza en la simulación de los componentes IoT del proyecto, esto permite la integración y procesamiento de datos provenientes de los sensores relacionados con el monitoreo de ambientes.
+  * Sensores: DHT22 (sensor para medir temperatura y humedad) y PIR (sensor para detección de presencia)
+  * Ruta de Referencia: (https://docs.espressif.com/projects/esp-idf/en/stable/esp32/index.html)[https://docs.espressif.com/projects/esp-idf/en/stable/esp32/index.html]
+
+
+**Software Deployment**
+
+* Github Pages: Es un servicio de alojamiento web proporcionado por GirtHub que permite publicar sitios web estáticos directamente desde repositorios. Se utiliza principalmente para desplegar documentación, portafolios y proyectos personales de forma sencilla y gratuita.
+  * Ruta de Referencia: [https://pages.github.com/](https://pages.github.com/)
+
+* Vercel: Plataforma que optimiza el proceso de desarrollo y despliegue de aplicaciones web, especialmente con marcos de trabajo como Next.js y React. Proporciona un entorno colaborativo que agiliza los despliegues rápidos y genera previsualizaciones automáticas con cada commit, lo que facilita la revisión de modificaciones antes de su publicación.
+  * Ruta de Referencia: [https://vercel.com/](https://vercel.com/)
+
+
+**Software Testing**
+* Postman: Se utiliza para probar y validar los endpoints REST y cómo responden a las solicitudes de los usuarios.
+  * Ruta de Referencia: (https://www.postman.com/)[https://www.postman.com/]
+
+
+**Software Documentation**
+* PlantUML: Herramienta utilizada para la creación de diagramas mediante texto descriptivo, esto nos permite generar representaciones UML de forma rápida y organizada.
+  * Ruta de Referencia: (https://plantuml.com/)[https://plantuml.com/]
+
+* LucidChart: Plataforma de diagramación colaborativa empleada para elaborar diagramas y representaciones visuales que agilizan la comprensión de procesos y estructuras del sistema.
+  * Ruta de Referencia: (https://www.lucidchart.com/pages)[https://www.lucidchart.com/pages]
+
+* Structurizr: Herramienta enfocada en la elaboración de diagramas bajo el modelo C4, es utilizada para representar la arquitectura del sistema de manera clara y estructurada en distintos niveles de abstracción.
+  * Ruta de Referencia: (https://structurizr.com/)[https://structurizr.com/]
+
+* Vertabelo: Plataforma especializada en el diseño y modelado de bases de datos, empleada para crear diagramas entidad-relación y definir la estructura lógica de la información.
+  * Ruta de Referencia: (https://vertabelo.com/)[https://vertabelo.com/]
+
+* Swagger API: Solución utilizada para la documentación de APIs REST, lo que permite describir endpoints, métodos, parámetros y respuestas de manera estandarizada e interactiva.
+  * Ruta de Referencia: (https://swagger.io/)[https://swagger.io/]
+
+### 6.1.2. Source Code Management.
+
+El proyecto seguirá las convenciones del flujo de trabajo establecido por el modelo GitFlow para el control de versiones, empleando GitHub como plataforma y sistema de control de versiones. A continuación, se describirá la implementación de GitFlow como un flujo de trabajo para el control de versiones.
+
+**Repositorio de GitHub:**
+- Enlace de la organización en GitHub: [https://github.com/DesarrolloSolucionIoT](https://github.com/DesarrolloSolucionIoT)
+* Enlace para acceder al repositorio de la Landing Page: [https://github.com/DesarrolloSolucionIoT/landing-page](https://github.com/DesarrolloSolucionIoT/landing-page)
+* Enlace para acceder al repositorio del reporte: [https://github.com/DesarrolloSolucionIoT/eduspace-report](https://github.com/DesarrolloSolucionIoT/eduspace-report)
+* Enlace para acceder al repositorio de la App Web (Frontend): [https://github.com/DesarrolloSolucionIoT/eduspace-frontend-web-app](https://github.com/DesarrolloSolucionIoT/eduspace-frontend-web-app)
+- Enlace para acceder al repositorio de la App Móvil (Frontend): [https://github.com/DesarrolloSolucionIoT/eduspace-mobile](https://github.com/DesarrolloSolucionIoT/eduspace-mobile)
+- Enlace para acceder al repositorio del Backend: [https://github.com/DesarrolloSolucionIoT/eduspace-platform](https://github.com/DesarrolloSolucionIoT/eduspace-platform)
+
+
+**Estructura de las ramas:**
+1. Main branch (Rama principal): Esta rama servirá como la principal para la aplicación, alojando versiones estables y finales del desarrollo. Únicamente se aceptarán cambios que hayan sido previamente probados y verificados en los features y de ahí en Developer.
+2. Develop branch (Rama de desarrollo): El propósito de esta rama es facilitar los avances del proyecto en equipo y mantener los archivos centrales del desarrollo continuo.
+3. Feature branch(Ramas de funcionalidad): Cada capitulo desarrollado por el equipo, o separada del enfoque actual del desarrollo, tendrá su propia rama. Una vez que una funcionalidad esté completamente trabajada, se fusionará con la rama de desarrollo del proyecto. Las convenciones para nombrar las ramas de funcionalidad seguirán un patrón descriptivo y único, por ejemplo, "feature/chapter-#".
+
+**Versionado semántico:**
+En el proyecto se ha utilizado la convención Semantic Versioning 2.0.0 para definir los lanzamientos del sistema. Se presenta el formato a usar:
+* MAJOR.MINOR.PATCH
+  * Ejemplo: v2.5.1
+
+En donde cada uno representa:
+* MAJOR: Los cambios que son incompatibles con la versión anterior.
+* MINOR: Las adiciones de nuevas funcionalidades que son compatibles con la versión actual.
+* PATCH: Son las correcciones de errores que no generan incompatibilidades con la versión actual.
+
+**Convenciones de los mensajes de commits:**
+Para la redacción de los mensajes de commits, se ha seguido el estándar Convential Commits. Este estándar mejora el entendimiento de los cambios, adiciones y correcciones que se han realizado en el proyecto.
+
+Los tipos que se utilizarán en el proyecto son:
+* feat: Para la implementación de una nueva funcionalidad
+* fix: Para la corrección de errores y bugs
+* docs: Para cambios en la documentación
+* refactor: Para la reestructuración del código
+* chore: Para tareas de mantenimiento.
+* test: Para pruebas realizadas en el código fuente
+
+
+### 6.1.3. Source Code Style Guide & Conventions
+En esta sección se detallan las convenciones de estilo de código que serán utilizadas en el proyecto. Estas reglas permiten que haya consistencia dentro del desarrollo del código.
+
+**HTML**
+Algunas de las prácticas que deben seguirse para alcanzar un código coherente, sostenible y ordenado son las siguientes:
+1. Cerrar todos los elementos HTML: Por ejemplo, `<p>Esto es un párrafo.</p>`.
+2. Siempre declarar el tipo de documento en la primera línea del documento, para HTML es `<!DOCTYPE html>`.
+3. Escribir en una línea los comentarios cortos.
+4. Utilizar comillas en caso de que los atributos contengan espacios entre sí.
+5. Procurar especificar el texto `alt` y las dimensiones `width` y `height` de las imágenes, ya que de esta manera se facilitará la disponibilidad del contenido. Por ejemplo:
+6. Se nos recomienda no usar el espacio al momento de utilizar los signos porque es más fácil de leerlo de esta forma.
+
+Referencia: [https://www.w3schools.com/html/html5_syntax.asp](https://www.w3schools.com/html/html5_syntax.asp)
+
+
+**CSS**
+Entre las prácticas empleadas se menciona:
+1. Se nos recomienda tener una sangría por 2 espacios a la vez, no debemos utilizar tabulaciones ni mezclarlas tabulaciones con espacios para la sangría.
+2. Todo el código debe estar en minúscula.
+3. Eliminar los espacios en blanco.
+4. Usar comentarios para explicar el código.
+5. Utilizar nombres de clase significativos o genéricos, nombres que reflejen el propósito de su elemento.
+
+Referencia: [https://google.github.io/styleguide/htmlcssguide.html](https://google.github.io/styleguide/htmlcssguide.html)
+
+
+**JavaScript**
+Algunas de las mejores prácticas para programar incluyen:
+1. Utilizar nombres de variables claros: Es importante que los nombres reflejen el propósito de la variable.
+2. Ser consistente con las comillas: Elegir entre comillas simples o dobles y mantener esa elección a lo largo del código.
+3. Incluir comentarios explicativos: Usar comentarios para aclarar bloques de código, especialmente en secciones complejas, facilita la comprensión.
+4. Minimizar el uso de variables globales: Limitar el ámbito de las variables para evitar conflictos y mejorar la mantenibilidad del código.
+5. Encapsular lógica en funciones: Mantener el código modular y reutilizable mediante el uso de funciones.
+6. Seguir un estilo de codificación uniforme: Mantener un formato consistente mejora la legibilidad del código.
+
+Referencia: [https://www.w3schools.com/js/DEFAULT.asp](https://www.w3schools.com/js/DEFAULT.asp)
+
+
+**Vue.js**
+Para asegurar que el código en Vue.js sea claro y eficiente, se recomiendan las siguientes prácticas:
+1. Estructura de carpetas organizada: Mantener una estructura clara para components, pages, model y services.
+2. Crear componentes reutilizables: Diseñar componentes que puedan ser utilizados en diversas partes de la aplicación.
+3. Separar lógica de negocio de la vista: Utilizar métodos y propiedades computadas para mantener la lógica separada de la presentación.
+4. Emplear Vue Router para la navegación: Usar Vue Router para gestionar eficazmente la navegación entre vistas.
+5. Documentar componentes: Incluir comentarios y documentación sobre props, eventos y métodos dentro de los componentes.
+
+Referencia: [https://vuejs.org/guide/introduction](https://vuejs.org/guide/introduction)
+
+
+**Flutter**
+Para mantener un código limpio y eficiente en Flutter, se sugieren las siguientes prácticas:
+1. Estructura de carpetas organizada: Mantener una estructura clara para lib, test y assets.
+2. Utilizar widgets reutilizables: Diseñar widgets que puedan ser utilizados en diversas partes de la aplicación.
+3. Separar lógica de negocio de la vista: Utilizar providers o blocs para mantener la lógica separada de la presentación.
+4. Emplear rutas nombradas para la navegación: Usar rutas nombradas para gestionar eficazmente la navegación entre vistas.
+5. Documentar widgets: Incluir comentarios y documentación sobre props, eventos y métodos dentro de los widgets.
+
+Referencia: [https://flutter.dev/docs](https://flutter.dev/docs)
+
+
+**C# (Domain-Driven Design)**
+Para asegurar que el código en C# siga los principios de Domain-Driven Design (DDD), se recomiendan las siguientes prácticas:
+
+1. Utilizar nombres de dominio significativos: Los nombres de las clases, métodos y variables deben reflejar el lenguaje del dominio.
+2. Mantener la lógica de negocio en el dominio: La lógica de negocio debe residir en el modelo de dominio y no en la infraestructura o en la interfaz de usuario.
+3. Usar agregados para gestionar la consistencia: Los agregados son entidades que se agrupan para garantizar la consistencia de los cambios en el modelo.
+4. Implementar repositorios para el acceso a datos: Los repositorios son responsables de la persistencia y recuperación de los agregados.
+5. Aplicar patrones de diseño adecuados: Utilizar patrones de diseño como CQRS, Event Sourcing y DDD para estructurar el código de manera efectiva.
+
+Referencia: [https://www.domainlanguage.com/ddd/reference/](https://www.domainlanguage.com/ddd/reference/)
+
+
+**C++**
+Para asegurar que el código sea claro, eficiente y mantenible en el desarrollo de los componentes IoT, se recomiendan las siguientes prácticas:
+1. Utilizar nombres descriptivos para variables y funciones: Los nombres deben reflejar claramente la función o propósito de los elementos dentro del código.
+2. Mantener código modular: Es necesario separar la lógica en funciones y módulos reutilizables para agilizar el mantenimiento y comprensión del sistema.
+3. Minimizar el uso innecesario de la memoria: Optimizar el uso de variables y estructuras para mejorar el rendimiento en dispositivos embebidos.
+4. Documentar el código mediante comentarios: Para entender cada funcionalidad que se encuentra en el código, es importante explicar su comportamiento y qué requieren para funcionar.
+
+Referencia: (https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines)[https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines]
+
+### 6.1.4. Software Deployment Configuration.
+En esta sección se explica la configuración de despligue de EduSpace. Se ha considerado el uso de servicios en la nube que permitan publicar los distintos componentes del sistema a partir de los repositorios de código fuente alojados en GitHub.
+
+* GitHub Pages: La landing page del proyecto se desplegará en GitHub Pages, debido a que agiliza la publicación de sitios web estáticos desde un repositorio GitHub. Asimismo, al tener la funcionalidad de despliegue automático, reduce el tiempo que se dedica a la configuración del producto.
+* Vercel: El frontend de la aplicación web se desplegará en Vercel debido a que permite integrar el repositorio de GitHub y generar despliegues automátics. Además, es brinda la opción de previsualizar los cambios en cada commit, lo que mejora el proceso de correción de errores o cambios que se deben de realizar.
+* Railway: El backend del proyecto se desplegará en Railway, que es una plataforma orientada al alojamiento de servicios web y APIs REST. Esta herramienta también ofrece despliegues automáticos, y posibilita la conexión con la base de datos. Se escoge debido a que es simple y bastante intuitivo de utilizar ya que detecta el lenguaje de programación y marco de trabajo que utiliza el proyecto.
+* Aiven: La base de datos se desplegará en Aiven, una plataforma que administra servicios en la nube. Aiven se ha escogido debido a que permite almacenar y gestionar la información del sistema de manera segura y escalable.
+
+
+**Flujo de Despliegue**
+1. El código fuente de cada producto se almacena en sus respectivos repositorios dentro de la organización en GitHub.
+2. La Landing Page se despliega mediante GitHub Pages.
+3. El frontend de la aplicación web se despliega en Vercel.
+4. El backend encargado de la API REST del proyecto se despliega en Railway.
+5. La base de datos se despliega y administra mediante Aiven.
+6. Todos los servicios desplegados se comunican mediante endpoints HTTPS, lo que garantiza su integración.
+
 
 ---
 
 # Conclusiones
 
 ## Conclusiones y recomendaciones
+
+
+En conclusión, el diseño de la arquitectura de software para el sistema de gestión de espacios educativos ha sido abordado con un enfoque integral, se consideran aspectos técnicos, operativos y estratégicos. Se han definido claramente los bounded contexts, entidades, servicios y componentes necesarios para garantizar una solución robusta, escalable y alineada con las necesidades de los usuarios finales.
+
 
 ---
 
@@ -2488,6 +2719,7 @@ Shanganlall, A. (2025, 21 febrero). _Los 7 mayores retos que afectan a la gesti�
 
 ## Anexo B: Videos de Exposiciones
 
-| Entrega | Título | URL |
-| ------- | ------ | --- |
-| AV1     |        |     |
+| Entrega | Título                                             | URL                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |     |
+| ------- | -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+| AV1     | upc-pre-202610-1asi0572-6776-edusolutions-expo-av1 | [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202110385_upc_edu_pe/IQBIiMX0AJRMSaQEIAnGe6olAZdW2wzqMkFe6cLaolmhgB0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=PJLtw2](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202110385_upc_edu_pe/IQBIiMX0AJRMSaQEIAnGe6olAZdW2wzqMkFe6cLaolmhgB0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=PJLtw2) |     |
+
