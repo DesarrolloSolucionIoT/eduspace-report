@@ -187,6 +187,12 @@ URL del repositorio del Project Report en GitHub: [https://github.com/Desarrollo
       - [6.2.1.1. Sprint Planning 1](#6211-sprint-planning-1)
       - [6.2.1.2. Aspect Leaders and Collaborators](#6212-aspect-leaders-and-collaborators)
       - [6.2.1.3. Sprint Backlog 1](#6213-sprint-backlog-1)
+      - [6.2.1.4. Development Evidence for Sprint Review.](#6214-development-evidence-for-sprint-review)
+      - [6.2.1.5. Testing Suite Evidence for Sprint Review.](#6215-testing-suite-evidence-for-sprint-review)
+      - [6.2.1.6. Execution Evidence for Sprint Review.](#6216-execution-evidence-for-sprint-review)
+      - [6.2.1.7. Services Documentation Evidence for Sprint Review.](#6217-services-documentation-evidence-for-sprint-review)
+      - [6.2.1.8. Software Deployment Evidence for Sprint Review.](#6218-software-deployment-evidence-for-sprint-review)
+      - [6.2.1.9. Team Collaboration Insights during Sprint.](#6219-team-collaboration-insights-during-sprint)
 - [Conclusiones](#conclusiones)
   - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
 - [Bibliografía](#bibliografía)
@@ -2775,6 +2781,140 @@ URL público del tablero (Jira): <https://upc-team-awnysuez.atlassian.net/jira/s
 | (sin US — task técnico) | Scaffolding IoT Monitoring | T-IoT-03 | Definir contratos REST iniciales y documentar en OpenAPI | Endpoints stub `/api/v1/iot-monitoring/{readings,alerts}` documentados con Swagger. | 4 | Antayhua Castillo, Josué | To-do |
 
 **Story Points totales del Sprint:** 40 SP, distribuidos en 27 SP de historias del Product Backlog (US31 + US32 + US34 + US08 + US12 + US14) más 13 SP equivalentes en tareas técnicas (autenticación base + scaffolding del bounded context IoT Monitoring).
+
+#### 6.2.1.4. Development Evidence for Sprint Review.
+
+En el Sprint 1 se consolidaron los entregables de implementacion de la Landing Page, la Web Application y los Web Services base, ademas del scaffolding del bounded context IoT Monitoring. A continuacion se presenta la evidencia visual de los avances y la tabla de commits por repositorio (a completar con los IDs reales del Sprint).
+
+**Landing Page**
+
+![Landing Page - Home](assets/chapter-VI/landing-page/home.png)
+![Landing Page - About Us](assets/chapter-VI/landing-page/aboutUs.png)
+![Landing Page - Planes](assets/chapter-VI/landing-page/planes.png)
+![Landing Page - Contacto](assets/chapter-VI/landing-page/contact.png)
+
+**Web Application**
+
+![Web App - Login](assets/chapter-VI/web-app/login.png)
+![Web App - Register](assets/chapter-VI/web-app/register.png)
+![Web App - Dashboard Admin](assets/chapter-VI/web-app/admin/dashborad-admin.png)
+![Web App - Dashboard Teacher](assets/chapter-VI/web-app/teacher/dashboard-teacher.png)
+![Web App - Spaces](assets/chapter-VI/web-app/teacher/spaces.png)
+
+**Web Services (REST API)**
+
+![REST API - Classrooms](assets/chapter-VI/rest-api/classrooms.png)
+![REST API - Reservations](assets/chapter-VI/rest-api/reservations.png)
+![REST API - Reports](assets/chapter-VI/rest-api/reports.png)
+![REST API - Authentication](assets/chapter-VI/rest-api/administrator-profile.png)
+
+**Commits de Implementacion (por completar)**
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| --- | --- | --- | --- | --- | --- |
+| DesarrolloSolucionIoT/landing-page | feature/sprint-1 | Por completar | Por completar | Por completar | Por completar |
+| DesarrolloSolucionIoT/eduspace-frontend-web-app | feature/sprint-1 | Por completar | Por completar | Por completar | Por completar |
+| DesarrolloSolucionIoT/eduspace-platform | feature/sprint-1 | Por completar | Por completar | Por completar | Por completar |
+
+#### 6.2.1.5. Testing Suite Evidence for Sprint Review.
+
+Durante el Sprint 1 se consolidaron pruebas Unit, Integration, BDD y System Tests para Web Services y flujos base de la plataforma. Las pruebas se enfocan en validar el comportamiento de agregados principales, endpoints REST y escenarios de usuario en los flujos de autenticacion y gestion de recursos.
+
+**Relacion de tests disenados**
+
+- Unit Tests: agregados Classroom, Reservation, Meeting, TeacherProfile y Account.
+- Integration Tests: endpoints de Classrooms, Shared Areas, Reservations, Meetings y Resources.
+- BDD (SpecFlow): escenarios de inicio de sesion y registro en la plataforma.
+- System Tests (Selenium): flujos principales de accesibilidad, registro y gestion de espacios.
+
+**Evidencia visual de pruebas**
+
+![Unit Tests - Classroom](assets/chapter-VI/tests/unit/1.png)
+![Unit Tests - Reservation](assets/chapter-VI/tests/unit/2.png)
+![Integration Tests - Reservations](assets/chapter-VI/tests/integration/2.png)
+![BDD - Feature Suite](assets/chapter-VI/tests/system/US.png)
+![System Test - US05](assets/chapter-VI/tests/system/us_05.png)
+
+**Commits de Testing (por completar)**
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| --- | --- | --- | --- | --- | --- |
+| DesarrolloSolucionIoT/eduspace-platform | feature/sprint-1-testing | Por completar | Por completar | Por completar | Por completar |
+
+#### 6.2.1.6. Execution Evidence for Sprint Review.
+
+En el Sprint 1 se alcanzo la ejecucion estable de la Landing Page y la Web Application, junto con la exposicion de endpoints base en la REST API. Las siguientes capturas muestran la navegacion y pantallas clave implementadas, y se incluye un video demostrativo del producto.
+
+**Capturas de ejecucion**
+
+![Landing Page - Home](assets/chapter-VI/landing-page/home.png)
+![Web App - Login](assets/chapter-VI/web-app/login.png)
+![Web App - Dashboard Admin](assets/chapter-VI/web-app/admin/dashborad-admin.png)
+![Web App - Dashboard Teacher](assets/chapter-VI/web-app/teacher/dashboard-teacher.png)
+![REST API - Meetings](assets/chapter-VI/rest-api/meetings.png)
+
+**Video de ejecucion**
+
+Link del video: https://youtu.be/tAP6TujgwuA
+
+#### 6.2.1.7. Services Documentation Evidence for Sprint Review.
+
+Durante el Sprint 1 se documento la API REST con OpenAPI/Swagger, cubriendo los endpoints base de autenticacion, gestion de aulas, reservas y reportes. A continuacion se resume la documentacion por endpoint y se adjuntan capturas de evidencia.
+
+**Resumen de endpoints documentados**
+
+| Endpoint | Actions | Documentacion | Example Response |
+| --- | --- | --- | --- |
+| /api/v1/Authentication/sign-in | POST | Por completar | { token, username, role } |
+| /api/v1/Classrooms | GET, POST | Por completar | [ { id, name, description, teacherId } ] |
+| /api/v1/reservations | GET, POST | Por completar | [ { id, start, end, title, areaId } ] |
+| /api/v1/Reports | GET, POST | Por completar | [ { id, kindOfReport, description, resourceId, status } ] |
+
+**Capturas de documentacion**
+
+![REST API - Authentication](assets/chapter-VI/rest-api/authentication.png)
+![REST API - Classrooms](assets/chapter-VI/rest-api/classrooms.png)
+![REST API - Reservations](assets/chapter-VI/rest-api/reservations.png)
+![REST API - Reports](assets/chapter-VI/rest-api/reports.png)
+
+**Commits de Documentacion (por completar)**
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| --- | --- | --- | --- | --- | --- |
+| DesarrolloSolucionIoT/eduspace-platform | feature/sprint-1-docs | Por completar | Por completar | Por completar | Por completar |
+
+#### 6.2.1.8. Software Deployment Evidence for Sprint Review.
+
+En el Sprint 1 se realizaron despliegues de los productos digitales base. La Landing Page fue publicada en GitHub Pages, la Web Application se desplego en Netlify y el backend en Railway, con base de datos gestionada en Aiven. A continuacion se muestran capturas de los despliegues realizados.
+
+**URLs de despliegue (Sprint 1)**
+
+- Landing Page: https://experimentdesign.github.io/landing-page/
+- Web Application: https://eduspacewebapp.netlify.app/
+
+**Capturas de despliegue**
+
+![Landing Page Deployment 1](assets/chapter-VI/deployment/landing-page-deployment-1.png)
+![Landing Page Deployment 2](assets/chapter-VI/deployment/landing-page-deployment-2.png)
+![Web App Deployment](assets/chapter-VI/deployment/web-app-deployment.png)
+![Backend Deployment](assets/chapter-VI/deployment/backend-deployment.png)
+![Database Deployment](assets/chapter-VI/deployment/database-deployment.png)
+
+#### 6.2.1.9. Team Collaboration Insights during Sprint.
+
+Durante el Sprint 1 se trabajo con liderazgo por aspecto y colaboraciones cruzadas segun la matriz LACX. A continuacion se registra la contribucion principal de cada integrante y la evidencia de colaboracion en GitHub (por completar con el analitico del Sprint).
+
+| Integrante | Actividad principal en el Sprint 1 |
+| --- | --- |
+| Alva Abanto, Luis Andres | Por completar |
+| Antayhua Castillo, Josue Oscar | Por completar |
+| Loli Ramirez, Camila Cristina | Por completar |
+| Torres Garcia, Andres Alberto | Por completar |
+| Yalan Zhang, Angie Christina | Por completar |
+
+**Evidencia de colaboracion**
+
+![GitHub Insights - Commits](assets/chapter-VI/collaboration/commits.png)
 
 ---
 
