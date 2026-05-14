@@ -3349,6 +3349,72 @@ URL del prototipo: \<URL Figma Mobile Application Prototype\>
 
 ## 5.6. IoT Device Design
 
+En esta sección se presenta la propuesta de diseño físico y diseño de circuito del dispositivo IoT que forma parte de la solución EduSpace IoT. Las decisiones de diseño están alineadas con las directrices de la sección 5.1.2 IoT Style Guidelines y con la arquitectura de software definida en el Capítulo IV, específicamente con el bounded context de IoT Monitoring.
+
+El dispositivo EduSpace IoT tiene como objetivo monitorear de forma autónoma y continua las condiciones ambientales de un aula, capturando temperatura, humedad y estado de ocupación, y transmitiendo estos datos al Edge API mediante HTTP cada 10 segundos.
+
+### Componentes del dispositivo
+
+| Componente | Modelo | Función |
+|-----------|--------|---------|
+| Microcontrolador | ESP32 | Unidad de procesamiento central. Ejecuta la Embedded Application en MicroPython, gestiona los sensores y la comunicación HTTP con el Edge API |
+| Sensor de temperatura y humedad | DHT22 | Captura temperatura (rango: -40°C a 80°C, precisión: ±0.5°C) y humedad relativa (rango: 0-100%, precisión: ±2-5%) |
+| Sensor de ocupación | HC-SR501 (PIR) | Detecta presencia humana mediante radiación infrarroja. Rango de detección: hasta 7 metros, ángulo de cobertura: 120° |
+| LED RGB | LED RGB ánodo común | Comunica el estado del sistema visualmente según los estándares definidos en IoT Style Guidelines |
+| Resistencias | 220Ω x3 | Protección del LED RGB |
+| Fuente de alimentación | Cable USB / Adaptador 5V | Alimentación del ESP32 y sensores |
+
+### Diseño físico del dispositivo
+
+El dispositivo está diseñado para ser instalado en una posición elevada dentro del aula, preferentemente en una esquina superior o en la pared frontal, de forma que el sensor PIR tenga cobertura sobre toda el área del aula y el LED RGB sea visible desde cualquier punto.
+
+El diseño físico prioriza la discreción y la funcionalidad sobre la estética, con los siguientes criterios:
+
+- **Tamaño compacto:** El dispositivo se monta sobre una protoboard o PCB de tamaño reducido, con dimensiones aproximadas de 10cm x 8cm.
+- **Instalación fija:** Se instala mediante tornillos o cinta adhesiva de doble cara en la posición designada.
+- **Cable de alimentación oculto:** El cable USB se canaliza por el rodapié o canal de cableado para mantener una instalación ordenada.
+- **Sin controles físicos:** El dispositivo no tiene botones ni controles físicos expuestos para minimizar la posibilidad de manipulación no autorizada.
+
+\<imagen diseño físico del dispositivo\>
+
+### Diagrama de circuito
+
+El diagrama de circuito muestra las conexiones entre el ESP32 y los componentes del dispositivo. Se ha elaborado en Wokwi, plataforma de simulación de circuitos IoT.
+
+#### Conexiones del circuito
+
+| Componente | Pin del componente | Pin del ESP32 | Descripción |
+|-----------|-------------------|---------------|-------------|
+| DHT22 | VCC | 3.3V | Alimentación del sensor |
+| DHT22 | GND | GND | Tierra |
+| DHT22 | DATA | GPIO4 | Señal de datos temperatura/humedad |
+| HC-SR501 | VCC | 5V (VIN) | Alimentación del sensor PIR |
+| HC-SR501 | GND | GND | Tierra |
+| HC-SR501 | OUT | GPIO14 | Señal de detección de presencia |
+| LED RGB | R (ánodo rojo) | GPIO25 (con resistencia 220Ω) | Canal rojo del LED |
+| LED RGB | G (ánodo verde) | GPIO26 (con resistencia 220Ω) | Canal verde del LED |
+| LED RGB | B (ánodo azul) | GPIO27 (con resistencia 220Ω) | Canal azul del LED |
+| LED RGB | Cátodo común | GND | Tierra del LED |
+
+\<imagen diagrama de circuito Wokwi\>
+
+URL de la simulación en Wokwi: \<URL simulación Wokwi\>
+
+### Flujo de interacción del dispositivo
+
+El dispositivo opera de forma completamente autónoma siguiendo el siguiente ciclo:
+
+1. **Inicialización:** Al encenderse, el ESP32 ejecuta la Embedded Application en MicroPython, inicializa los sensores DHT22 y PIR, y establece conexión WiFi con la red de la institución. Durante este proceso el LED RGB parpadea en blanco.
+
+2. **Lectura de sensores:** Cada 10 segundos, el ESP32 lee la temperatura y humedad del DHT22 y el estado de ocupación del PIR.
+
+3. **Transmisión de datos:** Los datos leídos se serializan en formato JSON y se envían al Edge API mediante una petición HTTP POST.
+
+4. **Actualización del LED:** Tras recibir la respuesta del Edge API, el ESP32 actualiza el color del LED RGB según el estado ambiental reportado por el sistema: verde (Normal), amarillo (Warning) o rojo (Alert).
+
+5. **Reconexión automática:** Si se pierde la conexión WiFi o el Edge API no responde, el ESP32 reintenta la conexión automáticamente y cambia el LED a azul parpadeante para indicar el estado de sin conexión.
+
+El flujo descrito garantiza que el dispositivo opere de forma resiliente ante fallos de conectividad, manteniendo la captura de lecturas localmente hasta restablecer la comunicación con el Edge API.
 
 # Capítulo VI: Product Implementation, Validation & Deployment
 
