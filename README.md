@@ -63,12 +63,6 @@ URL del repositorio del Project Report en GitHub: [https://github.com/Desarrollo
     - [1.2.1. Antecedentes y problemática](#121-antecedentes-y-problemática)
     - [1.2.2. Lean UX Process](#122-lean-ux-process)
       - [1.2.2.1. Lean UX Problem Statements](#1221-lean-ux-problem-statements)
-        - [**a. DOMAIN**](#a-domain)
-        - [**b. CUSTOMER SEGMENTS**](#b-customer-segments)
-        - [**c. PAIN POINTS**](#c-pain-points)
-        - [**d. GAP**](#d-gap)
-        - [**e. VISION/STRATEGY**](#e-visionstrategy)
-        - [**f. INITIAL SEGMENT**](#f-initial-segment)
       - [1.2.2.2. Lean UX Assumptions](#1222-lean-ux-assumptions)
       - [1.2.2.3. Lean UX Hypothesis Statements](#1223-lean-ux-hypothesis-statements)
       - [1.2.2.4. Lean UX Canvas](#1224-lean-ux-canvas)
@@ -77,45 +71,15 @@ URL del repositorio del Project Report en GitHub: [https://github.com/Desarrollo
   - [2.1. Competidores](#21-competidores)
     - [2.1.1. Análisis competitivo](#211-análisis-competitivo)
     - [2.1.2. Estrategias y tácticas frente a competidores](#212-estrategias-y-tácticas-frente-a-competidores)
-      - [**Frente a las fortalezas de los competidores**](#frente-a-las-fortalezas-de-los-competidores)
-        - [**Fortalezas de EduSpace:**](#fortalezas-de-eduspace)
-        - [**Estrategias**](#estrategias)
-        - [**Tácticas**](#tácticas)
-      - [**Frente a las debilidades de los competidores**](#frente-a-las-debilidades-de-los-competidores)
-        - [**Debilidades de EduSpace:**](#debilidades-de-eduspace)
-        - [**Estrategias**](#estrategias-1)
-        - [**Tácticas**](#tácticas-1)
   - [2.2. Entrevistas](#22-entrevistas)
     - [2.2.1. Diseño de entrevistas](#221-diseño-de-entrevistas)
-      - [Segmento 1: Administradores de instituciones educativas](#segmento-1-administradores-de-instituciones-educativas)
-      - [Segmento 2: Docentes y auxiliares](#segmento-2-docentes-y-auxiliares)
     - [2.2.2. Registro de entrevistas](#222-registro-de-entrevistas)
-    - [Segmento objetivo #1: Administradores de instituciones educativas](#segmento-objetivo-1-administradores-de-instituciones-educativas)
-        - [Datos del Entrevistado #1](#datos-del-entrevistado-1)
-        - [Datos del Entrevistado #2](#datos-del-entrevistado-2)
-        - [Datos del Entrevistado #3](#datos-del-entrevistado-3)
-    - [Segmento objetivo #2: Docentes y auxiliares](#segmento-objetivo-2-docentes-y-auxiliares)
-        - [Datos del Entrevistado #1](#datos-del-entrevistado-1-1)
-        - [Datos del Entrevistado #2](#datos-del-entrevistado-2-1)
-        - [Datos del Entrevistado #3](#datos-del-entrevistado-3-1)
     - [2.2.3. Análisis de entrevistas](#223-análisis-de-entrevistas)
-      - [Principales hallazgos (insights)](#principales-hallazgos-insights)
-      - [Patrones identificados](#patrones-identificados)
-      - [Pain Points validados](#pain-points-validados)
-      - [Oportunidades detectadas](#oportunidades-detectadas)
-      - [Riesgos identificados](#riesgos-identificados)
-      - [Conclusión del análisis](#conclusión-del-análisis)
   - [2.3. Needfinding](#23-needfinding)
     - [2.3.1. User Personas](#231-user-personas)
-      - [User persona 1: Administradores de instituciones educativas](#user-persona-1-administradores-de-instituciones-educativas)
-    - [User persona 2: Docentes y auxiliares](#user-persona-2-docentes-y-auxiliares)
     - [2.3.2. User Task Matrix](#232-user-task-matrix)
     - [2.3.3. User Journey Mapping](#233-user-journey-mapping)
-      - [User persona 1: Administradores de instituciones educativas](#user-persona-1-administradores-de-instituciones-educativas-1)
-    - [User persona 2: Docentes y auxiliares](#user-persona-2-docentes-y-auxiliares-1)
     - [2.3.4. Empathy Mapping](#234-empathy-mapping)
-      - [User persona 1: Administradores de instituciones educativas](#user-persona-1-administradores-de-instituciones-educativas-2)
-    - [User persona 2: Docentes y auxiliares](#user-persona-2-docentes-y-auxiliares-2)
   - [2.4. Big Picture EventStorming](#24-big-picture-eventstorming)
   - [2.5. Ubiquitous Language](#25-ubiquitous-language)
 - [Capítulo III: Requirements Specification](#capítulo-iii-requirements-specification)
@@ -135,7 +99,6 @@ URL del repositorio del Project Report en GitHub: [https://github.com/Desarrollo
       - [4.1.3.3. Software Architecture Container Level Diagrams](#4133-software-architecture-container-level-diagrams)
       - [4.1.3.4. Software Architecture Deployment Diagrams](#4134-software-architecture-deployment-diagrams)
 - [4.2. Tactical-Level Domain-Driven Design](#42-tactical-level-domain-driven-design)
-  - [Bounded Contexts válidos](#bounded-contexts-válidos)
     - [4.2.1. Identity, Access \& Profile Management](#421-identity-access--profile-management)
       - [4.2.1.1. Domain Layer](#4211-domain-layer)
       - [4.2.1.2. Interface Layer](#4212-interface-layer)
@@ -182,6 +145,11 @@ URL del repositorio del Project Report en GitHub: [https://github.com/Desarrollo
         - [4.2.5.6.1. Bounded Context Domain Layer Class Diagram](#42561-bounded-context-domain-layer-class-diagram)
         - [4.2.5.6.2. Bounded Context Database Design Diagram](#42562-bounded-context-database-design-diagram)
 - [Capítulo VI: Product Implementation, Validation \& Deployment](#capítulo-vi-product-implementation-validation--deployment)
+  - [6.1. Software Configuration Management](#61-software-configuration-management)
+    - [6.1.1. Software Development Environment Configuration](#611-software-development-environment-configuration)
+    - [6.1.2. Source Code Management](#612-source-code-management)
+    - [6.1.3. Source Code Style Guide & Conventions](#613-source-code-style-guide--conventions)
+    - [6.1.4. Software Deployment Configuration](#614-software-deployment-configuration)
   - [6.2. Landing Page, Services \& Applications Implementation](#62-landing-page-services--applications-implementation)
     - [6.2.1. Sprint 1](#621-sprint-1)
       - [6.2.1.1. Sprint Planning 1](#6211-sprint-planning-1)
@@ -690,7 +658,7 @@ Objetivo: Comprender cómo perciben el uso de aulas, condiciones del entorno y p
 - **Inicio de la entrevista:** 00:00
 - **Duración:** 4:19
 - **Screenshot del cuadro de video:** ![Entrevista3](/assets/chapter2/victor.png)
-- **URL del video (Microsoft Stream):** *[Entrevista 03](https://upcedupe-my.sharepoint.com/:l:/g/personal/u202312504_upc_edu_pe/JABq1Tk15HtaSqVGyJ4LGDFXAXKjrk2rXKsj0pI6lrjvc5M?e=zQ8JTi)*
+- **URL del video (Microsoft Stream):** *[https://upcedupe-my.sharepoint.com/:l:/g/personal/u202312504_upc_edu_pe/JABq1Tk15HtaSqVGyJ4LGDFXAXKjrk2rXKsj0pI6lrjvc5M?e=zQ8JTi](https://upcedupe-my.sharepoint.com/:l:/g/personal/u202312504_upc_edu_pe/JABq1Tk15HtaSqVGyJ4LGDFXAXKjrk2rXKsj0pI6lrjvc5M?e=zQ8JTi)*
 
 **Resumen:** El entrevistado señala que actualmente la gestión de aulas se realiza mediante hojas de cálculo y coordinación manual entre áreas, lo que genera errores frecuentes y poca visibilidad del uso real de los espacios. Indica que no cuentan con información en tiempo real sobre ocupación ni consumo energético, lo que ocasiona desperdicio de recursos como luces y equipos encendidos. Considera que una solución como EduSpace sería valiosa, especialmente si permite visualizar el estado de las aulas y recibir alertas automáticas. Sin embargo, menciona que el principal reto sería el costo de implementación y la adaptación del personal al cambio tecnológico.
 
@@ -716,7 +684,7 @@ Objetivo: Comprender cómo perciben el uso de aulas, condiciones del entorno y p
 - **Inicio de la entrevista:** 00:00
 - **Duración:** 3:45
 - **Screenshot del cuadro de video:** ![Entrevista3](/assets/chapter2/jairo.png)
-- **URL del video (Microsoft Stream):** *[Entrevista 03](https://upcedupe-my.sharepoint.com/:l:/g/personal/u202312504_upc_edu_pe/JABq1Tk15HtaSqVGyJ4LGDFXAXKjrk2rXKsj0pI6lrjvc5M?e=zQ8JTi)*
+- **URL del video (Microsoft Stream):** *[https://upcedupe-my.sharepoint.com/:l:/g/personal/u202312504_upc_edu_pe/JABq1Tk15HtaSqVGyJ4LGDFXAXKjrk2rXKsj0pI6lrjvc5M?e=zQ8JTi](https://upcedupe-my.sharepoint.com/:l:/g/personal/u202312504_upc_edu_pe/JABq1Tk15HtaSqVGyJ4LGDFXAXKjrk2rXKsj0pI6lrjvc5M?e=zQ8JTi)*
 
 **Resumen:** El entrevistado indica que su institución ha crecido rápidamente y la gestión de espacios se ha vuelto cada vez más compleja. Actualmente no cuentan con herramientas integradas, lo que genera retrasos en la toma de decisiones. Menciona que el consumo energético es un problema importante y que no existe un control eficiente. Considera que EduSpace podría aportar valor al centralizar la información y ofrecer datos en tiempo real. Destaca que la facilidad de uso será clave para su adopción.
 
@@ -730,7 +698,7 @@ Objetivo: Comprender cómo perciben el uso de aulas, condiciones del entorno y p
 - **Inicio de la entrevista:** 00:00
 - **Duración:** 4:05 
 - **Screenshot del cuadro de video:** ![Entrevista3](/assets/chapter2/mariano.png)
-- **URL del video (Microsoft Stream):** *[Entrevista 03](https://upcedupe-my.sharepoint.com/:l:/g/personal/u202312504_upc_edu_pe/JABq1Tk15HtaSqVGyJ4LGDFXAXKjrk2rXKsj0pI6lrjvc5M?e=zQ8JTi)*
+- **URL del video (Microsoft Stream):** *[https://upcedupe-my.sharepoint.com/:l:/g/personal/u202312504_upc_edu_pe/JABq1Tk15HtaSqVGyJ4LGDFXAXKjrk2rXKsj0pI6lrjvc5M?e=zQ8JTi](https://upcedupe-my.sharepoint.com/:l:/g/personal/u202312504_upc_edu_pe/JABq1Tk15HtaSqVGyJ4LGDFXAXKjrk2rXKsj0pI6lrjvc5M?e=zQ8JTi)*
 
 **Resumen:** El docente menciona que frecuentemente encuentra problemas en las aulas, como equipos que no funcionan o condiciones ambientales inadecuadas (calor, poca ventilación). Indica que esto afecta el desarrollo de sus clases y genera pérdida de tiempo. Considera que sería muy útil conocer el estado del aula antes de ingresar. Percibe positivamente la propuesta de EduSpace, especialmente si permite anticipar problemas y mejorar las condiciones del entorno educativo.
 
@@ -743,7 +711,7 @@ Objetivo: Comprender cómo perciben el uso de aulas, condiciones del entorno y p
 - **Inicio de la entrevista:** 00:00
 - **Duración:** 3:46
 - **Screenshot del cuadro de video:** ![Entrevista3](/assets/chapter2/jostin.png)
-- **URL del video (Microsoft Stream):** *[Entrevista 03](https://upcedupe-my.sharepoint.com/:l:/g/personal/u202312504_upc_edu_pe/JABq1Tk15HtaSqVGyJ4LGDFXAXKjrk2rXKsj0pI6lrjvc5M?e=zQ8JTi)*
+- **URL del video (Microsoft Stream):** *[https://upcedupe-my.sharepoint.com/:l:/g/personal/u202312504_upc_edu_pe/JABq1Tk15HtaSqVGyJ4LGDFXAXKjrk2rXKsj0pI6lrjvc5M?e=zQ8JTi](https://upcedupe-my.sharepoint.com/:l:/g/personal/u202312504_upc_edu_pe/JABq1Tk15HtaSqVGyJ4LGDFXAXKjrk2rXKsj0pI6lrjvc5M?e=zQ8JTi)*
 
 **Resumen:** El entrevistado señala que uno de los principales inconvenientes es la falta de organización en la asignación de aulas, lo que genera confusiones o retrasos al inicio de clases. También menciona que no existe un canal claro para reportar problemas en los ambientes. Considera que una plataforma como EduSpace podría mejorar la comunicación con el área administrativa y facilitar la gestión de incidencias. Valora especialmente la posibilidad de recibir notificaciones y acceder a información en tiempo real.
 
@@ -756,7 +724,7 @@ Objetivo: Comprender cómo perciben el uso de aulas, condiciones del entorno y p
 - **Inicio de la entrevista:** 00:00
 - **Duración:** 5:15
 - **Screenshot del cuadro de video:** <img src="/assets/chapter2/karina.png" alt="Entrevista3" width="200"/>
-- **URL del video (Microsoft Stream):** *[Entrevista 03](https://upcedupe-my.sharepoint.com/:l:/g/personal/u202312504_upc_edu_pe/JABq1Tk15HtaSqVGyJ4LGDFXAXKjrk2rXKsj0pI6lrjvc5M?e=zQ8JTi)*
+- **URL del video (Microsoft Stream):** *[https://upcedupe-my.sharepoint.com/:l:/g/personal/u202312504_upc_edu_pe/JABq1Tk15HtaSqVGyJ4LGDFXAXKjrk2rXKsj0pI6lrjvc5M?e=zQ8JTi](https://upcedupe-my.sharepoint.com/:l:/g/personal/u202312504_upc_edu_pe/JABq1Tk15HtaSqVGyJ4LGDFXAXKjrk2rXKsj0pI6lrjvc5M?e=zQ8JTi)*
 
 **Resumen:** La entrevistada indica que el estado de las aulas influye directamente en la calidad de la enseñanza y en la atención de los estudiantes. Menciona que en varias ocasiones ha tenido que adaptarse a espacios no adecuados, lo que afecta su planificación. Considera que el uso de tecnología puede mejorar significativamente la experiencia docente, siempre que sea fácil de usar. Destaca que EduSpace podría aportar valor si brinda información clara, rápida y accesible sobre disponibilidad y condiciones de los espacios.
 
@@ -1043,7 +1011,7 @@ A continuación se presenta el diagrama resultante de la sesión:
 | 39 | US39 | Consultar historial API | API histórica | 5 | Soporte |
 | 40 | US40 | Validar requests | Validación API | 3 | Control técnico |
 
-Link del trello: https://trello.com/invite/b/69edfb314ab741198fef7020/ATTI0d12cd13b753e0c11971c7322f7821d32297D49D/iot
+Link del trello: [https://trello.com/invite/b/69edfb314ab741198fef7020/ATTI0d12cd13b753e0c11971c7322f7821d32297D49D/iot](https://trello.com/invite/b/69edfb314ab741198fef7020/ATTI0d12cd13b753e0c11971c7322f7821d32297D49D/iot)
 
 <div style="page-break-after: always;"></div>
 
@@ -2496,26 +2464,26 @@ En este capítulo el equipo documenta el proceso de implementación, herramienta
 
 **Project management**
 * Google Meet: Plataforma de videollamadas utilizada para coordinar reuniones entre los integrantes del equipo. A través de esta herramienta se llevan a cabo discusiones sobre los avances del proyecto, la toma de decisiones relacionadas con los productos y la revisión de las tareas completadas.
-  * Ruta de Referencia: (https://meet.google.com/landing)[https://meet.google.com/landing]
+  * Ruta de Referencia: [https://meet.google.com/landing](https://meet.google.com/landing)
 
 * WhatsApp: Aplicación de mensajería empleada para la comunicación interna del equipo, esto nos permite organizar las reuniones, asignar tareas y recordar las fechas de entrega correspondientes a cada avance del proyecto.
-  * Ruta de Referencia: (https://web.whatsapp.com/)[https://web.whatsapp.com/]
+  * Ruta de Referencia: [https://web.whatsapp.com/](https://web.whatsapp.com/)
 
 * GitHub: Una plataforma en la nube que hospedará los repositorios de código del proyecto. Permitirá la colaboración en tiempo real y la revisión de contribuciones de cada miembro del equipo. Los integrantes del equipo podrán acceder a través de sus navegadores web.
-  * Ruta de Referencia: (https://github.com/)[https://github.com/]
+  * Ruta de Referencia: [https://github.com/](https://github.com/)
 
 
 **Requirements management**
 * Jira: Esta plataforma es utilizada para gestionar el proyecto de manera ágil, así manejamos el Product Backlog, y asignar las tareas correspondientes.
-  * Ruta de Referencia: (https://www.atlassian.com/software/jira.5)[https://www.atlassian.com/software/jira.5]
+  * Ruta de Referencia: [https://www.atlassian.com/software/jira.5](https://www.atlassian.com/software/jira.5)
 
 
 **Product Design**
 * UX Pressia: Plataforma orientada al diseño de mapas de experiencia de usuario y recorridos de interacción dentro del producto. Con estos diagramas y mapas, identificamos las necesidades de los usuarios y la comprensión de cómo van a actuar con el producto propuesto.
-  * Ruta de Referencia: (https://uxpressia.com/)[https://uxpressia.com/]
+  * Ruta de Referencia: [https://uxpressia.com/](https://uxpressia.com/)
 
 * Figma: Herramienta colaborativa utilizada para el diseño de las interfaces de EduSpace. Además, permite desarrollar prototipos interactivos, lo que ayuda a simular y evaluar el flujo de navegación y la experiencia de uso de la aplicación.
-  * Ruta de Preferencia: (https://www.figma.com/)[https://www.figma.com/]
+  * Ruta de Preferencia:  [https://www.figma.com/](https://www.figma.com/)
 
 
 **Software Development**
@@ -2538,14 +2506,14 @@ En este capítulo el equipo documenta el proceso de implementación, herramienta
   * Ruta de Referencia: [https://developer.mozilla.org/es/docs/Web/JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript)
 
 * C++: Es un lenguaje de programación que se utiliza para el desarrollo de la lógica de los dispositivos IoT y la interacción con sensores simulados dentro de la solución. Este permite controlar el comportamiento de los componentes embebidos y procesar la información recolectada por los sensores.
-  * Ruta de Referencia: (https://devdocs.io/cpp/)[https://devdocs.io/cpp/]
+  * Ruta de Referencia: [https://devdocs.io/cpp/](https://devdocs.io/cpp/)
 
 * Git: Una herramienta de control de versiones que facilita el registro y la gestión de las distintas versiones del programa. Su propósito es mantener un historial de cambios y simplificar la corrección de errores. Los integrantes del equipo accederán a través de la línea de comandos en sus sistemas locales.
   * Ruta de Referencia: [https://git-scm.com/](https://git-scm.com/)
 
 * ESP32: Es un microcontrolador que se utiliza en la simulación de los componentes IoT del proyecto, esto permite la integración y procesamiento de datos provenientes de los sensores relacionados con el monitoreo de ambientes.
   * Sensores: DHT22 (sensor para medir temperatura y humedad) y PIR (sensor para detección de presencia)
-  * Ruta de Referencia: (https://docs.espressif.com/projects/esp-idf/en/stable/esp32/index.html)[https://docs.espressif.com/projects/esp-idf/en/stable/esp32/index.html]
+  * Ruta de Referencia: [https://www.espressif.com/en/products/socs/esp32](https://www.espressif.com/en/products/socs/esp32)
 
 
 **Software Deployment**
@@ -2559,24 +2527,24 @@ En este capítulo el equipo documenta el proceso de implementación, herramienta
 
 **Software Testing**
 * Postman: Se utiliza para probar y validar los endpoints REST y cómo responden a las solicitudes de los usuarios.
-  * Ruta de Referencia: (https://www.postman.com/)[https://www.postman.com/]
+  * Ruta de Referencia: [https://www.postman.com/](https://www.postman.com/)
 
 
 **Software Documentation**
 * PlantUML: Herramienta utilizada para la creación de diagramas mediante texto descriptivo, esto nos permite generar representaciones UML de forma rápida y organizada.
-  * Ruta de Referencia: (https://plantuml.com/)[https://plantuml.com/]
+  * Ruta de Referencia: [https://plantuml.com/](https://plantuml.com/)
 
 * LucidChart: Plataforma de diagramación colaborativa empleada para elaborar diagramas y representaciones visuales que agilizan la comprensión de procesos y estructuras del sistema.
-  * Ruta de Referencia: (https://www.lucidchart.com/pages)[https://www.lucidchart.com/pages]
+  * Ruta de Referencia: [https://www.lucidchart.com/](https://www.lucidchart.com/)
 
 * Structurizr: Herramienta enfocada en la elaboración de diagramas bajo el modelo C4, es utilizada para representar la arquitectura del sistema de manera clara y estructurada en distintos niveles de abstracción.
-  * Ruta de Referencia: (https://structurizr.com/)[https://structurizr.com/]
+  * Ruta de Referencia: [https://structurizr.com/](https://structurizr.com/)
 
 * Vertabelo: Plataforma especializada en el diseño y modelado de bases de datos, empleada para crear diagramas entidad-relación y definir la estructura lógica de la información.
-  * Ruta de Referencia: (https://vertabelo.com/)[https://vertabelo.com/]
+  * Ruta de Referencia: [https://vertabelo.com/](https://vertabelo.com/)
 
 * Swagger API: Solución utilizada para la documentación de APIs REST, lo que permite describir endpoints, métodos, parámetros y respuestas de manera estandarizada e interactiva.
-  * Ruta de Referencia: (https://swagger.io/)[https://swagger.io/]
+  * Ruta de Referencia: [https://swagger.io/](https://swagger.io/)
 
 ### 6.1.2. Source Code Management.
 
@@ -2764,7 +2732,7 @@ El objetivo principal del Sprint 1 es consolidar la línea base desplegada de Ed
 
 A continuación se presenta la captura del Sprint Board y el enlace público al tablero del equipo.
 
-URL público del tablero (Jira): <https://upc-team-awnysuez.atlassian.net/jira/software/projects/SCRUM/boards/1>
+URL público del tablero (Jira): [https://upc-team-awnysuez.atlassian.net/jira/software/projects/SCRUM/boards/1](https://upc-team-awnysuez.atlassian.net/jira/software/projects/SCRUM/boards/1)
 
 ![Sprint 1 Board en Jira](assets/chapter-VI/sprint-1-board-jira.png)
 
@@ -2863,7 +2831,7 @@ En el Sprint 1 se alcanzo la ejecucion estable de la Landing Page y la Web Appli
 
 **Video de ejecucion**
 
-Link del video: https://youtu.be/tAP6TujgwuA
+Link del video: [https://youtu.be/tAP6TujgwuA](https://youtu.be/tAP6TujgwuA)
 
 #### 6.2.1.7. Services Documentation Evidence for Sprint Review.
 
@@ -2897,8 +2865,8 @@ En el Sprint 1 se realizaron despliegues de los productos digitales base. La Lan
 
 **URLs de despliegue (Sprint 1)**
 
-- Landing Page: https://experimentdesign.github.io/landing-page/
-- Web Application: https://eduspacewebapp.netlify.app/
+- Landing Page: [https://desarrollosolucioniot.github.io/landing-page/](https://desarrollosolucioniot.github.io/landing-page/)
+- Web Application: [https://eduspacewebapp.netlify.app/](https://eduspacewebapp.netlify.app/)
 
 **Capturas de despliegue**
 
@@ -2942,17 +2910,17 @@ Finalmente, respecto al Sprint Backlog 1 (sec. 6.2.1.3), se confirmó que priori
 
 # Bibliografía
 
-Birimisa, A. (2025, 19 febrero). _El consumo de energía en los Colegios y cómo el FM puede generar ahorros_. https://www.linkedin.com/pulse/el-consumo-de-energ%C3%ADa-en-los-colegios-y-c%C3%B3mo-fm-puede-birimisa-ncnpe/
+Birimisa, A. (2025, 19 febrero). _El consumo de energía en los Colegios y cómo el FM puede generar ahorros_. [https://www.linkedin.com/pulse/el-consumo-de-energ%C3%ADa-en-los-colegios-y-c%C3%B3mo-fm-puede-birimisa-ncnpe/](https://www.linkedin.com/pulse/el-consumo-de-energ%C3%ADa-en-los-colegios-y-c%C3%B3mo-fm-puede-birimisa-ncnpe/)
 
-Córdova Negrete, M. G., Domínguez Toala, G. del P., & Córdova Cabrera, D. J. (2025). Retos y perspectivas de la gestión administrativa en la educación superior: fortalecimiento institucional, calidad educativa y liderazgo académico en el contexto globalizado. _Multidisciplinary Journal of Sciences, Discoveries, and Society_, _2_(2), e-207. https://doi.org/10.71068/xzb5wn45
+Córdova Negrete, M. G., Domínguez Toala, G. del P., & Córdova Cabrera, D. J. (2025). Retos y perspectivas de la gestión administrativa en la educación superior: fortalecimiento institucional, calidad educativa y liderazgo académico en el contexto globalizado. _Multidisciplinary Journal of Sciences, Discoveries, and Society_, _2_(2), e-207. [https://doi.org/10.71068/xzb5wn45](https://doi.org/10.71068/xzb5wn45)
 
-Expertos En Educación. (2025, 22 septiembre). _Gestión educativa en el Perú: claves, retos y soluciones_. VIU Universidad Online. https://www.universidadviu.com/pe/actualidad/nuestros-expertos/gestion-educativa-en-el-peru-claves-retos-y-soluciones
+Expertos En Educación. (2025, 22 septiembre). _Gestión educativa en el Perú: claves, retos y soluciones_. VIU Universidad Online. [https://www.universidadviu.com/pe/actualidad/nuestros-expertos/gestion-educativa-en-el-peru-claves-retos-y-soluciones](https://www.universidadviu.com/pe/actualidad/nuestros-expertos/gestion-educativa-en-el-peru-claves-retos-y-soluciones)
 
-Diaz, H. (2024, 25 junio). _Infraestructura escolar: soluciones frente al déficit y los desafíos tecnológicos - Educared_. Educared. https://educared.fundaciontelefonica.com.pe/desafios/infraestructura-escolar-soluciones-frente-al-deficit-y-los-desafios-tecnologicos/
+Diaz, H. (2024, 25 junio). _Infraestructura escolar: soluciones frente al déficit y los desafíos tecnológicos - Educared_. Educared. [https://educared.fundaciontelefonica.com.pe/desafios/infraestructura-escolar-soluciones-frente-al-deficit-y-los-desafios-tecnologicos/](https://educared.fundaciontelefonica.com.pe/desafios/infraestructura-escolar-soluciones-frente-al-deficit-y-los-desafios-tecnologicos/)
 
-Valencia, C., & Almeida, V. (2024). La tecnología en la gestión educativa. _Revista de Investigación Latinoamericana En Competitividad Organizacional_, _6_(23), 9859863. https://dialnet.unirioja.es/descarga/articulo/9859863.pdf#:~:text=En%20resumen%2C%20la%20integraci%C3%B3n%20de%20la%20tecnolog%C3%ADa,a%20la%20mejora%20de%20la%20calidad%20educativa.
+Valencia, C., & Almeida, V. (2024). La tecnología en la gestión educativa. _Revista de Investigación Latinoamericana En Competitividad Organizacional_, _6_(23), 9859863. [https://dialnet.unirioja.es/descarga/articulo/9859863.pdf#:~:text=En%20resumen%2C%20la%20integraci%C3%B3n%20de%20la%20tecnolog%C3%ADa,a%20la%20mejora%20de%20la%20calidad%20educativa](https://dialnet.unirioja.es/descarga/articulo/9859863.pdf#:~:text=En%20resumen%2C%20la%20integraci%C3%B3n%20de%20la%20tecnolog%C3%ADa,a%20la%20mejora%20de%20la%20calidad%20educativa).
 
-Shanganlall, A. (2025, 21 febrero). _Los 7 mayores retos que afectan a la gestión de la educación_. Classter. https://www.classter.com/es/blog/edtech-es/los-7-mayores-retos-que-afectan-a-la-gestion-de-la-educacion/
+Shanganlall, A. (2025, 21 febrero). _Los 7 mayores retos que afectan a la gestión de la educación_. Classter. [https://www.classter.com/es/blog/edtech-es/los-7-mayores-retos-que-afectan-a-la-gestion-de-la-educacion/](https://www.classter.com/es/blog/edtech-es/los-7-mayores-retos-que-afectan-a-la-gestion-de-la-educacion/)
 
 <div style="page-break-after: always;"></div>
 
@@ -2963,5 +2931,5 @@ Shanganlall, A. (2025, 21 febrero). _Los 7 mayores retos que afectan a la gesti�
 ## Anexo B: Videos de Exposiciones
 
 | Entrega | Título                                             | URL                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |     |
-| ------- | -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+|---------|----------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|
 | AV1     | upc-pre-202610-1asi0572-6776-edusolutions-expo-av1 | [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202110385_upc_edu_pe/IQBIiMX0AJRMSaQEIAnGe6olAZdW2wzqMkFe6cLaolmhgB0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=PJLtw2](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202110385_upc_edu_pe/IQBIiMX0AJRMSaQEIAnGe6olAZdW2wzqMkFe6cLaolmhgB0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=PJLtw2) |     |
