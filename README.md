@@ -3319,6 +3319,34 @@ Unhappy paths: La alerta ya fue reconocida por otro administrador (el sistema in
 
 ## 5.5. Applications Prototyping
 
+En esta sección se presentan los prototipos interactivos de la Web Application y la Mobile Application de EduSpace IoT, elaborados en Figma. Los prototipos simulan la interacción y navegación real de la plataforma, siendo consistentes con los User Flow Diagrams definidos en la sección anterior.
+
+Las principales decisiones de interacción tomadas para los prototipos son las siguientes:
+
+- **Navegación por sidebar** en la Web Application, permitiendo acceso directo a cualquier sección con un clic desde cualquier punto de la aplicación.
+- **Navegación por Bottom Navigation Bar** en la Mobile Application, siguiendo las convenciones nativas de iOS y Android para acceso rápido a las secciones principales.
+- **Actualización de datos IoT mediante polling**, simulada en el prototipo mediante transiciones automáticas que muestran el cambio de estado de las tarjetas ambientales.
+- **Flujos de confirmación** para acciones críticas como configuración de umbrales y reservas, con modales de confirmación antes de ejecutar la acción.
+- **Estados de error y vacío** representados en el prototipo para los principales unhappy paths identificados en los User Flow Diagrams.
+
+Estas decisiones de interacción están alineadas con el sistema de navegación definido en la sección 5.2.5 y los principios de diseño inclusivo establecidos en las Style Guidelines.
+
+#### Web Application
+
+A continuación se presenta el prototipo interactivo de la Web Application, que cubre los principales flujos de interacción para los segmentos de Administrador y Docente, incluyendo las nuevas funcionalidades de monitoreo IoT.
+
+\<imagen screenshot prototipo web application\>
+
+URL del prototipo: \<URL Figma Web Application Prototype\>
+
+#### Mobile Application
+
+A continuación se presenta el prototipo interactivo de la Mobile Application, que cubre los principales flujos de interacción para ambos segmentos en dispositivos móviles, con énfasis en las vistas de monitoreo ambiental en tiempo real y gestión de alertas IoT.
+
+\<imagen screenshot prototipo mobile application\>
+
+URL del prototipo: \<URL Figma Mobile Application Prototype\>
+
 ## 5.6. IoT Device Design
 
 
