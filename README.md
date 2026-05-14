@@ -2887,6 +2887,80 @@ Diseñado para administradores y docentes que desean gestionar su institución d
 
 ### 5.2.4. Searching Systems
 
+EduSpace ha diseñado su sistema de búsqueda y filtrado para proporcionar una experiencia eficiente y fluida a la hora de gestionar espacios educativos, recursos e información de monitoreo IoT, sin abrumar a los usuarios con el volumen de información disponible.
+
+#### Opciones de búsqueda por sección
+
+**Gestión de espacios (Administrador)**
+
+Los administradores pueden buscar y filtrar aulas y áreas compartidas mediante los siguientes criterios:
+
+| Filtro | Valores posibles |
+|--------|-----------------|
+| Tipo de espacio | Classroom / Shared Area |
+| Estado de ocupación IoT | Occupied / Unoccupied |
+| Estado ambiental | Normal / Warning / Alert |
+| Docente asignado | Lista de docentes registrados |
+
+**Reservas (Docente)**
+
+Los docentes pueden buscar espacios disponibles para reservar mediante los siguientes filtros:
+
+| Filtro | Valores posibles |
+|--------|-----------------|
+| Fecha | Selector de fecha |
+| Hora de inicio | Selector de hora |
+| Hora de fin | Selector de hora |
+| Tipo de espacio | Sports court / Common room / Other |
+
+**Reportes de averías (Administrador y Docente)**
+
+| Filtro | Valores posibles |
+|--------|-----------------|
+| Estado del reporte | In Progress / Completed / Cancelled |
+| Tipo de recurso | Equipment / Furniture / Infrastructure |
+| Fecha de creación | Rango de fechas |
+
+**IoT Dashboard (Administrador)**
+
+| Filtro | Valores posibles |
+|--------|-----------------|
+| Aula | Lista de aulas registradas |
+| Variable ambiental | Temperature / Humidity / Occupancy |
+| Estado | Normal / Warning / Alert |
+| Rango de fechas | Selector de rango para historial |
+
+**Alertas IoT (Administrador)**
+
+| Filtro | Valores posibles |
+|--------|-----------------|
+| Tipo de alerta | Temperature / Humidity / Occupancy |
+| Estado | Active / Acknowledged |
+| Aula | Lista de aulas registradas |
+| Rango de fechas | Selector de rango |
+
+#### Visualización de resultados después de la búsqueda
+
+**Resultados en formato de tarjetas (Cards)**
+
+Para espacios, aulas y áreas compartidas, los resultados se presentan en formato de tarjetas que muestran la información más relevante de forma compacta: nombre del espacio, estado de ocupación IoT, condición ambiental actual y disponibilidad. Esto permite al usuario escanear visualmente los resultados sin necesidad de abrir cada elemento.
+
+**Resultados en formato de lista**
+
+Para reportes de averías y alertas IoT, los resultados se presentan en formato de lista ordenada, donde cada elemento muestra el tipo, estado, aula asociada y fecha de creación. La lista permite ordenamiento por columnas para facilitar la priorización.
+
+**Resultados en formato de calendario**
+
+Para la búsqueda de disponibilidad de espacios compartidos, los resultados se presentan en un calendario semanal que muestra visualmente los bloques de tiempo disponibles y ocupados, facilitando la selección del horario de reserva.
+
+**Resultados en formato de gráfico**
+
+Para el historial de lecturas IoT, los resultados se presentan en gráficos de línea de series temporales, mostrando la evolución de temperatura, humedad u ocupación en el rango de fechas seleccionado. Esto permite identificar tendencias y patrones de uso de los espacios.
+
+#### Comportamiento de búsqueda vacía
+
+Cuando una búsqueda no retorna resultados, el sistema muestra un mensaje descriptivo que explica por qué no hay resultados y sugiere acciones alternativas, como ampliar el rango de fechas o cambiar los filtros aplicados. Nunca se muestra una pantalla en blanco sin contexto.
+
 ### 5.2.5. Navigation Systems
 
 ## 5.3. Landing Page UI Design
