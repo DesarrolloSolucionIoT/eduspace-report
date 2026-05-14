@@ -2772,6 +2772,119 @@ Estas etiquetas se usan en el dashboard y las tarjetas de monitoreo para comunic
 
 ### 5.2.3. SEO Tags and Meta Tags
 
+Las meta etiquetas nos permiten codificar y especificar metadatos en una página web. Aunque no son visibles para los usuarios, los navegadores y rastreadores web las leen. Estas etiquetas facilitan el análisis de archivos HTML y ayudan en el mantenimiento del contenido. Además, influyen en el posicionamiento de nuestra página en los motores de búsqueda.
+
+#### Landing Page
+
+**Título de la página:**
+
+```html
+<title>EduSpace IoT — Smart Classroom Management Platform</title>
+```
+
+**Meta descripción:**
+
+```html
+<meta
+  name="description"
+  content="EduSpace IoT is a smart platform for managing educational spaces. Monitor real-time environmental conditions, manage reservations, track resources and receive automated alerts through IoT technology."
+/>
+```
+
+**Meta palabras clave:**
+
+```html
+<meta
+  name="keywords"
+  content="smart classroom, IoT monitoring, educational space management, temperature monitoring, occupancy detection, classroom reservation, breakdown reporting, school management, EduSpace"
+/>
+```
+
+**Meta autor:**
+
+```html
+<meta name="author" content="EduSolutions" />
+<meta name="copyright" content="Copyright EduSpace IoT — EduSolutions" />
+```
+
+**Meta viewport y charset:**
+
+```html
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+```
+
+**Open Graph (para compartir en redes sociales):**
+
+```html
+<meta property="og:title" content="EduSpace IoT — Smart Classroom Management" />
+<meta property="og:description" content="Monitor and manage your educational spaces intelligently with IoT technology." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://eduspace-iot.github.io" />
+```
+
+#### Web Application
+
+**Título de la página:**
+
+```html
+<title>EduSpace IoT — Dashboard</title>
+```
+
+**Meta descripción:**
+
+```html
+<meta
+  name="description"
+  content="EduSpace IoT web application for administrators and teachers. Manage classrooms, monitor environmental conditions and coordinate institutional resources."
+/>
+```
+
+**Meta palabras clave:**
+
+```html
+<meta
+  name="keywords"
+  content="classroom management, IoT dashboard, space reservation, breakdown reports, environmental monitoring, EduSpace"
+/>
+```
+
+**Meta autor:**
+
+```html
+<meta name="author" content="EduSolutions" />
+```
+
+**Meta viewport y charset:**
+
+```html
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+```
+
+#### Mobile Application — ASO (App Store Optimization)
+
+**App Title:**
+EduSpace IoT
+
+**App Subtitle:**
+Smart Classroom Management
+
+**App Keywords:**
+classroom, IoT, monitoring, temperature, humidity, occupancy, reservation, school, education, management
+
+**App Description:**
+EduSpace IoT is a smart platform designed for educational institutions that want to optimize the use of their spaces and improve classroom environmental conditions.
+
+Con EduSpace IoT puedes:
+- Monitorear temperatura, humedad y ocupación de aulas en tiempo real
+- Recibir alertas automáticas cuando las condiciones ambientales superan los umbrales configurados
+- Reservar espacios compartidos y gestionar disponibilidad
+- Reportar averías en equipos y hacer seguimiento de su resolución
+- Recibir notificaciones sobre reuniones y cambios de aula
+
+Diseñado para administradores y docentes que desean gestionar su institución de manera eficiente e inteligente.
+
 ### 5.2.4. Searching Systems
 
 ### 5.2.5. Navigation Systems
