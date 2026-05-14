@@ -134,53 +134,73 @@ URL del repositorio del Project Report en GitHub: [https://github.com/Desarrollo
       - [4.1.3.2. Software Architecture Context Level Diagrams](#4132-software-architecture-context-level-diagrams)
       - [4.1.3.3. Software Architecture Container Level Diagrams](#4133-software-architecture-container-level-diagrams)
       - [4.1.3.4. Software Architecture Deployment Diagrams](#4134-software-architecture-deployment-diagrams)
-- [4.2. Tactical-Level Domain-Driven Design](#42-tactical-level-domain-driven-design)
-  - [Bounded Contexts válidos](#bounded-contexts-válidos)
-    - [4.2.1. Identity, Access \& Profile Management](#421-identity-access--profile-management)
-      - [4.2.1.1. Domain Layer](#4211-domain-layer)
-      - [4.2.1.2. Interface Layer](#4212-interface-layer)
-      - [4.2.1.3. Application Layer](#4213-application-layer)
-      - [4.2.1.4. Infrastructure Layer](#4214-infrastructure-layer)
-      - [4.2.1.5. Bounded Context Software Architecture Component Level Diagrams](#4215-bounded-context-software-architecture-component-level-diagrams)
-      - [4.2.1.6. Bounded Context Software Architecture Code Level Diagrams](#4216-bounded-context-software-architecture-code-level-diagrams)
-        - [4.2.1.6.1. Bounded Context Domain Layer Class Diagram](#42161-bounded-context-domain-layer-class-diagram)
-        - [4.2.1.6.2. Bounded Context Database Design Diagram](#42162-bounded-context-database-design-diagram)
-    - [4.2.2. Space \& Resource Management](#422-space--resource-management)
-      - [4.2.2.1. Domain Layer](#4221-domain-layer)
-      - [4.2.2.2. Interface Layer](#4222-interface-layer)
-      - [4.2.2.3. Application Layer](#4223-application-layer)
-      - [4.2.2.4. Infrastructure Layer](#4224-infrastructure-layer)
-      - [4.2.2.5. Bounded Context Software Architecture Component Level Diagrams](#4225-bounded-context-software-architecture-component-level-diagrams)
-      - [4.2.2.6. Bounded Context Software Architecture Code Level Diagrams](#4226-bounded-context-software-architecture-code-level-diagrams)
-        - [4.2.2.6.1. Bounded Context Domain Layer Class Diagram](#42261-bounded-context-domain-layer-class-diagram)
-        - [4.2.2.6.2. Bounded Context Database Design Diagram](#42262-bounded-context-database-design-diagram)
-    - [4.2.3. Reservation \& Scheduling](#423-reservation--scheduling)
-      - [4.2.3.1. Domain Layer](#4231-domain-layer)
-      - [4.2.3.2. Interface Layer](#4232-interface-layer)
-      - [4.2.3.3. Application Layer](#4233-application-layer)
-      - [4.2.3.4. Infrastructure Layer](#4234-infrastructure-layer)
-      - [4.2.3.5. Bounded Context Software Architecture Component Level Diagrams](#4235-bounded-context-software-architecture-component-level-diagrams)
-      - [4.2.3.6. Bounded Context Software Architecture Code Level Diagrams](#4236-bounded-context-software-architecture-code-level-diagrams)
-        - [4.2.3.6.1. Bounded Context Domain Layer Class Diagram](#42361-bounded-context-domain-layer-class-diagram)
-        - [4.2.3.6.2. Bounded Context Database Design Diagram](#42362-bounded-context-database-design-diagram)
-    - [4.2.4. Breakdown Management](#424-breakdown-management)
-      - [4.2.4.1. Domain Layer](#4241-domain-layer)
-      - [4.2.4.2. Interface Layer](#4242-interface-layer)
-      - [4.2.4.3. Application Layer](#4243-application-layer)
-      - [4.2.4.4. Infrastructure Layer](#4244-infrastructure-layer)
-      - [4.2.4.5. Bounded Context Software Architecture Component Level Diagrams](#4245-bounded-context-software-architecture-component-level-diagrams)
-      - [4.2.4.6. Bounded Context Software Architecture Code Level Diagrams](#4246-bounded-context-software-architecture-code-level-diagrams)
-        - [4.2.4.6.1. Bounded Context Domain Layer Class Diagram](#42461-bounded-context-domain-layer-class-diagram)
-        - [4.2.4.6.2. Bounded Context Database Design Diagram](#42462-bounded-context-database-design-diagram)
-    - [4.2.5. IoT Monitoring](#425-iot-monitoring)
-      - [4.2.5.1. Domain Layer](#4251-domain-layer)
-      - [4.2.5.2. Interface Layer](#4252-interface-layer)
-      - [4.2.5.3. Application Layer](#4253-application-layer)
-      - [4.2.5.4. Infrastructure Layer](#4254-infrastructure-layer)
-      - [4.2.5.5. Bounded Context Software Architecture Component Level Diagrams](#4255-bounded-context-software-architecture-component-level-diagrams)
-      - [4.2.5.6. Bounded Context Software Architecture Code Level Diagrams](#4256-bounded-context-software-architecture-code-level-diagrams)
-        - [4.2.5.6.1. Bounded Context Domain Layer Class Diagram](#42561-bounded-context-domain-layer-class-diagram)
-        - [4.2.5.6.2. Bounded Context Database Design Diagram](#42562-bounded-context-database-design-diagram)
+  - [4.2. Tactical-Level Domain-Driven Design](#42-tactical-level-domain-driven-design)
+    - [Bounded Contexts válidos](#bounded-contexts-válidos)
+      - [4.2.1. Identity, Access \& Profile Management](#421-identity-access--profile-management)
+        - [4.2.1.1. Domain Layer](#4211-domain-layer)
+        - [4.2.1.2. Interface Layer](#4212-interface-layer)
+        - [4.2.1.3. Application Layer](#4213-application-layer)
+        - [4.2.1.4. Infrastructure Layer](#4214-infrastructure-layer)
+        - [4.2.1.5. Bounded Context Software Architecture Component Level Diagrams](#4215-bounded-context-software-architecture-component-level-diagrams)
+        - [4.2.1.6. Bounded Context Software Architecture Code Level Diagrams](#4216-bounded-context-software-architecture-code-level-diagrams)
+          - [4.2.1.6.1. Bounded Context Domain Layer Class Diagram](#42161-bounded-context-domain-layer-class-diagram)
+          - [4.2.1.6.2. Bounded Context Database Design Diagram](#42162-bounded-context-database-design-diagram)
+      - [4.2.2. Space \& Resource Management](#422-space--resource-management)
+        - [4.2.2.1. Domain Layer](#4221-domain-layer)
+        - [4.2.2.2. Interface Layer](#4222-interface-layer)
+        - [4.2.2.3. Application Layer](#4223-application-layer)
+        - [4.2.2.4. Infrastructure Layer](#4224-infrastructure-layer)
+        - [4.2.2.5. Bounded Context Software Architecture Component Level Diagrams](#4225-bounded-context-software-architecture-component-level-diagrams)
+        - [4.2.2.6. Bounded Context Software Architecture Code Level Diagrams](#4226-bounded-context-software-architecture-code-level-diagrams)
+          - [4.2.2.6.1. Bounded Context Domain Layer Class Diagram](#42261-bounded-context-domain-layer-class-diagram)
+          - [4.2.2.6.2. Bounded Context Database Design Diagram](#42262-bounded-context-database-design-diagram)
+      - [4.2.3. Reservation \& Scheduling](#423-reservation--scheduling)
+        - [4.2.3.1. Domain Layer](#4231-domain-layer)
+        - [4.2.3.2. Interface Layer](#4232-interface-layer)
+        - [4.2.3.3. Application Layer](#4233-application-layer)
+        - [4.2.3.4. Infrastructure Layer](#4234-infrastructure-layer)
+        - [4.2.3.5. Bounded Context Software Architecture Component Level Diagrams](#4235-bounded-context-software-architecture-component-level-diagrams)
+        - [4.2.3.6. Bounded Context Software Architecture Code Level Diagrams](#4236-bounded-context-software-architecture-code-level-diagrams)
+          - [4.2.3.6.1. Bounded Context Domain Layer Class Diagram](#42361-bounded-context-domain-layer-class-diagram)
+          - [4.2.3.6.2. Bounded Context Database Design Diagram](#42362-bounded-context-database-design-diagram)
+      - [4.2.4. Breakdown Management](#424-breakdown-management)
+        - [4.2.4.1. Domain Layer](#4241-domain-layer)
+        - [4.2.4.2. Interface Layer](#4242-interface-layer)
+        - [4.2.4.3. Application Layer](#4243-application-layer)
+        - [4.2.4.4. Infrastructure Layer](#4244-infrastructure-layer)
+        - [4.2.4.5. Bounded Context Software Architecture Component Level Diagrams](#4245-bounded-context-software-architecture-component-level-diagrams)
+        - [4.2.4.6. Bounded Context Software Architecture Code Level Diagrams](#4246-bounded-context-software-architecture-code-level-diagrams)
+          - [4.2.4.6.1. Bounded Context Domain Layer Class Diagram](#42461-bounded-context-domain-layer-class-diagram)
+          - [4.2.4.6.2. Bounded Context Database Design Diagram](#42462-bounded-context-database-design-diagram)
+      - [4.2.5. IoT Monitoring](#425-iot-monitoring)
+        - [4.2.5.1. Domain Layer](#4251-domain-layer)
+        - [4.2.5.2. Interface Layer](#4252-interface-layer)
+        - [4.2.5.3. Application Layer](#4253-application-layer)
+        - [4.2.5.4. Infrastructure Layer](#4254-infrastructure-layer)
+        - [4.2.5.5. Bounded Context Software Architecture Component Level Diagrams](#4255-bounded-context-software-architecture-component-level-diagrams)
+        - [4.2.5.6. Bounded Context Software Architecture Code Level Diagrams](#4256-bounded-context-software-architecture-code-level-diagrams)
+          - [4.2.5.6.1. Bounded Context Domain Layer Class Diagram](#42561-bounded-context-domain-layer-class-diagram)
+          - [4.2.5.6.2. Bounded Context Database Design Diagram](#42562-bounded-context-database-design-diagram)
+- [Capítulo V: Solution UI/UX Design](#capítulo-v-solution-uiux-design)
+  - [5.1. Style Guidelines](#51-style-guidelines)
+    - [5.1.1. General Style Guidelines](#511-general-style-guidelines)
+    - [5.1.2. Web, Mobile and IoT Style Guidelines](#512-web-mobile-and-iot-style-guidelines)
+  - [5.2. Information Architecture](#52-information-architecture)
+    - [5.2.1. Organization Systems](#521-organization-systems)
+    - [5.2.2. Labeling Systems](#522-labeling-systems)
+    - [5.2.3. SEO Tags and Meta Tags](#523-seo-tags-and-meta-tags)
+    - [5.2.4. Searching Systems](#524-searching-systems)
+    - [5.2.5. Navigation Systems](#525-navigation-systems)
+  - [5.3. Landing Page UI Design](#53-landing-page-ui-design)
+    - [5.3.1. Landing Page Wireframe](#531-landing-page-wireframe)
+    - [5.3.2. Landing Page Mock-up](#532-landing-page-mock-up)
+  - [5.4. Applications UX/UI Design](#54-applications-uxui-design)
+    - [5.4.1. Applications Wireframes](#541-applications-wireframes)
+    - [5.4.2. Applications Wireflow Diagrams](#542-applications-wireflow-diagrams)
+    - [5.4.3. Applications Mock-ups](#543-applications-mock-ups)
+    - [5.4.4. Applications User Flow Diagrams](#544-applications-user-flow-diagrams)
+  - [5.5. Applications Prototyping](#55-applications-prototyping)
+  - [5.6. IoT Device Design](#56-iot-device-design)
 - [Capítulo VI: Product Implementation, Validation \& Deployment](#capítulo-vi-product-implementation-validation--deployment)
   - [6.2. Landing Page, Services \& Applications Implementation](#62-landing-page-services--applications-implementation)
     - [6.2.1. Sprint 1](#621-sprint-1)
@@ -2473,6 +2493,46 @@ Componentes principales:
 ##### 4.2.5.6.2. Bounded Context Database Design Diagram
 
 ![IoT Monitoring Database Design Diagram](assets/images/IoT-Monitoring-Bounded-Context-Database-DesignDiagram.png)
+
+# Capítulo V: Solution UI/UX Design
+
+## 5.1. Style Guidelines
+
+### 5.1.1. General Style Guidelines
+
+### 5.1.2. Web, Mobile and IoT Style Guidelines
+
+## 5.2. Information Architecture
+
+### 5.2.1. Organization Systems
+
+### 5.2.2. Labeling Systems
+
+### 5.2.3. SEO Tags and Meta Tags
+
+### 5.2.4. Searching Systems
+
+### 5.2.5. Navigation Systems
+
+## 5.3. Landing Page UI Design
+
+### 5.3.1. Landing Page Wireframe
+
+### 5.3.2. Landing Page Mock-up
+
+## 5.4. Applications UX/UI Design
+
+### 5.4.1. Applications Wireframes
+
+### 5.4.2. Applications Wireflow Diagrams
+
+### 5.4.3. Applications Mock-ups
+
+### 5.4.4. Applications User Flow Diagrams
+
+## 5.5. Applications Prototyping
+
+## 5.6. IoT Device Design
 
 
 # Capítulo VI: Product Implementation, Validation & Deployment
