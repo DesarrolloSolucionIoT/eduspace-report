@@ -3375,7 +3375,11 @@ El diseño físico prioriza la discreción y la funcionalidad sobre la estética
 - **Cable de alimentación oculto:** El cable USB se canaliza por el rodapié o canal de cableado para mantener una instalación ordenada.
 - **Sin controles físicos:** El dispositivo no tiene botones ni controles físicos expuestos para minimizar la posibilidad de manipulación no autorizada.
 
-\<imagen diseño físico del dispositivo\>
+Diseño Fisico:
+
+***Imagen generada con IA para visualizar como se vería el circuito.***
+
+![Diseño Fisico](./assets/images/diseño-fisico-ia.jpg)
 
 ### Diagrama de circuito
 
@@ -3396,9 +3400,13 @@ El diagrama de circuito muestra las conexiones entre el ESP32 y los componentes 
 | LED RGB | B (ánodo azul) | GPIO27 (con resistencia 220Ω) | Canal azul del LED |
 | LED RGB | Cátodo común | GND | Tierra del LED |
 
-\<imagen diagrama de circuito Wokwi\>
+![Diagrama de circuito](./assets/images/diseño-fisico.png)
 
-URL de la simulación en Wokwi: \<URL simulación Wokwi\>
+URL de la simulación en Wokwi: 
+
+[https://wokwi.com/projects/464030948953540609](https://wokwi.com/projects/464030948953540609)
+
+![Simulacion](./assets/images/simulacion.png)
 
 ### Flujo de interacción del dispositivo
 
