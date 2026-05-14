@@ -2963,6 +2963,78 @@ Cuando una búsqueda no retorna resultados, el sistema muestra un mensaje descri
 
 ### 5.2.5. Navigation Systems
 
+En esta sección se explican las acciones y técnicas que guiarán a los usuarios a través del Landing Page y las aplicaciones de EduSpace, permitiéndoles cumplir sus metas e interactuar de forma satisfactoria con el producto.
+
+#### Landing Page
+
+La navegación del Landing Page sigue un modelo de **navegación lineal descendente**, donde el contenido se presenta en una secuencia lógica que guía al visitante desde el conocimiento del producto hasta la conversión. Se complementa con una **barra de navegación fija** en la parte superior que permite acceder directamente a cualquier sección en cualquier momento.
+
+| Elemento de navegación | Tipo | Descripción |
+|----------------------|------|-------------|
+| Top Navigation Bar | Global | Barra fija con enlaces a todas las secciones: Home, About Us, Features, Packages, Contact y botón Get Started |
+| Scroll Navigation | Lineal | El usuario puede desplazarse verticalmente para recorrer el contenido en secuencia |
+| Anchor Links | Local | Los enlaces de la barra de navegación hacen scroll suave hacia la sección correspondiente |
+| Call-to-Action buttons | Acción | Botones destacados en cada sección que redirigen al usuario a la Web Application |
+| Footer Links | Global | Enlaces secundarios a términos y condiciones, política de privacidad y redes sociales |
+
+#### Web Application
+
+La aplicación web utiliza un modelo de **navegación jerárquica** organizada mediante una barra lateral (sidebar) fija que permanece visible en todo momento. Este modelo permite al usuario ubicarse siempre dentro de la estructura de la aplicación y acceder a cualquier sección con un máximo de dos clics.
+
+**Navegación principal — Administrador:**
+
+| Elemento | Tipo | Descripción |
+|----------|------|-------------|
+| Sidebar | Global | Barra lateral fija con acceso a todas las secciones principales |
+| Breadcrumbs | Contextual | Indicador de ubicación actual dentro de la jerarquía de navegación |
+| Tab Navigation | Local | Pestañas dentro de secciones complejas como IoT Dashboard (por aula) |
+| Quick Actions | Acceso rápido | Acciones frecuentes disponibles desde el Home sin necesidad de navegar |
+| Notifications Bell | Global | Ícono de campana en la barra superior con acceso directo a notificaciones y alertas IoT |
+
+**Navegación principal — Docente:**
+
+| Elemento | Tipo | Descripción |
+|----------|------|-------------|
+| Sidebar | Global | Barra lateral fija con acceso a las secciones del docente |
+| Breadcrumbs | Contextual | Indicador de ubicación actual |
+| Back Button | Local | Botón de retroceso en flujos de reserva y reporte de averías |
+| Notifications Bell | Global | Acceso directo a notificaciones sobre reuniones, cambios de aula y alertas ambientales |
+
+#### Mobile Application
+
+La aplicación móvil utiliza una **barra de navegación inferior** (Bottom Navigation Bar) como elemento de navegación principal, siguiendo las convenciones de diseño de iOS y Android. Este modelo es el más adecuado para dispositivos móviles ya que permite acceder a las secciones principales con el pulgar sin necesidad de estirarse hacia la parte superior de la pantalla.
+
+**Navegación principal — Administrador:**
+
+| Elemento | Tipo | Descripción |
+|----------|------|-------------|
+| Bottom Navigation Bar | Global | Barra inferior con 5 ítems: Dashboard, Alerts, Spaces, Reports, Profile |
+| Top App Bar | Global | Barra superior con título de la sección actual y acciones contextuales |
+| Drawer Menu | Global | Menú lateral accesible desde el ícono de hamburguesa para opciones secundarias |
+| Back Navigation | Local | Gesto de deslizamiento hacia la derecha (iOS) o botón de retroceso (Android) |
+| Pull to Refresh | Local | Gesto de arrastre hacia abajo para actualizar datos IoT en tiempo real |
+
+**Navegación principal — Docente:**
+
+| Elemento | Tipo | Descripción |
+|----------|------|-------------|
+| Bottom Navigation Bar | Global | Barra inferior con 5 ítems: My Classroom, Reservations, Report, Notifications, Profile |
+| Top App Bar | Global | Barra superior con título de la sección actual |
+| Back Navigation | Local | Gesto de deslizamiento o botón de retroceso en flujos de varios pasos |
+| Pull to Refresh | Local | Actualización de datos ambientales del aula asignada |
+
+#### Flujos de navegación críticos
+
+Los siguientes flujos de navegación son los más frecuentes y han sido optimizados para minimizar el número de pasos:
+
+| Flujo | Pasos | Aplicación |
+|-------|-------|------------|
+| Ver estado ambiental del aula | 1 paso desde Home | Web y Mobile |
+| Reservar espacio compartido | 3 pasos: selección → horario → confirmación | Web y Mobile |
+| Reportar avería | 3 pasos: selección de recurso → descripción → envío | Web y Mobile |
+| Ver alertas IoT activas | 1 paso desde notificación push | Mobile |
+| Configurar umbral de temperatura | 3 pasos: selección de aula → variable → valor | Web |
+
 ## 5.3. Landing Page UI Design
 
 ### 5.3.1. Landing Page Wireframe
