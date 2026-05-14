@@ -2547,6 +2547,75 @@ Las dimensiones del tono adoptado son:
 
 ### 5.1.2. Web, Mobile and IoT Style Guidelines
 
+#### Web Style Guidelines
+
+Para EduSpace, estamos desarrollando una plataforma web que implementará un diseño adaptable (Web Responsive Design) con el objetivo de optimizar la presentación de información en cualquier dispositivo. Esto asegurará que el contenido sea de fácil acceso y navegación, mejorando en última instancia la experiencia del usuario.
+
+Hemos establecido un sistema en el que la información se organiza de manera jerárquica (Visual Hierarchy), particularmente en las secciones principales de la plataforma. Los elementos se disponen dando prioridad a la información más relevante, utilizando tamaños, colores y posiciones distintivas para resaltar los elementos clave.
+
+También utilizaremos un sistema de categorización matricial para la gestión de recursos, permitiendo a los usuarios filtrar resultados según sus necesidades, como la disponibilidad de espacios, el estado de reportes de averías o las condiciones ambientales de las aulas, proporcionando una experiencia más eficiente y personalizada.
+
+Como equipo, hemos optado por incorporar el patrón de diseño en forma de Z en nuestro sitio web. Esta técnica de diseño web es altamente efectiva para mejorar la experiencia del usuario, guiando su atención hacia los elementos clave y potenciando la eficacia del contenido en la página. Por lo general, colocamos el logotipo en la esquina superior izquierda, asegurándonos de que sea lo primero que llame la atención del usuario. Justo enfrente, en la esquina superior derecha, ubicamos la barra de navegación, acompañada de un llamado a la acción destacado.
+
+Para los dashboards de monitoreo IoT, se aplicarán los siguientes estándares adicionales:
+
+- Los valores de temperatura, humedad y ocupación se presentan mediante tarjetas (cards) con indicadores visuales de color: verde para condiciones normales, amarillo para condiciones de precaución y rojo para condiciones de alerta.
+- Los gráficos de series temporales siguen la paleta de colores establecida y utilizan líneas suaves para representar la evolución de las variables ambientales.
+- Las alertas activas se destacan mediante banners en la parte superior del dashboard, con un ícono representativo y un mensaje claro y accionable.
+
+#### Mobile Style Guidelines
+
+##### iOS Mobile Style Guidelines
+
+Para iOS, buscamos que la app se sienta natural dentro del ecosistema de Apple. Usamos UIColor.systemBackground para superficies, UIColor.label para texto y el mismo gradiente azul–verde, adaptado a Light y Dark Mode. Así logramos coherencia con Android sin perder la estética propia de iOS.
+
+La tipografía es San Francisco (SF Pro) con soporte para Dynamic Type. Los títulos de la barra de navegación usan Title de 17pt, los de tarjetas usan Title 3 y el contenido principal usa Body de 17pt. Esto asegura que la app se lea bien en todos los tamaños de pantalla y respete los ajustes de accesibilidad del usuario.
+
+Los íconos se basan en SF Symbols y se mantienen en el rango de 20 a 24pt para un aspecto consistente. Las tarjetas tienen esquinas redondeadas de 12pt y sombras muy sutiles, mientras que la lista de espacios se presenta en estilo Inset Grouped para sentirse nativa.
+
+Las acciones principales no usan FAB como en Android; en su lugar, se utiliza un botón en la barra de navegación (por ejemplo, un ícono "+" en la parte superior derecha). Los formularios se presentan como Sheet o pantallas de tipo Form, y se cierran deslizando hacia abajo. Las animaciones usan transiciones EaseInOut o Spring, manteniendo la fluidez característica de iOS.
+
+En accesibilidad, todas las áreas interactivas cumplen con el mínimo de 44pt, se incluyen descripciones para VoiceOver y se soporta Dynamic Type y Dark Mode de manera nativa.
+
+Para las pantallas de monitoreo IoT en iOS, los valores ambientales se presentan mediante tarjetas nativas con SF Symbols representativos: thermometer para temperatura, humidity para humedad y person.fill para ocupación. Las alertas se muestran como notificaciones push nativas del sistema.
+
+##### Android Mobile Style Guidelines
+
+En la versión Android de EduSpace, seguimos las recomendaciones de Material Design 3 para que la app se sienta nativa y familiar. Usamos un gradiente azul–verde como fondo principal, superficies blancas para tarjetas y modales, y texto en tonos oscuros para asegurar buena legibilidad. El color primario es azul (#1976D2) y aparece en botones y acciones importantes.
+
+La tipografía está basada en la escala de Material 3: los títulos de la barra superior usan Title Large de 22sp, las tarjetas usan Title Medium de 16sp y el texto de botones es Label Large de 14sp. Todo el contenido es escalable para respetar los ajustes de accesibilidad del sistema.
+
+Los íconos siguen el estilo de Material Symbols, con un tamaño de 24dp, y en el botón flotante (FAB) se usan de 36dp. Las tarjetas tienen bordes redondeados de 12dp y una ligera elevación para destacar del fondo. Los formularios usan campos OutlinedTextField, y el FAB circular de 56dp es el encargado de la acción principal de agregar espacios.
+
+La navegación se organiza con un TopAppBar con ícono de menú que abre el drawer lateral, y las animaciones son suaves, de 200–300 ms, con las curvas de movimiento estándar de Material. Además, se incluyen gestos como deslizar para cerrar modales. En cuanto a accesibilidad, todas las áreas táctiles cumplen con el mínimo de 48dp y los colores respetan el contraste WCAG 2.1 AA.
+
+Para las pantallas de monitoreo IoT en Android, los valores ambientales se presentan mediante Material Cards con íconos de Material Symbols representativos. Las alertas críticas se muestran como notificaciones push del sistema con canal de alta prioridad, garantizando que el usuario sea notificado incluso con la app en segundo plano.
+
+#### IoT Style Guidelines
+
+Esta sección define los estándares de diseño para la interfaz física del dispositivo IoT instalado en las aulas, compuesto por un microcontrolador ESP32 con sensores DHT22 (temperatura y humedad) y HC-SR501 (ocupación PIR).
+
+Dado que el dispositivo EduSpace IoT no cuenta con pantalla, la interfaz física se limita a señales visuales mediante LED. Los estándares de interacción con esta interfaz son los siguientes:
+
+##### Señalización visual mediante LED
+
+El dispositivo incorpora un LED RGB para comunicar el estado del sistema al personal de la institución de forma intuitiva:
+
+| Estado | Color del LED | Patrón | Descripción |
+|--------|--------------|--------|-------------|
+| Normal | Verde | Encendido fijo | Todos los valores dentro de los umbrales configurados |
+| Precaución | Amarillo | Parpadeo lento (1 Hz) | Al menos un valor se aproxima al umbral límite |
+| Alerta | Rojo | Parpadeo rápido (3 Hz) | Al menos un valor ha superado el umbral configurado |
+| Sin conexión | Azul | Parpadeo lento (0.5 Hz) | El dispositivo no tiene conectividad con el Edge API |
+| Inicializando | Blanco | Parpadeo rápido (5 Hz) | El dispositivo está iniciando o reconectando |
+
+##### Principios de diseño físico
+
+- **Visibilidad:** El LED debe ser visible desde cualquier punto del aula. Se recomienda instalación en una posición elevada y despejada.
+- **Simplicidad:** La interfaz física se limita al LED RGB — no se incluyen botones, pantallas ni controles físicos para minimizar la posibilidad de manipulación no autorizada.
+- **Instalación discreta:** El dispositivo debe instalarse de forma que no interfiera con las actividades académicas ni distraiga a los estudiantes.
+- **Resiliencia:** El dispositivo opera de forma autónoma aunque pierda conexión, continuando la captura de lecturas localmente hasta restablecer la comunicación con el Edge API.
+
 ## 5.2. Information Architecture
 
 ### 5.2.1. Organization Systems
