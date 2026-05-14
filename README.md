@@ -2620,6 +2620,73 @@ El dispositivo incorpora un LED RGB para comunicar el estado del sistema al pers
 
 ### 5.2.1. Organization Systems
 
+En esta sección se explica cómo se organiza el contenido en las distintas experiencias digitales de EduSpace, tanto en el Landing Page como en las aplicaciones web y móvil, incluyendo las nuevas secciones de monitoreo IoT.
+
+#### Landing Page
+
+La organización del Landing Page sigue un esquema **secuencial** (step-by-step), guiando al visitante desde la propuesta de valor general hasta la conversión. El contenido se presenta en el siguiente orden:
+
+| Sección | Tipo de organización | Descripción |
+|---------|---------------------|-------------|
+| Home | Jerárquica | Vista general del servicio destacando las características clave de EduSpace IoT. La propuesta de valor principal ocupa el primer plano visual. |
+| About Us | Secuencial | Explica el compromiso de EduSpace con la gestión inteligente de espacios educativos, incluyendo las capacidades de monitoreo IoT. |
+| Features | Jerárquica | Presenta las funcionalidades principales organizadas por importancia: gestión de espacios, reservas, reportes de averías y monitoreo ambiental IoT. |
+| Packages | Matricial | Comparación de planes disponibles en formato de tabla, permitiendo al visitante comparar características y precios entre opciones. |
+| Contact | Jerárquica | Información de contacto para soporte y consultas. |
+
+#### Web Application
+
+La aplicación web organiza su contenido de forma **jerárquica**, dando prioridad a la información más relevante para cada rol de usuario. Se complementa con organización **matricial** en las secciones de gestión y monitoreo, donde el usuario necesita comparar múltiples elementos simultáneamente.
+
+**Organización para Administradores:**
+
+| Feature | Tipo de organización | Descripción |
+|---------|---------------------|-------------|
+| Home | Jerárquica | Resumen de datos clave: reportes recientes, estado de espacios, alertas IoT activas y notificaciones urgentes. |
+| Classroom Management | Jerárquica | Registro y gestión de aulas, incluyendo el dispositivo IoT asociado a cada una. |
+| Shared Areas | Matricial | Gestión de espacios compartidos con vista de disponibilidad en formato calendario. |
+| Meetings | Secuencial | Programación de reuniones paso a paso: selección de aula, fecha, hora e invitados. |
+| Breakdown Reports | Jerárquica | Lista de reportes de averías ordenados por prioridad y estado de resolución. |
+| IoT Dashboard | Matricial | Vista en tiempo real de temperatura, humedad y ocupación por aula. Organización matricial que permite comparar el estado de múltiples aulas simultáneamente. |
+| Alert Management | Jerárquica | Gestión de alertas generadas por el sistema IoT, ordenadas por severidad y timestamp. |
+| Threshold Configuration | Secuencial | Configuración paso a paso de umbrales por variable ambiental y por aula. |
+| Profile | Jerárquica | Información personal y profesional del administrador. |
+
+**Organización para Docentes:**
+
+| Feature | Tipo de organización | Descripción |
+|---------|---------------------|-------------|
+| Home | Jerárquica | Resumen de tareas, notificaciones y calendario de actividades asignadas. |
+| Reservations | Secuencial | Proceso paso a paso para reservar espacios compartidos: búsqueda, selección de horario y confirmación. |
+| Breakdown Reports | Secuencial | Reporte de averías paso a paso: selección de recurso, descripción del problema y envío. |
+| Classroom Environment | Jerárquica | Visualización del estado ambiental del aula asignada: temperatura, humedad y ocupación en tiempo real, con historial de lecturas. |
+| Notifications | Jerárquica | Alertas sobre cambios de aula, reuniones programadas y alertas ambientales IoT. |
+| Profile | Jerárquica | Información personal y profesional del docente. |
+
+#### Mobile Application
+
+La aplicación móvil sigue la misma organización jerárquica que la web, adaptada a las restricciones de espacio de pantalla. Se prioriza el acceso rápido a las funciones más frecuentes mediante navegación inferior (bottom navigation bar), con las siguientes secciones principales organizadas por audiencia:
+
+**Para Administradores:**
+
+| Feature | Tipo de organización |
+|---------|---------------------|
+| Dashboard IoT | Matricial — tarjetas por aula |
+| Alerts | Jerárquica — por severidad |
+| Spaces | Jerárquica — lista de aulas y áreas |
+| Reports | Jerárquica — por estado |
+| Profile | Jerárquica |
+
+**Para Docentes:**
+
+| Feature | Tipo de organización |
+|---------|---------------------|
+| My Classroom | Jerárquica — estado ambiental |
+| Reservations | Secuencial — proceso de reserva |
+| Report Breakdown | Secuencial — proceso de reporte |
+| Notifications | Jerárquica — por fecha |
+| Profile | Jerárquica |
+
 ### 5.2.2. Labeling Systems
 
 ### 5.2.3. SEO Tags and Meta Tags
