@@ -3037,9 +3037,35 @@ Los siguientes flujos de navegación son los más frecuentes y han sido optimiza
 
 ## 5.3. Landing Page UI Design
 
+En esta sección se presenta la propuesta de UI para el Landing Page de EduSpace IoT. Las decisiones de diseño traducen las directrices establecidas en las Style Guidelines y la arquitectura de información definida en las secciones anteriores, buscando comunicar de forma clara y atractiva la propuesta de valor de la plataforma a los segmentos objetivo: administradores de instituciones educativas y docentes.
+
 ### 5.3.1. Landing Page Wireframe
 
+Los wireframes del Landing Page representan la estructura y distribución de los elementos de la interfaz sin considerar aspectos visuales como colores o tipografía. Se han elaborado versiones para Desktop Web Browser y Mobile Web Browser, evidenciando la aplicación del diseño responsivo, el patrón de navegación en Z y los principios de arquitectura de información definidos.
+
+En ambas versiones se puede apreciar la organización secuencial del contenido: Hero Section con propuesta de valor principal, sección About Us, sección Features destacando las capacidades IoT, sección Packages con comparación de planes, y sección Contact con formulario de contacto y call-to-action.
+
+**Desktop Web Browser:**
+
+\<imagen wireframe landing page desktop\>
+
+**Mobile Web Browser:**
+
+\<imagen wireframe landing page mobile\>
+
 ### 5.3.2. Landing Page Mock-up
+
+Los mock-ups del Landing Page presentan la propuesta visual completa, aplicando la paleta de colores, tipografía Poppins, iconografía e imágenes definitivas establecidas en las Style Guidelines. Se evidencia la consistencia visual entre la versión desktop y mobile, así como la aplicación del Design System establecido para los productos digitales de EduSpace IoT.
+
+En ambas versiones se puede apreciar la aplicación del tono profesional y sereno definido para la comunicación de la plataforma, con énfasis en las capacidades de monitoreo IoT como diferenciador principal frente a soluciones de gestión educativa tradicionales.
+
+**Desktop Web Browser:**
+
+\<imagen mockup landing page desktop\>
+
+**Mobile Web Browser:**
+
+\<imagen mockup landing page mobile\>
 
 ## 5.4. Applications UX/UI Design
 
