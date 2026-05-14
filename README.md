@@ -2500,6 +2500,51 @@ Componentes principales:
 
 ### 5.1.1. General Style Guidelines
 
+Debido al enfoque de nuestra solución en la gestión inteligente de espacios educativos con monitoreo IoT, es necesario que el diseño visual sea profesional, organizado y transmita confianza tecnológica. El estilo debe facilitar la navegación tanto en las interfaces de gestión administrativa como en los dashboards de monitoreo en tiempo real.
+
+#### Branding
+
+Para la creación del logo de nuestro producto EduSpace, se ha optado por un diseño moderno, utilizando una tipografía clara y legible acompañada por un ícono que simboliza la educación, organización y gestión eficiente de espacios.
+
+![Logo](./assets/images/eduspace-logo.png)
+
+#### Color Palette
+
+EduSpace mantiene un estilo limpio y profesional, utilizando colores que transmiten confianza y profesionalismo. Estos colores facilitan la lectura y navegación, creando un ambiente visual que apoya la productividad en la gestión educativa y el monitoreo de condiciones ambientales.
+
+![Color pallete](./assets/images/eduspace-color-palette.png)
+
+#### Icons
+
+EduSpace cuenta con una colección de íconos específicos para mejorar la interfaz del sistema. Estos íconos están destinados a hacer la navegación más intuitiva y alineada con los objetivos del servicio, incluyendo íconos para las nuevas funcionalidades de monitoreo IoT como temperatura, humedad, ocupación y alertas ambientales.
+
+![Icons](./assets/images/eduspace-icons.png)
+
+#### Typography
+
+Para garantizar una apariencia uniforme en el desarrollo de nuestro aplicativo, utilizaremos la fuente **Poppins**. Elegimos Poppins por su legibilidad, espaciado equilibrado y diseño sin serifas, lo que proporciona una flexibilidad óptima y una experiencia de lectura clara y coherente en todas las plataformas de EduSpace.
+
+![Typography](./assets/images/eduspace-typography.png)
+
+#### Spacing
+
+El espaciado de la plataforma es importante debido a que no queremos abrumar a nuestros usuarios. Nuestra aplicación tiene como objetivo ofrecer una experiencia de usuario sencilla y agradable, especialmente en los dashboards de monitoreo IoT donde se presenta información cuantitativa en tiempo real. Un diseño limpio y organizado mejora la usabilidad y reduce la carga cognitiva del usuario.
+
+![Spacing](./assets/images/eduspace-spacing.png)
+
+#### Tono de comunicación y lenguaje
+
+El tono de comunicación y lenguaje de EduSpace es profesional, claro y directo. Utilizamos un lenguaje preciso y accesible que resuene con las necesidades laborales de administradores y docentes. En las secciones de monitoreo IoT, el lenguaje prioriza la claridad de los datos presentados, utilizando unidades de medida estándar (°C para temperatura, % para humedad) y mensajes de alerta directos y accionables.
+
+Las dimensiones del tono adoptado son:
+
+| Dimensión | Posición |
+|-----------|----------|
+| Formal / Casual | Formal |
+| Respetuoso / Irreverente | Respetuoso |
+| Entusiasta / Sereno | Sereno |
+| Divertido / Serio | Serio |
+
 ### 5.1.2. Web, Mobile and IoT Style Guidelines
 
 ## 5.2. Information Architecture
