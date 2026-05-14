@@ -25,7 +25,7 @@
 **Integrantes:**
 
 | Código     | Apellidos y Nombres            |
-| ---------- | ------------------------------ |
+|------------|--------------------------------|
 | u202310877 | Alva Abanto, Luis Andrés       |
 | u20191e414 | Antayhua Castillo, Josué Oscar |
 | u202110385 | Loli Ramirez, Camila Cristina  |
@@ -40,16 +40,46 @@
 
 ## Registro de Versiones del Informe
 
-| Versión | Fecha      | Autor  | Descripción de modificación |
-| ------- | ---------- | ------ | --------------------------- |
-| AV1     | 11/04/2026 | Alva Abanto, Luis Andrés <br> Antayhua Castillo, Josué Oscar <br> Loli Ramirez, Camila Cristina <br> Torres García, Andrés Alberto <br> Yalán Zhang, Angie Christina| Se han incluído los siguientes capítulos: <br>Capítulo I: Introducción <br> Capítulo II: Requirements Elicitation & Analysis <br> Capítulo III: Requirements Specification <br> Capítulo IV: Solution Software Design      |
-| TB1     | 08/05/2026 | Torres García, Andrés Alberto | Se ha incluído la sección 6.2.1 (Sprint 1) del Capítulo VI: <br> 6.2.1.1. Sprint Planning 1 <br> 6.2.1.2. Aspect Leaders and Collaborators <br> 6.2.1.3. Sprint Backlog 1 |
+| Versión | Fecha      | Autor                                                                                                                                                                | Descripción de modificación                                                                                                                                                                                                                                                                              |
+|---------|------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1.0     | 11/04/2026 | Alva Abanto, Luis Andrés <br> Antayhua Castillo, Josué Oscar <br> Loli Ramirez, Camila Cristina <br> Torres García, Andrés Alberto <br> Yalán Zhang, Angie Christina | Se han incluído los siguientes capítulos: <br>Capítulo I: Introducción <br> Capítulo II: Requirements Elicitation & Analysis <br> Capítulo III: Requirements Specification <br> Capítulo IV: Solution Software Design                                                                                    |
+| 2.0     | 08/05/2026 | Torres García, Andrés Alberto                                                                                                                                        | Se ha incluído la sección 6.2.1 (Sprint 1) del Capítulo VI: <br> 6.2.1.1. Sprint Planning 1 <br> 6.2.1.2. Aspect Leaders and Collaborators <br> 6.2.1.3. Sprint Backlog 1                                                                                                                                |
+| 2.1     | 12/05/2026 | Loli Ramirez, Camila Cristina                                                                                                                                        | Se incluye: 6.1. Software Configuration Management.<br><br>6.1.1. Software Development Environment Configuration.<br>6.1.2. Source Code Management. <br>6.1.3. Source Code Style Guide & Conventions.<br>6.1.4. Software Deployment Configuration. <br><br> Levantar correcciones de los capítulos I-IV. |
+
 
 <div style="page-break-after: always;"></div>
 
 ## Project Report Collaboration Insights
 
 URL del repositorio del Project Report en GitHub: [https://github.com/DesarrolloSolucionIoT/eduspace-report](https://github.com/DesarrolloSolucionIoT/eduspace-report)
+
+## AV1:
+
+Para la primera entrega, el equipo dividió las tareas por capítulos. En este caso, las asignaciones fueron las siguientes:
+* Capítulo I: Introducción - Camila Loli
+* Capítulo II: Requirements Elicitation & Analysis - Angie Yalán
+* Capítulo III: Requirements Specification - Josué Antayhua
+* Capítulo IV: Solution Software Design - Luis Alva y Andrés Torres
+
+![Insight AV1](assets/insights/insightsAV1.png)
+
+**Contribución de cada integrante en AV1:**
+
+![Commits AV1](assets/insights/commitsAV1.png)
+
+## TB1:
+
+Para esta segunda entrega, el equipo decidió asignar tareas específicas a cada integrante. En esta ocasión, las asignaciones fueron:
+
+* Capítulo V: Solution Software Design - Luis Alva y Angie Yalán
+* Capítulo VI: Product Implementation, Validation & Deployment: 
+    * 6.1. Software Configuration Management - Camila Loli
+    * 6.2. Landing Page, Services & Applications Implementation
+        * Sprint 1 - Andrés Torres y Josué Antayhua
+* Levantar correciones y mejoras en los capítulos I-IV - Camila Loli
+* Avance de Frontend y Backend - Andrés Torres y Josué Antayhua
+
+**Contribución de cada integrante en TB1:**
 
 <div style="page-break-after: always;"></div>
 
