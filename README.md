@@ -3069,13 +3069,253 @@ En ambas versiones se puede apreciar la aplicación del tono profesional y seren
 
 ## 5.4. Applications UX/UI Design
 
+En esta sección se presenta la propuesta visual y de interacción para las aplicaciones que conforman la experiencia de usuario de EduSpace IoT. Las decisiones de diseño parten de los User Stories identificados, el Impact Map y las directrices de estilo y arquitectura de información establecidas en las secciones anteriores. Se incluyen wireframes, wireflow diagrams, mock-ups y user flow diagrams para la Web Application y la Mobile Application, incorporando las nuevas pantallas de monitoreo IoT.
+
 ### 5.4.1. Applications Wireframes
+
+Los wireframes presentan la estructura y distribución de los elementos de interfaz para las principales vistas de la Web Application y la Mobile Application, sin considerar aspectos visuales como colores o tipografía. Se evidencia la aplicación de los principios de diseño inclusivo, la arquitectura de información y los sistemas de navegación definidos.
+
+#### Web Application
+
+**Vista: Login**
+
+\<imagen wireframe web login\>
+
+**Vista: Home — Administrador**
+
+\<imagen wireframe web home admin\>
+
+**Vista: Classroom Management**
+
+\<imagen wireframe web classroom management\>
+
+**Vista: IoT Dashboard — Administrador**
+
+\<imagen wireframe web iot dashboard\>
+
+**Vista: Alert Management**
+
+\<imagen wireframe web alert management\>
+
+**Vista: Threshold Configuration**
+
+\<imagen wireframe web threshold configuration\>
+
+**Vista: Breakdown Reports — Administrador**
+
+\<imagen wireframe web breakdown reports admin\>
+
+**Vista: Home — Docente**
+
+\<imagen wireframe web home teacher\>
+
+**Vista: My Classroom — Docente**
+
+\<imagen wireframe web my classroom teacher\>
+
+**Vista: Reservations — Docente**
+
+\<imagen wireframe web reservations teacher\>
+
+**Vista: Breakdown Reports — Docente**
+
+\<imagen wireframe web breakdown reports teacher\>
+
+#### Mobile Application
+
+**Vista: Login**
+
+\<imagen wireframe mobile login\>
+
+**Vista: IoT Dashboard — Administrador**
+
+\<imagen wireframe mobile iot dashboard admin\>
+
+**Vista: Alerts — Administrador**
+
+\<imagen wireframe mobile alerts admin\>
+
+**Vista: My Classroom — Docente**
+
+\<imagen wireframe mobile my classroom teacher\>
+
+**Vista: Reservations — Docente**
+
+\<imagen wireframe mobile reservations teacher\>
+
+**Vista: Report Breakdown — Docente**
+
+\<imagen wireframe mobile report breakdown teacher\>
 
 ### 5.4.2. Applications Wireflow Diagrams
 
+Los wireflow diagrams presentan los flujos de navegación entre pantallas para cada User Goal identificado, combinando los wireframes con los pasos de interacción. Se ha elaborado un wireflow por cada User Goal principal, considerando los User Personas definidos para cada aplicación.
+
+#### Web Application
+
+**User Goal: Administrador configura un umbral de temperatura para un aula**
+
+\<imagen wireflow web threshold configuration\>
+
+El administrador accede desde el sidebar a la sección Thresholds, selecciona el aula correspondiente, elige la variable Temperature, ingresa el valor máximo permitido y confirma la configuración. El sistema muestra un mensaje de confirmación y actualiza el umbral en el dispositivo IoT asociado.
+
+**User Goal: Administrador visualiza el estado ambiental de las aulas en tiempo real**
+
+\<imagen wireflow web iot dashboard\>
+
+El administrador accede desde el Home o el sidebar a IoT Dashboard, donde visualiza las tarjetas de estado por aula. Puede filtrar por aula o variable ambiental, y hacer clic en una tarjeta para ver el historial de lecturas en formato gráfico.
+
+**User Goal: Docente reserva un espacio compartido**
+
+\<imagen wireflow web reservation\>
+
+El docente accede desde el sidebar a Reservations, consulta el calendario de disponibilidad, selecciona el espacio y horario deseado, completa el formulario de reserva y confirma. El sistema muestra la confirmación y envía una notificación al docente.
+
+**User Goal: Docente reporta una avería en un recurso**
+
+\<imagen wireflow web breakdown report\>
+
+El docente accede desde el sidebar a Breakdown Reports, selecciona el aula y el recurso afectado, describe el problema, adjunta evidencia opcional y envía el reporte. El sistema notifica al administrador automáticamente.
+
+#### Mobile Application
+
+**User Goal: Docente consulta el estado ambiental de su aula**
+
+\<imagen wireflow mobile my classroom\>
+
+El docente accede desde la Bottom Navigation Bar a My Classroom, donde visualiza en tiempo real la temperatura, humedad y ocupación de su aula asignada. Puede deslizar hacia abajo para actualizar los datos y hacer tap en cada tarjeta para ver el historial.
+
+**User Goal: Administrador gestiona una alerta IoT activa**
+
+\<imagen wireflow mobile alert management\>
+
+El administrador recibe una notificación push de alerta IoT, hace tap en la notificación y es redirigido directamente a la vista de detalle de la alerta, donde puede ver el tipo, el valor medido, el umbral superado y el aula afectada. Puede marcar la alerta como reconocida desde esta vista.
+
 ### 5.4.3. Applications Mock-ups
 
+Los mock-ups presentan la propuesta visual completa de las aplicaciones, aplicando el Design System establecido: paleta de colores, tipografía Poppins, iconografía e indicadores visuales de estado IoT. Se evidencia la consistencia visual entre la Web Application y la Mobile Application.
+
+#### Web Application
+
+**Vista: Login**
+
+\<imagen mockup web login\>
+
+**Vista: Home — Administrador**
+
+\<imagen mockup web home admin\>
+
+**Vista: Classroom Management**
+
+\<imagen mockup web classroom management\>
+
+**Vista: IoT Dashboard — Administrador**
+
+\<imagen mockup web iot dashboard\>
+
+**Vista: Alert Management**
+
+\<imagen mockup web alert management\>
+
+**Vista: Threshold Configuration**
+
+\<imagen mockup web threshold configuration\>
+
+**Vista: Breakdown Reports — Administrador**
+
+\<imagen mockup web breakdown reports admin\>
+
+**Vista: Home — Docente**
+
+\<imagen mockup web home teacher\>
+
+**Vista: My Classroom — Docente**
+
+\<imagen mockup web my classroom teacher\>
+
+**Vista: Reservations — Docente**
+
+\<imagen mockup web reservations teacher\>
+
+**Vista: Breakdown Reports — Docente**
+
+\<imagen mockup web breakdown reports teacher\>
+
+#### Mobile Application
+
+**Vista: Login**
+
+\<imagen mockup mobile login\>
+
+**Vista: IoT Dashboard — Administrador**
+
+\<imagen mockup mobile iot dashboard admin\>
+
+**Vista: Alerts — Administrador**
+
+\<imagen mockup mobile alerts admin\>
+
+**Vista: My Classroom — Docente**
+
+\<imagen mockup mobile my classroom teacher\>
+
+**Vista: Reservations — Docente**
+
+\<imagen mockup mobile reservations teacher\>
+
+**Vista: Report Breakdown — Docente**
+
+\<imagen mockup mobile report breakdown teacher\>
+
 ### 5.4.4. Applications User Flow Diagrams
+
+Los User Flow Diagrams presentan los flujos completos de interacción para cada User Goal, incluyendo el happy path y los unhappy paths. A diferencia de los Wireflows, los User Flows incluyen los mock-ups de las vistas junto con las condiciones y rutas alternativas.
+
+#### Web Application
+
+**User Goal: Administrador configura un umbral de temperatura para un aula**
+
+\<imagen user flow web threshold configuration\>
+
+Happy path: El administrador selecciona el aula, configura el umbral y confirma exitosamente.
+Unhappy paths: El valor ingresado está fuera del rango permitido (el sistema muestra un mensaje de error de validación); el aula seleccionada no tiene dispositivo IoT asociado (el sistema informa que no es posible configurar umbrales para esa aula).
+
+**User Goal: Administrador visualiza el estado ambiental en tiempo real**
+
+\<imagen user flow web iot dashboard\>
+
+Happy path: El administrador accede al dashboard y visualiza los datos en tiempo real correctamente.
+Unhappy paths: El dispositivo IoT del aula está offline (la tarjeta muestra el estado Offline con el último dato conocido y su timestamp); no hay datos históricos disponibles (el gráfico muestra un estado vacío con mensaje explicativo).
+
+**User Goal: Docente reserva un espacio compartido**
+
+\<imagen user flow web reservation\>
+
+Happy path: El docente selecciona el espacio, el horario disponible y confirma la reserva.
+Unhappy paths: El horario seleccionado ya no está disponible al confirmar (el sistema informa el conflicto y regresa al calendario); el docente intenta reservar fuera del horario permitido (el sistema muestra un mensaje de validación).
+
+**User Goal: Docente reporta una avería**
+
+\<imagen user flow web breakdown report\>
+
+Happy path: El docente selecciona el recurso, describe la avería y envía el reporte exitosamente.
+Unhappy paths: El docente no selecciona un recurso antes de enviar (el sistema muestra validación de campo requerido); error de conexión al enviar (el sistema muestra mensaje de error y permite reintentar).
+
+#### Mobile Application
+
+**User Goal: Docente consulta el estado ambiental de su aula**
+
+\<imagen user flow mobile my classroom\>
+
+Happy path: El docente accede a My Classroom y visualiza los datos ambientales en tiempo real.
+Unhappy paths: El dispositivo IoT está offline (se muestra el último dato conocido con indicador de sin conexión); el docente no tiene aula asignada (se muestra mensaje indicando que no tiene aula asignada y sugiere contactar al administrador).
+
+**User Goal: Administrador gestiona una alerta IoT activa**
+
+\<imagen user flow mobile alert management\>
+
+Happy path: El administrador recibe la notificación, accede al detalle y reconoce la alerta.
+Unhappy paths: La alerta ya fue reconocida por otro administrador (el sistema informa que la alerta ya está reconocida); error de conexión al reconocer (el sistema muestra mensaje de error y permite reintentar).
 
 ## 5.5. Applications Prototyping
 
