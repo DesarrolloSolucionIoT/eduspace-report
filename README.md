@@ -2689,6 +2689,87 @@ La aplicación móvil sigue la misma organización jerárquica que la web, adapt
 
 ### 5.2.2. Labeling Systems
 
+En esta sección se explica de qué maneras se representan los datos en EduSpace, considerando simplicidad y buscando evitar la confusión para los visitantes y usuarios. Las etiquetas se formulan con el mínimo número de palabras necesario para representar los conjuntos de información y las asociaciones entre las mismas.
+
+#### Principios de Etiquetado
+
+- **Claridad:** Cada etiqueta debe ser fácilmente comprensible por todos los usuarios, independientemente de su rol (administrador o docente).
+- **Consistencia:** Se mantiene un lenguaje uniforme en todas las secciones de la aplicación para evitar confusión.
+- **Brevedad:** Las etiquetas se formulan con el menor número de palabras posibles sin perder claridad o precisión.
+- **Idioma:** Todas las etiquetas de la interfaz están en inglés como idioma por defecto, con soporte para español latinoamericano (es_419) mediante i18n.
+
+#### Landing Page
+
+| Etiqueta | Descripción de la asociación |
+|----------|------------------------------|
+| Home | Sección principal con propuesta de valor de EduSpace IoT |
+| About Us | Descripción del startup y su misión |
+| Features | Funcionalidades principales de la plataforma |
+| Packages | Planes y precios disponibles |
+| Contact | Información de contacto y soporte |
+| Get Started | Call-to-action principal para acceder a la aplicación |
+
+#### Web Application — Administrador
+
+| Etiqueta | Descripción de la asociación |
+|----------|------------------------------|
+| Home | Resumen ejecutivo y acceso rápido a funciones clave |
+| Classrooms | Registro y gestión de aulas y recursos asociados |
+| Shared Areas | Gestión de espacios compartidos y disponibilidad |
+| Meetings | Programación de reuniones y gestión de participantes |
+| Breakdown Reports | Reportes de averías y seguimiento de resolución |
+| IoT Dashboard | Monitoreo en tiempo real de condiciones ambientales por aula |
+| Alerts | Alertas activas generadas por el sistema IoT |
+| Thresholds | Configuración de umbrales por variable ambiental y aula |
+| Notifications | Avisos y actualizaciones importantes del sistema |
+| Profile | Información personal y configuración de cuenta |
+| Log Out | Cierre de sesión seguro |
+
+#### Web Application — Docente
+
+| Etiqueta | Descripción de la asociación |
+|----------|------------------------------|
+| Home | Resumen de tareas y calendario de actividades |
+| My Classroom | Estado ambiental en tiempo real del aula asignada |
+| Reservations | Reserva de espacios compartidos y consulta de disponibilidad |
+| Breakdown Reports | Reporte de averías en recursos del aula |
+| Notifications | Alertas sobre cambios de aula, reuniones y condiciones ambientales |
+| Profile | Información personal y configuración de cuenta |
+| Log Out | Cierre de sesión seguro |
+
+#### Mobile Application — Administrador
+
+| Etiqueta | Descripción de la asociación |
+|----------|------------------------------|
+| Dashboard | Vista resumida de condiciones IoT por aula |
+| Alerts | Alertas activas del sistema IoT |
+| Spaces | Gestión de aulas y áreas compartidas |
+| Reports | Reportes de averías y su estado |
+| Profile | Información personal y configuración de cuenta |
+
+#### Mobile Application — Docente
+
+| Etiqueta | Descripción de la asociación |
+|----------|------------------------------|
+| My Classroom | Estado ambiental del aula asignada |
+| Reservations | Reserva de espacios compartidos |
+| Report | Reporte de averías en recursos |
+| Notifications | Avisos y alertas del sistema |
+| Profile | Información personal y configuración de cuenta |
+
+#### Etiquetas de estado IoT
+
+Estas etiquetas se usan en el dashboard y las tarjetas de monitoreo para comunicar el estado de las variables ambientales:
+
+| Etiqueta | Descripción |
+|----------|-------------|
+| Normal | Valor dentro del rango configurado |
+| Warning | Valor aproximándose al umbral límite |
+| Alert | Valor que ha superado el umbral configurado |
+| Offline | Dispositivo sin conectividad con el Edge API |
+| Occupied | Aula con presencia detectada por el sensor PIR |
+| Unoccupied | Aula sin presencia detectada |
+
 ### 5.2.3. SEO Tags and Meta Tags
 
 ### 5.2.4. Searching Systems
