@@ -79,6 +79,7 @@ Para esta segunda entrega, el equipo decidió asignar tareas específicas a cada
 * Avance de Frontend y Backend - Andrés Torres y Josué Antayhua
 
 **Contribución de cada integrante en TB1:**
+![insights TB1](/assets/chapter-VI/insights.png)
 
 <div style="page-break-after: always;"></div>
 
@@ -3086,7 +3087,7 @@ Los wireflow diagrams presentan los flujos de navegación entre pantallas para c
 
 **User Goal: Administrador configura un umbral de temperatura para un aula**
 
-\<imagen wireflow web threshold configuration\>
+![Wireflow](/assets/chapter5/WireflowDiagram.jpeg)
 
  [Wireflow EduSpace](https://www.figma.com/design/rwg6tiEySDcpefZyoulEG2/EduSpace-IoT?node-id=1-4&t=q15p9L2MeBQMhSoe-1)
 
@@ -3094,7 +3095,7 @@ El administrador accede desde el sidebar a la sección Thresholds, selecciona el
 
 **User Goal: Administrador visualiza el estado ambiental de las aulas en tiempo real**
 
-\<imagen wireflow web iot dashboard\>
+![Wireflow](/assets/chapter5/WireflowDiagram.jpeg)
 
  [Wireflow EduSpace](https://www.figma.com/design/rwg6tiEySDcpefZyoulEG2/EduSpace-IoT?node-id=1-4&t=q15p9L2MeBQMhSoe-1)
 
@@ -3102,7 +3103,7 @@ El administrador accede desde el Home o el sidebar a IoT Dashboard, donde visual
 
 **User Goal: Docente reserva un espacio compartido**
 
-\<imagen wireflow web reservation\>
+![Wireflow](/assets/chapter5/WireflowDiagram.jpeg)
 
  [Wireflow EduSpace](https://www.figma.com/design/rwg6tiEySDcpefZyoulEG2/EduSpace-IoT?node-id=1-4&t=q15p9L2MeBQMhSoe-1)
 
@@ -3110,7 +3111,7 @@ El docente accede desde el sidebar a Reservations, consulta el calendario de dis
 
 **User Goal: Docente reporta una avería en un recurso**
 
-\<imagen wireflow web breakdown report\>
+![Wireflow](/assets/chapter5/WireflowDiagram.jpeg)
 
  [Wireflow EduSpace](https://www.figma.com/design/rwg6tiEySDcpefZyoulEG2/EduSpace-IoT?node-id=1-4&t=q15p9L2MeBQMhSoe-1)
 
@@ -3120,7 +3121,7 @@ El docente accede desde el sidebar a Breakdown Reports, selecciona el aula y el 
 
 **User Goal: Docente consulta el estado ambiental de su aula**
 
-\<imagen wireflow mobile my classroom\>
+![Wireflow](/assets/chapter5/WireflowMobile.png)
 
  [Wireflow EduSpace](https://www.figma.com/design/rwg6tiEySDcpefZyoulEG2/EduSpace-IoT?node-id=1-4&t=q15p9L2MeBQMhSoe-1)
 
@@ -3128,7 +3129,7 @@ El docente accede desde la Bottom Navigation Bar a My Classroom, donde visualiza
 
 **User Goal: Administrador gestiona una alerta IoT activa**
 
-\<imagen wireflow mobile alert management\>
+![Wireflow](/assets/chapter5/WireflowMobile.png)
 
  [Wireflow EduSpace](https://www.figma.com/design/rwg6tiEySDcpefZyoulEG2/EduSpace-IoT?node-id=1-4&t=q15p9L2MeBQMhSoe-1)
 
@@ -3140,75 +3141,7 @@ Los mock-ups presentan la propuesta visual completa de las aplicaciones, aplican
 
 #### Web Application
 
-**Vista: Login**
-
-\<imagen mockup web login\>
-
-**Vista: Home — Administrador**
-
-\<imagen mockup web home admin\>
-
-**Vista: Classroom Management**
-
-\<imagen mockup web classroom management\>
-
-**Vista: IoT Dashboard — Administrador**
-
-\<imagen mockup web iot dashboard\>
-
-**Vista: Alert Management**
-
-\<imagen mockup web alert management\>
-
-**Vista: Threshold Configuration**
-
-\<imagen mockup web threshold configuration\>
-
-**Vista: Breakdown Reports — Administrador**
-
-\<imagen mockup web breakdown reports admin\>
-
-**Vista: Home — Docente**
-
-\<imagen mockup web home teacher\>
-
-**Vista: My Classroom — Docente**
-
-\<imagen mockup web my classroom teacher\>
-
-**Vista: Reservations — Docente**
-
-\<imagen mockup web reservations teacher\>
-
-**Vista: Breakdown Reports — Docente**
-
-\<imagen mockup web breakdown reports teacher\>
-
-#### Mobile Application
-
-**Vista: Login**
-
-\<imagen mockup mobile login\>
-
-**Vista: IoT Dashboard — Administrador**
-
-\<imagen mockup mobile iot dashboard admin\>
-
-**Vista: Alerts — Administrador**
-
-\<imagen mockup mobile alerts admin\>
-
-**Vista: My Classroom — Docente**
-
-\<imagen mockup mobile my classroom teacher\>
-
-**Vista: Reservations — Docente**
-
-\<imagen mockup mobile reservations teacher\>
-
-**Vista: Report Breakdown — Docente**
-
-\<imagen mockup mobile report breakdown teacher\>
+![Wireflow](/assets/chapter5/webmockup.png)
 
 ### 5.4.4. Applications User Flow Diagrams
 
@@ -3218,28 +3151,28 @@ Los User Flow Diagrams presentan los flujos completos de interacción para cada 
 
 **User Goal: Administrador configura un umbral de temperatura para un aula**
 
-\<imagen user flow web threshold configuration\>
+![Wireflow](/assets/chapter5/userfloww.png)
 
 Happy path: El administrador selecciona el aula, configura el umbral y confirma exitosamente.
 Unhappy paths: El valor ingresado está fuera del rango permitido (el sistema muestra un mensaje de error de validación); el aula seleccionada no tiene dispositivo IoT asociado (el sistema informa que no es posible configurar umbrales para esa aula).
 
 **User Goal: Administrador visualiza el estado ambiental en tiempo real**
 
-\<imagen user flow web iot dashboard\>
+![Wireflow](/assets/chapter5/userfloww.png)
 
 Happy path: El administrador accede al dashboard y visualiza los datos en tiempo real correctamente.
 Unhappy paths: El dispositivo IoT del aula está offline (la tarjeta muestra el estado Offline con el último dato conocido y su timestamp); no hay datos históricos disponibles (el gráfico muestra un estado vacío con mensaje explicativo).
 
 **User Goal: Docente reserva un espacio compartido**
 
-\<imagen user flow web reservation\>
+![Wireflow](/assets/chapter5/userfloww.png)
 
 Happy path: El docente selecciona el espacio, el horario disponible y confirma la reserva.
 Unhappy paths: El horario seleccionado ya no está disponible al confirmar (el sistema informa el conflicto y regresa al calendario); el docente intenta reservar fuera del horario permitido (el sistema muestra un mensaje de validación).
 
 **User Goal: Docente reporta una avería**
 
-\<imagen user flow web breakdown report\>
+![Wireflow](/assets/chapter5/userfloww.png)
 
 Happy path: El docente selecciona el recurso, describe la avería y envía el reporte exitosamente.
 Unhappy paths: El docente no selecciona un recurso antes de enviar (el sistema muestra validación de campo requerido); error de conexión al enviar (el sistema muestra mensaje de error y permite reintentar).
@@ -3248,14 +3181,14 @@ Unhappy paths: El docente no selecciona un recurso antes de enviar (el sistema m
 
 **User Goal: Docente consulta el estado ambiental de su aula**
 
-\<imagen user flow mobile my classroom\>
+![Wireflow](/assets/chapter5/userFlow.png)
 
 Happy path: El docente accede a My Classroom y visualiza los datos ambientales en tiempo real.
 Unhappy paths: El dispositivo IoT está offline (se muestra el último dato conocido con indicador de sin conexión); el docente no tiene aula asignada (se muestra mensaje indicando que no tiene aula asignada y sugiere contactar al administrador).
 
 **User Goal: Administrador gestiona una alerta IoT activa**
 
-\<imagen user flow mobile alert management\>
+![Wireflow](/assets/chapter5/userFlow.png)
 
 Happy path: El administrador recibe la notificación, accede al detalle y reconoce la alerta.
 Unhappy paths: La alerta ya fue reconocida por otro administrador (el sistema informa que la alerta ya está reconocida); error de conexión al reconocer (el sistema muestra mensaje de error y permite reintentar).
@@ -3278,17 +3211,17 @@ Estas decisiones de interacción están alineadas con el sistema de navegación 
 
 A continuación se presenta el prototipo interactivo de la Web Application, que cubre los principales flujos de interacción para los segmentos de Administrador y Docente, incluyendo las nuevas funcionalidades de monitoreo IoT.
 
-\<imagen screenshot prototipo web application\>
+![Wireflow](/assets/chapter5/WireflowDiagram.jpeg)
 
-URL del prototipo: \<URL Figma Web Application Prototype\>
+URL del prototipo: [Figma Web Application Prototype](https://www.figma.com/design/rwg6tiEySDcpefZyoulEG2/EduSpace-IoT?node-id=1-2&t=q15p9L2MeBQMhSoe-1)
 
 #### Mobile Application
 
 A continuación se presenta el prototipo interactivo de la Mobile Application, que cubre los principales flujos de interacción para ambos segmentos en dispositivos móviles, con énfasis en las vistas de monitoreo ambiental en tiempo real y gestión de alertas IoT.
 
-\<imagen screenshot prototipo mobile application\>
+![Wireflow](/assets/chapter5/userFlow.png)
 
-URL del prototipo: \<URL Figma Mobile Application Prototype\>
+URL del prototipo: [Figma Web Application Prototype](https://www.figma.com/design/rwg6tiEySDcpefZyoulEG2/EduSpace-IoT?node-id=1-2&t=q15p9L2MeBQMhSoe-1)
 
 ## 5.6. IoT Device Design
 
@@ -3682,10 +3615,10 @@ En el Sprint 1 se consolidaron los entregables de implementacion de la Landing P
 
 **Landing Page**
 
-![Landing Page - Home](assets/chapter-VI/landing-page/home.png)
-![Landing Page - About Us](assets/chapter-VI/landing-page/aboutUs.png)
-![Landing Page - Planes](assets/chapter-VI/landing-page/planes.png)
-![Landing Page - Contacto](assets/chapter-VI/landing-page/contact.png)
+![Landing Page - Home](assets/chapter5/l1.png)
+![Landing Page - About Us](/assets/chapter5/l5.png)
+![Landing Page - Planes](/assets/chapter5/l6.png)
+![Landing Page - Contacto](/assets/chapter5/l7.png)
 
 **Web Application**
 
@@ -3825,7 +3758,7 @@ En el Sprint 1 se realizaron despliegues de los productos digitales base. La Lan
 **Capturas de despliegue**
 
 ![Landing Page Deployment 1](assets/chapter-VI/deployment/landing-page-deployment-1.png)
-![Landing Page Deployment 2](assets/chapter-VI/deployment/landing-page-deployment-2.png)
+![Landing Page Deployment 2](/assets/chapter-VI/landing-page/evidence.jpeg)
 ![Web App Deployment](assets/chapter-VI/deployment/web-app-deployment.png)
 ![Backend Deployment](assets/chapter-VI/deployment/backend-deployment.png)
 ![Database Deployment](assets/chapter-VI/deployment/database-deployment.png)
@@ -3853,6 +3786,8 @@ Durante el Sprint 1 se trabajo con liderazgo por aspecto y colaboraciones cruzad
 ## Conclusiones y recomendaciones
 
 En conclusión, el diseño de la arquitectura de software para el sistema de gestión de espacios educativos ha sido abordado con un enfoque integral, se consideran aspectos técnicos, operativos y estratégicos. Se han definido claramente los bounded contexts, entidades, servicios y componentes necesarios para garantizar una solución robusta, escalable y alineada con las necesidades de los usuarios finales.
+
+Durante la entrega del TB1 se consolidó el diseño y validación de la solución EduSpace IoT mediante un enfoque integral que abarca arquitectura de software, diseño UI/UX, monitoreo inteligente y despliegue tecnológico. Se desarrollaron los Capítulos V y VI del proyecto, definiendo lineamientos visuales, arquitectura de información, prototipos y el diseño del dispositivo IoT basado en ESP32, sensores PIR y DHT22. Asimismo, se documentó el entorno de desarrollo, gestión de configuración de software, despliegue de la landing page y aplicación web, junto con la planificación y evidencia del Sprint 1. Todo ello permitió fortalecer la coherencia entre la propuesta funcional, la arquitectura planteada y la implementación técnica del sistema EduSpace.
 
 Respecto a la planificación del Sprint 1 (sec. 6.2.1.1), se evidenció que establecer un Sprint Goal acotado a re-estabilizar la línea base heredada y dejar el scaffolding del bounded context IoT Monitoring permitió al equipo proteger el alcance del Trabajo Parcial sin comprometer historias de usuario que dependen de telemetría real, las cuales fueron diferidas de manera explícita al Sprint 2. La fijación de una velocidad inicial de 40 Story Points, calibrada a partir del desempeño del ciclo previo y descontando el overhead del nuevo bounded context, demostró ser una referencia razonable para dimensionar el compromiso del Sprint y servirá como línea base para planificar las iteraciones subsiguientes.
 
