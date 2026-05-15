@@ -128,52 +128,72 @@ Para esta segunda entrega, el equipo decidió asignar tareas específicas a cada
       - [4.1.3.2. Software Architecture Context Level Diagrams](#4132-software-architecture-context-level-diagrams)
       - [4.1.3.3. Software Architecture Container Level Diagrams](#4133-software-architecture-container-level-diagrams)
       - [4.1.3.4. Software Architecture Deployment Diagrams](#4134-software-architecture-deployment-diagrams)
-- [4.2. Tactical-Level Domain-Driven Design](#42-tactical-level-domain-driven-design)
-    - [4.2.1. Identity, Access \& Profile Management](#421-identity-access--profile-management)
-      - [4.2.1.1. Domain Layer](#4211-domain-layer)
-      - [4.2.1.2. Interface Layer](#4212-interface-layer)
-      - [4.2.1.3. Application Layer](#4213-application-layer)
-      - [4.2.1.4. Infrastructure Layer](#4214-infrastructure-layer)
-      - [4.2.1.5. Bounded Context Software Architecture Component Level Diagrams](#4215-bounded-context-software-architecture-component-level-diagrams)
-      - [4.2.1.6. Bounded Context Software Architecture Code Level Diagrams](#4216-bounded-context-software-architecture-code-level-diagrams)
-        - [4.2.1.6.1. Bounded Context Domain Layer Class Diagram](#42161-bounded-context-domain-layer-class-diagram)
-        - [4.2.1.6.2. Bounded Context Database Design Diagram](#42162-bounded-context-database-design-diagram)
-    - [4.2.2. Space \& Resource Management](#422-space--resource-management)
-      - [4.2.2.1. Domain Layer](#4221-domain-layer)
-      - [4.2.2.2. Interface Layer](#4222-interface-layer)
-      - [4.2.2.3. Application Layer](#4223-application-layer)
-      - [4.2.2.4. Infrastructure Layer](#4224-infrastructure-layer)
-      - [4.2.2.5. Bounded Context Software Architecture Component Level Diagrams](#4225-bounded-context-software-architecture-component-level-diagrams)
-      - [4.2.2.6. Bounded Context Software Architecture Code Level Diagrams](#4226-bounded-context-software-architecture-code-level-diagrams)
-        - [4.2.2.6.1. Bounded Context Domain Layer Class Diagram](#42261-bounded-context-domain-layer-class-diagram)
-        - [4.2.2.6.2. Bounded Context Database Design Diagram](#42262-bounded-context-database-design-diagram)
-    - [4.2.3. Reservation \& Scheduling](#423-reservation--scheduling)
-      - [4.2.3.1. Domain Layer](#4231-domain-layer)
-      - [4.2.3.2. Interface Layer](#4232-interface-layer)
-      - [4.2.3.3. Application Layer](#4233-application-layer)
-      - [4.2.3.4. Infrastructure Layer](#4234-infrastructure-layer)
-      - [4.2.3.5. Bounded Context Software Architecture Component Level Diagrams](#4235-bounded-context-software-architecture-component-level-diagrams)
-      - [4.2.3.6. Bounded Context Software Architecture Code Level Diagrams](#4236-bounded-context-software-architecture-code-level-diagrams)
-        - [4.2.3.6.1. Bounded Context Domain Layer Class Diagram](#42361-bounded-context-domain-layer-class-diagram)
-        - [4.2.3.6.2. Bounded Context Database Design Diagram](#42362-bounded-context-database-design-diagram)
-    - [4.2.4. Breakdown Management](#424-breakdown-management)
-      - [4.2.4.1. Domain Layer](#4241-domain-layer)
-      - [4.2.4.2. Interface Layer](#4242-interface-layer)
-      - [4.2.4.3. Application Layer](#4243-application-layer)
-      - [4.2.4.4. Infrastructure Layer](#4244-infrastructure-layer)
-      - [4.2.4.5. Bounded Context Software Architecture Component Level Diagrams](#4245-bounded-context-software-architecture-component-level-diagrams)
-      - [4.2.4.6. Bounded Context Software Architecture Code Level Diagrams](#4246-bounded-context-software-architecture-code-level-diagrams)
-        - [4.2.4.6.1. Bounded Context Domain Layer Class Diagram](#42461-bounded-context-domain-layer-class-diagram)
-        - [4.2.4.6.2. Bounded Context Database Design Diagram](#42462-bounded-context-database-design-diagram)
-    - [4.2.5. IoT Monitoring](#425-iot-monitoring)
-      - [4.2.5.1. Domain Layer](#4251-domain-layer)
-      - [4.2.5.2. Interface Layer](#4252-interface-layer)
-      - [4.2.5.3. Application Layer](#4253-application-layer)
-      - [4.2.5.4. Infrastructure Layer](#4254-infrastructure-layer)
-      - [4.2.5.5. Bounded Context Software Architecture Component Level Diagrams](#4255-bounded-context-software-architecture-component-level-diagrams)
-      - [4.2.5.6. Bounded Context Software Architecture Code Level Diagrams](#4256-bounded-context-software-architecture-code-level-diagrams)
-        - [4.2.5.6.1. Bounded Context Domain Layer Class Diagram](#42561-bounded-context-domain-layer-class-diagram)
-        - [4.2.5.6.2. Bounded Context Database Design Diagram](#42562-bounded-context-database-design-diagram)
+  - [4.2. Tactical-Level Domain-Driven Design](#42-tactical-level-domain-driven-design)
+      - [4.2.1. Identity, Access \& Profile Management](#421-identity-access--profile-management)
+        - [4.2.1.1. Domain Layer](#4211-domain-layer)
+        - [4.2.1.2. Interface Layer](#4212-interface-layer)
+        - [4.2.1.3. Application Layer](#4213-application-layer)
+        - [4.2.1.4. Infrastructure Layer](#4214-infrastructure-layer)
+        - [4.2.1.5. Bounded Context Software Architecture Component Level Diagrams](#4215-bounded-context-software-architecture-component-level-diagrams)
+        - [4.2.1.6. Bounded Context Software Architecture Code Level Diagrams](#4216-bounded-context-software-architecture-code-level-diagrams)
+          - [4.2.1.6.1. Bounded Context Domain Layer Class Diagram](#42161-bounded-context-domain-layer-class-diagram)
+          - [4.2.1.6.2. Bounded Context Database Design Diagram](#42162-bounded-context-database-design-diagram)
+      - [4.2.2. Space \& Resource Management](#422-space--resource-management)
+        - [4.2.2.1. Domain Layer](#4221-domain-layer)
+        - [4.2.2.2. Interface Layer](#4222-interface-layer)
+        - [4.2.2.3. Application Layer](#4223-application-layer)
+        - [4.2.2.4. Infrastructure Layer](#4224-infrastructure-layer)
+        - [4.2.2.5. Bounded Context Software Architecture Component Level Diagrams](#4225-bounded-context-software-architecture-component-level-diagrams)
+        - [4.2.2.6. Bounded Context Software Architecture Code Level Diagrams](#4226-bounded-context-software-architecture-code-level-diagrams)
+          - [4.2.2.6.1. Bounded Context Domain Layer Class Diagram](#42261-bounded-context-domain-layer-class-diagram)
+          - [4.2.2.6.2. Bounded Context Database Design Diagram](#42262-bounded-context-database-design-diagram)
+      - [4.2.3. Reservation \& Scheduling](#423-reservation--scheduling)
+        - [4.2.3.1. Domain Layer](#4231-domain-layer)
+        - [4.2.3.2. Interface Layer](#4232-interface-layer)
+        - [4.2.3.3. Application Layer](#4233-application-layer)
+        - [4.2.3.4. Infrastructure Layer](#4234-infrastructure-layer)
+        - [4.2.3.5. Bounded Context Software Architecture Component Level Diagrams](#4235-bounded-context-software-architecture-component-level-diagrams)
+        - [4.2.3.6. Bounded Context Software Architecture Code Level Diagrams](#4236-bounded-context-software-architecture-code-level-diagrams)
+          - [4.2.3.6.1. Bounded Context Domain Layer Class Diagram](#42361-bounded-context-domain-layer-class-diagram)
+          - [4.2.3.6.2. Bounded Context Database Design Diagram](#42362-bounded-context-database-design-diagram)
+      - [4.2.4. Breakdown Management](#424-breakdown-management)
+        - [4.2.4.1. Domain Layer](#4241-domain-layer)
+        - [4.2.4.2. Interface Layer](#4242-interface-layer)
+        - [4.2.4.3. Application Layer](#4243-application-layer)
+        - [4.2.4.4. Infrastructure Layer](#4244-infrastructure-layer)
+        - [4.2.4.5. Bounded Context Software Architecture Component Level Diagrams](#4245-bounded-context-software-architecture-component-level-diagrams)
+        - [4.2.4.6. Bounded Context Software Architecture Code Level Diagrams](#4246-bounded-context-software-architecture-code-level-diagrams)
+          - [4.2.4.6.1. Bounded Context Domain Layer Class Diagram](#42461-bounded-context-domain-layer-class-diagram)
+          - [4.2.4.6.2. Bounded Context Database Design Diagram](#42462-bounded-context-database-design-diagram)
+      - [4.2.5. IoT Monitoring](#425-iot-monitoring)
+        - [4.2.5.1. Domain Layer](#4251-domain-layer)
+        - [4.2.5.2. Interface Layer](#4252-interface-layer)
+        - [4.2.5.3. Application Layer](#4253-application-layer)
+        - [4.2.5.4. Infrastructure Layer](#4254-infrastructure-layer)
+        - [4.2.5.5. Bounded Context Software Architecture Component Level Diagrams](#4255-bounded-context-software-architecture-component-level-diagrams)
+        - [4.2.5.6. Bounded Context Software Architecture Code Level Diagrams](#4256-bounded-context-software-architecture-code-level-diagrams)
+          - [4.2.5.6.1. Bounded Context Domain Layer Class Diagram](#42561-bounded-context-domain-layer-class-diagram)
+          - [4.2.5.6.2. Bounded Context Database Design Diagram](#42562-bounded-context-database-design-diagram)
+- [Capítulo V: Solution UI/UX Design](#capítulo-v-solution-uiux-design)
+  - [5.1. Style Guidelines](#51-style-guidelines)
+    - [5.1.1. General Style Guidelines](#511-general-style-guidelines)
+    - [5.1.2. Web, Mobile and IoT Style Guidelines](#512-web-mobile-and-iot-style-guidelines)
+  - [5.2. Information Architecture](#52-information-architecture)
+    - [5.2.1. Organization Systems](#521-organization-systems)
+    - [5.2.2. Labeling Systems](#522-labeling-systems)
+    - [5.2.3. SEO Tags and Meta Tags](#523-seo-tags-and-meta-tags)
+    - [5.2.4. Searching Systems](#524-searching-systems)
+    - [5.2.5. Navigation Systems](#525-navigation-systems)
+  - [5.3. Landing Page UI Design](#53-landing-page-ui-design)
+    - [5.3.1. Landing Page Wireframe](#531-landing-page-wireframe)
+    - [5.3.2. Landing Page Mock-up](#532-landing-page-mock-up)
+  - [5.4. Applications UX/UI Design](#54-applications-uxui-design)
+    - [5.4.1. Applications Wireframes](#541-applications-wireframes)
+    - [5.4.2. Applications Wireflow Diagrams](#542-applications-wireflow-diagrams)
+    - [5.4.3. Applications Mock-ups](#543-applications-mock-ups)
+    - [5.4.4. Applications User Flow Diagrams](#544-applications-user-flow-diagrams)
+  - [5.5. Applications Prototyping](#55-applications-prototyping)
+  - [5.6. IoT Device Design](#56-iot-device-design)
 - [Capítulo VI: Product Implementation, Validation \& Deployment](#capítulo-vi-product-implementation-validation--deployment)
   - [6.1. Software Configuration Management](#61-software-configuration-management)
     - [6.1.1. Software Development Environment Configuration](#611-software-development-environment-configuration)
@@ -701,7 +721,7 @@ Objetivo: Comprender cómo perciben el uso de aulas, condiciones del entorno y p
 - **Inicio de la entrevista:** 00:00
 - **Duración:** 3:21
 - **Screenshot del cuadro de video:** ![Entrevista3](/assets/chapter2/rosa.png)
-- **URL del video (Microsoft Stream):** *[Entrevista 03](https://upcedupe-my.sharepoint.com/:l:/g/personal/u202312504_upc_edu_pe/JABq1Tk15HtaSqVGyJ4LGDFXAXKjrk2rXKsj0pI6lrjvc5M?e=zQ8JTi)*
+- **URL del video (Microsoft Stream):** *[https://upcedupe-my.sharepoint.com/:l:/g/personal/u202312504_upc_edu_pe/JABq1Tk15HtaSqVGyJ4LGDFXAXKjrk2rXKsj0pI6lrjvc5M?e=zQ8JTi](https://upcedupe-my.sharepoint.com/:l:/g/personal/u202312504_upc_edu_pe/JABq1Tk15HtaSqVGyJ4LGDFXAXKjrk2rXKsj0pI6lrjvc5M?e=zQ8JTi)*
 
 **Resumen:** La entrevistada menciona que uno de los principales problemas es la falta de coordinación entre docentes y administración, lo que genera conflictos en la asignación de aulas. Señala que muchas veces las aulas están vacías o mal utilizadas sin que el sistema lo detecte. Considera importante contar con indicadores claros para la toma de decisiones y mejorar la eficiencia operativa. Percibe alto valor en una plataforma como EduSpace, especialmente en la automatización de procesos y monitoreo ambiental, ya que esto permitiría mejorar tanto la gestión como la experiencia educativa.
 
@@ -2477,6 +2497,934 @@ Componentes principales:
 <div style="page-break-after: always;"></div>
 
 # Capítulo V: Solution UI/UX Design
+
+## 5.1. Style Guidelines
+
+### 5.1.1. General Style Guidelines
+
+Debido al enfoque de nuestra solución en la gestión inteligente de espacios educativos con monitoreo IoT, es necesario que el diseño visual sea profesional, organizado y transmita confianza tecnológica. El estilo debe facilitar la navegación tanto en las interfaces de gestión administrativa como en los dashboards de monitoreo en tiempo real.
+
+#### Branding
+
+Para la creación del logo de nuestro producto EduSpace, se ha optado por un diseño moderno, utilizando una tipografía clara y legible acompañada por un ícono que simboliza la educación, organización y gestión eficiente de espacios.
+
+![Logo](./assets/images/eduspace-logo.png)
+
+#### Color Palette
+
+EduSpace mantiene un estilo limpio y profesional, utilizando colores que transmiten confianza y profesionalismo. Estos colores facilitan la lectura y navegación, creando un ambiente visual que apoya la productividad en la gestión educativa y el monitoreo de condiciones ambientales.
+
+![Color pallete](./assets/images/eduspace-color-palette.png)
+
+#### Icons
+
+EduSpace cuenta con una colección de íconos específicos para mejorar la interfaz del sistema. Estos íconos están destinados a hacer la navegación más intuitiva y alineada con los objetivos del servicio, incluyendo íconos para las nuevas funcionalidades de monitoreo IoT como temperatura, humedad, ocupación y alertas ambientales.
+
+![Icons](./assets/images/eduspace-icons.png)
+
+#### Typography
+
+Para garantizar una apariencia uniforme en el desarrollo de nuestro aplicativo, utilizaremos la fuente **Poppins**. Elegimos Poppins por su legibilidad, espaciado equilibrado y diseño sin serifas, lo que proporciona una flexibilidad óptima y una experiencia de lectura clara y coherente en todas las plataformas de EduSpace.
+
+![Typography](./assets/images/eduspace-typography.png)
+
+#### Spacing
+
+El espaciado de la plataforma es importante debido a que no queremos abrumar a nuestros usuarios. Nuestra aplicación tiene como objetivo ofrecer una experiencia de usuario sencilla y agradable, especialmente en los dashboards de monitoreo IoT donde se presenta información cuantitativa en tiempo real. Un diseño limpio y organizado mejora la usabilidad y reduce la carga cognitiva del usuario.
+
+![Spacing](./assets/images/eduspace-spacing.png)
+
+#### Tono de comunicación y lenguaje
+
+El tono de comunicación y lenguaje de EduSpace es profesional, claro y directo. Utilizamos un lenguaje preciso y accesible que resuene con las necesidades laborales de administradores y docentes. En las secciones de monitoreo IoT, el lenguaje prioriza la claridad de los datos presentados, utilizando unidades de medida estándar (°C para temperatura, % para humedad) y mensajes de alerta directos y accionables.
+
+Las dimensiones del tono adoptado son:
+
+| Dimensión | Posición |
+|-----------|----------|
+| Formal / Casual | Formal |
+| Respetuoso / Irreverente | Respetuoso |
+| Entusiasta / Sereno | Sereno |
+| Divertido / Serio | Serio |
+
+### 5.1.2. Web, Mobile and IoT Style Guidelines
+
+#### Web Style Guidelines
+
+Para EduSpace, estamos desarrollando una plataforma web que implementará un diseño adaptable (Web Responsive Design) con el objetivo de optimizar la presentación de información en cualquier dispositivo. Esto asegurará que el contenido sea de fácil acceso y navegación, mejorando en última instancia la experiencia del usuario.
+
+Hemos establecido un sistema en el que la información se organiza de manera jerárquica (Visual Hierarchy), particularmente en las secciones principales de la plataforma. Los elementos se disponen dando prioridad a la información más relevante, utilizando tamaños, colores y posiciones distintivas para resaltar los elementos clave.
+
+También utilizaremos un sistema de categorización matricial para la gestión de recursos, permitiendo a los usuarios filtrar resultados según sus necesidades, como la disponibilidad de espacios, el estado de reportes de averías o las condiciones ambientales de las aulas, proporcionando una experiencia más eficiente y personalizada.
+
+Como equipo, hemos optado por incorporar el patrón de diseño en forma de Z en nuestro sitio web. Esta técnica de diseño web es altamente efectiva para mejorar la experiencia del usuario, guiando su atención hacia los elementos clave y potenciando la eficacia del contenido en la página. Por lo general, colocamos el logotipo en la esquina superior izquierda, asegurándonos de que sea lo primero que llame la atención del usuario. Justo enfrente, en la esquina superior derecha, ubicamos la barra de navegación, acompañada de un llamado a la acción destacado.
+
+Para los dashboards de monitoreo IoT, se aplicarán los siguientes estándares adicionales:
+
+- Los valores de temperatura, humedad y ocupación se presentan mediante tarjetas (cards) con indicadores visuales de color: verde para condiciones normales, amarillo para condiciones de precaución y rojo para condiciones de alerta.
+- Los gráficos de series temporales siguen la paleta de colores establecida y utilizan líneas suaves para representar la evolución de las variables ambientales.
+- Las alertas activas se destacan mediante banners en la parte superior del dashboard, con un ícono representativo y un mensaje claro y accionable.
+
+#### Mobile Style Guidelines
+
+##### iOS Mobile Style Guidelines
+
+Para iOS, buscamos que la app se sienta natural dentro del ecosistema de Apple. Usamos UIColor.systemBackground para superficies, UIColor.label para texto y el mismo gradiente azul–verde, adaptado a Light y Dark Mode. Así logramos coherencia con Android sin perder la estética propia de iOS.
+
+La tipografía es San Francisco (SF Pro) con soporte para Dynamic Type. Los títulos de la barra de navegación usan Title de 17pt, los de tarjetas usan Title 3 y el contenido principal usa Body de 17pt. Esto asegura que la app se lea bien en todos los tamaños de pantalla y respete los ajustes de accesibilidad del usuario.
+
+Los íconos se basan en SF Symbols y se mantienen en el rango de 20 a 24pt para un aspecto consistente. Las tarjetas tienen esquinas redondeadas de 12pt y sombras muy sutiles, mientras que la lista de espacios se presenta en estilo Inset Grouped para sentirse nativa.
+
+Las acciones principales no usan FAB como en Android; en su lugar, se utiliza un botón en la barra de navegación (por ejemplo, un ícono "+" en la parte superior derecha). Los formularios se presentan como Sheet o pantallas de tipo Form, y se cierran deslizando hacia abajo. Las animaciones usan transiciones EaseInOut o Spring, manteniendo la fluidez característica de iOS.
+
+En accesibilidad, todas las áreas interactivas cumplen con el mínimo de 44pt, se incluyen descripciones para VoiceOver y se soporta Dynamic Type y Dark Mode de manera nativa.
+
+Para las pantallas de monitoreo IoT en iOS, los valores ambientales se presentan mediante tarjetas nativas con SF Symbols representativos: thermometer para temperatura, humidity para humedad y person.fill para ocupación. Las alertas se muestran como notificaciones push nativas del sistema.
+
+##### Android Mobile Style Guidelines
+
+En la versión Android de EduSpace, seguimos las recomendaciones de Material Design 3 para que la app se sienta nativa y familiar. Usamos un gradiente azul–verde como fondo principal, superficies blancas para tarjetas y modales, y texto en tonos oscuros para asegurar buena legibilidad. El color primario es azul (#1976D2) y aparece en botones y acciones importantes.
+
+La tipografía está basada en la escala de Material 3: los títulos de la barra superior usan Title Large de 22sp, las tarjetas usan Title Medium de 16sp y el texto de botones es Label Large de 14sp. Todo el contenido es escalable para respetar los ajustes de accesibilidad del sistema.
+
+Los íconos siguen el estilo de Material Symbols, con un tamaño de 24dp, y en el botón flotante (FAB) se usan de 36dp. Las tarjetas tienen bordes redondeados de 12dp y una ligera elevación para destacar del fondo. Los formularios usan campos OutlinedTextField, y el FAB circular de 56dp es el encargado de la acción principal de agregar espacios.
+
+La navegación se organiza con un TopAppBar con ícono de menú que abre el drawer lateral, y las animaciones son suaves, de 200–300 ms, con las curvas de movimiento estándar de Material. Además, se incluyen gestos como deslizar para cerrar modales. En cuanto a accesibilidad, todas las áreas táctiles cumplen con el mínimo de 48dp y los colores respetan el contraste WCAG 2.1 AA.
+
+Para las pantallas de monitoreo IoT en Android, los valores ambientales se presentan mediante Material Cards con íconos de Material Symbols representativos. Las alertas críticas se muestran como notificaciones push del sistema con canal de alta prioridad, garantizando que el usuario sea notificado incluso con la app en segundo plano.
+
+#### IoT Style Guidelines
+
+Esta sección define los estándares de diseño para la interfaz física del dispositivo IoT instalado en las aulas, compuesto por un microcontrolador ESP32 con sensores DHT22 (temperatura y humedad) y HC-SR501 (ocupación PIR).
+
+Dado que el dispositivo EduSpace IoT no cuenta con pantalla, la interfaz física se limita a señales visuales mediante LED. Los estándares de interacción con esta interfaz son los siguientes:
+
+##### Señalización visual mediante LED
+
+El dispositivo incorpora un LED RGB para comunicar el estado del sistema al personal de la institución de forma intuitiva:
+
+| Estado | Color del LED | Patrón | Descripción |
+|--------|--------------|--------|-------------|
+| Normal | Verde | Encendido fijo | Todos los valores dentro de los umbrales configurados |
+| Precaución | Amarillo | Parpadeo lento (1 Hz) | Al menos un valor se aproxima al umbral límite |
+| Alerta | Rojo | Parpadeo rápido (3 Hz) | Al menos un valor ha superado el umbral configurado |
+| Sin conexión | Azul | Parpadeo lento (0.5 Hz) | El dispositivo no tiene conectividad con el Edge API |
+| Inicializando | Blanco | Parpadeo rápido (5 Hz) | El dispositivo está iniciando o reconectando |
+
+##### Principios de diseño físico
+
+- **Visibilidad:** El LED debe ser visible desde cualquier punto del aula. Se recomienda instalación en una posición elevada y despejada.
+- **Simplicidad:** La interfaz física se limita al LED RGB — no se incluyen botones, pantallas ni controles físicos para minimizar la posibilidad de manipulación no autorizada.
+- **Instalación discreta:** El dispositivo debe instalarse de forma que no interfiera con las actividades académicas ni distraiga a los estudiantes.
+- **Resiliencia:** El dispositivo opera de forma autónoma aunque pierda conexión, continuando la captura de lecturas localmente hasta restablecer la comunicación con el Edge API.
+
+## 5.2. Information Architecture
+
+### 5.2.1. Organization Systems
+
+En esta sección se explica cómo se organiza el contenido en las distintas experiencias digitales de EduSpace, tanto en el Landing Page como en las aplicaciones web y móvil, incluyendo las nuevas secciones de monitoreo IoT.
+
+#### Landing Page
+
+La organización del Landing Page sigue un esquema **secuencial** (step-by-step), guiando al visitante desde la propuesta de valor general hasta la conversión. El contenido se presenta en el siguiente orden:
+
+| Sección | Tipo de organización | Descripción |
+|---------|---------------------|-------------|
+| Home | Jerárquica | Vista general del servicio destacando las características clave de EduSpace IoT. La propuesta de valor principal ocupa el primer plano visual. |
+| About Us | Secuencial | Explica el compromiso de EduSpace con la gestión inteligente de espacios educativos, incluyendo las capacidades de monitoreo IoT. |
+| Features | Jerárquica | Presenta las funcionalidades principales organizadas por importancia: gestión de espacios, reservas, reportes de averías y monitoreo ambiental IoT. |
+| Packages | Matricial | Comparación de planes disponibles en formato de tabla, permitiendo al visitante comparar características y precios entre opciones. |
+| Contact | Jerárquica | Información de contacto para soporte y consultas. |
+
+#### Web Application
+
+La aplicación web organiza su contenido de forma **jerárquica**, dando prioridad a la información más relevante para cada rol de usuario. Se complementa con organización **matricial** en las secciones de gestión y monitoreo, donde el usuario necesita comparar múltiples elementos simultáneamente.
+
+**Organización para Administradores:**
+
+| Feature | Tipo de organización | Descripción |
+|---------|---------------------|-------------|
+| Home | Jerárquica | Resumen de datos clave: reportes recientes, estado de espacios, alertas IoT activas y notificaciones urgentes. |
+| Classroom Management | Jerárquica | Registro y gestión de aulas, incluyendo el dispositivo IoT asociado a cada una. |
+| Shared Areas | Matricial | Gestión de espacios compartidos con vista de disponibilidad en formato calendario. |
+| Meetings | Secuencial | Programación de reuniones paso a paso: selección de aula, fecha, hora e invitados. |
+| Breakdown Reports | Jerárquica | Lista de reportes de averías ordenados por prioridad y estado de resolución. |
+| IoT Dashboard | Matricial | Vista en tiempo real de temperatura, humedad y ocupación por aula. Organización matricial que permite comparar el estado de múltiples aulas simultáneamente. |
+| Alert Management | Jerárquica | Gestión de alertas generadas por el sistema IoT, ordenadas por severidad y timestamp. |
+| Threshold Configuration | Secuencial | Configuración paso a paso de umbrales por variable ambiental y por aula. |
+| Profile | Jerárquica | Información personal y profesional del administrador. |
+
+**Organización para Docentes:**
+
+| Feature | Tipo de organización | Descripción |
+|---------|---------------------|-------------|
+| Home | Jerárquica | Resumen de tareas, notificaciones y calendario de actividades asignadas. |
+| Reservations | Secuencial | Proceso paso a paso para reservar espacios compartidos: búsqueda, selección de horario y confirmación. |
+| Breakdown Reports | Secuencial | Reporte de averías paso a paso: selección de recurso, descripción del problema y envío. |
+| Classroom Environment | Jerárquica | Visualización del estado ambiental del aula asignada: temperatura, humedad y ocupación en tiempo real, con historial de lecturas. |
+| Notifications | Jerárquica | Alertas sobre cambios de aula, reuniones programadas y alertas ambientales IoT. |
+| Profile | Jerárquica | Información personal y profesional del docente. |
+
+#### Mobile Application
+
+La aplicación móvil sigue la misma organización jerárquica que la web, adaptada a las restricciones de espacio de pantalla. Se prioriza el acceso rápido a las funciones más frecuentes mediante navegación inferior (bottom navigation bar), con las siguientes secciones principales organizadas por audiencia:
+
+**Para Administradores:**
+
+| Feature | Tipo de organización |
+|---------|---------------------|
+| Dashboard IoT | Matricial — tarjetas por aula |
+| Alerts | Jerárquica — por severidad |
+| Spaces | Jerárquica — lista de aulas y áreas |
+| Reports | Jerárquica — por estado |
+| Profile | Jerárquica |
+
+**Para Docentes:**
+
+| Feature | Tipo de organización |
+|---------|---------------------|
+| My Classroom | Jerárquica — estado ambiental |
+| Reservations | Secuencial — proceso de reserva |
+| Report Breakdown | Secuencial — proceso de reporte |
+| Notifications | Jerárquica — por fecha |
+| Profile | Jerárquica |
+
+### 5.2.2. Labeling Systems
+
+En esta sección se explica de qué maneras se representan los datos en EduSpace, considerando simplicidad y buscando evitar la confusión para los visitantes y usuarios. Las etiquetas se formulan con el mínimo número de palabras necesario para representar los conjuntos de información y las asociaciones entre las mismas.
+
+#### Principios de Etiquetado
+
+- **Claridad:** Cada etiqueta debe ser fácilmente comprensible por todos los usuarios, independientemente de su rol (administrador o docente).
+- **Consistencia:** Se mantiene un lenguaje uniforme en todas las secciones de la aplicación para evitar confusión.
+- **Brevedad:** Las etiquetas se formulan con el menor número de palabras posibles sin perder claridad o precisión.
+- **Idioma:** Todas las etiquetas de la interfaz están en inglés como idioma por defecto, con soporte para español latinoamericano (es_419) mediante i18n.
+
+#### Landing Page
+
+| Etiqueta | Descripción de la asociación |
+|----------|------------------------------|
+| Home | Sección principal con propuesta de valor de EduSpace IoT |
+| About Us | Descripción del startup y su misión |
+| Features | Funcionalidades principales de la plataforma |
+| Packages | Planes y precios disponibles |
+| Contact | Información de contacto y soporte |
+| Get Started | Call-to-action principal para acceder a la aplicación |
+
+#### Web Application — Administrador
+
+| Etiqueta | Descripción de la asociación |
+|----------|------------------------------|
+| Home | Resumen ejecutivo y acceso rápido a funciones clave |
+| Classrooms | Registro y gestión de aulas y recursos asociados |
+| Shared Areas | Gestión de espacios compartidos y disponibilidad |
+| Meetings | Programación de reuniones y gestión de participantes |
+| Breakdown Reports | Reportes de averías y seguimiento de resolución |
+| IoT Dashboard | Monitoreo en tiempo real de condiciones ambientales por aula |
+| Alerts | Alertas activas generadas por el sistema IoT |
+| Thresholds | Configuración de umbrales por variable ambiental y aula |
+| Notifications | Avisos y actualizaciones importantes del sistema |
+| Profile | Información personal y configuración de cuenta |
+| Log Out | Cierre de sesión seguro |
+
+#### Web Application — Docente
+
+| Etiqueta | Descripción de la asociación |
+|----------|------------------------------|
+| Home | Resumen de tareas y calendario de actividades |
+| My Classroom | Estado ambiental en tiempo real del aula asignada |
+| Reservations | Reserva de espacios compartidos y consulta de disponibilidad |
+| Breakdown Reports | Reporte de averías en recursos del aula |
+| Notifications | Alertas sobre cambios de aula, reuniones y condiciones ambientales |
+| Profile | Información personal y configuración de cuenta |
+| Log Out | Cierre de sesión seguro |
+
+#### Mobile Application — Administrador
+
+| Etiqueta | Descripción de la asociación |
+|----------|------------------------------|
+| Dashboard | Vista resumida de condiciones IoT por aula |
+| Alerts | Alertas activas del sistema IoT |
+| Spaces | Gestión de aulas y áreas compartidas |
+| Reports | Reportes de averías y su estado |
+| Profile | Información personal y configuración de cuenta |
+
+#### Mobile Application — Docente
+
+| Etiqueta | Descripción de la asociación |
+|----------|------------------------------|
+| My Classroom | Estado ambiental del aula asignada |
+| Reservations | Reserva de espacios compartidos |
+| Report | Reporte de averías en recursos |
+| Notifications | Avisos y alertas del sistema |
+| Profile | Información personal y configuración de cuenta |
+
+#### Etiquetas de estado IoT
+
+Estas etiquetas se usan en el dashboard y las tarjetas de monitoreo para comunicar el estado de las variables ambientales:
+
+| Etiqueta | Descripción |
+|----------|-------------|
+| Normal | Valor dentro del rango configurado |
+| Warning | Valor aproximándose al umbral límite |
+| Alert | Valor que ha superado el umbral configurado |
+| Offline | Dispositivo sin conectividad con el Edge API |
+| Occupied | Aula con presencia detectada por el sensor PIR |
+| Unoccupied | Aula sin presencia detectada |
+
+### 5.2.3. SEO Tags and Meta Tags
+
+Las meta etiquetas nos permiten codificar y especificar metadatos en una página web. Aunque no son visibles para los usuarios, los navegadores y rastreadores web las leen. Estas etiquetas facilitan el análisis de archivos HTML y ayudan en el mantenimiento del contenido. Además, influyen en el posicionamiento de nuestra página en los motores de búsqueda.
+
+#### Landing Page
+
+**Título de la página:**
+
+```html
+<title>EduSpace IoT — Smart Classroom Management Platform</title>
+```
+
+**Meta descripción:**
+
+```html
+<meta
+  name="description"
+  content="EduSpace IoT is a smart platform for managing educational spaces. Monitor real-time environmental conditions, manage reservations, track resources and receive automated alerts through IoT technology."
+/>
+```
+
+**Meta palabras clave:**
+
+```html
+<meta
+  name="keywords"
+  content="smart classroom, IoT monitoring, educational space management, temperature monitoring, occupancy detection, classroom reservation, breakdown reporting, school management, EduSpace"
+/>
+```
+
+**Meta autor:**
+
+```html
+<meta name="author" content="EduSolutions" />
+<meta name="copyright" content="Copyright EduSpace IoT — EduSolutions" />
+```
+
+**Meta viewport y charset:**
+
+```html
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+```
+
+**Open Graph (para compartir en redes sociales):**
+
+```html
+<meta property="og:title" content="EduSpace IoT — Smart Classroom Management" />
+<meta property="og:description" content="Monitor and manage your educational spaces intelligently with IoT technology." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://eduspace-iot.github.io" />
+```
+
+#### Web Application
+
+**Título de la página:**
+
+```html
+<title>EduSpace IoT — Dashboard</title>
+```
+
+**Meta descripción:**
+
+```html
+<meta
+  name="description"
+  content="EduSpace IoT web application for administrators and teachers. Manage classrooms, monitor environmental conditions and coordinate institutional resources."
+/>
+```
+
+**Meta palabras clave:**
+
+```html
+<meta
+  name="keywords"
+  content="classroom management, IoT dashboard, space reservation, breakdown reports, environmental monitoring, EduSpace"
+/>
+```
+
+**Meta autor:**
+
+```html
+<meta name="author" content="EduSolutions" />
+```
+
+**Meta viewport y charset:**
+
+```html
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+```
+
+#### Mobile Application — ASO (App Store Optimization)
+
+**App Title:**
+EduSpace IoT
+
+**App Subtitle:**
+Smart Classroom Management
+
+**App Keywords:**
+classroom, IoT, monitoring, temperature, humidity, occupancy, reservation, school, education, management
+
+**App Description:**
+EduSpace IoT is a smart platform designed for educational institutions that want to optimize the use of their spaces and improve classroom environmental conditions.
+
+Con EduSpace IoT puedes:
+- Monitorear temperatura, humedad y ocupación de aulas en tiempo real
+- Recibir alertas automáticas cuando las condiciones ambientales superan los umbrales configurados
+- Reservar espacios compartidos y gestionar disponibilidad
+- Reportar averías en equipos y hacer seguimiento de su resolución
+- Recibir notificaciones sobre reuniones y cambios de aula
+
+Diseñado para administradores y docentes que desean gestionar su institución de manera eficiente e inteligente.
+
+### 5.2.4. Searching Systems
+
+EduSpace ha diseñado su sistema de búsqueda y filtrado para proporcionar una experiencia eficiente y fluida a la hora de gestionar espacios educativos, recursos e información de monitoreo IoT, sin abrumar a los usuarios con el volumen de información disponible.
+
+#### Opciones de búsqueda por sección
+
+**Gestión de espacios (Administrador)**
+
+Los administradores pueden buscar y filtrar aulas y áreas compartidas mediante los siguientes criterios:
+
+| Filtro | Valores posibles |
+|--------|-----------------|
+| Tipo de espacio | Classroom / Shared Area |
+| Estado de ocupación IoT | Occupied / Unoccupied |
+| Estado ambiental | Normal / Warning / Alert |
+| Docente asignado | Lista de docentes registrados |
+
+**Reservas (Docente)**
+
+Los docentes pueden buscar espacios disponibles para reservar mediante los siguientes filtros:
+
+| Filtro | Valores posibles |
+|--------|-----------------|
+| Fecha | Selector de fecha |
+| Hora de inicio | Selector de hora |
+| Hora de fin | Selector de hora |
+| Tipo de espacio | Sports court / Common room / Other |
+
+**Reportes de averías (Administrador y Docente)**
+
+| Filtro | Valores posibles |
+|--------|-----------------|
+| Estado del reporte | In Progress / Completed / Cancelled |
+| Tipo de recurso | Equipment / Furniture / Infrastructure |
+| Fecha de creación | Rango de fechas |
+
+**IoT Dashboard (Administrador)**
+
+| Filtro | Valores posibles |
+|--------|-----------------|
+| Aula | Lista de aulas registradas |
+| Variable ambiental | Temperature / Humidity / Occupancy |
+| Estado | Normal / Warning / Alert |
+| Rango de fechas | Selector de rango para historial |
+
+**Alertas IoT (Administrador)**
+
+| Filtro | Valores posibles |
+|--------|-----------------|
+| Tipo de alerta | Temperature / Humidity / Occupancy |
+| Estado | Active / Acknowledged |
+| Aula | Lista de aulas registradas |
+| Rango de fechas | Selector de rango |
+
+#### Visualización de resultados después de la búsqueda
+
+**Resultados en formato de tarjetas (Cards)**
+
+Para espacios, aulas y áreas compartidas, los resultados se presentan en formato de tarjetas que muestran la información más relevante de forma compacta: nombre del espacio, estado de ocupación IoT, condición ambiental actual y disponibilidad. Esto permite al usuario escanear visualmente los resultados sin necesidad de abrir cada elemento.
+
+**Resultados en formato de lista**
+
+Para reportes de averías y alertas IoT, los resultados se presentan en formato de lista ordenada, donde cada elemento muestra el tipo, estado, aula asociada y fecha de creación. La lista permite ordenamiento por columnas para facilitar la priorización.
+
+**Resultados en formato de calendario**
+
+Para la búsqueda de disponibilidad de espacios compartidos, los resultados se presentan en un calendario semanal que muestra visualmente los bloques de tiempo disponibles y ocupados, facilitando la selección del horario de reserva.
+
+**Resultados en formato de gráfico**
+
+Para el historial de lecturas IoT, los resultados se presentan en gráficos de línea de series temporales, mostrando la evolución de temperatura, humedad u ocupación en el rango de fechas seleccionado. Esto permite identificar tendencias y patrones de uso de los espacios.
+
+#### Comportamiento de búsqueda vacía
+
+Cuando una búsqueda no retorna resultados, el sistema muestra un mensaje descriptivo que explica por qué no hay resultados y sugiere acciones alternativas, como ampliar el rango de fechas o cambiar los filtros aplicados. Nunca se muestra una pantalla en blanco sin contexto.
+
+### 5.2.5. Navigation Systems
+
+En esta sección se explican las acciones y técnicas que guiarán a los usuarios a través del Landing Page y las aplicaciones de EduSpace, permitiéndoles cumplir sus metas e interactuar de forma satisfactoria con el producto.
+
+#### Landing Page
+
+La navegación del Landing Page sigue un modelo de **navegación lineal descendente**, donde el contenido se presenta en una secuencia lógica que guía al visitante desde el conocimiento del producto hasta la conversión. Se complementa con una **barra de navegación fija** en la parte superior que permite acceder directamente a cualquier sección en cualquier momento.
+
+| Elemento de navegación | Tipo | Descripción |
+|----------------------|------|-------------|
+| Top Navigation Bar | Global | Barra fija con enlaces a todas las secciones: Home, About Us, Features, Packages, Contact y botón Get Started |
+| Scroll Navigation | Lineal | El usuario puede desplazarse verticalmente para recorrer el contenido en secuencia |
+| Anchor Links | Local | Los enlaces de la barra de navegación hacen scroll suave hacia la sección correspondiente |
+| Call-to-Action buttons | Acción | Botones destacados en cada sección que redirigen al usuario a la Web Application |
+| Footer Links | Global | Enlaces secundarios a términos y condiciones, política de privacidad y redes sociales |
+
+#### Web Application
+
+La aplicación web utiliza un modelo de **navegación jerárquica** organizada mediante una barra lateral (sidebar) fija que permanece visible en todo momento. Este modelo permite al usuario ubicarse siempre dentro de la estructura de la aplicación y acceder a cualquier sección con un máximo de dos clics.
+
+**Navegación principal — Administrador:**
+
+| Elemento | Tipo | Descripción |
+|----------|------|-------------|
+| Sidebar | Global | Barra lateral fija con acceso a todas las secciones principales |
+| Breadcrumbs | Contextual | Indicador de ubicación actual dentro de la jerarquía de navegación |
+| Tab Navigation | Local | Pestañas dentro de secciones complejas como IoT Dashboard (por aula) |
+| Quick Actions | Acceso rápido | Acciones frecuentes disponibles desde el Home sin necesidad de navegar |
+| Notifications Bell | Global | Ícono de campana en la barra superior con acceso directo a notificaciones y alertas IoT |
+
+**Navegación principal — Docente:**
+
+| Elemento | Tipo | Descripción |
+|----------|------|-------------|
+| Sidebar | Global | Barra lateral fija con acceso a las secciones del docente |
+| Breadcrumbs | Contextual | Indicador de ubicación actual |
+| Back Button | Local | Botón de retroceso en flujos de reserva y reporte de averías |
+| Notifications Bell | Global | Acceso directo a notificaciones sobre reuniones, cambios de aula y alertas ambientales |
+
+#### Mobile Application
+
+La aplicación móvil utiliza una **barra de navegación inferior** (Bottom Navigation Bar) como elemento de navegación principal, siguiendo las convenciones de diseño de iOS y Android. Este modelo es el más adecuado para dispositivos móviles ya que permite acceder a las secciones principales con el pulgar sin necesidad de estirarse hacia la parte superior de la pantalla.
+
+**Navegación principal — Administrador:**
+
+| Elemento | Tipo | Descripción |
+|----------|------|-------------|
+| Bottom Navigation Bar | Global | Barra inferior con 5 ítems: Dashboard, Alerts, Spaces, Reports, Profile |
+| Top App Bar | Global | Barra superior con título de la sección actual y acciones contextuales |
+| Drawer Menu | Global | Menú lateral accesible desde el ícono de hamburguesa para opciones secundarias |
+| Back Navigation | Local | Gesto de deslizamiento hacia la derecha (iOS) o botón de retroceso (Android) |
+| Pull to Refresh | Local | Gesto de arrastre hacia abajo para actualizar datos IoT en tiempo real |
+
+**Navegación principal — Docente:**
+
+| Elemento | Tipo | Descripción |
+|----------|------|-------------|
+| Bottom Navigation Bar | Global | Barra inferior con 5 ítems: My Classroom, Reservations, Report, Notifications, Profile |
+| Top App Bar | Global | Barra superior con título de la sección actual |
+| Back Navigation | Local | Gesto de deslizamiento o botón de retroceso en flujos de varios pasos |
+| Pull to Refresh | Local | Actualización de datos ambientales del aula asignada |
+
+#### Flujos de navegación críticos
+
+Los siguientes flujos de navegación son los más frecuentes y han sido optimizados para minimizar el número de pasos:
+
+| Flujo | Pasos | Aplicación |
+|-------|-------|------------|
+| Ver estado ambiental del aula | 1 paso desde Home | Web y Mobile |
+| Reservar espacio compartido | 3 pasos: selección → horario → confirmación | Web y Mobile |
+| Reportar avería | 3 pasos: selección de recurso → descripción → envío | Web y Mobile |
+| Ver alertas IoT activas | 1 paso desde notificación push | Mobile |
+| Configurar umbral de temperatura | 3 pasos: selección de aula → variable → valor | Web |
+
+## 5.3. Landing Page UI Design
+
+En esta sección se presenta la propuesta de UI para el Landing Page de EduSpace IoT. Las decisiones de diseño traducen las directrices establecidas en las Style Guidelines y la arquitectura de información definida en las secciones anteriores, buscando comunicar de forma clara y atractiva la propuesta de valor de la plataforma a los segmentos objetivo: administradores de instituciones educativas y docentes.
+
+### 5.3.1. Landing Page Wireframe
+
+Los wireframes del Landing Page representan la estructura y distribución de los elementos de la interfaz sin considerar aspectos visuales como colores o tipografía. Se han elaborado versiones para Desktop Web Browser y Mobile Web Browser, evidenciando la aplicación del diseño responsivo, el patrón de navegación en Z y los principios de arquitectura de información definidos.
+
+En ambas versiones se puede apreciar la organización secuencial del contenido: Hero Section con propuesta de valor principal, sección About Us, sección Features destacando las capacidades IoT, sección Packages con comparación de planes, y sección Contact con formulario de contacto y call-to-action.
+
+**Desktop Web Browser:**
+
+\<imagen wireframe landing page desktop\>
+
+**Mobile Web Browser:**
+
+\<imagen wireframe landing page mobile\>
+
+### 5.3.2. Landing Page Mock-up
+
+Los mock-ups del Landing Page presentan la propuesta visual completa, aplicando la paleta de colores, tipografía Poppins, iconografía e imágenes definitivas establecidas en las Style Guidelines. Se evidencia la consistencia visual entre la versión desktop y mobile, así como la aplicación del Design System establecido para los productos digitales de EduSpace IoT.
+
+En ambas versiones se puede apreciar la aplicación del tono profesional y sereno definido para la comunicación de la plataforma, con énfasis en las capacidades de monitoreo IoT como diferenciador principal frente a soluciones de gestión educativa tradicionales.
+
+**Desktop Web Browser:**
+
+\<imagen mockup landing page desktop\>
+
+**Mobile Web Browser:**
+
+\<imagen mockup landing page mobile\>
+
+## 5.4. Applications UX/UI Design
+
+En esta sección se presenta la propuesta visual y de interacción para las aplicaciones que conforman la experiencia de usuario de EduSpace IoT. Las decisiones de diseño parten de los User Stories identificados, el Impact Map y las directrices de estilo y arquitectura de información establecidas en las secciones anteriores. Se incluyen wireframes, wireflow diagrams, mock-ups y user flow diagrams para la Web Application y la Mobile Application, incorporando las nuevas pantallas de monitoreo IoT.
+
+### 5.4.1. Applications Wireframes
+
+Los wireframes presentan la estructura y distribución de los elementos de interfaz para las principales vistas de la Web Application y la Mobile Application, sin considerar aspectos visuales como colores o tipografía. Se evidencia la aplicación de los principios de diseño inclusivo, la arquitectura de información y los sistemas de navegación definidos.
+
+#### Web Application
+
+**Vista: Login**
+
+\<imagen wireframe web login\>
+
+**Vista: Home — Administrador**
+
+\<imagen wireframe web home admin\>
+
+**Vista: Classroom Management**
+
+\<imagen wireframe web classroom management\>
+
+**Vista: IoT Dashboard — Administrador**
+
+\<imagen wireframe web iot dashboard\>
+
+**Vista: Alert Management**
+
+\<imagen wireframe web alert management\>
+
+**Vista: Threshold Configuration**
+
+\<imagen wireframe web threshold configuration\>
+
+**Vista: Breakdown Reports — Administrador**
+
+\<imagen wireframe web breakdown reports admin\>
+
+**Vista: Home — Docente**
+
+\<imagen wireframe web home teacher\>
+
+**Vista: My Classroom — Docente**
+
+\<imagen wireframe web my classroom teacher\>
+
+**Vista: Reservations — Docente**
+
+\<imagen wireframe web reservations teacher\>
+
+**Vista: Breakdown Reports — Docente**
+
+\<imagen wireframe web breakdown reports teacher\>
+
+#### Mobile Application
+
+**Vista: Login**
+
+\<imagen wireframe mobile login\>
+
+**Vista: IoT Dashboard — Administrador**
+
+\<imagen wireframe mobile iot dashboard admin\>
+
+**Vista: Alerts — Administrador**
+
+\<imagen wireframe mobile alerts admin\>
+
+**Vista: My Classroom — Docente**
+
+\<imagen wireframe mobile my classroom teacher\>
+
+**Vista: Reservations — Docente**
+
+\<imagen wireframe mobile reservations teacher\>
+
+**Vista: Report Breakdown — Docente**
+
+\<imagen wireframe mobile report breakdown teacher\>
+
+### 5.4.2. Applications Wireflow Diagrams
+
+Los wireflow diagrams presentan los flujos de navegación entre pantallas para cada User Goal identificado, combinando los wireframes con los pasos de interacción. Se ha elaborado un wireflow por cada User Goal principal, considerando los User Personas definidos para cada aplicación.
+
+#### Web Application
+
+**User Goal: Administrador configura un umbral de temperatura para un aula**
+
+\<imagen wireflow web threshold configuration\>
+
+El administrador accede desde el sidebar a la sección Thresholds, selecciona el aula correspondiente, elige la variable Temperature, ingresa el valor máximo permitido y confirma la configuración. El sistema muestra un mensaje de confirmación y actualiza el umbral en el dispositivo IoT asociado.
+
+**User Goal: Administrador visualiza el estado ambiental de las aulas en tiempo real**
+
+\<imagen wireflow web iot dashboard\>
+
+El administrador accede desde el Home o el sidebar a IoT Dashboard, donde visualiza las tarjetas de estado por aula. Puede filtrar por aula o variable ambiental, y hacer clic en una tarjeta para ver el historial de lecturas en formato gráfico.
+
+**User Goal: Docente reserva un espacio compartido**
+
+\<imagen wireflow web reservation\>
+
+El docente accede desde el sidebar a Reservations, consulta el calendario de disponibilidad, selecciona el espacio y horario deseado, completa el formulario de reserva y confirma. El sistema muestra la confirmación y envía una notificación al docente.
+
+**User Goal: Docente reporta una avería en un recurso**
+
+\<imagen wireflow web breakdown report\>
+
+El docente accede desde el sidebar a Breakdown Reports, selecciona el aula y el recurso afectado, describe el problema, adjunta evidencia opcional y envía el reporte. El sistema notifica al administrador automáticamente.
+
+#### Mobile Application
+
+**User Goal: Docente consulta el estado ambiental de su aula**
+
+\<imagen wireflow mobile my classroom\>
+
+El docente accede desde la Bottom Navigation Bar a My Classroom, donde visualiza en tiempo real la temperatura, humedad y ocupación de su aula asignada. Puede deslizar hacia abajo para actualizar los datos y hacer tap en cada tarjeta para ver el historial.
+
+**User Goal: Administrador gestiona una alerta IoT activa**
+
+\<imagen wireflow mobile alert management\>
+
+El administrador recibe una notificación push de alerta IoT, hace tap en la notificación y es redirigido directamente a la vista de detalle de la alerta, donde puede ver el tipo, el valor medido, el umbral superado y el aula afectada. Puede marcar la alerta como reconocida desde esta vista.
+
+### 5.4.3. Applications Mock-ups
+
+Los mock-ups presentan la propuesta visual completa de las aplicaciones, aplicando el Design System establecido: paleta de colores, tipografía Poppins, iconografía e indicadores visuales de estado IoT. Se evidencia la consistencia visual entre la Web Application y la Mobile Application.
+
+#### Web Application
+
+**Vista: Login**
+
+\<imagen mockup web login\>
+
+**Vista: Home — Administrador**
+
+\<imagen mockup web home admin\>
+
+**Vista: Classroom Management**
+
+\<imagen mockup web classroom management\>
+
+**Vista: IoT Dashboard — Administrador**
+
+\<imagen mockup web iot dashboard\>
+
+**Vista: Alert Management**
+
+\<imagen mockup web alert management\>
+
+**Vista: Threshold Configuration**
+
+\<imagen mockup web threshold configuration\>
+
+**Vista: Breakdown Reports — Administrador**
+
+\<imagen mockup web breakdown reports admin\>
+
+**Vista: Home — Docente**
+
+\<imagen mockup web home teacher\>
+
+**Vista: My Classroom — Docente**
+
+\<imagen mockup web my classroom teacher\>
+
+**Vista: Reservations — Docente**
+
+\<imagen mockup web reservations teacher\>
+
+**Vista: Breakdown Reports — Docente**
+
+\<imagen mockup web breakdown reports teacher\>
+
+#### Mobile Application
+
+**Vista: Login**
+
+\<imagen mockup mobile login\>
+
+**Vista: IoT Dashboard — Administrador**
+
+\<imagen mockup mobile iot dashboard admin\>
+
+**Vista: Alerts — Administrador**
+
+\<imagen mockup mobile alerts admin\>
+
+**Vista: My Classroom — Docente**
+
+\<imagen mockup mobile my classroom teacher\>
+
+**Vista: Reservations — Docente**
+
+\<imagen mockup mobile reservations teacher\>
+
+**Vista: Report Breakdown — Docente**
+
+\<imagen mockup mobile report breakdown teacher\>
+
+### 5.4.4. Applications User Flow Diagrams
+
+Los User Flow Diagrams presentan los flujos completos de interacción para cada User Goal, incluyendo el happy path y los unhappy paths. A diferencia de los Wireflows, los User Flows incluyen los mock-ups de las vistas junto con las condiciones y rutas alternativas.
+
+#### Web Application
+
+**User Goal: Administrador configura un umbral de temperatura para un aula**
+
+\<imagen user flow web threshold configuration\>
+
+Happy path: El administrador selecciona el aula, configura el umbral y confirma exitosamente.
+Unhappy paths: El valor ingresado está fuera del rango permitido (el sistema muestra un mensaje de error de validación); el aula seleccionada no tiene dispositivo IoT asociado (el sistema informa que no es posible configurar umbrales para esa aula).
+
+**User Goal: Administrador visualiza el estado ambiental en tiempo real**
+
+\<imagen user flow web iot dashboard\>
+
+Happy path: El administrador accede al dashboard y visualiza los datos en tiempo real correctamente.
+Unhappy paths: El dispositivo IoT del aula está offline (la tarjeta muestra el estado Offline con el último dato conocido y su timestamp); no hay datos históricos disponibles (el gráfico muestra un estado vacío con mensaje explicativo).
+
+**User Goal: Docente reserva un espacio compartido**
+
+\<imagen user flow web reservation\>
+
+Happy path: El docente selecciona el espacio, el horario disponible y confirma la reserva.
+Unhappy paths: El horario seleccionado ya no está disponible al confirmar (el sistema informa el conflicto y regresa al calendario); el docente intenta reservar fuera del horario permitido (el sistema muestra un mensaje de validación).
+
+**User Goal: Docente reporta una avería**
+
+\<imagen user flow web breakdown report\>
+
+Happy path: El docente selecciona el recurso, describe la avería y envía el reporte exitosamente.
+Unhappy paths: El docente no selecciona un recurso antes de enviar (el sistema muestra validación de campo requerido); error de conexión al enviar (el sistema muestra mensaje de error y permite reintentar).
+
+#### Mobile Application
+
+**User Goal: Docente consulta el estado ambiental de su aula**
+
+\<imagen user flow mobile my classroom\>
+
+Happy path: El docente accede a My Classroom y visualiza los datos ambientales en tiempo real.
+Unhappy paths: El dispositivo IoT está offline (se muestra el último dato conocido con indicador de sin conexión); el docente no tiene aula asignada (se muestra mensaje indicando que no tiene aula asignada y sugiere contactar al administrador).
+
+**User Goal: Administrador gestiona una alerta IoT activa**
+
+\<imagen user flow mobile alert management\>
+
+Happy path: El administrador recibe la notificación, accede al detalle y reconoce la alerta.
+Unhappy paths: La alerta ya fue reconocida por otro administrador (el sistema informa que la alerta ya está reconocida); error de conexión al reconocer (el sistema muestra mensaje de error y permite reintentar).
+
+## 5.5. Applications Prototyping
+
+En esta sección se presentan los prototipos interactivos de la Web Application y la Mobile Application de EduSpace IoT, elaborados en Figma. Los prototipos simulan la interacción y navegación real de la plataforma, siendo consistentes con los User Flow Diagrams definidos en la sección anterior.
+
+Las principales decisiones de interacción tomadas para los prototipos son las siguientes:
+
+- **Navegación por sidebar** en la Web Application, permitiendo acceso directo a cualquier sección con un clic desde cualquier punto de la aplicación.
+- **Navegación por Bottom Navigation Bar** en la Mobile Application, siguiendo las convenciones nativas de iOS y Android para acceso rápido a las secciones principales.
+- **Actualización de datos IoT mediante polling**, simulada en el prototipo mediante transiciones automáticas que muestran el cambio de estado de las tarjetas ambientales.
+- **Flujos de confirmación** para acciones críticas como configuración de umbrales y reservas, con modales de confirmación antes de ejecutar la acción.
+- **Estados de error y vacío** representados en el prototipo para los principales unhappy paths identificados en los User Flow Diagrams.
+
+Estas decisiones de interacción están alineadas con el sistema de navegación definido en la sección 5.2.5 y los principios de diseño inclusivo establecidos en las Style Guidelines.
+
+#### Web Application
+
+A continuación se presenta el prototipo interactivo de la Web Application, que cubre los principales flujos de interacción para los segmentos de Administrador y Docente, incluyendo las nuevas funcionalidades de monitoreo IoT.
+
+\<imagen screenshot prototipo web application\>
+
+URL del prototipo: \<URL Figma Web Application Prototype\>
+
+#### Mobile Application
+
+A continuación se presenta el prototipo interactivo de la Mobile Application, que cubre los principales flujos de interacción para ambos segmentos en dispositivos móviles, con énfasis en las vistas de monitoreo ambiental en tiempo real y gestión de alertas IoT.
+
+\<imagen screenshot prototipo mobile application\>
+
+URL del prototipo: \<URL Figma Mobile Application Prototype\>
+
+## 5.6. IoT Device Design
+
+En esta sección se presenta la propuesta de diseño físico y diseño de circuito del dispositivo IoT que forma parte de la solución EduSpace IoT. Las decisiones de diseño están alineadas con las directrices de la sección 5.1.2 IoT Style Guidelines y con la arquitectura de software definida en el Capítulo IV, específicamente con el bounded context de IoT Monitoring.
+
+El dispositivo EduSpace IoT tiene como objetivo monitorear de forma autónoma y continua las condiciones ambientales de un aula, capturando temperatura, humedad y estado de ocupación, y transmitiendo estos datos al Edge API mediante HTTP cada 10 segundos.
+
+### Componentes del dispositivo
+
+| Componente | Modelo | Función |
+|-----------|--------|---------|
+| Microcontrolador | ESP32 | Unidad de procesamiento central. Ejecuta la Embedded Application en C++ con Arduino Framework, gestiona los sensores y la comunicación HTTP con el Edge API |
+| Sensor de temperatura y humedad | DHT22 | Captura temperatura (rango: -40°C a 80°C, precisión: ±0.5°C) y humedad relativa (rango: 0-100%, precisión: ±2-5%) |
+| Sensor de ocupación | HC-SR501 (PIR) | Detecta presencia humana mediante radiación infrarroja. Rango de detección: hasta 7 metros, ángulo de cobertura: 120° |
+| LED RGB | LED RGB cátodo común | Comunica el estado del sistema visualmente según los estándares definidos en IoT Style Guidelines |
+| Resistencias | 220Ω x3 | Protección del LED RGB |
+| Fuente de alimentación | Cable USB / Adaptador 5V | Alimentación del ESP32 y sensores |
+
+### Diseño físico del dispositivo
+
+El dispositivo está diseñado para ser instalado en una posición elevada dentro del aula, preferentemente en una esquina superior o en la pared frontal, de forma que el sensor PIR tenga cobertura sobre toda el área del aula y el LED RGB sea visible desde cualquier punto.
+
+El diseño físico prioriza la discreción y la funcionalidad sobre la estética, con los siguientes criterios:
+
+- **Tamaño compacto:** El dispositivo se monta sobre una protoboard o PCB de tamaño reducido, con dimensiones aproximadas de 10cm x 8cm.
+- **Instalación fija:** Se instala mediante tornillos o cinta adhesiva de doble cara en la posición designada.
+- **Cable de alimentación oculto:** El cable USB se canaliza por el rodapié o canal de cableado para mantener una instalación ordenada.
+- **Sin controles físicos:** El dispositivo no tiene botones ni controles físicos expuestos para minimizar la posibilidad de manipulación no autorizada.
+
+Diseño Fisico:
+
+***Imagen generada con IA para visualizar como se vería el circuito.***
+
+![Diseño Fisico](./assets/images/diseño-fisico-ia.jpg)
+
+### Diagrama de circuito
+
+El diagrama de circuito muestra las conexiones entre el ESP32 y los componentes del dispositivo. Se ha elaborado en Wokwi, plataforma de simulación de circuitos IoT.
+
+#### Conexiones del circuito
+
+| Componente | Pin del componente | Pin del ESP32 | Descripción |
+|-----------|-------------------|---------------|-------------|
+| DHT22 | VCC | 3.3V | Alimentación del sensor |
+| DHT22 | GND | GND | Tierra |
+| DHT22 | DATA | GPIO4 | Señal de datos temperatura/humedad |
+| HC-SR501 | VCC | 5V (VIN) | Alimentación del sensor PIR |
+| HC-SR501 | GND | GND | Tierra |
+| HC-SR501 | OUT | GPIO14 | Señal de detección de presencia |
+| LED RGB | R (cátodo rojo) | GPIO25 (con resistencia 220Ω) | Canal rojo del LED |
+| LED RGB | G (cátodo verde) | GPIO26 (con resistencia 220Ω) | Canal verde del LED |
+| LED RGB | B (cátodo azul) | GPIO27 (con resistencia 220Ω) | Canal azul del LED |
+| LED RGB | Cátodo común | GND | Tierra del LED |
+
+![Diagrama de circuito](./assets/images/diseño-fisico.png)
+
+URL de la simulación en Wokwi:
+
+[https://wokwi.com/projects/464030948953540609](https://wokwi.com/projects/464030948953540609)
+
+![Simulacion](./assets/images/simulacion.png)
+
+### Flujo de interacción del dispositivo
+
+El dispositivo opera de forma completamente autónoma siguiendo el siguiente ciclo:
+
+1. **Inicialización:** Al encenderse, el ESP32 ejecuta la Embedded Application desarrollada en C++ con Arduino Framework, inicializa los sensores DHT22 y PIR, y se prepara para comenzar el ciclo de lectura. Durante este proceso el LED RGB parpadea en blanco durante aproximadamente 2 segundos.
+
+2. **Lectura de sensores:** Cada 2 segundos en la simulación (cada 10 segundos en el dispositivo físico), el ESP32 lee la temperatura y humedad del DHT22 y el estado de ocupación del PIR.
+
+3. **Evaluación local de umbrales:** El ESP32 evalúa localmente los valores capturados contra los umbrales configurados en el código y actualiza el color del LED RGB según el estado ambiental determinado: verde fijo (Normal), amarillo (Warning) o rojo (Alert).
+
+4. **Transmisión de datos:** Los datos leídos se serializan en formato JSON y se envían al Edge API mediante una petición HTTP POST. En la simulación actual esta transmisión se representa mediante el payload JSON impreso en el Serial Monitor, que refleja exactamente el mensaje que se enviaría al Edge API en el dispositivo físico.
+
+5. **Resiliencia ante fallos de conectividad:** En el dispositivo físico, si se pierde la conexión con el Edge API, el ESP32 reintenta la transmisión automáticamente y cambia el LED a azul parpadeante para indicar el estado de sin conexión. En la simulación actual esta funcionalidad se representa mediante el estado LED_OFFLINE definido en el código, aunque no se activa dado que la simulación no requiere conectividad de red real.
+
+El flujo descrito garantiza que el dispositivo opere de forma resiliente ante fallos de conectividad, manteniendo la captura y evaluación local de lecturas de forma continua independientemente del estado de la conexión con el Edge API.
 
 <div style="page-break-after: always;"></div>
 
