@@ -2574,6 +2574,14 @@ En el Sprint 1 se consolidaron los entregables de implementacion de la Landing P
 ![Web App - Dashboard Teacher](assets/chapter-VI/web-app/teacher/dashboard-teacher.png)
 ![Web App - Spaces](assets/chapter-VI/web-app/teacher/spaces.png)
 
+**Web Application - IoT Monitoring**
+
+En esta iteracion se implemento el modulo IoT Monitoring en la Web App, incluyendo la nueva ruta del dashboard, el menu de acceso en el sidebar y la seccion IoT dentro del dashboard de administracion. Para este Sprint, los datos IoT se consumen desde mocks locales en el frontend.
+
+![Web App - IoT Monitoring Dashboard](assets/chapter-VI/web-app/iot/placeholder-iot-dashboard.png)
+![Web App - IoT Widgets in Admin Home](assets/chapter-VI/web-app/iot/placeholder-iot-widgets.png)
+
+
 **Web Services (REST API)**
 
 ![REST API - Classrooms](assets/chapter-VI/rest-api/classrooms.png)
@@ -2586,12 +2594,17 @@ En el Sprint 1 se consolidaron los entregables de implementacion de la Landing P
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
 | --- | --- | --- | --- | --- | --- |
 | DesarrolloSolucionIoT/landing-page | feature/sprint-1 | Por completar | Por completar | Por completar | Por completar |
-| DesarrolloSolucionIoT/eduspace-frontend-web-app | feature/sprint-1 | Por completar | Por completar | Por completar | Por completar |
+| DesarrolloSolucionIoT/eduspace-frontend-web-app | feature-admin | 98efedb | feat(iot-monitoring): add IoT Monitoring module and dashboard IoT widgets | Modulo IoT + widgets en dashboard admin (datos mock). | Por completar |
+| DesarrolloSolucionIoT/eduspace-frontend-web-app | feature-admin | 1089852 | refactor(iot-monitoring): align bounded context with DDD structure | Ajuste estructura DDD en modulo IoT. | Por completar |
+| DesarrolloSolucionIoT/eduspace-frontend-web-app | feature-admin | 4a21223 | fix(iot-monitoring): replace SVG charts with Chart.js via pv-chart, fix navigation bug | Grafico IoT con Chart.js y fix de navegacion. | Por completar |
+| DesarrolloSolucionIoT/eduspace-frontend-web-app | feature-admin | ff46ec7 | fix(home-admin): wrap template in single root element to fix Transition animation | Fix de transicion en admin home. | Por completar |
 | DesarrolloSolucionIoT/eduspace-platform | feature/sprint-1 | Por completar | Por completar | Por completar | Por completar |
 
 #### 6.2.1.5. Testing Suite Evidence for Sprint Review.
 
 Durante el Sprint 1 se consolidaron pruebas Unit, Integration, BDD y System Tests para Web Services y flujos base de la plataforma. Las pruebas se enfocan en validar el comportamiento de agregados principales, endpoints REST y escenarios de usuario en los flujos de autenticacion y gestion de recursos.
+
+Para el modulo IoT Monitoring no se incluyeron pruebas automaticas en Sprint 1; se planifican para Sprint 2 junto con la integracion de telemetria real.
 
 **Relacion de tests disenados**
 
@@ -2626,6 +2639,13 @@ En el Sprint 1 se alcanzo la ejecucion estable de la Landing Page y la Web Appli
 ![Web App - Dashboard Teacher](assets/chapter-VI/web-app/teacher/dashboard-teacher.png)
 ![REST API - Meetings](assets/chapter-VI/rest-api/meetings.png)
 
+**Ejecucion - IoT Monitoring (mock)**
+
+El modulo IoT Monitoring se ejecuta con datos mockeados en el frontend para Sprint 1. La telemetria real se integra en Sprint 2.
+
+![Web App - IoT Monitoring Dashboard](assets/chapter-VI/web-app/iot/placeholder-iot-dashboard.png)
+![Web App - IoT Widgets in Admin Home](assets/chapter-VI/web-app/iot/placeholder-iot-widgets.png)
+
 **Video de ejecucion**
 
 Link del video: https://youtu.be/tAP6TujgwuA
@@ -2633,6 +2653,8 @@ Link del video: https://youtu.be/tAP6TujgwuA
 #### 6.2.1.7. Services Documentation Evidence for Sprint Review.
 
 Durante el Sprint 1 se documento la API REST con OpenAPI/Swagger, cubriendo los endpoints base de autenticacion, gestion de aulas, reservas y reportes. A continuacion se resume la documentacion por endpoint y se adjuntan capturas de evidencia.
+
+En esta iteracion no se documento una API IoT real; el modulo IoT Monitoring utiliza datos mockeados en el frontend. La documentacion de endpoints IoT se planifica para Sprint 2.
 
 **Resumen de endpoints documentados**
 
@@ -2680,9 +2702,9 @@ Durante el Sprint 1 se trabajo con liderazgo por aspecto y colaboraciones cruzad
 | Integrante | Actividad principal en el Sprint 1 |
 | --- | --- |
 | Alva Abanto, Luis Andres | Por completar |
-| Antayhua Castillo, Josue Oscar | Por completar |
+| Antayhua Castillo, Josue Oscar | Refactor y mejoras del modulo IoT Monitoring (estructura DDD, Chart.js, fixes de navegacion). |
 | Loli Ramirez, Camila Cristina | Por completar |
-| Torres Garcia, Andres Alberto | Por completar |
+| Torres Garcia, Andres Alberto | Implementacion inicial del modulo IoT Monitoring en Web App (dashboard, widgets, ruta y sidebar). |
 | Yalan Zhang, Angie Christina | Por completar |
 
 **Evidencia de colaboracion**
