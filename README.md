@@ -2685,7 +2685,7 @@ En el Sprint 1 se realizaron despliegues de los productos digitales base. La Lan
 **URLs de despliegue (Sprint 1)**
 
 - Landing Page: https://experimentdesign.github.io/landing-page/
-- Web Application: https://eduspacewebapp.netlify.app/
+- Web Application: https://eduspace-frontend-web-app.vercel.app/login
 
 **Capturas de despliegue**
 
