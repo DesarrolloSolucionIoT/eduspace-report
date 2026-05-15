@@ -3357,10 +3357,10 @@ El dispositivo EduSpace IoT tiene como objetivo monitorear de forma autónoma y 
 
 | Componente | Modelo | Función |
 |-----------|--------|---------|
-| Microcontrolador | ESP32 | Unidad de procesamiento central. Ejecuta la Embedded Application en MicroPython, gestiona los sensores y la comunicación HTTP con el Edge API |
+| Microcontrolador | ESP32 | Unidad de procesamiento central. Ejecuta la Embedded Application en C++ con Arduino Framework, gestiona los sensores y la comunicación HTTP con el Edge API |
 | Sensor de temperatura y humedad | DHT22 | Captura temperatura (rango: -40°C a 80°C, precisión: ±0.5°C) y humedad relativa (rango: 0-100%, precisión: ±2-5%) |
 | Sensor de ocupación | HC-SR501 (PIR) | Detecta presencia humana mediante radiación infrarroja. Rango de detección: hasta 7 metros, ángulo de cobertura: 120° |
-| LED RGB | LED RGB ánodo común | Comunica el estado del sistema visualmente según los estándares definidos en IoT Style Guidelines |
+| LED RGB | LED RGB cátodo común | Comunica el estado del sistema visualmente según los estándares definidos en IoT Style Guidelines |
 | Resistencias | 220Ω x3 | Protección del LED RGB |
 | Fuente de alimentación | Cable USB / Adaptador 5V | Alimentación del ESP32 y sensores |
 
@@ -3395,14 +3395,14 @@ El diagrama de circuito muestra las conexiones entre el ESP32 y los componentes 
 | HC-SR501 | VCC | 5V (VIN) | Alimentación del sensor PIR |
 | HC-SR501 | GND | GND | Tierra |
 | HC-SR501 | OUT | GPIO14 | Señal de detección de presencia |
-| LED RGB | R (ánodo rojo) | GPIO25 (con resistencia 220Ω) | Canal rojo del LED |
-| LED RGB | G (ánodo verde) | GPIO26 (con resistencia 220Ω) | Canal verde del LED |
-| LED RGB | B (ánodo azul) | GPIO27 (con resistencia 220Ω) | Canal azul del LED |
+| LED RGB | R (cátodo rojo) | GPIO25 (con resistencia 220Ω) | Canal rojo del LED |
+| LED RGB | G (cátodo verde) | GPIO26 (con resistencia 220Ω) | Canal verde del LED |
+| LED RGB | B (cátodo azul) | GPIO27 (con resistencia 220Ω) | Canal azul del LED |
 | LED RGB | Cátodo común | GND | Tierra del LED |
 
 ![Diagrama de circuito](./assets/images/diseño-fisico.png)
 
-URL de la simulación en Wokwi: 
+URL de la simulación en Wokwi:
 
 [https://wokwi.com/projects/464030948953540609](https://wokwi.com/projects/464030948953540609)
 
@@ -3412,17 +3412,17 @@ URL de la simulación en Wokwi:
 
 El dispositivo opera de forma completamente autónoma siguiendo el siguiente ciclo:
 
-1. **Inicialización:** Al encenderse, el ESP32 ejecuta la Embedded Application en MicroPython, inicializa los sensores DHT22 y PIR, y establece conexión WiFi con la red de la institución. Durante este proceso el LED RGB parpadea en blanco.
+1. **Inicialización:** Al encenderse, el ESP32 ejecuta la Embedded Application desarrollada en C++ con Arduino Framework, inicializa los sensores DHT22 y PIR, y se prepara para comenzar el ciclo de lectura. Durante este proceso el LED RGB parpadea en blanco durante aproximadamente 2 segundos.
 
-2. **Lectura de sensores:** Cada 10 segundos, el ESP32 lee la temperatura y humedad del DHT22 y el estado de ocupación del PIR.
+2. **Lectura de sensores:** Cada 2 segundos en la simulación (cada 10 segundos en el dispositivo físico), el ESP32 lee la temperatura y humedad del DHT22 y el estado de ocupación del PIR.
 
-3. **Transmisión de datos:** Los datos leídos se serializan en formato JSON y se envían al Edge API mediante una petición HTTP POST.
+3. **Evaluación local de umbrales:** El ESP32 evalúa localmente los valores capturados contra los umbrales configurados en el código y actualiza el color del LED RGB según el estado ambiental determinado: verde fijo (Normal), amarillo (Warning) o rojo (Alert).
 
-4. **Actualización del LED:** Tras recibir la respuesta del Edge API, el ESP32 actualiza el color del LED RGB según el estado ambiental reportado por el sistema: verde (Normal), amarillo (Warning) o rojo (Alert).
+4. **Transmisión de datos:** Los datos leídos se serializan en formato JSON y se envían al Edge API mediante una petición HTTP POST. En la simulación actual esta transmisión se representa mediante el payload JSON impreso en el Serial Monitor, que refleja exactamente el mensaje que se enviaría al Edge API en el dispositivo físico.
 
-5. **Reconexión automática:** Si se pierde la conexión WiFi o el Edge API no responde, el ESP32 reintenta la conexión automáticamente y cambia el LED a azul parpadeante para indicar el estado de sin conexión.
+5. **Resiliencia ante fallos de conectividad:** En el dispositivo físico, si se pierde la conexión con el Edge API, el ESP32 reintenta la transmisión automáticamente y cambia el LED a azul parpadeante para indicar el estado de sin conexión. En la simulación actual esta funcionalidad se representa mediante el estado LED_OFFLINE definido en el código, aunque no se activa dado que la simulación no requiere conectividad de red real.
 
-El flujo descrito garantiza que el dispositivo opere de forma resiliente ante fallos de conectividad, manteniendo la captura de lecturas localmente hasta restablecer la comunicación con el Edge API.
+El flujo descrito garantiza que el dispositivo opere de forma resiliente ante fallos de conectividad, manteniendo la captura y evaluación local de lecturas de forma continua independientemente del estado de la conexión con el Edge API.
 
 # Capítulo VI: Product Implementation, Validation & Deployment
 
