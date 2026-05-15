@@ -3042,11 +3042,11 @@ En ambas versiones se puede apreciar la organización secuencial del contenido: 
 
 **Desktop Web Browser:**
 
-\<imagen wireframe landing page desktop\>
+![Landing Page Desktop](/assets/chapter5/wireframe.png)
 
 **Mobile Web Browser:**
 
-\<imagen wireframe landing page mobile\>
+![Landing Page Mobile](/assets/chapter5/wireframe-mobile.png)
 
 ### 5.3.2. Landing Page Mock-up
 
@@ -3056,11 +3056,11 @@ En ambas versiones se puede apreciar la aplicación del tono profesional y seren
 
 **Desktop Web Browser:**
 
-\<imagen mockup landing page desktop\>
+![Landing Page Desktop](/assets/chapter5/mockup-landing.png)
 
 **Mobile Web Browser:**
 
-\<imagen mockup landing page mobile\>
+![Landing Page Mobile](/assets/chapter5/mockup-landing-mobile.png)
 
 ## 5.4. Applications UX/UI Design
 
@@ -3072,75 +3072,11 @@ Los wireframes presentan la estructura y distribución de los elementos de inter
 
 #### Web Application
 
-**Vista: Login**
-
-\<imagen wireframe web login\>
-
-**Vista: Home — Administrador**
-
-\<imagen wireframe web home admin\>
-
-**Vista: Classroom Management**
-
-\<imagen wireframe web classroom management\>
-
-**Vista: IoT Dashboard — Administrador**
-
-\<imagen wireframe web iot dashboard\>
-
-**Vista: Alert Management**
-
-\<imagen wireframe web alert management\>
-
-**Vista: Threshold Configuration**
-
-\<imagen wireframe web threshold configuration\>
-
-**Vista: Breakdown Reports — Administrador**
-
-\<imagen wireframe web breakdown reports admin\>
-
-**Vista: Home — Docente**
-
-\<imagen wireframe web home teacher\>
-
-**Vista: My Classroom — Docente**
-
-\<imagen wireframe web my classroom teacher\>
-
-**Vista: Reservations — Docente**
-
-\<imagen wireframe web reservations teacher\>
-
-**Vista: Breakdown Reports — Docente**
-
-\<imagen wireframe web breakdown reports teacher\>
+![Web App Wireframe](/assets/chapter5/wireframeapp.png)
 
 #### Mobile Application
 
-**Vista: Login**
-
-\<imagen wireframe mobile login\>
-
-**Vista: IoT Dashboard — Administrador**
-
-\<imagen wireframe mobile iot dashboard admin\>
-
-**Vista: Alerts — Administrador**
-
-\<imagen wireframe mobile alerts admin\>
-
-**Vista: My Classroom — Docente**
-
-\<imagen wireframe mobile my classroom teacher\>
-
-**Vista: Reservations — Docente**
-
-\<imagen wireframe mobile reservations teacher\>
-
-**Vista: Report Breakdown — Docente**
-
-\<imagen wireframe mobile report breakdown teacher\>
+![Mobile App Wireframe](/assets/chapter5/wireframemobile.png)
 
 ### 5.4.2. Applications Wireflow Diagrams
 
@@ -3152,11 +3088,15 @@ Los wireflow diagrams presentan los flujos de navegación entre pantallas para c
 
 \<imagen wireflow web threshold configuration\>
 
+ [Wireflow EduSpace](https://www.figma.com/design/rwg6tiEySDcpefZyoulEG2/EduSpace-IoT?node-id=1-4&t=q15p9L2MeBQMhSoe-1)
+
 El administrador accede desde el sidebar a la sección Thresholds, selecciona el aula correspondiente, elige la variable Temperature, ingresa el valor máximo permitido y confirma la configuración. El sistema muestra un mensaje de confirmación y actualiza el umbral en el dispositivo IoT asociado.
 
 **User Goal: Administrador visualiza el estado ambiental de las aulas en tiempo real**
 
 \<imagen wireflow web iot dashboard\>
+
+ [Wireflow EduSpace](https://www.figma.com/design/rwg6tiEySDcpefZyoulEG2/EduSpace-IoT?node-id=1-4&t=q15p9L2MeBQMhSoe-1)
 
 El administrador accede desde el Home o el sidebar a IoT Dashboard, donde visualiza las tarjetas de estado por aula. Puede filtrar por aula o variable ambiental, y hacer clic en una tarjeta para ver el historial de lecturas en formato gráfico.
 
@@ -3164,11 +3104,15 @@ El administrador accede desde el Home o el sidebar a IoT Dashboard, donde visual
 
 \<imagen wireflow web reservation\>
 
+ [Wireflow EduSpace](https://www.figma.com/design/rwg6tiEySDcpefZyoulEG2/EduSpace-IoT?node-id=1-4&t=q15p9L2MeBQMhSoe-1)
+
 El docente accede desde el sidebar a Reservations, consulta el calendario de disponibilidad, selecciona el espacio y horario deseado, completa el formulario de reserva y confirma. El sistema muestra la confirmación y envía una notificación al docente.
 
 **User Goal: Docente reporta una avería en un recurso**
 
 \<imagen wireflow web breakdown report\>
+
+ [Wireflow EduSpace](https://www.figma.com/design/rwg6tiEySDcpefZyoulEG2/EduSpace-IoT?node-id=1-4&t=q15p9L2MeBQMhSoe-1)
 
 El docente accede desde el sidebar a Breakdown Reports, selecciona el aula y el recurso afectado, describe el problema, adjunta evidencia opcional y envía el reporte. El sistema notifica al administrador automáticamente.
 
@@ -3178,11 +3122,15 @@ El docente accede desde el sidebar a Breakdown Reports, selecciona el aula y el 
 
 \<imagen wireflow mobile my classroom\>
 
+ [Wireflow EduSpace](https://www.figma.com/design/rwg6tiEySDcpefZyoulEG2/EduSpace-IoT?node-id=1-4&t=q15p9L2MeBQMhSoe-1)
+
 El docente accede desde la Bottom Navigation Bar a My Classroom, donde visualiza en tiempo real la temperatura, humedad y ocupación de su aula asignada. Puede deslizar hacia abajo para actualizar los datos y hacer tap en cada tarjeta para ver el historial.
 
 **User Goal: Administrador gestiona una alerta IoT activa**
 
 \<imagen wireflow mobile alert management\>
+
+ [Wireflow EduSpace](https://www.figma.com/design/rwg6tiEySDcpefZyoulEG2/EduSpace-IoT?node-id=1-4&t=q15p9L2MeBQMhSoe-1)
 
 El administrador recibe una notificación push de alerta IoT, hace tap en la notificación y es redirigido directamente a la vista de detalle de la alerta, donde puede ver el tipo, el valor medido, el umbral superado y el aula afectada. Puede marcar la alerta como reconocida desde esta vista.
 
@@ -3817,7 +3765,7 @@ En el Sprint 1 se alcanzo la ejecucion estable de la Landing Page y la Web Appli
 
 **Capturas de ejecucion**
 
-![Landing Page - Home](assets/chapter-VI/landing-page/home.png)
+![Landing Page - Home](/assets/chapter5/l1.png)
 ![Web App - Login](assets/chapter-VI/web-app/login.png)
 ![Web App - Dashboard Admin](assets/chapter-VI/web-app/admin/dashborad-admin.png)
 ![Web App - Dashboard Teacher](assets/chapter-VI/web-app/teacher/dashboard-teacher.png)
@@ -3872,7 +3820,7 @@ En el Sprint 1 se realizaron despliegues de los productos digitales base. La Lan
 **URLs de despliegue (Sprint 1)**
 
 - Landing Page: [https://desarrollosolucioniot.github.io/landing-page/](https://desarrollosolucioniot.github.io/landing-page/)
-- Web Application: https://eduspace-frontend-web-app.vercel.app/login
+- Web Application: https://eduspace-frontend-web-app.vercel.app/
 
 **Capturas de despliegue**
 
@@ -3932,9 +3880,7 @@ Shanganlall, A. (2025, 21 febrero). _Los 7 mayores retos que afectan a la gesti�
 
 # Anexos
 
-## Anexo A: Estructura para la sección Student Outcome
-
-## Anexo B: Videos de Exposiciones
+## Anexo A: Videos de Exposiciones
 
 | Entrega | Título                                             | URL                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |     |
 |---------|----------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|
