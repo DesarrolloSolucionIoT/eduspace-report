@@ -1159,7 +1159,7 @@ Los actores identificados son el Administrador, responsable de la gestión insti
 
 ![System Landscape Diagram Key](/assets/images/c4-system-landscape-key.png)
 
-![System Landscape Diagram](/assets/images/c4-system-landscape.png)
+![System Landscape Diagram](assets/images/new-landscape-diagram.png)
 
 #### 4.1.3.2. Software Architecture Context Level Diagrams
 
@@ -1169,7 +1169,7 @@ Dado que EduSpace IoT es una plataforma independiente que no se integra con otro
 
 ![System Context Diagram Key](/assets/images/c4-system-context-key.png)
 
-![System Context Diagram](/assets/images/c4-system-context.png)
+![System Context Diagram](assets/images/new-context-diagram.png)
 
 #### 4.1.3.3. Software Architecture Container Level Diagrams
 
