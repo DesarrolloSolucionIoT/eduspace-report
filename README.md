@@ -2589,16 +2589,27 @@ En esta iteracion se implemento el modulo IoT Monitoring en la Web App, incluyen
 ![REST API - Reports](assets/chapter-VI/rest-api/reports.png)
 ![REST API - Authentication](assets/chapter-VI/rest-api/administrator-profile.png)
 
-**Commits de Implementacion (por completar)**
+**Commits de Implementacion**
 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
 | --- | --- | --- | --- | --- | --- |
-| DesarrolloSolucionIoT/landing-page | feature/sprint-1 | Por completar | Por completar | Por completar | Por completar |
-| DesarrolloSolucionIoT/eduspace-frontend-web-app | feature-admin | 98efedb | feat(iot-monitoring): add IoT Monitoring module and dashboard IoT widgets | Modulo IoT + widgets en dashboard admin (datos mock). | Por completar |
-| DesarrolloSolucionIoT/eduspace-frontend-web-app | feature-admin | 1089852 | refactor(iot-monitoring): align bounded context with DDD structure | Ajuste estructura DDD en modulo IoT. | Por completar |
-| DesarrolloSolucionIoT/eduspace-frontend-web-app | feature-admin | 4a21223 | fix(iot-monitoring): replace SVG charts with Chart.js via pv-chart, fix navigation bug | Grafico IoT con Chart.js y fix de navegacion. | Por completar |
-| DesarrolloSolucionIoT/eduspace-frontend-web-app | feature-admin | ff46ec7 | fix(home-admin): wrap template in single root element to fix Transition animation | Fix de transicion en admin home. | Por completar |
-| DesarrolloSolucionIoT/eduspace-platform | feature/sprint-1 | Por completar | Por completar | Por completar | Por completar |
+| DesarrolloSolucionIoT/landing-page | main | 40d8687 | refactor: collapse bilingual HTML into single page with runtime i18n | Unifica el HTML bilingue en una sola pagina con i18n en runtime. | 2026-05-13 |
+| DesarrolloSolucionIoT/landing-page | main | 42b3583 | feat: replace team members with FullStack Fury roster and photos | Actualiza la seccion de equipo con el roster y fotos. | 2026-05-13 |
+| DesarrolloSolucionIoT/landing-page | main | 9a68a7e | feat: redesign landing with full-bleed hero, IoT focus, scroll-reveal and counter animations | Rediseno de la landing con enfoque IoT y animaciones. | 2026-05-13 |
+| DesarrolloSolucionIoT/landing-page | main | 80cd04c | fix: gendered admin role, translated plan tiers, eyebrow spacing and navbar blur | Correcciones de UI y traducciones de la landing. | 2026-05-13 |
+| DesarrolloSolucionIoT/eduspace-frontend-web-app | feature-admin | 7d6607b | feat(iam): restrict web access to admin role only | Restringe el acceso de la Web App al rol administrador. | 2026-05-14 |
+| DesarrolloSolucionIoT/eduspace-frontend-web-app | feature-admin | 5c1b684 | chore: remove teacher-only pages and orphan domain folders | Elimina paginas de docente y carpetas de dominio huerfanas. | 2026-05-14 |
+| DesarrolloSolucionIoT/eduspace-frontend-web-app | feature-admin | 0a42238 | perf(router): lazy-load route components for code splitting | Carga diferida de componentes de ruta (code splitting). | 2026-05-14 |
+| DesarrolloSolucionIoT/eduspace-frontend-web-app | feature-admin | 98efedb | feat(iot-monitoring): add IoT Monitoring module and dashboard IoT widgets | Modulo IoT + widgets en dashboard admin (datos mock). | 2026-05-14 |
+| DesarrolloSolucionIoT/eduspace-frontend-web-app | feature-admin | 1089852 | refactor(iot-monitoring): align bounded context with DDD structure | Ajuste estructura DDD en modulo IoT. | 2026-05-14 |
+| DesarrolloSolucionIoT/eduspace-frontend-web-app | feature-admin | 4a21223 | fix(iot-monitoring): replace SVG charts with Chart.js via pv-chart, fix navigation bug | Grafico IoT con Chart.js y fix de navegacion. | 2026-05-14 |
+| DesarrolloSolucionIoT/eduspace-frontend-web-app | feature-admin | ff46ec7 | fix(home-admin): wrap template in single root element to fix Transition animation | Fix de transicion en admin home. | 2026-05-14 |
+| DesarrolloSolucionIoT/eduspace-platform | main | 5b44a4e | chore(infra): hygiene pass — drop Reservations BC, switch to Migrate(), dedupe DI, remove EF 1.x package, fix Toknes namespace | Limpieza de infraestructura del backend. | 2026-05-13 |
+| DesarrolloSolucionIoT/eduspace-platform | main | 05b75b8 | feat(api): auth hardening + domain validation + DDD pass across 5 BCs | Hardening de autenticacion y validacion de dominio en 5 BCs. | 2026-05-13 |
+| DesarrolloSolucionIoT/eduspace-platform | main | 64f5650 | fix(api): apply independent review must-fix findings (C1-C4 + H1-H4) | Correcciones de hallazgos de la revision independiente. | 2026-05-13 |
+| DesarrolloSolucionIoT/eduspace-platform | main | daacc75 | fix(migrations): reorder DropIndex on resources.classroom_id to run after dependent index creation | Reordena DropIndex en migracion de recursos. | 2026-05-13 |
+| DesarrolloSolucionIoT/eduspace-platform | main | c80fd19 | chore(cors): allow any origin for academic deployment | Habilita CORS para el despliegue academico. | 2026-05-14 |
+| DesarrolloSolucionIoT/eduspace-platform | main | a214f3b | feat(controller): allow anonymous access to CreateAdministratorProfile endpoint | Acceso anonimo al endpoint de creacion de perfil administrador. | 2026-05-14 |
 
 #### 6.2.1.5. Testing Suite Evidence for Sprint Review.
 
@@ -2621,11 +2632,11 @@ Para el modulo IoT Monitoring no se incluyeron pruebas automaticas en Sprint 1; 
 ![BDD - Feature Suite](assets/chapter-VI/tests/system/US.png)
 ![System Test - US05](assets/chapter-VI/tests/system/us_05.png)
 
-**Commits de Testing (por completar)**
+**Commits de Testing**
 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
 | --- | --- | --- | --- | --- | --- |
-| DesarrolloSolucionIoT/eduspace-platform | feature/sprint-1-testing | Por completar | Por completar | Por completar | Por completar |
+| DesarrolloSolucionIoT/eduspace-platform | main | 3b99671 | chore(scripts): add end-to-end API test runner with auth, domain validation, and CORS checks | Script de pruebas end-to-end de la API (auth, validacion de dominio y CORS). | 2026-05-13 |
 
 #### 6.2.1.6. Execution Evidence for Sprint Review.
 
@@ -2660,10 +2671,10 @@ En esta iteracion no se documento una API IoT real; el modulo IoT Monitoring uti
 
 | Endpoint | Actions | Documentacion | Example Response |
 | --- | --- | --- | --- |
-| /api/v1/Authentication/sign-in | POST | Por completar | { token, username, role } |
-| /api/v1/Classrooms | GET, POST | Por completar | [ { id, name, description, teacherId } ] |
-| /api/v1/reservations | GET, POST | Por completar | [ { id, start, end, title, areaId } ] |
-| /api/v1/Reports | GET, POST | Por completar | [ { id, kindOfReport, description, resourceId, status } ] |
+| /api/v1/Authentication/sign-in | POST | OpenAPI / Swagger | { token, username, role } |
+| /api/v1/Classrooms | GET, POST | OpenAPI / Swagger | [ { id, name, description, teacherId } ] |
+| /api/v1/reservations | GET, POST | OpenAPI / Swagger | [ { id, start, end, title, areaId } ] |
+| /api/v1/Reports | GET, POST | OpenAPI / Swagger | [ { id, kindOfReport, description, resourceId, status } ] |
 
 **Capturas de documentacion**
 
@@ -2672,11 +2683,14 @@ En esta iteracion no se documento una API IoT real; el modulo IoT Monitoring uti
 ![REST API - Reservations](assets/chapter-VI/rest-api/reservations.png)
 ![REST API - Reports](assets/chapter-VI/rest-api/reports.png)
 
-**Commits de Documentacion (por completar)**
+**Commits de Documentacion**
 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
 | --- | --- | --- | --- | --- | --- |
-| DesarrolloSolucionIoT/eduspace-platform | feature/sprint-1-docs | Por completar | Por completar | Por completar | Por completar |
+| DesarrolloSolucionIoT/eduspace-platform | main | 4c24209 | docs(api): sync README with current state (5 BCs, EF migrations, refresh tokens, hardened JWT) | Sincroniza el README de la API con el estado actual. | 2026-05-13 |
+| DesarrolloSolucionIoT/eduspace-frontend-web-app | feature-admin | 8bc923c | docs(readme): sync with admin-only, lazy routes, and current structure | Actualiza el README de la Web App con el alcance admin-only. | 2026-05-14 |
+| DesarrolloSolucionIoT/eduspace-frontend-web-app | feature-admin | 6034bef | feat: added design.md | Agrega el documento de diseno de la Web App. | 2026-05-14 |
+| DesarrolloSolucionIoT/landing-page | main | 0aa3b95 | docs: update README to reflect single-page i18n architecture | Actualiza el README de la landing con la arquitectura i18n. | 2026-05-13 |
 
 #### 6.2.1.8. Software Deployment Evidence for Sprint Review.
 
@@ -2701,11 +2715,11 @@ Durante el Sprint 1 se trabajo con liderazgo por aspecto y colaboraciones cruzad
 
 | Integrante | Actividad principal en el Sprint 1 |
 | --- | --- |
-| Alva Abanto, Luis Andres | Por completar |
+| Alva Abanto, Luis Andres | Documentacion del Capitulo V del reporte (Product Design: UX/UI, prototipado, IoT Device Design, sistemas de navegacion y busqueda). |
 | Antayhua Castillo, Josue Oscar | Refactor y mejoras del modulo IoT Monitoring (estructura DDD, Chart.js, fixes de navegacion). |
-| Loli Ramirez, Camila Cristina | Por completar |
+| Loli Ramirez, Camila Cristina | Correcciones del reporte y elaboracion de la seccion 6.1 (Software Configuration Management). |
 | Torres Garcia, Andres Alberto | Implementacion inicial del modulo IoT Monitoring en Web App (dashboard, widgets, ruta y sidebar). |
-| Yalan Zhang, Angie Christina | Por completar |
+| Yalan Zhang, Angie Christina | Documentacion del Capitulo V del reporte (Product Design: estructura, organizacion, etiquetado y SEO). |
 
 **Evidencia de colaboracion**
 
