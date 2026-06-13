@@ -3781,6 +3781,109 @@ Durante el Sprint 1 se trabajo con liderazgo por aspecto y colaboraciones cruzad
 
 <div style="page-break-after: always;"></div>
 
+### 6.2.2. Sprint 2
+
+El Sprint 2 corresponde a la segunda iteración formal del ciclo 2026-1. Su propósito es incorporar el flujo de telemetría IoT real sobre el bounded context IoT Monitoring —cuyo scaffolding quedó listo en el Sprint 1— y habilitar las historias de visualización en tiempo real basadas en sensores (US01, US04, US11, US12, US16) que fueron diferidas explícitamente desde el Sprint 1. Las subsecciones a continuación documentan la planificación, la asignación de líderes y colaboradores por aspecto, el backlog del Sprint y las evidencias del Sprint Review.
+
+<!-- 6.2.2.1. Sprint Planning 2 — PENDIENTE (Jira SCRUM-50, responsable: Loli Ramirez, Camila Cristina). Insertar la sección aquí, antes de 6.2.2.2, replicando el cuadro de 6.2.1.1. El Sprint Goal y la velocidad definidos en el Planning alimentan las secciones 6.2.2.2 y 6.2.2.3. -->
+
+#### 6.2.2.2. Aspect Leaders and Collaborators
+
+En esta sección se presenta la matriz de Liderazgo y Colaboración (LACX) del Sprint 2. Los aspectos considerados se derivan directamente del modelo estratégico definido en el Capítulo IV.1: los cinco bounded contexts validados —IAM, Space & Resource Management, Reservation & Scheduling, Breakdown Management e IoT Monitoring— y, adicionalmente, el aspecto Landing Page. Con el propósito de preservar la continuidad del conocimiento técnico y la responsabilidad adquirida durante el Sprint 1, el equipo acordó mantener la misma asignación de líderes y colaboradores por aspecto, reforzando el foco sobre el bounded context IoT Monitoring, dado que la integración de telemetría real constituye el objetivo central de la iteración. Cada miembro conserva su rol de Líder (L) —responsable de la coherencia técnica del aspecto, la coordinación de tareas y la integración a `main`— y de Colaborador (C) en los aspectos restantes, donde aporta implementación, revisión de código y validación. La asignación garantiza que cada aspecto cuente con al menos un Líder y un Colaborador, evitando puntos únicos de falla, y se respeta en la distribución de Work-items del Sprint Backlog (sec. 6.2.2.3).
+
+| Apellidos y Nombres            | GitHub Username | Landing Page | IAM | Space & Resource Management | Reservation & Scheduling | Breakdown Management | IoT Monitoring |
+|--------------------------------|-----------------|:------------:|:---:|:---------------------------:|:------------------------:|:--------------------:|:--------------:|
+| Torres García, Andrés Alberto  | andrest04       |      C       |  L  |              C              |            —             |          —           |       L        |
+| Loli Ramirez, Camila Cristina  | CamilaLoli      |      L       |  C  |              —              |            —             |          C           |       C        |
+| Antayhua Castillo, Josué Oscar | Azsher          |      —       |  C  |              L              |            C             |          —           |       C        |
+| Alva Abanto, Luis Andrés       | luis-alva0      |      —       |  —  |              C              |            L             |          C           |       —        |
+| Yalán Zhang, Angie Christina   | aaaaangie       |      C       |  —  |              —              |            C             |          L           |       —        |
+
+Leyenda: **L** = Leader (responsable del aspecto durante el Sprint), **C** = Collaborator (aporta implementación y revisión), **—** = no participa en ese aspecto durante el Sprint 2.
+
+#### 6.2.2.3. Sprint Backlog 2
+
+El Sprint Backlog 2 organiza los Work-items comprometidos por el equipo para consolidar el incremento del producto y producir la evidencia del Sprint Review correspondiente a la entrega AV2. Cada Work-item se gestionó en el tablero de Jira y se mapea a una sección del informe —evidencias de desarrollo, testing, ejecución, servicios y despliegue (secs. 6.2.2.4 a 6.2.2.8)—, a las entrevistas de validación (sec. 6.3), al video About-the-Product (sec. 6.4) o a los artefactos de cierre de la entrega (keynote, Individual Member Performance Report y paquete de entrega). La asignación respeta la matriz de líderes y colaboradores definida en la sección 6.2.2.2. El Sprint comprometió un total de 40 Story Points distribuidos en 18 Work-items, de los cuales 14 se completaron (Done) y 4 quedaron en revisión (In-Review) al momento del Sprint Review.
+
+A continuación se presenta la captura del Sprint Board al cierre del Sprint y el enlace público al tablero del equipo. Por la cantidad de Work-items, el tablero se documenta en dos vistas complementarias.
+
+URL público del tablero (Jira): [https://upc-team-awnysuez.atlassian.net/jira/software/projects/SCRUM/boards/1](https://upc-team-awnysuez.atlassian.net/jira/software/projects/SCRUM/boards/1)
+
+![Sprint 2 Board en Jira — vista general (columnas To Do, In Progress e In Review)](assets/chapter-VI/sprint-2-board-jira-1.png)
+
+![Sprint 2 Board en Jira — detalle de columnas In Review y Done](assets/chapter-VI/sprint-2-board-jira-2.png)
+
+| Sprint #     | Sprint 2                                                            |                            |                  |                |              |
+|--------------|---------------------------------------------------------------------|----------------------------|------------------|----------------|--------------|
+| **ID Jira**  | **Work-Item**                                                       | **Sección / Entregable**   | **Story Points** | **Assigned To** | **Status**   |
+| SCRUM-50     | Sprint Planning 2                                                   | 6.2.2.1                    | 2                | Loli Ramirez, Camila     | Done       |
+| SCRUM-51     | Aspect Leaders and Collaborators                                    | 6.2.2.2                    | 1                | Torres García, Andrés    | Done       |
+| SCRUM-52     | Sprint Backlog 2                                                    | 6.2.2.3                    | 2                | Torres García, Andrés    | Done       |
+| SCRUM-53     | Development Evidence for Sprint Review                              | 6.2.2.4                    | 3                | Torres García, Andrés    | Done       |
+| SCRUM-54     | Testing Suite Evidence for Sprint Review                           | 6.2.2.5                    | 3                | Alva Abanto, Luis        | Done       |
+| SCRUM-55     | Execution Evidence for Sprint Review                                | 6.2.2.6                    | 2                | Antayhua Castillo, Josué | In-Review  |
+| SCRUM-56     | Services Documentation Evidence for Sprint Review                   | 6.2.2.7                    | 2                | Alva Abanto, Luis        | Done       |
+| SCRUM-57     | Software Deployment Evidence for Sprint Review                      | 6.2.2.8                    | 2                | Antayhua Castillo, Josué | Done       |
+| SCRUM-58     | Team Collaboration Insights during Sprint                          | 6.2.2.9                    | 2                | Loli Ramirez, Camila     | In-Review  |
+| SCRUM-59     | Diseño de Entrevistas (Validation Interviews)                      | 6.3.1                      | 2                | Yalán Zhang, Angie       | Done       |
+| SCRUM-60     | Registro de Entrevistas (Validation Interviews)                    | 6.3.2                      | 3                | Yalán Zhang, Angie       | In-Review  |
+| SCRUM-61     | Evaluaciones según heurísticas                                     | 6.3.3                      | 3                | Loli Ramirez, Camila     | Done       |
+| SCRUM-62     | Video About-the-Product                                            | 6.4                        | 2                | Yalán Zhang, Angie       | Done       |
+| SCRUM-63     | Actualizar Registro de Versiones, Bibliografía, Conclusiones y Anexos | Cierre del informe      | 3                | Alva Abanto, Luis        | Done       |
+| SCRUM-64     | Verificar despliegue de productos                                  | Despliegue                 | 2                | Antayhua Castillo, Josué | Done       |
+| SCRUM-65     | Preparar Final Project Keynote                                     | Entrega                    | 3                | Sin asignar              | Done       |
+| SCRUM-66     | Elaborar Individual Member Performance Report                      | Entrega                    | 2                | Loli Ramirez, Camila     | Done       |
+| SCRUM-67     | Preparar archivo ZIP de entrega                                    | Entrega                    | 1                | Loli Ramirez, Camila     | In-Review  |
+
+**Story Points totales del Sprint:** 40 SP distribuidos en 18 Work-items (14 en estado Done y 4 en estado In-Review al cierre del Sprint Review).
+
+#### 6.2.2.4. Development Evidence for Sprint Review.
+
+En el Sprint 2 el equipo integró el flujo de telemetría real sobre el bounded context IoT Monitoring —reemplazando los datos mock empleados en el Sprint 1 por lecturas provenientes del dispositivo basado en ESP32— y desplegó la nueva versión de la Landing Page y de la Web Application, junto con la primera versión de la aplicación móvil que forma parte del alcance. A continuación se presenta la evidencia visual de los avances y la tabla de commits por repositorio. <!-- TODO: ajustar la redacción al alcance real implementado en el Sprint 2. -->
+
+**Web Application — IoT Monitoring (telemetría real)**
+
+<!-- TODO: insertar las capturas del dashboard IoT consumiendo telemetría real (ya no mocks). Guardar las imágenes en assets/chapter-VI/sprint-2/web-app/iot/ y referenciarlas aquí siguiendo el formato del Sprint 1, p. ej.:
+![Web App - IoT Dashboard tiempo real](assets/chapter-VI/sprint-2/web-app/iot/dashboard-realtime.png) -->
+
+**Mobile Application (primera versión)**
+
+<!-- TODO: insertar las capturas de la aplicación móvil desplegada. Guardar en assets/chapter-VI/sprint-2/mobile-app/ y referenciarlas aquí. -->
+
+**IoT Device / Edge (lectura de sensores)**
+
+<!-- TODO: insertar la evidencia del dispositivo ESP32 leyendo sensores e ingestando datos (foto del armado físico y/o consola serial con los logs de ingesta). Guardar en assets/chapter-VI/sprint-2/iot-device/ y referenciarlas aquí. -->
+
+**Web Services (REST API / WebSocket)**
+
+<!-- TODO: insertar las capturas de los endpoints IoT (ingesta de lecturas y alertas) en Swagger y/o la evidencia del canal de tiempo real. Guardar en assets/chapter-VI/sprint-2/rest-api/ y referenciarlas aquí. -->
+
+**Commits de Implementación**
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| --- | --- | --- | --- | --- | --- |
+| DesarrolloSolucionIoT/eduspace-edge-api | main | a807571 | docs: ratify constitution v1.0.0 (DDD, TDD, code quality, IoT resilience, error handling) | Ratifica la constitución técnica del servicio edge (DDD, TDD, calidad y resiliencia IoT). | 2026-05-30 |
+| DesarrolloSolucionIoT/eduspace-edge-api | main | 79d1e75 | [Spec Kit] Add classroom sensor ingestion specification | Especificación del servicio de ingesta de lecturas de sensores por aula. | 2026-05-30 |
+| DesarrolloSolucionIoT/eduspace-edge-api | main | 6690592 | [Spec Kit] Implement classroom sensor ingestion edge service | Implementa el servicio edge de ingesta de lecturas de sensores. | 2026-05-30 |
+| DesarrolloSolucionIoT/eduspace-edge-api | main | 6f6dcde | feat: authenticate upstream forwarding with X-Edge-Key header | Autentica el reenvío de telemetría al backend mediante el header X-Edge-Key. | 2026-06-06 |
+| DesarrolloSolucionIoT/eduspace-edge-api | main | 960cab0 | docs: add documentation for backend integration and postman testing | Documenta la integración con el backend y las pruebas con Postman. | 2026-06-06 |
+| DesarrolloSolucionIoT/eduspace-edge-api | main | 687d0c2 | docs: add Wokwi ESP32 simulation wired to the edge API | Incorpora la simulación del ESP32 en Wokwi conectada al edge API. | 2026-06-11 |
+| DesarrolloSolucionIoT/eduspace-mobile | feature/teacher | c49dfd5 | feat: add asset for the logo and a base for the color palette | Agrega el logo y la paleta base de color de la aplicación móvil. | 2026-06-05 |
+| DesarrolloSolucionIoT/eduspace-mobile | feature/teacher | 363cd46 | feat: update main with the new page for welcome | Implementa la página de bienvenida inicial de la aplicación móvil. | 2026-06-05 |
+| DesarrolloSolucionIoT/eduspace-mobile | iot-monitoring | e508364 | feat: added new iot monitoring system | Primer módulo de monitoreo IoT en la aplicación móvil. | 2026-06-06 |
+| DesarrolloSolucionIoT/eduspace-mobile | iot-monitoring | 7f4d87f | fix: fixed | Correcciones del módulo de monitoreo IoT móvil. | 2026-06-06 |
+| DesarrolloSolucionIoT/eduspace-frontend-web-app | main | 7dbdcf8 | feat(iam): replace verify-code flow with account activation page | Reemplaza el flujo de verificación por código con una página de activación de cuenta. | 2026-05-19 |
+| DesarrolloSolucionIoT/eduspace-frontend-web-app | main | 26ae1e1 | chore(deploy): point Vercel rewrite at new Azure Container Apps backend | Apunta el despliegue en Vercel al backend en Azure Container Apps. | 2026-05-19 |
+| DesarrolloSolucionIoT/eduspace-frontend-web-app | main | 5c9862a | feat(i18n): add vue-i18n with ES/EN locales and language switcher across all bounded contexts | Internacionalización ES/EN con selector de idioma en todos los bounded contexts. | 2026-05-20 |
+| DesarrolloSolucionIoT/eduspace-frontend-web-app | main | 48a3509 | feat(layout): make admin sidebar responsive with hamburger toggle | Hace responsivo el sidebar de administración con menú hamburguesa. | 2026-05-20 |
+| DesarrolloSolucionIoT/eduspace-platform | main | 8bcaf3d | chore(test): scaffold xUnit test project with FluentAssertions and NSubstitute | Scaffolding del proyecto de pruebas con xUnit, FluentAssertions y NSubstitute. | 2026-05-18 |
+| DesarrolloSolucionIoT/eduspace-platform | main | 820f1ca | test(iam): add unit tests for IAM bounded context | Pruebas unitarias del bounded context IAM. | 2026-05-18 |
+| DesarrolloSolucionIoT/eduspace-platform | main | 5ebecb8 | feat(iam): introduce account activation domain and infrastructure | Introduce el dominio e infraestructura de activación de cuenta. | 2026-05-19 |
+| DesarrolloSolucionIoT/eduspace-platform | main | 2692cf5 | chore(deploy): migrate deploy script and docs from App Service to Container Apps | Migra el despliegue de App Service a Azure Container Apps. | 2026-05-19 |
+| DesarrolloSolucionIoT/eduspace-platform | main | 89730bf | refactor(iam): migrate email service from Resend to SendGrid | Migra el servicio de correo de Resend a SendGrid. | 2026-05-20 |
+
+<div style="page-break-after: always;"></div>
+
 # Conclusiones
 
 ## Conclusiones y recomendaciones
