@@ -44,6 +44,7 @@
 | ------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | AV1     | 11/04/2026 | Alva Abanto, Luis Andrés <br> Antayhua Castillo, Josué Oscar <br> Loli Ramirez, Camila Cristina <br> Torres García, Andrés Alberto <br> Yalán Zhang, Angie Christina | Se han incluído los siguientes capítulos: <br>Capítulo I: Introducción <br> Capítulo II: Requirements Elicitation & Analysis <br> Capítulo III: Requirements Specification <br> Capítulo IV: Solution Software Design                              |
 | TB1     | 08/05/2026 | Alva Abanto, Luis Andrés <br> Antayhua Castillo, Josué Oscar <br> Loli Ramirez, Camila Cristina <br> Torres García, Andrés Alberto <br> Yalán Zhang, Angie Christina | Levantar correcciones de los capítulos I a IV<br>Se han incluído los siguientes capítulos: <br>Capítulo V: Solution UI/UX Design<br>Capítulo VI (hasta el punto 6.2.1.9.): Product Implementation, Validation & Deployment.<br>Avance de Conclusiones, Bibliografía y Anexos.<br>Avance de Frontend y Backend  |
+| AV2     | 16/06/2026 | Alva Abanto, Luis Andrés <br> Antayhua Castillo, Josué Oscar <br> Loli Ramirez, Camila Cristina <br> Torres García, Andrés Alberto <br> Yalán Zhang, Angie Christina | Levantar correcciones de la entrega TB1.<br>Integración del bounded context IoT Monitoring con telemetría real a través de la EduSpace Edge API (Edge Computing).<br>Se incluye en el Capítulo VI la evidencia del Sprint 2: Testing Suite Evidence (6.2.2.5) y Services Documentation Evidence (6.2.2.7) de la Edge API.<br>Actualización de Conclusiones, Bibliografía y Anexos. |
 
 
 <div style="page-break-after: always;"></div>
@@ -211,6 +212,9 @@ Para esta segunda entrega, el equipo decidió asignar tareas específicas a cada
       - [6.2.1.7. Services Documentation Evidence for Sprint Review.](#6217-services-documentation-evidence-for-sprint-review)
       - [6.2.1.8. Software Deployment Evidence for Sprint Review.](#6218-software-deployment-evidence-for-sprint-review)
       - [6.2.1.9. Team Collaboration Insights during Sprint.](#6219-team-collaboration-insights-during-sprint)
+    - [6.2.2. Sprint 2](#622-sprint-2)
+      - [6.2.2.5. Testing Suite Evidence for Sprint Review.](#6225-testing-suite-evidence-for-sprint-review)
+      - [6.2.2.7. Services Documentation Evidence for Sprint Review.](#6227-services-documentation-evidence-for-sprint-review)
 - [Conclusiones](#conclusiones)
   - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
 - [Bibliografía](#bibliografía)
@@ -3781,6 +3785,111 @@ Durante el Sprint 1 se trabajo con liderazgo por aspecto y colaboraciones cruzad
 
 <div style="page-break-after: always;"></div>
 
+### 6.2.2. Sprint 2
+
+El Sprint 2 corresponde a la segunda iteración formal del ciclo 2026-1 y materializa la integración de telemetría IoT real que en el Sprint 1 quedó deliberadamente diferida. El objetivo del Sprint fue construir y validar la **EduSpace Edge API** —un servicio de Edge Computing desarrollado en Python 3.12 / Flask— encargado de ingerir las lecturas de los sensores de aula (temperatura, humedad y ocupación) enviadas por los dispositivos ESP32, calcular **localmente** la decisión de alerta (LED) a partir de umbrales por zona, persistir cada lectura en una base de datos SQLite local y reenviarla de forma asíncrona al backend en la nube (`eduspace-platform`), con almacenamiento en búfer y reintentos automáticos ante caídas de conectividad.
+
+El servicio se organiza en dos bounded contexts —`device_auth` (autenticación de dispositivos por `X-API-Key`) e `iot_ingestion` (validación, normalización UTC, evaluación de alertas, persistencia y reenvío con reintento en segundo plano)—, cada uno dividido en las capas domain / application / infrastructure / interfaces, conforme a la constitución del proyecto (DDD + TDD). Las subsecciones a continuación documentan la evidencia de pruebas y de documentación de servicios producida durante el Sprint.
+
+#### 6.2.2.5. Testing Suite Evidence for Sprint Review.
+
+Durante el Sprint 2 se consolidó la suite de pruebas automatizadas de la **EduSpace Edge API**, cubriendo las pruebas del módulo IoT que en el Sprint 1 se habían planificado para esta iteración. El desarrollo siguió un enfoque **Test-Driven Development (TDD)**, principio ratificado en la constitución del repositorio, y las pruebas se organizan en tres niveles: **Unit**, **Integration** y **Contract**. La ejecución completa de la suite con `pytest` reporta **52 casos en estado *passed***.
+
+**Relación de tests diseñados**
+
+| Nivel | Módulo de pruebas | Enfoque |
+| --- | --- | --- |
+| Unit | `tests/unit/iot_ingestion/test_alert_policy.py` | Evaluación local de alerta: temperatura/humedad fuera de umbral activan el LED; la ocupación no afecta la decisión. |
+| Unit | `tests/unit/iot_ingestion/test_normalize.py` | Normalización de `recorded_at` a UTC (offset, naive, Zulu) y uso del reloj del sistema cuando se omite. |
+| Unit | `tests/unit/iot_ingestion/test_request_validator.py` | Validación del cuerpo de la petición: campos requeridos, rangos, tipos (boolean vs número) y timestamp malformado. |
+| Unit | `tests/unit/iot_ingestion/test_upstream_forwarder.py` | Reenvío al backend: manejo de timeout/connection error, envío del `reading_id`, header `X-Edge-Key` y base URL vacía. |
+| Unit | `tests/unit/device_auth/test_seed_test_device.py` | Sembrado idempotente del dispositivo de prueba en modo desarrollo. |
+| Integration | `tests/integration/test_ingestion_endpoint.py` | Endpoint `POST /sensor-readings`: respuesta 201, estado de alerta y persistencia en UTC. |
+| Integration | `tests/integration/test_auth_failures.py` | Fallos de autenticación (faltante, dispositivo desconocido, clave incorrecta) indistinguibles → 401 genérico. |
+| Integration | `tests/integration/test_validation_errors.py` | Errores de validación → 400 con `code` y `message`. |
+| Integration | `tests/integration/test_offline_buffering.py` | Lecturas aceptadas y bufferizadas (`forwarded_at IS NULL`) cuando el backend está caído. |
+| Integration | `tests/integration/test_retry_forwarding.py` | Reenvío de lecturas bufferizadas en el reintento y entrega idempotente (sin duplicados). |
+| Integration | `tests/integration/test_seed_test_device.py` | Arranque en desarrollo siembra y autentica; el reinicio no duplica; producción no siembra. |
+| Contract | `tests/contract/test_sensor_readings_contract.py` | Conformidad de las respuestas (201, 400, 401) y de la ruta/campos contra el contrato OpenAPI. |
+
+**Evidencia de ejecución**
+
+```text
+$ pytest -q
+....................................................                     [100%]
+52 passed in 2.07s
+```
+
+![Edge API - Suite de pruebas pytest (52 passed)](assets/chapter-VI/tests/pytest-run.png)
+
+**Commits de Testing**
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| --- | --- | --- | --- | --- | --- |
+| DesarrolloSolucionIoT/eduspace-edge-api | main | 6690592 | [Spec Kit] Implement classroom sensor ingestion edge service | Implementa el servicio edge con la suite TDD (unit, integration y contract). | 2026-05-30 |
+| DesarrolloSolucionIoT/eduspace-edge-api | main | a807571 | docs: ratify constitution v1.0.0 (DDD, TDD, code quality, IoT resilience, error handling) | Ratifica TDD como principio rector de las pruebas del edge. | 2026-05-30 |
+| DesarrolloSolucionIoT/eduspace-edge-api | main | 6f6dcde | feat: authenticate upstream forwarding with X-Edge-Key header | Añade la verificación del header X-Edge-Key, cubierta por pruebas unitarias del forwarder. | 2026-06-06 |
+
+#### 6.2.2.7. Services Documentation Evidence for Sprint Review.
+
+Durante el Sprint 2 se documentó la **EduSpace Edge API**, cubriendo la API IoT que en el Sprint 1 se había diferido. La documentación se materializa en tres artefactos versionados en el repositorio: un **contrato OpenAPI 3.0.3**, una **colección Postman** con escenarios de prueba ejecutables y una **guía de integración** para el equipo de backend.
+
+**Resumen de endpoints documentados**
+
+| Endpoint | Actions | Documentación | Example Response |
+| --- | --- | --- | --- |
+| /api/v1/iot-monitoring/sensor-readings | POST | OpenAPI 3.0.3 / Postman | 201 { reading_id, alert_led_state, recorded_at } |
+
+El endpoint autentica al dispositivo mediante el header `X-API-Key` (validado contra el `device_id` del cuerpo), valida la lectura, normaliza `recorded_at` a UTC, computa `alert_led_state` localmente y reenvía la lectura de forma asíncrona. Las respuestas de error están tipificadas: **400** (`VALIDATION_ERROR`) ante campos faltantes, malformados o fuera de rango, y **401** (`AUTH_FAILED`) genérico ante cualquier fallo de autenticación (sin enumeración de la causa).
+
+**Ejemplo de petición/respuesta**
+
+```http
+POST /api/v1/iot-monitoring/sensor-readings
+Content-Type: application/json
+X-API-Key: test-api-key-edu
+
+{ "device_id": "esp32-aula-101", "temperature": 31.5, "humidity": 70.0, "occupancy": true }
+```
+
+```json
+HTTP/1.1 201 Created
+{ "reading_id": 1, "alert_led_state": 1, "recorded_at": "2026-06-06T14:30:00+00:00" }
+```
+
+**Artefactos de documentación**
+
+- **Contrato OpenAPI 3.0.3** — `specs/001-classroom-sensor-ingestion/contracts/sensor-readings.openapi.yaml`: define el path versionado, los esquemas `SensorReadingRequest` / `SensorReadingResponse`, los códigos 201/400/401 y ejemplos de cada respuesta.
+- **Colección Postman** — `docs/postman/eduspace-edge-api.postman_collection.json`: agrupa dos flujos —*Device → Edge API* (auth `X-API-Key`: 201, 400 fuera de rango, 400 campo faltante, 401 clave incorrecta y 401 clave faltante) y *Edge → Backend forward* (reenvío con `X-Edge-Key`: 2xx, duplicado idempotente, 401)— con scripts de aserción automatizados.
+- **Guía de integración con el backend** — `docs/backend-integration-guide.md`: especifica el contrato de reenvío Edge → `eduspace-platform` (payload en snake_case, idempotencia por `(device_id, reading_id)`, header `X-Edge-Key` y semántica de reintentos).
+
+**Contrato de reenvío Edge → Backend (cloud)**
+
+```json
+{
+  "reading_id": 42,
+  "device_id": "esp32-aula-101",
+  "temperature": 31.5,
+  "humidity": 70.0,
+  "occupancy": true,
+  "alert_led_state": 1,
+  "recorded_at": "2026-06-06T14:30:00+00:00"
+}
+```
+
+![Edge API - Contrato OpenAPI 3.0.3 renderizado en Swagger Editor](assets/chapter-VI/sprint2/docs/openapi-swagger.png)
+![Edge API - Colección Postman (Device to Edge y Edge to Backend)](assets/chapter-VI/sprint2/docs/postman-collection.png)
+
+**Commits de Documentación**
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| --- | --- | --- | --- | --- | --- |
+| DesarrolloSolucionIoT/eduspace-edge-api | main | 960cab0 | docs: add documentation for backend integration and postman testing | Guía de integración con el backend y colección Postman del Edge API. | 2026-06-06 |
+| DesarrolloSolucionIoT/eduspace-edge-api | main | 6829be9 | [Spec Kit] Add implementation plan and design artifacts | Incluye el contrato OpenAPI `sensor-readings.openapi.yaml`. | 2026-05-30 |
+| DesarrolloSolucionIoT/eduspace-edge-api | main | 687d0c2 | docs: add Wokwi ESP32 simulation wired to the edge API | Documenta la simulación Wokwi del ESP32 conectada al Edge API. | 2026-06-11 |
+
+<div style="page-break-after: always;"></div>
+
 # Conclusiones
 
 ## Conclusiones y recomendaciones
@@ -3794,6 +3903,10 @@ Respecto a la planificación del Sprint 1 (sec. 6.2.1.1), se evidenció que esta
 En cuanto a la matriz de Aspect Leaders and Collaborators (sec. 6.2.1.2), se concluye que distribuir el liderazgo a nivel de bounded context —y no a nivel de capa técnica— alinea la organización del equipo con el modelo estratégico definido en el Capítulo IV y refuerza la coherencia entre diseño e implementación. Garantizar que cada aspecto cuente con al menos un Líder y un Colaborador eliminó puntos únicos de falla durante el Sprint y habilitó revisiones cruzadas sistemáticas; se recomienda mantener este criterio en los Sprints siguientes y revisar la asignación al inicio de cada iteración para reflejar la incorporación progresiva de los flujos IoT.
 
 Finalmente, respecto al Sprint Backlog 1 (sec. 6.2.1.3), se confirmó que priorizar las User Stories del aspecto Landing Page (US31, US32, US34) junto con un subconjunto de historias soportadas íntegramente por la base de código heredada permitió cumplir con los entregables obligatorios del Trabajo Parcial sin introducir dependencias bloqueantes hacia componentes aún no implementados. La inclusión de tareas técnicas explícitas (T-IAM-* y T-IoT-*) para validar la autenticación heredada y materializar el scaffolding del bounded context IoT Monitoring resultó clave para dejar la plataforma lista para integrar telemetría real en el Sprint 2, y se recomienda mantener esta práctica de modelar el trabajo técnico no funcional como Work-items de primer orden en el backlog.
+
+Respecto a la Testing Suite Evidence del Sprint 2 (sec. 6.2.2.5), se concluye que adoptar Test-Driven Development en la EduSpace Edge API —con 52 casos automatizados distribuidos en pruebas unitarias, de integración y de contrato— permitió validar no solo la lógica de dominio (evaluación local de alertas y normalización a UTC), sino también los escenarios de resiliencia propios del Edge Computing: el almacenamiento en búfer de lecturas ante la caída del backend y el reenvío idempotente durante los reintentos. Verificar estos comportamientos de forma automatizada brinda confianza en que el dispositivo de aula continuará operando y sin pérdida de datos durante cortes de conectividad, y se recomienda extender la suite con pruebas de extremo a extremo contra el receptor real del backend en futuras iteraciones.
+
+En cuanto a la Services Documentation Evidence del Sprint 2 (sec. 6.2.2.7), se concluye que formalizar la API de la Edge mediante un contrato OpenAPI 3.0.3, una colección Postman ejecutable y una guía de integración para el backend redujo el acoplamiento entre los equipos de edge y de nube: el contrato fija el formato de las lecturas y los códigos de respuesta, mientras que la guía explicita la semántica de reenvío (idempotencia por `(device_id, reading_id)`, autenticación por `X-Edge-Key` y reintentos), eliminando ambigüedades en la integración. Se recomienda mantener el contrato como única fuente de verdad y versionarlo junto con el firmware del ESP32 para preservar la compatibilidad establecida en la ruta `/api/v1`.
 
 <div style="page-break-after: always;"></div>
 
@@ -3811,6 +3924,16 @@ Valencia, C., & Almeida, V. (2024). La tecnología en la gestión educativa. _Re
 
 Shanganlall, A. (2025, 21 febrero). _Los 7 mayores retos que afectan a la gestión de la educación_. Classter. [https://www.classter.com/es/blog/edtech-es/los-7-mayores-retos-que-afectan-a-la-gestion-de-la-educacion/](https://www.classter.com/es/blog/edtech-es/los-7-mayores-retos-que-afectan-a-la-gestion-de-la-educacion/)
 
+Beck, K. (2003). _Test-Driven Development: By Example_. Addison-Wesley.
+
+Evans, E. (2004). _Domain-Driven Design: Tackling Complexity in the Heart of Software_. Addison-Wesley.
+
+OpenAPI Initiative. (2021). _OpenAPI Specification v3.0.3_. [https://spec.openapis.org/oas/v3.0.3](https://spec.openapis.org/oas/v3.0.3)
+
+Pallets Projects. (2024). _Flask Documentation_. [https://flask.palletsprojects.com/](https://flask.palletsprojects.com/)
+
+Pytest-dev Team. (2024). _pytest: helps you write better programs_. [https://docs.pytest.org/](https://docs.pytest.org/)
+
 <div style="page-break-after: always;"></div>
 
 # Anexos
@@ -3820,3 +3943,4 @@ Shanganlall, A. (2025, 21 febrero). _Los 7 mayores retos que afectan a la gesti�
 | Entrega | Título                                             | URL                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |     |
 |---------|----------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|
 | AV1     | upc-pre-202610-1asi0572-6776-edusolutions-expo-av1 | [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202110385_upc_edu_pe/IQBIiMX0AJRMSaQEIAnGe6olAZdW2wzqMkFe6cLaolmhgB0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=PJLtw2](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202110385_upc_edu_pe/IQBIiMX0AJRMSaQEIAnGe6olAZdW2wzqMkFe6cLaolmhgB0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=PJLtw2) |     |
+| AV2     | upc-pre-202610-1asi0572-6776-edusolutions-expo-av2 | _(Pendiente: enlazar el video de exposición AV2 publicado en Microsoft Stream/Clipchamp)_ |     |
