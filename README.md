@@ -44,6 +44,7 @@
 | ------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | AV1     | 11/04/2026 | Alva Abanto, Luis Andrés <br> Antayhua Castillo, Josué Oscar <br> Loli Ramirez, Camila Cristina <br> Torres García, Andrés Alberto <br> Yalán Zhang, Angie Christina | Se han incluído los siguientes capítulos: <br>Capítulo I: Introducción <br> Capítulo II: Requirements Elicitation & Analysis <br> Capítulo III: Requirements Specification <br> Capítulo IV: Solution Software Design                              |
 | TB1     | 08/05/2026 | Alva Abanto, Luis Andrés <br> Antayhua Castillo, Josué Oscar <br> Loli Ramirez, Camila Cristina <br> Torres García, Andrés Alberto <br> Yalán Zhang, Angie Christina | Levantar correcciones de los capítulos I a IV<br>Se han incluído los siguientes capítulos: <br>Capítulo V: Solution UI/UX Design<br>Capítulo VI (hasta el punto 6.2.1.9.): Product Implementation, Validation & Deployment.<br>Avance de Conclusiones, Bibliografía y Anexos.<br>Avance de Frontend y Backend  |
+| AV2     | 19/06/2026 | Torres García, Andrés Alberto | Sprint 2 (sec. 6.2.2.4 Development Evidence): se documenta la integración de telemetría real de extremo a extremo del bounded context IoT Monitoring (ESP32/Wokwi → Edge API → Web API → Web Application) con evidencia del dispositivo, la ingesta en el Edge, los endpoints REST en Swagger y el dashboard web en tiempo real. |
 
 
 <div style="page-break-after: always;"></div>
@@ -3839,24 +3840,37 @@ URL público del tablero (Jira): [https://upc-team-awnysuez.atlassian.net/jira/s
 
 #### 6.2.2.4. Development Evidence for Sprint Review.
 
-En el Sprint 2 el equipo integró el flujo de telemetría real sobre el bounded context IoT Monitoring —reemplazando los datos mock empleados en el Sprint 1 por lecturas provenientes del dispositivo basado en ESP32— y desplegó la nueva versión de la Landing Page y de la Web Application, junto con la primera versión de la aplicación móvil que forma parte del alcance. A continuación se presenta la evidencia visual de los avances y la tabla de commits por repositorio. <!-- TODO: ajustar la redacción al alcance real implementado en el Sprint 2. -->
+En el Sprint 2 el equipo integró el flujo de telemetría real de extremo a extremo sobre el bounded context IoT Monitoring, reemplazando los datos mock empleados en el Sprint 1 por lecturas provenientes del dispositivo basado en ESP32. La cadena verificada en este Sprint es: el dispositivo ESP32 (simulado en Wokwi con sensores DHT22 de temperatura/humedad y PIR de ocupación) publica sus lecturas en el Edge API, que calcula localmente la decisión del LED de alerta según los umbrales de la zona, las almacena en su buffer SQLite y las reenvía a la nube; el Web API las persiste en MySQL a través del endpoint de ingesta del contexto IoT Monitoring; y la Web Application las consume y visualiza en tiempo real en el dashboard de administración. A continuación se presenta la evidencia visual de cada eslabón de la cadena y la tabla de commits por repositorio.
+
+**IoT Device — ESP32 (lectura de sensores)**
+
+El dispositivo se simula en Wokwi sobre un ESP32 con un sensor DHT22 (temperatura y humedad), un sensor PIR (ocupación) y un LED RGB que materializa el estado de alerta. El firmware lee periódicamente los sensores, evalúa el umbral de temperatura y refleja por consola serial la lectura y el estado del LED.
+
+![IoT Device - Simulación ESP32 en Wokwi](assets/chapter-VI/sprint-2/iot-device/wokwi-esp32-simulation.png)
+
+**Edge API — Ingesta y cálculo local de alertas**
+
+El Edge API recibe las lecturas del dispositivo autenticadas con `X-API-Key`, calcula el estado del LED de alerta de forma local (LED en ALERTA cuando la temperatura supera el umbral de la zona), las persiste en su buffer SQLite y las reenvía de forma asíncrona al Web API en la nube. La siguiente evidencia muestra una ingesta real y el conjunto de lecturas capturadas con su estado de alerta calculado en el borde.
+
+![Edge API - Evidencia de ingesta y cálculo de alerta](assets/chapter-VI/sprint-2/iot-device/edge-ingestion-evidence.png)
+
+**Web Services (REST API) — Contexto IoT Monitoring**
+
+El Web API expone el bounded context IoT Monitoring bajo `api/v1/sensorreadings`, con el endpoint de ingesta consumido por el Edge API y los endpoints de consulta protegidos con JWT. La siguiente evidencia muestra el contrato de los endpoints en Swagger y la ejecución real del endpoint de consulta devolviendo las lecturas persistidas en la base de datos.
+
+![REST API - Endpoints IoT Monitoring en Swagger](assets/chapter-VI/sprint-2/rest-api/swagger-sensorreadings-endpoints.png)
+
+![REST API - GET /sensorreadings con datos reales](assets/chapter-VI/sprint-2/rest-api/swagger-get-sensorreadings-200.png)
 
 **Web Application — IoT Monitoring (telemetría real)**
 
-<!-- TODO: insertar las capturas del dashboard IoT consumiendo telemetría real (ya no mocks). Guardar las imágenes en assets/chapter-VI/sprint-2/web-app/iot/ y referenciarlas aquí siguiendo el formato del Sprint 1, p. ej.:
-![Web App - IoT Dashboard tiempo real](assets/chapter-VI/sprint-2/web-app/iot/dashboard-realtime.png) -->
+El dashboard de monitoreo IoT de la Web Application consume las lecturas persistidas por el Web API y las presenta en tiempo real, sustituyendo los datos mock del Sprint 1. El indicador "En vivo · Platform API" confirma que la información proviene del backend y no de datos simulados; el aula muestra la última lectura del dispositivo `esp32-aula-101` (temperatura, humedad, ocupación) y el estado de alerta derivado del LED calculado en el Edge.
+
+![Web App - Dashboard IoT con telemetría real](assets/chapter-VI/sprint-2/web-app/iot/dashboard-realtime.png)
 
 **Mobile Application (primera versión)**
 
-<!-- TODO: insertar las capturas de la aplicación móvil desplegada. Guardar en assets/chapter-VI/sprint-2/mobile-app/ y referenciarlas aquí. -->
-
-**IoT Device / Edge (lectura de sensores)**
-
-<!-- TODO: insertar la evidencia del dispositivo ESP32 leyendo sensores e ingestando datos (foto del armado físico y/o consola serial con los logs de ingesta). Guardar en assets/chapter-VI/sprint-2/iot-device/ y referenciarlas aquí. -->
-
-**Web Services (REST API / WebSocket)**
-
-<!-- TODO: insertar las capturas de los endpoints IoT (ingesta de lecturas y alertas) en Swagger y/o la evidencia del canal de tiempo real. Guardar en assets/chapter-VI/sprint-2/rest-api/ y referenciarlas aquí. -->
+En el Sprint 2 se inició el módulo de monitoreo IoT en la aplicación móvil (Flutter), según los commits de los repositorios `eduspace-mobile` registrados en la tabla siguiente. La evidencia visual de la aplicación móvil desplegada queda pendiente de captura en el entorno de ejecución correspondiente (emulador Android).
 
 **Commits de Implementación**
 
