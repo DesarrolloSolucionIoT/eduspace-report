@@ -3989,8 +3989,8 @@ HTTP/1.1 201 Created
 }
 ```
 
-![Edge API - Contrato OpenAPI 3.0.3 renderizado en Swagger Editor](assets/chapter-VI/sprint2/docs/openapi-swagger.png)
-![Edge API - Colección Postman (Device to Edge y Edge to Backend)](assets/chapter-VI/sprint2/docs/postman-collection.png)
+![Edge API - Contrato OpenAPI 3.0.3 renderizado en Swagger Editor](assets/chapter-VI/sprint-2/docs/openapi-swagger.png)
+![Edge API - Colección Postman (Device to Edge y Edge to Backend)](assets/chapter-VI/sprint-2/docs/postman-collection.png)
 
 **Commits de Documentación**
 
