@@ -3870,7 +3870,11 @@ El dashboard de monitoreo IoT de la Web Application consume las lecturas persist
 
 **Mobile Application (primera versión)**
 
-En el Sprint 2 se inició el módulo de monitoreo IoT en la aplicación móvil (Flutter), según los commits de los repositorios `eduspace-mobile` registrados en la tabla siguiente. La evidencia visual de la aplicación móvil desplegada queda pendiente de captura en el entorno de ejecución correspondiente (emulador Android).
+En el Sprint 2 se incorporó el módulo de monitoreo IoT a la aplicación móvil (Flutter), que comparte el mismo bounded context IoT Monitoring del backend. La aplicación presenta la pantalla de autenticación y el tab de monitoreo IoT, donde el aula con dispositivo asociado muestra en tiempo real la última lectura del sensor (temperatura, humedad y ocupación) junto con el estado de alerta derivado del LED calculado en el Edge.
+
+![Mobile App - Inicio de sesión](assets/chapter-VI/sprint-2/mobile-app/mobile-login.png)
+
+![Mobile App - Monitoreo IoT con telemetría real](assets/chapter-VI/sprint-2/mobile-app/mobile-iot-dashboard.png)
 
 **Commits de Implementación**
 
