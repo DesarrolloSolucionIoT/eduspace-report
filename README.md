@@ -4003,7 +4003,81 @@ HTTP/1.1 201 Created
 <div style="page-break-after: always;"></div>
 
 ## 6.3. Validation Interviews
+
+Con el objetivo de validar la propuesta de valor de EduSpace, se realizarán entrevistas de validación con representantes de los segmentos objetivo identificados durante la fase de descubrimiento. Estas sesiones permitirán evaluar la percepción de los usuarios respecto al Landing Page, la aplicación web y móvil, verificando el interés por la solución, la comprensión de sus funcionalidades y la utilidad percibida de los beneficios ofrecidos.
+
 ### 6.3.1. Diseño de Entrevistas
+
+#### Segmento 1: Administradores de Instituciones Educativas
+
+**Objetivo de Validación**
+
+Validar si los responsables de la gestión académica consideran valiosa una solución que permita monitorear las condiciones ambientales y la ocupación de las aulas mediante dispositivos IoT.
+
+**Validación del Landing Page**
+
+* ¿La propuesta de valor de EduSpace le resultó clara después de navegar por la página?
+* ¿Qué beneficios de la plataforma logró identificar durante su recorrido por el Landing Page?
+* ¿Qué tan interesante le parece la solución presentada por EduSpace para su institución?
+* ¿Existe alguna información adicional que le hubiera gustado encontrar en la página?
+
+**User Flow 1: Consulta de estado general de aulas**
+
+1. Iniciar sesión.
+2. Acceder al Dashboard principal.
+3. Visualizar listado de aulas monitoreadas.
+4. Identificar aulas con estado Normal, Warning o Alert.
+6. Revisar indicadores de temperatura, humedad y ocupación.
+
+**User Flow 2: Consulta de Información Detallada de un Aula**
+1. Seleccionar un aula específica.
+2. Consultar información detallada del aula.
+3. Revisar historial de alertas.
+4. Identificar incidencias registradas.
+5. Evaluar acciones correctivas.
+
+**Preguntas de Validación**
+* ¿Qué problema considera que resuelve la plataforma?
+* ¿La información mostrada le permitiría tomar decisiones sobre la gestión de aulas?
+* ¿Qué tan útil considera visualizar las alertas ambientales en tiempo real?
+* ¿Existe alguna información adicional que esperaría encontrar?
+* En una escala del 1 al 5, ¿qué tan probable sería que utilizara una solución como EduSpace?
+
+#### Segmento 2: Docentes y auxiliares
+
+**Objetivo de Validación**
+
+Validar si docentes y auxiliares perciben valor en disponer de información en tiempo real sobre las condiciones ambientales y el estado de los espacios educativos.
+
+**Validación del Landing Page**
+
+* ¿Considera que la información presentada le permitió comprender claramente el propósito de la plataforma?
+* ¿Qué tan fácil le resultó entender cómo funciona EduSpace?
+* ¿Qué beneficios cree que podría aportar EduSpace al desarrollo de sus actividades académicas?
+* ¿Considera útil disponer de información en tiempo real sobre las condiciones y disponibilidad de las aulas?
+* ¿De qué manera cree que una solución como EduSpace podría mejorar su experiencia dentro de la institución?
+
+**User Flow 1: Consulta del Estado de un Aula**
+
+1. Iniciar sesión.
+2. Acceder al panel de espacios educativos.
+3. Seleccionar un aula.
+4. Consultar temperatura, humedad y ocupación.
+5. Verificar el estado actual del ambiente.
+
+**User Flow 2: Revisión de Alertas**
+1. Acceder al detalle de un aula.
+2. Revisar alertas activas.
+3. Consultar incidencias registradas.
+4. Identificar posibles condiciones que puedan afectar el desarrollo de clases.
+
+**Preguntas de Validación**
+* ¿La plataforma le parece fácil de utilizar?
+* ¿La información presentada resulta clara y comprensible?
+* ¿Considera útil conocer el estado de un aula antes de iniciar una actividad académica?
+* ¿Qué mejoras propondría para la plataforma?
+* En una escala del 1 al 5, ¿qué tan probable sería que utilizara EduSpace en su institución?
+
 ### 6.3.2. Registro de Entrevistas
 ### 6.3.3. Evaluaciones según heurísticas
 ## 6.4. Video About-the-Product
