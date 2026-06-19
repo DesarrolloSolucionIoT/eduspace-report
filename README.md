@@ -4079,6 +4079,80 @@ Validar si docentes y auxiliares perciben valor en disponer de información en t
 * En una escala del 1 al 5, ¿qué tan probable sería que utilizara EduSpace en su institución?
 
 ### 6.3.2. Registro de Entrevistas
+
+### Segmento objetivo #1: Administradores de instituciones educativas
+##### Datos del Entrevistado #1
+- **Nombre completo:** Victor Otto Reinoso Díaz
+- **Segmento Objetivo:** Administradores de instituciones educativas
+- **Edad:** 28
+- **Distrito:** Lurigancho - Chosica
+- **Duración:** 
+- **Screenshot del cuadro de video:** ![Entrevista3](/assets/chapter2/victor.png)
+- **URL del video (Microsoft Stream):** *[link](link)*
+
+**Resumen:** 
+
+
+##### Datos del Entrevistado #2
+- **Nombre completo:** Juan José Huamaní
+- **Segmento Objetivo:** Administradores de instituciones educativas
+- **Edad:** 27
+- **Distrito:** Huachipa  
+- **Duración:** 13:46
+- **Screenshot del cuadro de video:** ![Entrevista3](./assets/chapter2/juanjo.png)
+- **URL del video (Microsoft Stream):** *[link](link)*
+
+**Resumen:** 
+
+
+##### Datos del Entrevistado #3
+- **Nombre completo:** Jairo Anderson Escobar Coronado
+- **Segmento Objetivo:** Administradores de instituciones educativas
+- **Edad:** 27
+- **Distrito:** Miraflores
+- **Duración:** 13:46
+- **Screenshot del cuadro de video:** ![Entrevista3](/assets/chapter2/jairo.png)
+- **URL del video (Microsoft Stream):** *[link](link)*
+
+**Resumen:** 
+
+
+### Segmento objetivo #2: Docentes y auxiliares
+##### Datos del Entrevistado #1
+- **Nombre completo:** Mariano Melgar
+- **Segmento Objetivo:** Docentes y auxiliares
+- **Edad:** 30
+- **Distrito:** San Juan de Miraflores
+- **Duración:** 
+- **Screenshot del cuadro de video:** ![Entrevista3](/assets/chapter2/mariano.png)
+- **URL del video (Microsoft Stream):** *[link](link)*
+
+**Resumen:** 
+
+  
+##### Datos del Entrevistado #2
+- **Nombre completo:** Jostin Ninamango
+- **Segmento Objetivo:** Docentes y auxiliares
+- **Edad:** 25
+- **Distrito:** Surco
+- **Duración:** 
+- **Screenshot del cuadro de video:** ![Entrevista3](/assets/chapter2/jostin.png)
+- **URL del video (Microsoft Stream):** *[link](link)*
+
+**Resumen:** .
+
+
+##### Datos del Entrevistado #3
+- **Nombre completo:** Karina Baygorrea Paquiyauri
+- **Segmento Objetivo:** Docentes y auxiliares
+- **Edad:** 36
+- **Distrito:** Huamanga
+- **Duración:** 
+- **Screenshot del cuadro de video:** <img src="./assets/chapter2/karina.png" alt="Entrevista3" width="200"/>
+- **URL del video (Microsoft Stream):** *[link](link)*
+
+**Resumen:** 
+
 ### 6.3.3. Evaluaciones según heurísticas
 ## 6.4. Video About-the-Product
 
