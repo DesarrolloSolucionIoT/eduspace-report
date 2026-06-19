@@ -4002,6 +4002,12 @@ HTTP/1.1 201 Created
 
 <div style="page-break-after: always;"></div>
 
+## 6.3. Validation Interviews
+### 6.3.1. Diseño de Entrevistas
+### 6.3.2. Registro de Entrevistas
+### 6.3.3. Evaluaciones según heurísticas
+## 6.4. Video About-the-Product
+
 # Conclusiones
 
 ## Conclusiones y recomendaciones
