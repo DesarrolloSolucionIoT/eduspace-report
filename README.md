@@ -3789,7 +3789,25 @@ Durante el Sprint 1 se trabajo con liderazgo por aspecto y colaboraciones cruzad
 
 El Sprint 2 corresponde a la segunda iteración formal del ciclo 2026-1. Su propósito es incorporar el flujo de telemetría IoT real sobre el bounded context IoT Monitoring —cuyo scaffolding quedó listo en el Sprint 1— y habilitar las historias de visualización en tiempo real basadas en sensores (US01, US04, US11, US12, US16) que fueron diferidas explícitamente desde el Sprint 1. Las subsecciones a continuación documentan la planificación, la asignación de líderes y colaboradores por aspecto, el backlog del Sprint y las evidencias del Sprint Review.
 
-<!-- 6.2.2.1. Sprint Planning 2 — PENDIENTE (Jira SCRUM-50, responsable: Loli Ramirez, Camila Cristina). Insertar la sección aquí, antes de 6.2.2.2, replicando el cuadro de 6.2.1.1. El Sprint Goal y la velocidad definidos en el Planning alimentan las secciones 6.2.2.2 y 6.2.2.3. -->
+#### 6.2.2.1 Sprint Planning 2
+
+Para este Sprint 2, el equipo se ha enfocado en terminar el desarrollo de la cadena de telemetría en tiempo real de extremo a extremo sobre el bounded context IoT Monitoring. En este caso se ha considerado la simulación del dispositivo ESP32 (simulado en Wokwi) y la visualización en tiempo real de la telemetría en la Aplicación Web y Móvil mediante la Edge API y el Backend. La decisión responde directamente al objetivo del Sprint 1: una vez establecida la base operativa de la plataforma, el equipo ha priorizado completar el flujo IoT en los cuatro productos desarrollados (Edge API, Backend, Aplicación Web y Móvil) para entregar a los administradores y profesores una herramienta de monitoreo en tiempo real. La reunión del Sprint Planning se realizó el 1 de junio de 2026, siguiendo el formato de Scrum, y el cuadro sobre el mismo se presenta a continuación.
+
+
+| **Sprint #**                       | **Sprint 2** |
+| ---------------------------------- | ------------ |
+| **Sprint Planning Background**     |              |
+| Date                               | 2026-06-01   |
+| Time                               | 07:00 PM (GMT-5) |
+| Location                           | Google Meet  |
+| Prepared By                        | Loli Ramirez, Camila Cristina |
+| Attendees (to planning meeting)    | Alva Abanto, Luis Andrés <br> Antayhua Castillo, Josué Oscar <br> Loli Ramirez, Camila Cristina <br> Torres García, Andrés Alberto <br> Yalán Zhang, Angie Christina |
+| Sprint 1 – 2 Review Summary        | En el Sprint 1 se consolidó la línea base desplegada de la plataforma EduSpace: Landing Page publicada en GitHub Pages (ES/EN), Web Application con flujo de autenticación JWT operativo, y la RESTful API con los cuatro bounded contexts preexistentes —IAM, Space & Resource Management, Reservation & Scheduling y Breakdown Management— disponibles y validados con pruebas de humo. Adicionalmente, se mergeó a `main` el scaffolding del bounded context IoT Monitoring (estructura de carpetas, entidades de dominio y contratos REST stub documentados en Swagger), dejando la base lista para integrar telemetría real en este Sprint 2. |
+| Sprint 1 – 2 Retrospective Summary | Hemos notado, como equipo, que es una necesidad incrementar la comunicación para poder experimentar de forma conjunta los productos desarrollados. La solución determinada es planificar reuniones semanales para verificar los avances y asegurarnos de que cada uno es coherente con el otro. |
+| **Sprint Goal & User Stories**     |              |
+| Sprint 2 Goal                      | Nuestro enfoque está en completar la implementación del bounded context IoT Monitoring de extremo a extremo —Edge API, Web API, Web Application y aplicación móvil— cerrando la cadena de telemetría real: dispositivo ESP32 → Edge API → Web API → dashboard en tiempo real. Creemos que esto proporciona a los administradores una forma más eficaz de monitorear el estado de aulas y espacios en tiempo real, tomando decisiones pertinentes basadas en datos reales del dispositivo IoT. Lo confirmaremos cuando la cadena completa de telemetría esté desplegada en producción, los endpoints del bounded context IoT Monitoring respondan correctamente con autenticación JWT, y las lecturas de sensores sean visibles en tiempo real tanto en la Web Application como en la aplicación móvil. |
+| Sprint 2 Velocity                  | 40 Story Points. El equipo mantiene la velocidad de referencia de 40 SP demostrada en el Sprint 1, dado que el alcance del Sprint 2 —integración de telemetría real en cuatro plataformas (Edge API, Web API, Web Application y Mobile) más las historias diferidas US01, US04, US11, US12 y US16— es comparable en complejidad al Sprint anterior. |
+| Sum of Story Points                | 40 Story Points. |
 
 #### 6.2.2.2. Aspect Leaders and Collaborators
 
