@@ -4087,10 +4087,14 @@ Validar si docentes y auxiliares perciben valor en disponer de información en t
 - **Edad:** 28
 - **Distrito:** Lurigancho - Chosica
 - **Duración:** 
-- **Screenshot del cuadro de video:** ![Entrevista3](/assets/chapter2/victor.png)
+- **Screenshot del cuadro de video:** ![Entrevista3](/assets/chapter-VI/validation-interviews/otto.png)
 - **URL del video (Microsoft Stream):** *[link](link)*
 
-**Resumen:** 
+**Resumen:** El entrevistado señaló que comprendió claramente la propuesta de valor de EduSpace y la relacionó con la necesidad de mejorar la gestión de aulas mediante datos en tiempo real. Identificó como principales beneficios la optimización de espacios, la toma de decisiones basada en información actualizada y la detección temprana de problemas que podrían afectar las actividades académicas.
+
+Al interactuar con la aplicación, consideró útil la vista general de aulas monitoreadas y la posibilidad de identificar rápidamente estados como Normal, Warning o Alert. También valoró la consulta de indicadores de temperatura, humedad y ocupación, ya que estos datos podrían apoyar decisiones relacionadas con asignación de espacios y mantenimiento.
+
+Como recomendación, sugirió incluir indicadores de impacto, como estimaciones de ahorro de recursos o mejoras en el uso de aulas. Finalmente, indicó que utilizaría una solución como EduSpace en su institución y otorgó una valoración de 5/5.
 
 
 ##### Datos del Entrevistado #2
@@ -4102,7 +4106,11 @@ Validar si docentes y auxiliares perciben valor en disponer de información en t
 - **Screenshot del cuadro de video:** ![Entrevista3](./assets/chapter2/juanjo.png)
 - **URL del video (Microsoft Stream):** *[link](link)*
 
-**Resumen:** 
+**Resumen:** El entrevistado manifestó que la información presentada en el Landing Page fue clara y permitió comprender que EduSpace busca mejorar el control de espacios educativos mediante tecnología IoT. Destacó como beneficios principales el monitoreo continuo de aulas, la detección temprana de problemas y una mejor administración de los recursos disponibles.
+
+Durante la interacción con la aplicación, valoró especialmente la consulta del estado general de aulas y la revisión de alertas ambientales en tiempo real. Consideró que estas funcionalidades permitirían centralizar información que normalmente se encuentra dispersa entre diferentes áreas de la institución.
+
+Como mejora, recomendó mostrar con mayor detalle el funcionamiento de los dispositivos IoT e incluir indicadores relacionados con consumo energético y frecuencia de incidencias por aula. Finalmente, calificó con 4/5 su probabilidad de uso, señalando que la adopción dependería también del presupuesto y la facilidad de implementación.
 
 
 ##### Datos del Entrevistado #3
@@ -4114,7 +4122,11 @@ Validar si docentes y auxiliares perciben valor en disponer de información en t
 - **Screenshot del cuadro de video:** ![Entrevista3](/assets/chapter2/jairo.png)
 - **URL del video (Microsoft Stream):** *[link](link)*
 
-**Resumen:** 
+**Resumen:** El entrevistado indicó que comprendió fácilmente el propósito de EduSpace y lo asoció con la necesidad de contar con información en tiempo real para mejorar la gestión institucional. Identificó como beneficios principales el monitoreo de espacios, la detección temprana de incidencias y la generación de información útil para la planificación.
+
+Al interactuar con la aplicación, encontró valiosa la posibilidad de consultar información detallada por aula, revisar historial de alertas e identificar incidencias registradas. Consideró que los indicadores de ocupación y condiciones ambientales permitirían tomar decisiones más objetivas sobre el uso de los espacios.
+
+Como recomendación, sugirió incorporar reportes ejecutivos y métricas de rendimiento por aula para evaluar la eficiencia de cada espacio educativo. Finalmente, expresó una alta disposición a utilizar EduSpace y otorgó una valoración de 5/5.
 
 
 ### Segmento objetivo #2: Docentes y auxiliares
@@ -4127,7 +4139,11 @@ Validar si docentes y auxiliares perciben valor en disponer de información en t
 - **Screenshot del cuadro de video:** ![Entrevista3](/assets/chapter2/mariano.png)
 - **URL del video (Microsoft Stream):** *[link](link)*
 
-**Resumen:** 
+**Resumen:** El entrevistado indicó que el propósito de EduSpace fue fácil de comprender desde el Landing Page y destacó que la propuesta de monitorear aulas en tiempo real responde a problemas que experimenta con frecuencia. Considera especialmente valioso poder conocer las condiciones del aula antes de iniciar una clase, ya que en ocasiones ha encontrado ambientes con problemas de ventilación o equipos que no funcionan correctamente.
+
+Durante la navegación por la aplicación, encontró intuitivo el proceso de consulta del estado de las aulas y valoró positivamente la visualización de temperatura, humedad y ocupación. Asimismo, consideró útil la funcionalidad de alertas, ya que permitiría anticipar inconvenientes y reducir interrupciones durante las actividades académicas.
+
+Como mejora, sugirió incluir notificaciones personalizadas y acceso rápido a incidencias reportadas por otros docentes. Finalmente, calificó con 5/5 su intención de utilizar EduSpace en su institución.
 
   
 ##### Datos del Entrevistado #2
@@ -4136,10 +4152,14 @@ Validar si docentes y auxiliares perciben valor en disponer de información en t
 - **Edad:** 25
 - **Distrito:** Surco
 - **Duración:** 
-- **Screenshot del cuadro de video:** ![Entrevista3](/assets/chapter2/jostin.png)
+- **Screenshot del cuadro de video:** ![Entrevista3](/assets/chapter-VI/validation-interviews/jostin.png)
 - **URL del video (Microsoft Stream):** *[link](link)*
 
-**Resumen:** .
+**Resumen:** El entrevistado manifestó que la propuesta de valor de EduSpace fue clara y que los beneficios presentados resultan relevantes para la gestión diaria de los espacios educativos. Señaló que actualmente existe poca visibilidad sobre el estado de las aulas, lo que genera dificultades para coordinar actividades académicas y resolver incidencias oportunamente.
+
+Durante la validación de los flujos, destacó la utilidad de poder consultar rápidamente el estado de un aula y revisar alertas relacionadas con condiciones ambientales o problemas detectados. Considera que disponer de información en tiempo real permitiría una mejor coordinación entre docentes, auxiliares y personal administrativo.
+
+Como sugerencia, indicó que sería útil incorporar un historial de incidencias y un mecanismo para confirmar cuando un problema ha sido resuelto. En una escala del 1 al 5, calificó con 4/5 su intención de utilizar la plataforma.
 
 
 ##### Datos del Entrevistado #3
@@ -4151,7 +4171,11 @@ Validar si docentes y auxiliares perciben valor en disponer de información en t
 - **Screenshot del cuadro de video:** <img src="./assets/chapter2/karina.png" alt="Entrevista3" width="200"/>
 - **URL del video (Microsoft Stream):** *[link](link)*
 
-**Resumen:** 
+**Resumen:** La entrevistada señaló que comprendió fácilmente el funcionamiento de EduSpace y considera que la plataforma aborda una necesidad real relacionada con la organización y las condiciones de los espacios educativos. Destacó que frecuentemente debe adaptarse a cambios de aula o enfrentar problemas de temperatura y ruido que afectan el desarrollo de las clases.
+
+Al interactuar con la aplicación, encontró sencilla la consulta de información del aula y valoró especialmente las alertas preventivas. Considera que conocer el estado del ambiente antes de ingresar le permitiría planificar mejor sus actividades y evitar pérdidas de tiempo.
+
+Como recomendación, sugirió agregar indicadores visuales más detallados sobre la calidad del ambiente y la disponibilidad de recursos dentro del aula. Finalmente, indicó que estaría dispuesta a utilizar una solución como EduSpace y otorgó una valoración de 5/5.
 
 ### 6.3.3. Evaluaciones según heurísticas
 ## 6.4. Video About-the-Product
