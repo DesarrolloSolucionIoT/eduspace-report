@@ -4475,13 +4475,13 @@ En cuanto a la Services Documentation Evidence del Sprint 2 (sec. 6.2.2.7), se c
 
 | Campo | Valor |
 | --- | --- |
-| Título | upc-pre-202610-1asi0572-6776-edusolutions-about-the-team |
-| Duración (timing) | [mm:ss] |
-| URL Microsoft Stream/Clipchamp | [pegar enlace] |
+| Título | upc-pre-202610-1asi0572-6776-edusolutions-about-the-team-av2 |
+| Duración (timing) | [08:16] |
+| URL Microsoft Stream/Clipchamp | [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202110385_upc_edu_pe/IQDuD5VTzYjGS7IQQXfDML_HAQKjnzrNGR7m5EbPLfrUlUM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=EC1Uxc](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202110385_upc_edu_pe/IQDuD5VTzYjGS7IQQXfDML_HAQKjnzrNGR7m5EbPLfrUlUM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=EC1Uxc) |
 
 **Screenshot del video**
 
-![Video About-the-Team — captura]()
+![Video About-the-Team — captura](asset/abt.png)
 
 <div style="page-break-after: always;"></div>
 
