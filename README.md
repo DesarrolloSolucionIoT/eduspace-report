@@ -4243,7 +4243,129 @@ Como recomendación, sugirió agregar indicadores visuales más detallados sobre
 
 ### 6.3.3. Evaluaciones según heurísticas
 
-<!-- 6.3.3 Evaluaciones según heurísticas — PENDIENTE (Jira SCRUM-61, responsable: Loli Ramirez, Camila Cristina). Insertar aquí la evaluación heurística (p. ej. heurísticas de Nielsen) de los productos digitales: tabla de hallazgos por heurística y severidad, con capturas de evidencia. -->
+### UX Heuristics & Principles Evaluation
+
+#### Usability – Inclusive Design – Information Architecture
+
+
+**CARRERA**: Ingeniería de Software
+
+**CURSO**: Desarrollo de Soluciones IoT
+
+**SECCIÓN**: 6776
+
+**PROFESORES**: Todos
+
+**AUDITOR**: Equipo EduSolutions - Camila Loli
+
+**CLIENTE(S)**: Equipo EduSolutions
+
+
+---
+#### SITE o APP A EVALUAR
+1. EduSpace Web Application - [https://eduspace-frontend-web-app.vercel.app/](https://eduspace-frontend-web-app.vercel.app/)
+2. EduSpace Mobile App - [https://appdistribution.firebase.google.com/testerapps/1:764371962041:android:85d37d3666cc6d94887368/releases/4kek8ah5bheg0?utm_source=firebase-console](https://appdistribution.firebase.google.com/testerapps/1:764371962041:android:85d37d3666cc6d94887368/releases/4kek8ah5bheg0?utm_source=firebase-console)
+
+#### TAREAS A EVALUAR
+
+**Tareas incluidas:**
+1. Consulta del estado en tiempo real de un aula (temperatura, humedad, ocupación)
+2. Revisión de alertas activas y su detalle
+3. Registro de una incidencia de avería
+4. Navegación entre aulas en el dashboard IoT
+5. Visualización de métricas IoT en la aplicación móvil
+
+**Tareas no incluidas:**
+1. Flujo de autenticación (IAM)
+2. Gestión de reservas y horarios
+3. Gestión de espacios y recursos.
+
+#### ESCALA DE SEVERIDAD
+
+*Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:*
+
+| Nivel | Descripción                                                                                                                                                                                          |
+| ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1     | Problema superficial: puede ser fácilmente superador por el usuario ó ocurre con muy poco<br>frecuencia. No necesita ser arreglado a no ser que exista disponibilidad de tiempo.                     |
+| 2     | Problema menor: puede ocurrir un poco más frecuentemente o es un poco más difícil de<br>superar para el usuario. Se le debería asignar una prioridad baja resolverlo de cara al siguiente<br>release |
+| 3     | Problema mayor: ocurre frecuentemente o los usuarios no son capaces de resolverlos. Es<br>importante que sean corregidos y se les debe asignar una prioridad alta.                                   |
+| 4     | Problema muy grave: un error de gran impacto que impide al usuario continuar con el uso de<br>la herramienta. Es imperativo que sea corregido antes del lanzamiento.                                 |
+
+#### TABLA RESUMEN
+
+| #   | Problema                                                                                                                                        | Escala de severidad | Heurística / Principio violada(o)             |
+| --- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | --------------------------------------------- |
+| 1   | El docente que reportó una avería no recibe retroalimentación cuando el administrador la resuelve.                                              | 3                   | Visibilidad del estado del sistema            |
+| 2   | No existen notificaciones proactivas cuando un sensor supera un umbral crítico.                                                                 | 2                   | Flexibilidad y eficiencia                     |
+| 3   | Los valores numéricos de los sensores se muestran sin escala de referencia visual que indique si el rango es normal, una advertencia o crítico. | 2                   | Coincidencia entre el sistema y el mundo real |
+| 4   | Los docentes no pueden consultar rápidamente las incidencias reportadas por otros colegas para el mismo recurso.                                | 2                   | Reconocimiento antes que recuerdo             |
+
+
+#### DESCRIPCIÓN DE PROBLEMAS
+
+
+**Problema #1:** El docente que reportó una avería no recibe retroalimentación cuando el administrador la resuelve.
+
+
+
+**Severidad:** 3
+Heurística violada: Visibilidad del estado del sistema
+
+**Problema:** Al registrar una incidencia de avería en un recurso, el docente no recibe notificación alguna ni indicador visible cuando el administrador marca el problema como resuelto. El usuario queda sin información sobre el ciclo de vida del reporte que él mismo generó.
+
+![Problema 1](assets/chapter-VI/heuristicas/problema1.png)
+
+**Recomendación:** Incorporar un indicador de estado por incidencia (Pendiente / En revisión / Resuelto) visible desde la vista del docente y enviar una notificación en la aplicación cuando el estado cambie a Resuelto.
+
+
+
+---
+
+**Problema #2:** No existen notificaciones proactivas cuando un sensor supera un umbral crítico.
+
+
+**Severidad:** 2
+Heurística violada: Flexibilidad y eficiencia
+
+**Problema:** Cuando un sensor supera un umbral configurado, el sistema no emite ninguna notificación proactiva. Tanto administradores como docentes deben ingresar activamente al dashboard para enterarse de una alerta, lo que reduce la utilidad del monitoreo en tiempo real.
+
+![Problema 2](assets/chapter-VI/heuristicas/problema2.png)
+
+
+**Recomendación:** Implementar notificaciones push en la aplicación móvil y notificaciones en la Aplicación Web que se activen automáticamente al cruzar un umbral, esto permitirá al usuario actuar sin necesidad de monitorear la pantalla de forma continua.
+
+
+---
+
+**Problema #3:** Los valores numéricos de los sensores se muestran sin escala de referencia visual que indique si el rango es normal, una advertencia o crítico.
+
+
+**Severidad:** 2
+Heurística violada: Coincidencia entre el sistema y el mundo real
+
+**Problema:** El dashboard muestra los valores de temperatura y humedad como cifras numéricas crudas sin ningún indicador visual que comunique si ese valor es aceptable, de advertencia o crítico. El usuario debe recordar o conocer de antemano los umbrales para interpretar la lectura correctamente.
+
+![Problema 3](assets/chapter-VI/heuristicas/problema3.png)
+
+
+**Recomendación:** Acompañar cada valor numérico con un rango de los límites que puede llegar la temperatura y humedad, sin requerir que recuerde los límites configurados.
+
+
+---
+
+**Problema #4:** Los docentes no pueden consultar rápidamente las incidencias reportadas por otros colegas para el mismo recurso.
+
+
+**Severidad:** 2
+Heurística violada: Reconocimiento antes que recuerdo
+
+
+**Problema:** Un docente que va a utilizar un aula no puede ver fácilmente si existen incidencias reportadas previamente por otros colegas para ese mismo espacio. La información está disponible en el sistema, pero no se presenta en la vista del aula sin una navegación adicional.
+
+![Problema 4](assets/chapter-VI/heuristicas/problema4.png)
+
+**Recomendación:** Mostrar en la vista de detalle de cada aula un resumen de incidencias activas o recientes, de modo que el docente las reconozca al primer vistazo sin tener que recordar dónde buscarlas ni navegar a una sección separada.
+
 
 <div style="page-break-after: always;"></div>
 
