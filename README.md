@@ -82,6 +82,41 @@ Para esta segunda entrega, el equipo decidió asignar tareas específicas a cada
 **Contribución de cada integrante en TB1:**
 ![insights TB1](/assets/chapter-VI/insights.png)
 
+## AV2:
+
+Para esta segunda entrega, el equipo decidió asignar tareas específicas a cada integrante. En esta ocasión, las asignaciones fueron:
+
+* Sprint 2
+* Edge API: Luis Alva
+* Frontend: Andres Torres, Oscar Antayhua
+* Backend: Andres Torres, Oscar Antayhua, Camila Loli
+* Mobile: Camila Loli, Oscar Antayhua
+* Entrevistas: Angie Yalán
+
+**Contribución de cada integrante en AV2:**
+
+**Backend**
+
+![Backend Collaboration](assets/chapter-VI/collab-sprint2/backend.png)
+
+**Frontend**
+
+![Frontend Collaboration](assets/chapter-VI/collab-sprint2/frontend.png)
+
+**Mobile**
+
+![Mobile Collaboration](assets/chapter-VI/collab-sprint2/mobile.png)
+
+**Edge API**
+
+![Edge API Collaboration](assets/chapter-VI/collab-sprint2/edgeApi.png)
+
+**Report**
+
+![Report Collaboration](assets/chapter-VI/collab-sprint2/report.png)
+
+
+
 <div style="page-break-after: always;"></div>
 
 ## Contenido
