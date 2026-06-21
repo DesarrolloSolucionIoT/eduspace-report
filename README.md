@@ -4291,7 +4291,7 @@ Como sugerencia, indicó que sería útil incorporar un historial de incidencias
 - **Edad:** 28
 - **Distrito:** Santa Anita
 - **Duración:** 
-- **Screenshot del cuadro de video:** <img src="./assets/chapter-VI/validation-interviews/rosario.png" alt="Entrevista3" width="200"/>
+- **Screenshot del cuadro de video:** <img src="./assets/chapter-VI/validation-interviews/rosario.png" alt="Entrevista3" />
 - **URL del video (Microsoft Stream):** *[https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312504_upc_edu_pe/IQDXSZ74vfxqTZVkq38DTC_zAZKumplXSeyH2oarYnCk67Y?e=wTaRxH](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312504_upc_edu_pe/IQDXSZ74vfxqTZVkq38DTC_zAZKumplXSeyH2oarYnCk67Y?e=wTaRxH)*
 
 **Resumen:** La entrevistada señaló que comprendió fácilmente el funcionamiento de EduSpace y considera que la plataforma aborda una necesidad real relacionada con la organización y las condiciones de los espacios educativos. Destacó que frecuentemente debe adaptarse a cambios de aula o enfrentar problemas de temperatura y ruido que afectan el desarrollo de las clases.
@@ -4476,8 +4476,8 @@ En cuanto a la Services Documentation Evidence del Sprint 2 (sec. 6.2.2.7), se c
 | Campo | Valor |
 | --- | --- |
 | Título | upc-pre-202610-1asi0572-6776-edusolutions-about-the-team-av2 |
-| Duración (timing) | [08:16] |
-| URL Microsoft Stream/Clipchamp | [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202110385_upc_edu_pe/IQDuD5VTzYjGS7IQQXfDML_HAQKjnzrNGR7m5EbPLfrUlUM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=EC1Uxc](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202110385_upc_edu_pe/IQDuD5VTzYjGS7IQQXfDML_HAQKjnzrNGR7m5EbPLfrUlUM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=EC1Uxc) |
+| Duración (timing) | [08:26] |
+| URL Microsoft Stream/Clipchamp | [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312504_upc_edu_pe/IQBZ2Df3mn5PSYwCHE880KsEARXUR5k7t7VnRfxU52wTGEw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=00Enma](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312504_upc_edu_pe/IQBZ2Df3mn5PSYwCHE880KsEARXUR5k7t7VnRfxU52wTGEw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=00Enma) |
 
 **Screenshot del video**
 
