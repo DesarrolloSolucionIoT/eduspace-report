@@ -213,14 +213,26 @@ Para esta segunda entrega, el equipo decidió asignar tareas específicas a cada
       - [6.2.1.8. Software Deployment Evidence for Sprint Review.](#6218-software-deployment-evidence-for-sprint-review)
       - [6.2.1.9. Team Collaboration Insights during Sprint.](#6219-team-collaboration-insights-during-sprint)
     - [6.2.2. Sprint 2](#622-sprint-2)
+      - [6.2.2.1. Sprint Planning 2](#6221-sprint-planning-2)
+      - [6.2.2.2. Aspect Leaders and Collaborators](#6222-aspect-leaders-and-collaborators)
+      - [6.2.2.3. Sprint Backlog 2](#6223-sprint-backlog-2)
+      - [6.2.2.4. Development Evidence for Sprint Review.](#6224-development-evidence-for-sprint-review)
       - [6.2.2.5. Testing Suite Evidence for Sprint Review.](#6225-testing-suite-evidence-for-sprint-review)
+      - [6.2.2.6. Execution Evidence for Sprint Review.](#6226-execution-evidence-for-sprint-review)
       - [6.2.2.7. Services Documentation Evidence for Sprint Review.](#6227-services-documentation-evidence-for-sprint-review)
+      - [6.2.2.8. Software Deployment Evidence for Sprint Review.](#6228-software-deployment-evidence-for-sprint-review)
+      - [6.2.2.9. Team Collaboration Insights during Sprint.](#6229-team-collaboration-insights-during-sprint)
+  - [6.3. Validation Interviews](#63-validation-interviews)
+    - [6.3.1. Diseño de Entrevistas](#631-diseño-de-entrevistas)
+    - [6.3.2. Registro de Entrevistas](#632-registro-de-entrevistas)
+    - [6.3.3. Evaluaciones según heurísticas](#633-evaluaciones-según-heurísticas)
+  - [6.4. Video About-the-Product](#64-video-about-the-product)
 - [Conclusiones](#conclusiones)
   - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
+  - [Video About-the-Team](#video-about-the-team)
 - [Bibliografía](#bibliografía)
 - [Anexos](#anexos)
-  - [Anexo A: Estructura para la sección Student Outcome](#anexo-a-estructura-para-la-sección-student-outcome)
-  - [Anexo B: Videos de Exposiciones](#anexo-b-videos-de-exposiciones)
+  - [Anexo A: Videos de Exposiciones](#anexo-a-videos-de-exposiciones)
 
 <div style="page-break-after: always;"></div>
 
@@ -4027,7 +4039,7 @@ Validar si los responsables de la gestión académica consideran valiosa una sol
 2. Acceder al Dashboard principal.
 3. Visualizar listado de aulas monitoreadas.
 4. Identificar aulas con estado Normal, Warning o Alert.
-6. Revisar indicadores de temperatura, humedad y ocupación.
+5. Revisar indicadores de temperatura, humedad y ocupación.
 
 **User Flow 2: Consulta de Información Detallada de un Aula**
 1. Seleccionar un aula específica.
@@ -4178,7 +4190,29 @@ Al interactuar con la aplicación, encontró sencilla la consulta de informació
 Como recomendación, sugirió agregar indicadores visuales más detallados sobre la calidad del ambiente y la disponibilidad de recursos dentro del aula. Finalmente, indicó que estaría dispuesta a utilizar una solución como EduSpace y otorgó una valoración de 5/5.
 
 ### 6.3.3. Evaluaciones según heurísticas
+
+<!-- 6.3.3 Evaluaciones según heurísticas — PENDIENTE (Jira SCRUM-61, responsable: Loli Ramirez, Camila Cristina). Insertar aquí la evaluación heurística (p. ej. heurísticas de Nielsen) de los productos digitales: tabla de hallazgos por heurística y severidad, con capturas de evidencia. -->
+
+<div style="page-break-after: always;"></div>
+
 ## 6.4. Video About-the-Product
+
+<!-- Jira SCRUM-62, responsable: Yalán Zhang, Angie Christina. Completar los campos marcados con [ ... ] antes de la entrega AV2. Reemplazar el screenshot por el archivo real. Ver Anexo C del enunciado: "Indicaciones para secciones que incluyen Videos". -->
+
+**Datos del video**
+
+| Campo | Valor |
+| --- | --- |
+| Título | upc-pre-202610-1asi0572-6776-edusolutions-about-the-product |
+| Duración (timing) | [mm:ss] |
+| URL Microsoft Stream/Clipchamp | [pegar enlace] |
+| URL YouTube (para incrustar en el Landing Page) | [pegar enlace] |
+
+**Screenshot del video**
+
+![Video About-the-Product — captura]()
+
+<div style="page-break-after: always;"></div>
 
 # Conclusiones
 
@@ -4197,6 +4231,24 @@ Finalmente, respecto al Sprint Backlog 1 (sec. 6.2.1.3), se confirmó que priori
 Respecto a la Testing Suite Evidence del Sprint 2 (sec. 6.2.2.5), se concluye que adoptar Test-Driven Development en la EduSpace Edge API —con 52 casos automatizados distribuidos en pruebas unitarias, de integración y de contrato— permitió validar no solo la lógica de dominio (evaluación local de alertas y normalización a UTC), sino también los escenarios de resiliencia propios del Edge Computing: el almacenamiento en búfer de lecturas ante la caída del backend y el reenvío idempotente durante los reintentos. Verificar estos comportamientos de forma automatizada brinda confianza en que el dispositivo de aula continuará operando y sin pérdida de datos durante cortes de conectividad, y se recomienda extender la suite con pruebas de extremo a extremo contra el receptor real del backend en futuras iteraciones.
 
 En cuanto a la Services Documentation Evidence del Sprint 2 (sec. 6.2.2.7), se concluye que formalizar la API de la Edge mediante un contrato OpenAPI 3.0.3, una colección Postman ejecutable y una guía de integración para el backend redujo el acoplamiento entre los equipos de edge y de nube: el contrato fija el formato de las lecturas y los códigos de respuesta, mientras que la guía explicita la semántica de reenvío (idempotencia por `(device_id, reading_id)`, autenticación por `X-Edge-Key` y reintentos), eliminando ambigüedades en la integración. Se recomienda mantener el contrato como única fuente de verdad y versionarlo junto con el firmware del ESP32 para preservar la compatibilidad establecida en la ruta `/api/v1`.
+
+<div style="page-break-after: always;"></div>
+
+## Video About-the-Team
+
+<!-- Responsable: [asignar]. El Video About-the-Team recopila los testimonios de cada integrante sobre el trabajo en equipo, en coherencia con el Student Outcome (ABET – EAC – SO 5). Completar los campos marcados con [ ... ] antes de la entrega AV2. Reemplazar el screenshot por el archivo real. Ver Anexo C del enunciado: "Indicaciones para secciones que incluyen Videos". -->
+
+**Datos del video**
+
+| Campo | Valor |
+| --- | --- |
+| Título | upc-pre-202610-1asi0572-6776-edusolutions-about-the-team |
+| Duración (timing) | [mm:ss] |
+| URL Microsoft Stream/Clipchamp | [pegar enlace] |
+
+**Screenshot del video**
+
+![Video About-the-Team — captura]()
 
 <div style="page-break-after: always;"></div>
 
