@@ -4481,7 +4481,7 @@ En cuanto a la Services Documentation Evidence del Sprint 2 (sec. 6.2.2.7), se c
 
 **Screenshot del video**
 
-![Video About-the-Team — captura](asset/abt.png)
+![Video About-the-Team — captura](assets/images/abt.png)
 
 <div style="page-break-after: always;"></div>
 
