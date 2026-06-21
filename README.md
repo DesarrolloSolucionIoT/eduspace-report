@@ -4187,7 +4187,7 @@ Validar si docentes y auxiliares perciben valor en disponer de información en t
 - **Distrito:** Lurigancho - Chosica
 - **Duración:** 
 - **Screenshot del cuadro de video:** ![Entrevista3](/assets/chapter-VI/validation-interviews/otto.png)
-- **URL del video (Microsoft Stream):** *[link](link)*
+- **URL del video (Microsoft Stream):** *[https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312504_upc_edu_pe/IQDXSZ74vfxqTZVkq38DTC_zAZKumplXSeyH2oarYnCk67Y?e=wTaRxH](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312504_upc_edu_pe/IQDXSZ74vfxqTZVkq38DTC_zAZKumplXSeyH2oarYnCk67Y?e=wTaRxH)*
 
 **Resumen:** El entrevistado señaló que comprendió claramente la propuesta de valor de EduSpace y la relacionó con la necesidad de mejorar la gestión de aulas mediante datos en tiempo real. Identificó como principales beneficios la optimización de espacios, la toma de decisiones basada en información actualizada y la detección temprana de problemas que podrían afectar las actividades académicas.
 
@@ -4202,8 +4202,8 @@ Como recomendación, sugirió incluir indicadores de impacto, como estimaciones 
 - **Edad:** 27
 - **Distrito:** Huachipa  
 - **Duración:** 13:46
-- **Screenshot del cuadro de video:** ![Entrevista3](./assets/chapter2/juanjo.png)
-- **URL del video (Microsoft Stream):** *[link](link)*
+- **Screenshot del cuadro de video:** ![Entrevista3](./assets/chapter-VI/validation-interviews/juanjo.png)
+- **URL del video (Microsoft Stream):** *[https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312504_upc_edu_pe/IQDXSZ74vfxqTZVkq38DTC_zAZKumplXSeyH2oarYnCk67Y?e=wTaRxH](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312504_upc_edu_pe/IQDXSZ74vfxqTZVkq38DTC_zAZKumplXSeyH2oarYnCk67Y?e=wTaRxH)*
 
 **Resumen:** El entrevistado manifestó que la información presentada en el Landing Page fue clara y permitió comprender que EduSpace busca mejorar el control de espacios educativos mediante tecnología IoT. Destacó como beneficios principales el monitoreo continuo de aulas, la detección temprana de problemas y una mejor administración de los recursos disponibles.
 
@@ -4219,7 +4219,7 @@ Como mejora, recomendó mostrar con mayor detalle el funcionamiento de los dispo
 - **Distrito:** Miraflores
 - **Duración:** 13:46
 - **Screenshot del cuadro de video:** ![Entrevista3](/assets/chapter2/jairo.png)
-- **URL del video (Microsoft Stream):** *[link](link)*
+- **URL del video (Microsoft Stream):** *[https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312504_upc_edu_pe/IQDXSZ74vfxqTZVkq38DTC_zAZKumplXSeyH2oarYnCk67Y?e=wTaRxH](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312504_upc_edu_pe/IQDXSZ74vfxqTZVkq38DTC_zAZKumplXSeyH2oarYnCk67Y?e=wTaRxH)*
 
 **Resumen:** El entrevistado indicó que comprendió fácilmente el propósito de EduSpace y lo asoció con la necesidad de contar con información en tiempo real para mejorar la gestión institucional. Identificó como beneficios principales el monitoreo de espacios, la detección temprana de incidencias y la generación de información útil para la planificación.
 
@@ -4235,8 +4235,8 @@ Como recomendación, sugirió incorporar reportes ejecutivos y métricas de rend
 - **Edad:** 30
 - **Distrito:** San Juan de Miraflores
 - **Duración:** 
-- **Screenshot del cuadro de video:** ![Entrevista3](/assets/chapter2/mariano.png)
-- **URL del video (Microsoft Stream):** *[link](link)*
+- **Screenshot del cuadro de video:** ![Entrevista3](/assets/chapter-VI/validation-interviews/mariano.png)
+- **URL del video (Microsoft Stream):** *[https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312504_upc_edu_pe/IQDXSZ74vfxqTZVkq38DTC_zAZKumplXSeyH2oarYnCk67Y?e=wTaRxH](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312504_upc_edu_pe/IQDXSZ74vfxqTZVkq38DTC_zAZKumplXSeyH2oarYnCk67Y?e=wTaRxH)*
 
 **Resumen:** El entrevistado indicó que el propósito de EduSpace fue fácil de comprender desde el Landing Page y destacó que la propuesta de monitorear aulas en tiempo real responde a problemas que experimenta con frecuencia. Considera especialmente valioso poder conocer las condiciones del aula antes de iniciar una clase, ya que en ocasiones ha encontrado ambientes con problemas de ventilación o equipos que no funcionan correctamente.
 
@@ -4252,7 +4252,7 @@ Como mejora, sugirió incluir notificaciones personalizadas y acceso rápido a i
 - **Distrito:** Surco
 - **Duración:** 
 - **Screenshot del cuadro de video:** ![Entrevista3](/assets/chapter-VI/validation-interviews/jostin.png)
-- **URL del video (Microsoft Stream):** *[link](link)*
+- **URL del video (Microsoft Stream):** *[https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312504_upc_edu_pe/IQDXSZ74vfxqTZVkq38DTC_zAZKumplXSeyH2oarYnCk67Y?e=wTaRxH](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312504_upc_edu_pe/IQDXSZ74vfxqTZVkq38DTC_zAZKumplXSeyH2oarYnCk67Y?e=wTaRxH)*
 
 **Resumen:** El entrevistado manifestó que la propuesta de valor de EduSpace fue clara y que los beneficios presentados resultan relevantes para la gestión diaria de los espacios educativos. Señaló que actualmente existe poca visibilidad sobre el estado de las aulas, lo que genera dificultades para coordinar actividades académicas y resolver incidencias oportunamente.
 
@@ -4268,7 +4268,7 @@ Como sugerencia, indicó que sería útil incorporar un historial de incidencias
 - **Distrito:** Santa Anita
 - **Duración:** 
 - **Screenshot del cuadro de video:** <img src="./assets/chapter-VI/validation-interviews/rosario.png" alt="Entrevista3" width="200"/>
-- **URL del video (Microsoft Stream):** *[link](link)*
+- **URL del video (Microsoft Stream):** *[https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312504_upc_edu_pe/IQDXSZ74vfxqTZVkq38DTC_zAZKumplXSeyH2oarYnCk67Y?e=wTaRxH](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312504_upc_edu_pe/IQDXSZ74vfxqTZVkq38DTC_zAZKumplXSeyH2oarYnCk67Y?e=wTaRxH)*
 
 **Resumen:** La entrevistada señaló que comprendió fácilmente el funcionamiento de EduSpace y considera que la plataforma aborda una necesidad real relacionada con la organización y las condiciones de los espacios educativos. Destacó que frecuentemente debe adaptarse a cambios de aula o enfrentar problemas de temperatura y ruido que afectan el desarrollo de las clases.
 
@@ -4413,13 +4413,13 @@ Heurística violada: Reconocimiento antes que recuerdo
 | Campo | Valor |
 | --- | --- |
 | Título | upc-pre-202610-1asi0572-6776-edusolutions-about-the-product |
-| Duración (timing) | [mm:ss] |
-| URL Microsoft Stream/Clipchamp | [pegar enlace] |
-| URL YouTube (para incrustar en el Landing Page) | [pegar enlace] |
+| Duración (timing) | 3:40 |
+| URL Microsoft Stream/Clipchamp | [https://upcedupe-my.sharepoint.com/:l:/g/personal/u202312504_upc_edu_pe/JABq1Tk15HtaSqVGyJ4LGDFXAXKjrk2rXKsj0pI6lrjvc5M?e=lWvz7G](https://upcedupe-my.sharepoint.com/:l:/g/personal/u202312504_upc_edu_pe/JABq1Tk15HtaSqVGyJ4LGDFXAXKjrk2rXKsj0pI6lrjvc5M?e=lWvz7G) |
+
 
 **Screenshot del video**
 
-![Video About-the-Product — captura]()
+![Video About-the-Product — captura](assets/chapter-VI/sprint-2/web-app/iot/dashboard-realtime.png)
 
 <div style="page-break-after: always;"></div>
 
