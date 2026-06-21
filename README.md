@@ -4018,6 +4018,40 @@ HTTP/1.1 201 Created
 | DesarrolloSolucionIoT/eduspace-edge-api | main | 6829be9 | [Spec Kit] Add implementation plan and design artifacts | Incluye el contrato OpenAPI `sensor-readings.openapi.yaml`. | 2026-05-30 |
 | DesarrolloSolucionIoT/eduspace-edge-api | main | 687d0c2 | docs: add Wokwi ESP32 simulation wired to the edge API | Documenta la simulación Wokwi del ESP32 conectada al Edge API. | 2026-06-11 |
 
+#### 6.2.2.9. Team Collaboration Insights during Sprint.
+
+Durante el Sprint 2 se trabajó acorde a la matriz LACX. En el siguiente cuadro se mostrará la contribución principal de cada integrante y su respectiva colaboración demostrada en GitHub.
+
+| **Integrante**                 | **Actividad principal en el Sprint 2**                                                                                                                                                      |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Alva Abanto, Luis Andrés       | Desarrollo del Edge API y solución IoT. Participación en la documentación del Sprint 2.                                                                                                     |
+| Antayhua Castillo, Josué Oscar | Desarrollo del modelo del mobile, y actualización del frontend con la sincronización del backend respecto a la Edge API. Participación en la documentación del Sprint 2.                    |
+| Loli Ramirez, Camila Cristina  | Refactorización del BC IoT Monitoring del backend, y desarrollo del mobile para que esté sincronizado con la Edge API, el frontend y el backend. Participación en la documentación del Sprint 2. |
+| Torres García, Andrés Alberto  | Implementación de migraciones y verificaciones en el backend y su despliegue en producción, y remodelación parcial del frontend.                                                                 |
+| Yalán Zhang, Angie Christina   | Documentación de entrevistas. Participación en la documentación del Sprint 2.                                                                                                               |
+
+**Evidencia de Colaboración**
+
+**Backend**
+
+![Backend Collaboration](assets/chapter-VI/collab-sprint2/backend.png)
+
+**Frontend**
+
+![Frontend Collaboration](assets/chapter-VI/collab-sprint2/frontend.png)
+
+**Mobile**
+
+![Mobile Collaboration](assets/chapter-VI/collab-sprint2/mobile.png)
+
+**Edge API**
+
+![Edge API Collaboration](assets/chapter-VI/collab-sprint2/edgeApi.png)
+
+**Report**
+
+![Report Collaboration](assets/chapter-VI/collab-sprint2/report.png)
+
 <div style="page-break-after: always;"></div>
 
 ## 6.3. Validation Interviews
