@@ -4286,12 +4286,12 @@ Como sugerencia, indicó que sería útil incorporar un historial de incidencias
 
 
 ##### Datos del Entrevistado #3
-- **Nombre completo:** Karina Baygorrea Paquiyauri
+- **Nombre completo:** Rosario Domador
 - **Segmento Objetivo:** Docentes y auxiliares
-- **Edad:** 36
-- **Distrito:** Huamanga
+- **Edad:** 28
+- **Distrito:** Santa Anita
 - **Duración:** 
-- **Screenshot del cuadro de video:** <img src="./assets/chapter2/karina.png" alt="Entrevista3" width="200"/>
+- **Screenshot del cuadro de video:** <img src="./assets/chapter-VI/validation-interviews/rosario.png" alt="Entrevista3" width="200"/>
 - **URL del video (Microsoft Stream):** *[link](link)*
 
 **Resumen:** La entrevistada señaló que comprendió fácilmente el funcionamiento de EduSpace y considera que la plataforma aborda una necesidad real relacionada con la organización y las condiciones de los espacios educativos. Destacó que frecuentemente debe adaptarse a cambios de aula o enfrentar problemas de temperatura y ruido que afectan el desarrollo de las clases.
