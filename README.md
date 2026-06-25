@@ -84,7 +84,7 @@ Para esta segunda entrega, el equipo decidió asignar tareas específicas a cada
 
 ## AV2:
 
-Para esta segunda entrega, el equipo decidió asignar tareas específicas a cada integrante. En esta ocasión, las asignaciones fueron:
+Para esta tercera entrega, el equipo decidió asignar tareas específicas a cada integrante. En esta ocasión, las asignaciones fueron:
 
 * Sprint 2
 * Edge API: Luis Alva
@@ -4007,6 +4007,42 @@ $ pytest -q
 | DesarrolloSolucionIoT/eduspace-edge-api | main | a807571 | docs: ratify constitution v1.0.0 (DDD, TDD, code quality, IoT resilience, error handling) | Ratifica TDD como principio rector de las pruebas del edge. | 2026-05-30 |
 | DesarrolloSolucionIoT/eduspace-edge-api | main | 6f6dcde | feat: authenticate upstream forwarding with X-Edge-Key header | Añade la verificación del header X-Edge-Key, cubierta por pruebas unitarias del forwarder. | 2026-06-06 |
 
+#### 6.2.2.6. Execution Evidence for Sprint Review.
+
+En el Sprint 2 se alcanzó la ejecución verificada de la cadena de telemetría IoT de extremo a extremo, reemplazando los datos mock del Sprint 1 por lecturas reales provenientes del dispositivo ESP32 simulado en Wokwi. Las principales vistas implementadas y actualizadas durante este Sprint se resumen a continuación.
+
+**Web Application — Dashboard IoT Monitoring (telemetría real)**
+
+El dashboard de monitoreo IoT presenta el estado del Aula 101 con datos en tiempo real del dispositivo `esp32-aula-101`: temperatura (26.1 °C), humedad (61 %) y ocupación (Libre). El indicador "En vivo · Platform API" confirma que la información proviene del backend a través de la cadena ESP32 → Edge API → Web API. Se incluyen gráficos de evolución temporal de los tres indicadores, información del firmware y RSSI del dispositivo, y la sección de eventos recientes.
+
+![Web App - Dashboard IoT con telemetría real](assets/chapter-VI/sprint-2/web-app/iot/dashboard-realtime.png)
+
+**Mobile Application — Monitoreo IoT**
+
+La aplicación móvil (Flutter) incorpora en este Sprint el módulo de monitoreo IoT, accesible desde el tab "IoT" en la barra de navegación inferior. La vista presenta las aulas con dispositivo asociado, mostrando en tiempo real la última lectura del sensor (temperatura, humedad y ocupación) junto con el badge de estado de alerta derivado del cálculo del Edge API.
+
+![Mobile App - Monitoreo IoT con telemetría real](assets/chapter-VI/sprint-2/mobile-app/mobile-iot-dashboard.png)
+
+**IoT Device — Simulación ESP32 en Wokwi**
+
+El dispositivo se simula en Wokwi sobre un ESP32 con sensores DHT22 (temperatura y humedad) y PIR (ocupación), junto con un LED RGB que refleja el estado de alerta. La consola serial muestra las lecturas periódicas y la comunicación exitosa con el Edge API.
+
+![IoT Device - Simulación ESP32 en Wokwi](assets/chapter-VI/sprint-2/iot-device/wokwi-esp32-simulation.png)
+
+**Edge API — Ingesta y cálculo local de alertas**
+
+El Edge API recibe las lecturas del dispositivo, calcula el estado del LED de alerta localmente, las persiste en su buffer SQLite y las reenvía al Web API en la nube. La evidencia muestra una ingesta real con el estado de alerta calculado en el borde.
+
+![Edge API - Evidencia de ingesta y cálculo de alerta](assets/chapter-VI/sprint-2/iot-device/edge-ingestion-evidence.png)
+
+**REST API — Endpoints IoT Monitoring en Swagger**
+
+Los endpoints del bounded context IoT Monitoring (`api/v1/sensorreadings`) responden correctamente con autenticación JWT, devolviendo las lecturas persistidas en la base de datos MySQL.
+
+![REST API - Endpoints IoT Monitoring en Swagger](assets/chapter-VI/sprint-2/rest-api/swagger-sensorreadings-endpoints.png)
+
+> **Video demostrativo:** <!-- TODO: Agregar enlace al video demostrativo del Sprint 2 en Microsoft Stream/Clipchamp mostrando la navegación y flujos implementados. -->
+
 #### 6.2.2.7. Services Documentation Evidence for Sprint Review.
 
 Durante el Sprint 2 se documentó la **EduSpace Edge API**, cubriendo la API IoT que en el Sprint 1 se había diferido. La documentación se materializa en tres artefactos versionados en el repositorio: un **contrato OpenAPI 3.0.3**, una **colección Postman** con escenarios de prueba ejecutables y una **guía de integración** para el equipo de backend.
@@ -4073,6 +4109,7 @@ En el Sprint 2 las actividades de despliegue se centraron en la migración del b
 
 - Web Application: [https://eduspace-frontend-web-app.vercel.app/](https://eduspace-frontend-web-app.vercel.app/)
 - Web API: Azure Container Apps (ver evidencia a continuación)
+- Mobile Application: [Firebase App Distribution](https://appdistribution.firebase.google.com/testerapps/1:764371962041:android:85d37d3666cc6d94887368/releases/4kek8ah5bheg0?utm_source=firebase-console)
 - Edge API: Entorno local (despliegue en nube diferido al Sprint 3)
 
 **Capturas de despliegue**
@@ -4088,6 +4125,12 @@ El dashboard de Vercel muestra el proyecto `eduspace-frontend-web-app` desplegad
 El portal de Azure muestra el recurso de Container Apps con el servicio `eduspace-platform` en estado Running, resultado de la migración realizada durante el Sprint 2.
 
 ![Web API - Despliegue en Azure Container Apps](assets/chapter-VI/sprint-2/deployment/azure-container-apps.png)
+
+**Mobile Application — Firebase App Distribution**
+
+La aplicación móvil se distribuyó a los testers mediante Firebase App Distribution, permitiendo la instalación directa del APK en dispositivos Android para la validación del módulo IoT Monitoring y los flujos de autenticación. El enlace de distribución se utilizó durante las entrevistas de validación (sec. 6.3) para que los usuarios interactuaran con la aplicación en tiempo real.
+
+- URL de distribución: [Firebase App Distribution](https://appdistribution.firebase.google.com/testerapps/1:764371962041:android:85d37d3666cc6d94887368/releases/4kek8ah5bheg0?utm_source=firebase-console)
 
 #### 6.2.2.9. Team Collaboration Insights during Sprint.
 
@@ -4465,6 +4508,14 @@ Respecto a la Testing Suite Evidence del Sprint 2 (sec. 6.2.2.5), se concluye qu
 
 En cuanto a la Services Documentation Evidence del Sprint 2 (sec. 6.2.2.7), se concluye que formalizar la API de la Edge mediante un contrato OpenAPI 3.0.3, una colección Postman ejecutable y una guía de integración para el backend redujo el acoplamiento entre los equipos de edge y de nube: el contrato fija el formato de las lecturas y los códigos de respuesta, mientras que la guía explicita la semántica de reenvío (idempotencia por `(device_id, reading_id)`, autenticación por `X-Edge-Key` y reintentos), eliminando ambigüedades en la integración. Se recomienda mantener el contrato como única fuente de verdad y versionarlo junto con el firmware del ESP32 para preservar la compatibilidad establecida en la ruta `/api/v1`.
 
+Respecto a la integración de telemetría de extremo a extremo (sec. 6.2.2.4 y 6.2.2.6), se concluye que el Sprint 2 logró verificar la cadena completa ESP32 → Edge API → Web API → Web Application y aplicación móvil con datos reales de sensores, cumpliendo el Sprint Goal establecido. La sustitución de datos mock por telemetría real confirmó que la arquitectura de Edge Computing diseñada en el Capítulo IV es operativa: el dispositivo publica lecturas, el Edge las procesa y bufferiza localmente, y el backend las persiste y expone a los clientes web y móvil. Se recomienda en el Sprint 3 incorporar la automatización del despliegue del Edge API en la nube y ampliar el número de dispositivos monitoreados.
+
+En cuanto a las Validation Interviews (sec. 6.3), los resultados contrastan positivamente con las hipótesis planteadas en el Lean UX Process (sec. 1.2.2.3). La primera hipótesis —que los usuarios necesitan una aplicación para gestionar los espacios de su centro educativo— se valida con las valoraciones de 4/5 y 5/5 otorgadas por los seis entrevistados, quienes expresaron disposición a utilizar EduSpace en sus instituciones. La segunda hipótesis —que una interfaz intuitiva reducirá la tasa de abandono— se respalda con la navegación exitosa de los flujos de validación por parte de todos los entrevistados sin asistencia. La tercera hipótesis —que el monitoreo en tiempo real mediante IoT aportará valor— se confirma por las respuestas de los entrevistados, quienes destacaron la utilidad de conocer el estado de las aulas (temperatura, humedad y ocupación) antes de iniciar actividades académicas y la detección temprana de incidencias como los beneficios más relevantes de la plataforma.
+
+Respecto a las Evaluaciones según heurísticas (sec. 6.3.3), se identificaron cuatro problemas de usabilidad, de los cuales uno tiene severidad alta (nivel 3): la ausencia de retroalimentación al docente cuando el administrador resuelve una avería reportada, lo que viola la heurística de Visibilidad del estado del sistema. Los tres problemas restantes (severidad 2) se refieren a la falta de notificaciones proactivas ante umbrales críticos, la ausencia de escalas de referencia visual en los valores numéricos de sensores, y la dificultad para consultar incidencias reportadas por otros docentes. Se recomienda priorizar la incorporación de indicadores de estado por incidencia y las notificaciones push en el Sprint 3 para incrementar la satisfacción del usuario y la utilidad real del monitoreo en tiempo real.
+
+Como recomendaciones generales para las siguientes iteraciones, se propone: (1) desplegar el Edge API en la nube para eliminar la dependencia del entorno local; (2) implementar notificaciones push en la aplicación móvil al cruzar umbrales críticos; (3) agregar indicadores visuales de rango (normal/advertencia/crítico) en los valores de sensores; (4) incorporar reportes ejecutivos con métricas de rendimiento por aula, como sugirieron los entrevistados; y (5) ampliar la cobertura de pruebas con tests de extremo a extremo que conecten todos los eslabones de la cadena IoT.
+
 <div style="page-break-after: always;"></div>
 
 ## Video About-the-Team
@@ -4476,7 +4527,7 @@ En cuanto a la Services Documentation Evidence del Sprint 2 (sec. 6.2.2.7), se c
 | Campo | Valor |
 | --- | --- |
 | Título | upc-pre-202610-1asi0572-6776-edusolutions-about-the-team-av2 |
-| Duración (timing) | [08:26] |
+| Duración (timing) | 08:26 |
 | URL Microsoft Stream/Clipchamp | [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312504_upc_edu_pe/IQBZ2Df3mn5PSYwCHE880KsEARXUR5k7t7VnRfxU52wTGEw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=00Enma](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312504_upc_edu_pe/IQBZ2Df3mn5PSYwCHE880KsEARXUR5k7t7VnRfxU52wTGEw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=00Enma) |
 
 **Screenshot del video**
