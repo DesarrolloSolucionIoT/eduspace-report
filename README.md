@@ -257,6 +257,8 @@ Para esta tercera entrega, el equipo decidió asignar tareas específicas a cada
       - [6.2.2.7. Services Documentation Evidence for Sprint Review.](#6227-services-documentation-evidence-for-sprint-review)
       - [6.2.2.8. Software Deployment Evidence for Sprint Review.](#6228-software-deployment-evidence-for-sprint-review)
       - [6.2.2.9. Team Collaboration Insights during Sprint.](#6229-team-collaboration-insights-during-sprint)
+    - [6.2.3. Sprint 3](#623-sprint-3)
+      - [6.2.3.5. Testing Suite Evidence for Sprint Review.](#6235-testing-suite-evidence-for-sprint-review)
   - [6.3. Validation Interviews](#63-validation-interviews)
     - [6.3.1. Diseño de Entrevistas](#631-diseño-de-entrevistas)
     - [6.3.2. Registro de Entrevistas](#632-registro-de-entrevistas)
@@ -4165,6 +4167,86 @@ Durante el Sprint 2 se trabajó acorde a la matriz LACX. En el siguiente cuadro 
 **Report**
 
 ![Report Collaboration](assets/chapter-VI/collab-sprint2/report.png)
+
+<div style="page-break-after: always;"></div>
+
+### 6.2.3. Sprint 3
+
+<!-- TODO: 6.2.3.1. Sprint Planning 3 / 6.2.3.2. Aspect Leaders and Collaborators / 6.2.3.3. Sprint Backlog 3 / 6.2.3.4. Development Evidence -->
+
+#### 6.2.3.5. Testing Suite Evidence for Sprint Review.
+
+En el Sprint 3 la suite de pruebas automatizadas se amplió en dos frentes. Primero, la **EduSpace Edge API** incorporó el nivel de **Acceptance Tests bajo el enfoque BDD**, elaborando archivos `.feature` en lenguaje **Gherkin** con sus correspondientes *Steps* en Python (`pytest-bdd`), que validan de extremo a extremo las User Stories del servicio de ingesta IoT. Con esta incorporación, la ejecución completa de la suite del Edge API con `pytest` reporta **61 casos en estado *passed*** (52 unit/integration/contract del Sprint 2 + 9 escenarios de aceptación). Segundo, se consolidó la ejecución continua de las suites del **Web API** (.NET/xUnit, **441 tests passed**) mediante un workflow de **GitHub Actions** que compila y ejecuta las pruebas en cada push, y de la **Web Application** (Vitest, **37 tests passed**) sobre el módulo IoT Monitoring.
+
+**Relación de Acceptance Tests (BDD) — EduSpace Edge API**
+
+Los archivos `.feature` residen en `tests/acceptance/features/` y sus Steps en `tests/acceptance/`:
+
+| Feature File | User Story relacionada | Escenarios |
+| --- | --- | --- |
+| `classroom_sensor_ingestion.feature` | US1 — Enviar una lectura y recibir la decisión local de alerta | Lectura dentro de umbrales → alerta apagada; temperatura sobre el máximo → alerta encendida; humedad sobre el máximo → alerta encendida. |
+| `device_authentication_and_validation.feature` | US2 — Rechazar peticiones no autorizadas o inválidas | Petición sin `X-API-Key` → 401 `AUTH_FAILED`; clave incorrecta → 401 genérico; humedad fuera de rango → 400 `VALIDATION_ERROR`; campo `temperature` faltante → 400. |
+| `offline_buffering_and_forwarding.feature` | US3 — Persistencia local y reenvío a la nube con buffering offline | Backend caído → lectura aceptada (201) y bufferizada (`forwarded_at IS NULL`); backend restaurado → el ciclo de reintento entrega exactamente 1 lectura con el `reading_id` original (idempotencia) y la marca como reenviada. |
+
+**Código de un .feature File (Gherkin) — `offline_buffering_and_forwarding.feature`**
+
+```gherkin
+Feature: Offline buffering and idempotent forwarding to the cloud backend
+  Related to User Story 3 (US3): every accepted reading is persisted locally
+  and forwarded to the cloud backend asynchronously; if the backend is
+  unreachable the reading stays buffered and is delivered later without
+  duplicates, so no telemetry is lost during connectivity outages.
+
+  Background:
+    Given the Edge API is running with the development test device provisioned
+
+  Scenario: A reading is accepted and buffered while the backend is unreachable
+    Given the cloud backend is unreachable
+    When the device submits a reading with temperature 22.0, humidity 45.0 and occupancy true
+    Then the response status is 201
+    And the reading is stored locally with no forwarded timestamp
+
+  Scenario: A buffered reading is delivered once connectivity is restored
+    Given the cloud backend is unreachable
+    And the device submits a reading with temperature 31.5, humidity 70.0 and occupancy true
+    When the cloud backend becomes reachable again and the retry cycle runs
+    Then exactly 1 buffered reading is delivered to the backend
+    And the delivered payload carries the original reading_id for idempotent deduplication
+    And the reading is marked as forwarded locally
+```
+
+Los *Steps* correspondientes se implementan en Python con `pytest-bdd` (`tests/acceptance/test_offline_buffering_and_forwarding_steps.py`), reutilizando las fixtures de la suite de integración: cliente Flask de prueba, base SQLite temporal y simulación de la caída/restauración del backend mediante *monkeypatching* del cliente HTTP del *forwarder*.
+
+**Suites complementarias del Sprint 3**
+
+| Aplicación | Framework | Nivel | Cobertura | Resultado |
+| --- | --- | --- | --- | --- |
+| Web API (`eduspace-platform`) | xUnit (.NET 8) | Unit | 44 clases de prueba sobre los bounded contexts IAM, Profiles, BreakdownManagement, ReservationScheduling, SpacesAndResourceManagement e IoT Monitoring, relacionando cada clase de dominio/aplicación con sus comportamientos (agregados, value objects, command/query services). | **441 passed** |
+| Web Application (`eduspace-frontend-web-app`) | Vitest | Unit | `src/iot-monitoring/tests/`: servicio `IotMonitoringService` (agrupación de lecturas por zona, manejo de errores HTTP) y entidad `IotSpace`. | **37 passed** |
+| Edge API (`eduspace-edge-api`) | pytest + pytest-bdd | Unit / Integration / Contract / Acceptance (BDD) | Suite completa del servicio de ingesta IoT. | **61 passed** |
+
+Adicionalmente, en el Web API se incorporó **integración continua**: el workflow `.github/workflows/ci.yml` compila la solución y ejecuta la suite completa de xUnit en cada push y pull request, publicando el estado (verde/rojo) en cada commit de GitHub.
+
+**Evidencia de ejecución**
+
+```text
+$ pytest -q
+.............................................................            [100%]
+61 passed in 5.56s
+```
+
+![Edge API - Suite completa con escenarios BDD (61 passed)](assets/chapter-VI/sprint-3/tests/pytest-bdd-run.png)
+![Web API - Suite xUnit (441 passed)](assets/chapter-VI/sprint-3/tests/dotnet-test-run.png)
+![Web App - Suite Vitest (37 passed)](assets/chapter-VI/sprint-3/tests/vitest-run.png)
+
+**Commits de Testing**
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| --- | --- | --- | --- | --- | --- |
+| DesarrolloSolucionIoT/eduspace-edge-api | main | e44f2c4 | test(bdd): add Gherkin acceptance suite for US1-US3 with pytest-bdd | Añade los archivos .feature (ingesta y alerta local, autenticación/validación, buffering offline y reenvío idempotente) y sus step definitions. | 2026-07-03 |
+| DesarrolloSolucionIoT/eduspace-platform | main | 55e7970 | fix(tests): update SharedArea service tests to current constructors | Actualiza las pruebas de SharedArea a los constructores vigentes de los servicios. | 2026-06-20 |
+| DesarrolloSolucionIoT/eduspace-platform | main | e7e2908 | ci: add GitHub Actions workflow to build and test on every push | Ejecuta la suite completa de xUnit en cada push y pull request. | 2026-06-20 |
+| DesarrolloSolucionIoT/eduspace-frontend-web-app | main | dfd41a5 | feat: added | Incorpora las pruebas Vitest del módulo IoT Monitoring (servicio y entidad). | 2026-06-20 |
 
 <div style="page-break-after: always;"></div>
 
