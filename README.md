@@ -2,27 +2,33 @@
 
 ![Logo UPC](https://upload.wikimedia.org/wikipedia/commons/f/fc/UPC_logo_transparente.png)
 
-**Universidad Peruana de Ciencias Aplicadas**
+Universidad Peruana de Ciencias Aplicadas
 
-**Facultad de Ingeniería**
+Carrera de Ingeniería de Software
 
-**Curso:** 1ASI0572 – Desarrollo de Soluciones IoT
+**1ASI0572**
 
-**NRC:** 6776
+**Desarrollo de Soluciones IoT**
 
-**Nombre del profesor:** Marco Antonio León Baca
+NRC
 
----
+**6776**
 
-## Informe de Trabajo Final
+## Informe del Trabajo Final
 
-**Nombre de la startup:** EduSolutions
+Docente
 
-**Nombre del producto:** EduSpace
+**León Baca, Marco Antonio**
 
----
+Equipo
 
-**Integrantes:**
+**EduSolutions**
+
+Proyecto
+
+**EduSpace**
+
+**Integrantes**
 
 | Código     | Apellidos y Nombres            |
 |------------|--------------------------------|
@@ -32,7 +38,7 @@
 | u202220528 | Torres García, Andrés Alberto  |
 | u202312504 | Yalán Zhang, Angie Christina   |
 
-**Lima - abril 2026**
+**Período 202610**
 
 </div>
 
