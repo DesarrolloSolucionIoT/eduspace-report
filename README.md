@@ -51,6 +51,7 @@ Proyecto
 | AV1     | 11/04/2026 | Alva Abanto, Luis Andrés <br> Antayhua Castillo, Josué Oscar <br> Loli Ramirez, Camila Cristina <br> Torres García, Andrés Alberto <br> Yalán Zhang, Angie Christina | Se han incluído los siguientes capítulos: <br>Capítulo I: Introducción <br> Capítulo II: Requirements Elicitation & Analysis <br> Capítulo III: Requirements Specification <br> Capítulo IV: Solution Software Design                              |
 | TB1     | 08/05/2026 | Alva Abanto, Luis Andrés <br> Antayhua Castillo, Josué Oscar <br> Loli Ramirez, Camila Cristina <br> Torres García, Andrés Alberto <br> Yalán Zhang, Angie Christina | Levantar correcciones de los capítulos I a IV<br>Se han incluído los siguientes capítulos: <br>Capítulo V: Solution UI/UX Design<br>Capítulo VI (hasta el punto 6.2.1.9.): Product Implementation, Validation & Deployment.<br>Avance de Conclusiones, Bibliografía y Anexos.<br>Avance de Frontend y Backend  |
 | AV2     | 19/06/2026 | Alva Abanto, Luis Andrés <br> Antayhua Castillo, Josué Oscar <br> Loli Ramirez, Camila Cristina <br> Torres García, Andrés Alberto <br> Yalán Zhang, Angie Christina | Levantar correcciones de la entrega TB1.<br>Integración del bounded context IoT Monitoring con telemetría real a través de la EduSpace Edge API (Edge Computing).<br>Se incluye en el Capítulo VI la evidencia del Sprint 2: Development Evidence (6.2.2.4) con telemetría real de extremo a extremo (ESP32/Wokwi → Edge API → Web API → Web Application y aplicación móvil), Testing Suite Evidence (6.2.2.5) y Services Documentation Evidence (6.2.2.7) de la Edge API.<br>Actualización de Conclusiones, Bibliografía y Anexos. |
+| TB2     | 04/07/2026 | Alva Abanto, Luis Andrés <br> Antayhua Castillo, Josué Oscar <br> Loli Ramirez, Camila Cristina <br> Torres García, Andrés Alberto <br> Yalán Zhang, Angie Christina | Documentación del Sprint 3 en el Capítulo VI: matriz de Aspect Leaders and Collaborators (6.2.3.2) y Sprint Backlog 3 (6.2.3.3) con trazabilidad hacia el tablero de Jira. |
 
 
 <div style="page-break-after: always;"></div>
@@ -264,6 +265,8 @@ Para esta tercera entrega, el equipo decidió asignar tareas específicas a cada
       - [6.2.2.8. Software Deployment Evidence for Sprint Review.](#6228-software-deployment-evidence-for-sprint-review)
       - [6.2.2.9. Team Collaboration Insights during Sprint.](#6229-team-collaboration-insights-during-sprint)
     - [6.2.3. Sprint 3](#623-sprint-3)
+      - [6.2.3.2. Aspect Leaders and Collaborators](#6232-aspect-leaders-and-collaborators)
+      - [6.2.3.3. Sprint Backlog 3](#6233-sprint-backlog-3)
       - [6.2.3.5. Testing Suite Evidence for Sprint Review.](#6235-testing-suite-evidence-for-sprint-review)
   - [6.3. Validation Interviews](#63-validation-interviews)
     - [6.3.1. Diseño de Entrevistas](#631-diseño-de-entrevistas)
@@ -4178,7 +4181,57 @@ Durante el Sprint 2 se trabajó acorde a la matriz LACX. En el siguiente cuadro 
 
 ### 6.2.3. Sprint 3
 
-<!-- TODO: 6.2.3.1. Sprint Planning 3 / 6.2.3.2. Aspect Leaders and Collaborators / 6.2.3.3. Sprint Backlog 3 / 6.2.3.4. Development Evidence -->
+<!-- TODO: 6.2.3.1. Sprint Planning 3 -->
+
+#### 6.2.3.2. Aspect Leaders and Collaborators
+
+En esta sección se presenta la matriz de Liderazgo y Colaboración (LACX) del Sprint 3. Los aspectos considerados se derivan directamente del modelo estratégico definido en el Capítulo IV.1: los cinco bounded contexts validados —IAM, Space & Resource Management, Reservation & Scheduling, Breakdown Management e IoT Monitoring— y, adicionalmente, el aspecto Landing Page. Con el propósito de preservar la continuidad del conocimiento técnico acumulado durante los Sprints 1 y 2, el equipo acordó mantener la misma asignación de líderes y colaboradores por aspecto, reforzando el foco sobre el bounded context IoT Monitoring, dado que el objetivo central de la iteración es completar el ciclo de Edge Computing mediante el despliegue del EduSpace Edge API en la nube —diferido en el Sprint 2— y consolidar la evidencia de cierre de la entrega final. Cada miembro conserva su rol de Líder (L) —responsable de la coherencia técnica del aspecto, la coordinación de tareas y la integración a `main`— y de Colaborador (C) en los aspectos restantes, donde aporta implementación, revisión de código y validación. La asignación garantiza que cada aspecto cuente con al menos un Líder y un Colaborador, evitando puntos únicos de falla, y se respeta en la distribución de Work-items del Sprint Backlog (sec. 6.2.3.3).
+
+| Apellidos y Nombres            | GitHub Username | Landing Page | IAM | Space & Resource Management | Reservation & Scheduling | Breakdown Management | IoT Monitoring |
+|--------------------------------|-----------------|:------------:|:---:|:---------------------------:|:------------------------:|:--------------------:|:--------------:|
+| Torres García, Andrés Alberto  | andrest04       |      C       |  L  |              C              |            —             |          —           |       L        |
+| Loli Ramirez, Camila Cristina  | CamilaLoli      |      L       |  C  |              —              |            —             |          C           |       C        |
+| Antayhua Castillo, Josué Oscar | Azsher          |      —       |  C  |              L              |            C             |          —           |       C        |
+| Alva Abanto, Luis Andrés       | luis-alva0      |      —       |  —  |              C              |            L             |          C           |       —        |
+| Yalán Zhang, Angie Christina   | aaaaangie       |      C       |  —  |              —              |            C             |          L           |       —        |
+
+Leyenda: **L** = Leader (responsable del aspecto durante el Sprint), **C** = Collaborator (aporta implementación y revisión), **—** = no participa en ese aspecto durante el Sprint 3.
+
+#### 6.2.3.3. Sprint Backlog 3
+
+El Sprint Backlog 3 organiza los Work-items comprometidos por el equipo para producir el incremento final del producto y la evidencia del Sprint Review correspondiente a la entrega TB2. El objetivo principal del Sprint es cerrar el ciclo de Edge Computing del bounded context IoT Monitoring —desplegando la EduSpace Edge API en la nube— y consolidar la documentación de cierre del proyecto. Cada Work-item se gestionó en el tablero de Jira y se mapea a una sección del informe —evidencias de desarrollo, testing, ejecución, servicios y despliegue (secs. 6.2.3.4 a 6.2.3.8), Team Collaboration Insights (sec. 6.2.3.9)—, a la actualización de los artefactos de cierre del informe o a los artefactos de entrega final (keynote, Final Individual Member Performance Report y paquete de entrega). La asignación respeta la matriz de líderes y colaboradores definida en la sección 6.2.3.2. El Sprint comprometió un total de 30 Story Points distribuidos en 14 Work-items, completados en su totalidad (Done) al momento del Sprint Review.
+
+A continuación se presenta la captura del Sprint Board al cierre del Sprint y el enlace público al tablero del equipo. Por la cantidad de Work-items, la columna Done se documenta en tres vistas complementarias.
+
+URL público del tablero (Jira): [https://upc-team-awnysuez.atlassian.net/jira/software/projects/SCRUM/boards/1](https://upc-team-awnysuez.atlassian.net/jira/software/projects/SCRUM/boards/1)
+
+![Sprint 3 Board en Jira — vista general (columnas To Do, In Progress e In Review vacías; inicio de la columna Done)](assets/chapter-VI/sprint-3-board-jira-1.png)
+
+![Sprint 3 Board en Jira — detalle de la columna Done (Work-items intermedios)](assets/chapter-VI/sprint-3-board-jira-2.png)
+
+![Sprint 3 Board en Jira — detalle de la columna Done (Work-items finales de entrega)](assets/chapter-VI/sprint-3-board-jira-3.png)
+
+| Sprint #     | Sprint 3                                                            |                            |                  |                |              |
+|--------------|---------------------------------------------------------------------|----------------------------|------------------|----------------|--------------|
+| **ID Jira**  | **Work-Item**                                                       | **Sección / Entregable**   | **Story Points** | **Assigned To** | **Status**   |
+| SCRUM-71     | Sprint Planning 3                                                   | 6.2.3.1                    | 2                | Loli Ramirez, Camila     | Done       |
+| SCRUM-72     | Aspect Leaders and Collaborators                                    | 6.2.3.2                    | 1                | Torres García, Andrés    | Done       |
+| SCRUM-73     | Sprint Backlog 3                                                    | 6.2.3.3                    | 2                | Torres García, Andrés    | Done       |
+| SCRUM-74     | Development Evidence for Sprint Review                              | 6.2.3.4                    | 3                | Yalán Zhang, Angie       | Done       |
+| SCRUM-75     | Testing Suite Evidence for Sprint Review                           | 6.2.3.5                    | 3                | Alva Abanto, Luis        | Done       |
+| SCRUM-76     | Execution Evidence for Sprint Review                                | 6.2.3.6                    | 2                | Antayhua Castillo, Josué | Done       |
+| SCRUM-77     | Services Documentation Evidence for Sprint Review                   | 6.2.3.7                    | 2                | Antayhua Castillo, Josué | Done       |
+| SCRUM-78     | Software Deployment Evidence for Sprint Review                      | 6.2.3.8                    | 2                | Antayhua Castillo, Josué | Done       |
+| SCRUM-79     | Team Collaboration Insights during Sprint                          | 6.2.3.9                    | 2                | Loli Ramirez, Camila     | Done       |
+| SCRUM-80     | Actualizar Registro de Versiones, Bibliografía, Conclusiones y Anexos | Cierre del informe      | 3                | Yalán Zhang, Angie       | Done       |
+| SCRUM-81     | Verificar despliegue de productos                                  | Despliegue                 | 2                | Alva Abanto, Luis        | Done       |
+| SCRUM-82     | Preparar Final Project Final Keynote                               | Entrega                    | 3                | Sin asignar              | Done       |
+| SCRUM-83     | Elaborar Final Individual Member Performance Report                | Entrega                    | 2                | Loli Ramirez, Camila     | Done       |
+| SCRUM-84     | Preparar archivo ZIP de entrega                                    | Entrega                    | 1                | Loli Ramirez, Camila     | Done       |
+
+**Story Points totales del Sprint:** 30 SP distribuidos en 14 Work-items, completados en su totalidad (Done) al cierre del Sprint Review.
+
+<!-- TODO: 6.2.3.4. Development Evidence for Sprint Review -->
 
 #### 6.2.3.5. Testing Suite Evidence for Sprint Review.
 
