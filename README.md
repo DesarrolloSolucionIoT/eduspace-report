@@ -4329,6 +4329,40 @@ $ pytest -q
 | DesarrolloSolucionIoT/eduspace-platform | main | e7e2908 | ci: add GitHub Actions workflow to build and test on every push | Ejecuta la suite completa de xUnit en cada push y pull request. | 2026-06-20 |
 | DesarrolloSolucionIoT/eduspace-frontend-web-app | main | dfd41a5 | feat: added | Incorpora las pruebas Vitest del módulo IoT Monitoring (servicio y entidad). | 2026-06-20 |
 
+#### 6.2.3.9. Team Collaboration Insights during Sprint.
+
+Durante el Sprint 3 se trabajó acorde a la matriz LACX. En el siguiente cuadro se mostrará la contribución principal de cada integrante y su respectiva colaboración demostrada en GitHub.
+
+| **Integrante**                 | **Actividad principal en el Sprint 3**                                                                                                    |
+| ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Alva Abanto, Luis Andres       | Verificación del funcionamiento del código embebido y Edge API. Adiciones en el frontend. Participación en la documentación del Sprint 3. |
+| Antayhua Castillo, Josue Oscar | Despliegue de la última versión del frontend. Participación en la documentación del Sprint 3.                                             |
+| Loli Ramirez, Camila Cristina  | Adición de notificaciones al móvil y despliegue de la última versión. Participación en la documentación del Sprint 3.                     |
+| Torres Garcia, Andres Alberto  | Despliegue de la última versión de backend. Participación en la documentación del Sprint 3.                                               |
+| Yalan Zhang, Angie Christina   | Participación en la documentación del Sprint 3.                                                                                           |
+
+**Evidencia de Colaboración**
+
+**Backend**
+
+![Insight Frontend](assets/chapter-VI/sprint-3/insights-3/backend.png)
+
+**Frontend**
+
+![Insight Frontend](assets/chapter-VI/sprint-3/insights-3/frontend.png)
+
+**Mobile**
+
+![Insight Mobile](assets/chapter-VI/sprint-3/insights-3/mobile.png)
+
+**Edge API**
+
+![Insight Edge API](assets/chapter-VI/sprint-3/insights-3/edge-api.png)
+
+**Report**
+
+![Insight Report](assets/chapter-VI/sprint-3/insights-3/report.png)
+
 <div style="page-break-after: always;"></div>
 
 ## 6.3. Validation Interviews
