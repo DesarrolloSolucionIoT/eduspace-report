@@ -4761,8 +4761,8 @@ Como recomendaciones generales para las siguientes iteraciones, se propone: (1) 
 | Campo | Valor |
 | --- | --- |
 | Título | upc-pre-202610-1asi0572-6776-edusolutions-about-the-team-av2 |
-| Duración (timing) | 08:26 |
-| URL Microsoft Stream/Clipchamp | [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312504_upc_edu_pe/IQBZ2Df3mn5PSYwCHE880KsEARXUR5k7t7VnRfxU52wTGEw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=00Enma](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312504_upc_edu_pe/IQBZ2Df3mn5PSYwCHE880KsEARXUR5k7t7VnRfxU52wTGEw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=00Enma) |
+| Duración (timing) | 09:50 |
+| URL Microsoft Stream/Clipchamp | [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312504_upc_edu_pe/IQA8_ZkhBo6rSaS3VkZVfNLnAWfUzu161L70UEYnkUdb5to?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=DrWJNC](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312504_upc_edu_pe/IQA8_ZkhBo6rSaS3VkZVfNLnAWfUzu161L70UEYnkUdb5to?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=DrWJNC) |
 
 **Screenshot del video**
 
