@@ -4424,6 +4424,10 @@ La aplicación móvil (Flutter) mantiene el módulo de monitoreo IoT, accesible 
 
 El dispositivo se simula en Wokwi sobre un ESP32 con sensores DHT22 (temperatura y humedad) y PIR (ocupación), junto con un LED RGB que refleja el estado de alerta. La consola serial muestra las lecturas periódicas y la comunicación exitosa con el Edge API.
 
+**Enlace al simulador en Wokwi**
+
+[https://wokwi.com/projects/466508091820583937](https://wokwi.com/projects/466508091820583937)
+
 ![IoT Device - Simulación ESP32 en Wokwi](assets/chapter-VI/sprint-2/iot-device/wokwi-esp32-simulation.png)
 
 **Edge API — Ingesta y cálculo local de alertas**
