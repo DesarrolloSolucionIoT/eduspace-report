@@ -4289,7 +4289,38 @@ URL público del tablero (Jira): [https://upc-team-awnysuez.atlassian.net/jira/s
 
 **Story Points totales del Sprint:** 30 SP distribuidos en 14 Work-items, completados en su totalidad (Done) al cierre del Sprint Review.
 
-<!-- TODO: 6.2.3.4. Development Evidence for Sprint Review -->
+#### 6.2.3.4. Development Evidence for Sprint Review
+
+**Repository: eduspace-frontend-web-app**
+
+|Secuencia|Repository| Branch | Commit Id | Commit Message | Commit Message Body | Committed on |
+|--------|-----------|--------|-----------|----------------|--------------|--------------|
+| #01 | [eduspace-frontend-web-app](https://github.com/DesarrolloSolucionIoT/eduspace-frontend-web-app) | main | afcfed67455d58dfe9dee9158b4fdeafb2616907 | Merge pull request #1 from DesarrolloSolucionIoT/develop | Se integraron los cambios desarrollados en la rama develop hacia main, consolidando las mejoras y correcciones realizadas en la plataforma IoT.| 2026-07-07 18:02:08 -0500 |
+| #02 | [eduspace-frontend-web-app](https://github.com/DesarrolloSolucionIoT/eduspace-frontend-web-app) | main | 8a08343654bb67459653ff3a7b38d543bc25901b | fix(dashboard-admin): center inner cards consistently in summary cards | Se ajustó la alineación interna de las tarjetas del dashboard administrativo para mantener una presentación visual uniforme y ordenada. | 2026-07-04 10:46:51 -0500 |
+| #03 | [eduspace-frontend-web-app](https://github.com/DesarrolloSolucionIoT/eduspace-frontend-web-app) | main | 155209881dcb7c1de721ff890248c49cb08175a4 | fix(dashboard-admin): keep IoT KPI strip inside the viewport |Se corrigió la visualización de los indicadores KPI IoT para evitar desbordes y asegurar que permanezcan dentro del área visible de la pantalla.| 2026-07-04 10:35:58 -0500 |
+| #04 | [eduspace-frontend-web-app](https://github.com/DesarrolloSolucionIoT/eduspace-frontend-web-app) | main | 8fe64c4374702a54dea3eb0d8b709ca23323c9b5 | fix(iot-monitoring): attribute threshold alerts to the breaching sensor |Se corrigió la asignación de alertas por umbral para que cada notificación se vincule correctamente con el sensor que generó la lectura fuera de rango.| 2026-07-04 10:26:31 -0500 |
+| #05 | [eduspace-frontend-web-app](https://github.com/DesarrolloSolucionIoT/eduspace-frontend-web-app) | main | 81189a4eb992017aef98798bccf55563757f40b6 | feat(iot-monitoring): auto-refresh readings every 15s | Se implementó la actualización automática de lecturas cada 15 segundos, permitiendo visualizar información IoT más reciente sin recargar manualmente. | 2026-07-04 10:07:20 -0500 |
+| #06 | [eduspace-frontend-web-app](https://github.com/DesarrolloSolucionIoT/eduspace-frontend-web-app) | main | 85b7191cab0e06017dbd50ed2ef9522c9282f606 | fix(iot-monitoring): make chart time-range selector reflect real elapsed time | Se ajustó el selector de rango temporal del gráfico para que represente correctamente el tiempo transcurrido real de las lecturas registradas.| 2026-07-04 08:54:43 -0500 |
+
+**Repository: eduspace-mobile**
+
+|Secuencia|Repository| Branch | Commit Id | Commit Message | Commit Message Body | Committed on |
+|--------|-----------|--------|-----------|----------------|--------------|--------------|
+|#01| [eduspace-mobile](https://github.com/DesarrolloSolucionIoT/eduspace-mobile) | main | 64b7c30c8fa976d786e2c29c3f7f9ccf48e7c9c0 | t push Merge branch 'main' of https://github.com/DesarrolloSolucionIoT/eduspace-mobile Merge main of origin. | Se integraron los cambios provenientes de la rama main remota, resolviendo la sincronización del repositorio local con el repositorio de origen.| 2026-07-04 18:30:36 -0500 |
+|#02| [eduspace-mobile](https://github.com/DesarrolloSolucionIoT/eduspace-mobile) | main | 77a6439b77387ae0ac014699bbe92fcfa0f6fd47 | feat: fix pubspec.lock |Se corrigió el archivo pubspec.lock para asegurar la compatibilidad y correcta instalación de las dependencias del proyecto móvil.| 2026-07-04 18:04:29 -0500 |
+|#03| [eduspace-mobile](https://github.com/DesarrolloSolucionIoT/eduspace-mobile) | main | 4ca069f485749d59ba5de2be021430c665a0d857 | chore: regenerar pubspec.lock tras el merge |Se regeneró el archivo pubspec.lock luego del merge para mantener actualizadas las dependencias y evitar conflictos de configuración.| 2026-07-04 18:02:09 -0500 |
+|#04| [eduspace-mobile](https://github.com/DesarrolloSolucionIoT/eduspace-mobile) | main | 0352265f1f5defca17db172b36b90e3f9c3c5bde | Merge branch 'feature/notifications' |Se incorporaron los cambios de la rama feature/notifications, integrando funcionalidades relacionadas con el módulo de notificaciones.| 2026-07-04 17:52:32 -0500 |
+|#05| [eduspace-mobile](https://github.com/DesarrolloSolucionIoT/eduspace-mobile) | main | 0cd757ac2c7cdec643c1620066f9e30ee2a5d32e | Merge branch 'feature/notifications' to main |Se fusionó la rama feature/notifications con main, consolidando las mejoras desarrolladas para el sistema de notificaciones.| 2026-07-04 17:47:45 -0500 |
+|#06| [eduspace-mobile](https://github.com/DesarrolloSolucionIoT/eduspace-mobile) | main | b0d88ed08a18eed5b8794608d0fc43f8465821e7 | feat: add logo to app. |Se agregó el logo de la aplicación para reforzar la identidad visual del proyecto dentro de la interfaz móvil.| 2026-07-04 16:42:10 -0500 |
+|#07| https://github.com/DesarrolloSolucionIoT/eduspace-mobile | main | 0bb95339c9b7723221c8e997c5857339accf3715 | feat: add translation i18n. |Se implementó soporte de traducción mediante i18n, permitiendo adaptar los textos de la aplicación a distintos idiomas.| 2026-07-04 14:54:13 -0500 |
+|#08|| main | 75d9ef88a80b66e7f4137517bb7e6d43e0102a66 | feat: add notifications for shared areas. |Se añadieron notificaciones relacionadas con las áreas compartidas, mejorando la comunicación de eventos relevantes para los usuarios.| 2026-07-04 07:57:54 -0500 |
+|#09|| main | 46ae32098704e84f5c724e364c0f8841116c19d8 | feat: add notifications. |Se incorporó la funcionalidad base de notificaciones en la aplicación móvil para informar al usuario sobre eventos o actualizaciones importantes. 2026-07-03 17:42:34 -0500 |
+
+**Repository: eduspace-edge-api**
+
+|Secuencia|Repository| Branch | Commit Id | Commit Message | Commit Message Body | Committed on |
+|--------|-----------|--------|-----------|----------------|--------------|--------------|
+|#01| [eduspace-edge-api](https://github.com/DesarrolloSolucionIoT/eduspace-edge-api) | main | e44f2c47de3d5cbccb662e8801d134b25a96feaa | test(bdd): add Gherkin acceptance suite for US1-US3 with pytest-bdd |Se agregó la suite de pruebas de aceptación basadas en BDD para las User Stories US1-US3, utilizando Gherkin y pytest-bdd. 2026-07-03 15:52:18 -0500 |
 
 #### 6.2.3.5. Testing Suite Evidence for Sprint Review.
 
