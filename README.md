@@ -132,7 +132,8 @@ Para esta tercera entrega, el equipo decidió asignar tareas específicas a cada
 * Frontend: Andres Torres, Oscar Antayhua
 * Backend: Andres Torres, Oscar Antayhua, Camila Loli
 * Mobile: Camila Loli
-* Reporte: Andres Torres, Oscar Antayhua, Camila Loli, Angie Yalán
+* Reporte: Andres Torres, Oscar Antayhua, Camila Loli, Angie Yalán, Luis Alva
+* Landing Page: Angie Yalán
 
 **Contribución de cada integrante en TB2:**
 
@@ -155,6 +156,10 @@ Para esta tercera entrega, el equipo decidió asignar tareas específicas a cada
 **Report**
 
 ![Insight Report](assets/chapter-VI/sprint-3/insights-3/report.png)
+
+**Landing Page**
+
+![Insight Landing Page](assets/chapter-VI/sprint-3/insights-3/landing.png)
 
 
 <div style="page-break-after: always;"></div>
@@ -4395,6 +4400,10 @@ Durante el Sprint 3 se trabajó acorde a la matriz LACX. En el siguiente cuadro 
 **Report**
 
 ![Insight Report](assets/chapter-VI/sprint-3/insights-3/report.png)
+
+**Landing Page**
+
+![Insight Landing Page](assets/chapter-VI/sprint-3/insights-3/landing.png)
 
 <div style="page-break-after: always;"></div>
 
