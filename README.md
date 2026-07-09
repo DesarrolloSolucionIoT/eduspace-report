@@ -4541,7 +4541,7 @@ Durante el Sprint 3 se trabajó acorde a la matriz LACX. En el siguiente cuadro 
 | Antayhua Castillo, Josue Oscar | Despliegue de la última versión del frontend. Participación en la documentación del Sprint 3.                                             |
 | Loli Ramirez, Camila Cristina  | Adición de notificaciones al móvil y despliegue de la última versión. Participación en la documentación del Sprint 3.                     |
 | Torres Garcia, Andres Alberto  | Despliegue de la última versión de backend. Participación en la documentación del Sprint 3.                                               |
-| Yalan Zhang, Angie Christina   | Participación en la documentación del Sprint 3.                                                                                           |
+| Yalan Zhang, Angie Christina   | Participación en la documentación del Sprint 3. Adición de videos About the Team y About the Product a la Landing Page.                                                                                           |
 
 **Evidencia de Colaboración**
 
@@ -4927,8 +4927,6 @@ Asimismo, se recomienda continuar con la validación integral de la plataforma m
 <div style="page-break-after: always;"></div>
 
 ## Video About-the-Team
-
-<!-- Responsable: [asignar]. El Video About-the-Team recopila los testimonios de cada integrante sobre el trabajo en equipo, en coherencia con el Student Outcome (ABET – EAC – SO 5). Completar los campos marcados con [ ... ] antes de la entrega AV2. Reemplazar el screenshot por el archivo real. Ver Anexo C del enunciado: "Indicaciones para secciones que incluyen Videos". -->
 
 **Datos del video**
 
