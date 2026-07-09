@@ -4863,20 +4863,17 @@ Heurística violada: Reconocimiento antes que recuerdo
 
 ## 6.4. Video About-the-Product
 
-<!-- Jira SCRUM-62, responsable: Yalán Zhang, Angie Christina. Completar los campos marcados con [ ... ] antes de la entrega AV2. Reemplazar el screenshot por el archivo real. Ver Anexo C del enunciado: "Indicaciones para secciones que incluyen Videos". -->
-
 **Datos del video**
 
 | Campo | Valor |
 | --- | --- |
 | Título | upc-pre-202610-1asi0572-6776-edusolutions-about-the-product |
 | Duración (timing) | 3:40 |
-| URL Microsoft Stream/Clipchamp | [https://upcedupe-my.sharepoint.com/:l:/g/personal/u202312504_upc_edu_pe/JABq1Tk15HtaSqVGyJ4LGDFXAXKjrk2rXKsj0pI6lrjvc5M?e=lWvz7G](https://upcedupe-my.sharepoint.com/:l:/g/personal/u202312504_upc_edu_pe/JABq1Tk15HtaSqVGyJ4LGDFXAXKjrk2rXKsj0pI6lrjvc5M?e=lWvz7G) |
-
+| URL Microsoft Stream/Clipchamp | [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312504_upc_edu_pe/IQCQQgF87LqAS5I3asQ30lBnAdKu2GPgI1jbRp3_yJzhl3g?e=Lvl8Ax](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312504_upc_edu_pe/IQCQQgF87LqAS5I3asQ30lBnAdKu2GPgI1jbRp3_yJzhl3g?e=Lvl8Ax) |
 
 **Screenshot del video**
 
-![Video About-the-Product — captura](assets/chapter-VI/sprint-2/web-app/iot/dashboard-realtime.png)
+<img src="https://imgur.com/6cvGeEL.png">
 
 <div style="page-break-after: always;"></div>
 
