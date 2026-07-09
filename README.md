@@ -4426,13 +4426,15 @@ La aplicación móvil (Flutter) mantiene el módulo de monitoreo IoT, accesible 
 
 **IoT Device — Simulación ESP32 en Wokwi**
 
-El dispositivo se simula en Wokwi sobre un ESP32 con sensores DHT22 (temperatura y humedad) y PIR (ocupación), junto con un LED RGB que refleja el estado de alerta. La consola serial muestra las lecturas periódicas y la comunicación exitosa con el Edge API.
+El dispositivo se simula en Wokwi utilizando un **ESP32** con un sensor **DHT22** para medir temperatura y humedad, un sensor **PIR** para detectar ocupación y un **LED RGB** que representa visualmente el estado ambiental del aula.
+
+En esta versión, el firmware incorpora conectividad WiFi mediante las bibliotecas `WiFi.h`, `WiFiClientSecure.h` y `HTTPClient.h`, lo que permite establecer comunicación con el **Edge API**. Asimismo, se utiliza la biblioteca `ArduinoJson.h` para serializar las lecturas de los sensores en formato JSON antes de enviarlas mediante peticiones HTTP. La consola serial muestra las lecturas periódicas, el payload generado y la respuesta recibida del Edge API, validando la correcta comunicación entre el dispositivo IoT y la plataforma EduSpace.
 
 **Enlace al simulador en Wokwi**
 
 [https://wokwi.com/projects/466508091820583937](https://wokwi.com/projects/466508091820583937)
 
-![IoT Device - Simulación ESP32 en Wokwi](assets/chapter-VI/sprint-2/iot-device/wokwi-esp32-simulation.png)
+<img src="https://imgur.com/EMPzhu4.png">
 
 **Edge API — Ingesta y cálculo local de alertas**
 
