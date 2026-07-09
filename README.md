@@ -4291,6 +4291,10 @@ URL público del tablero (Jira): [https://upc-team-awnysuez.atlassian.net/jira/s
 
 #### 6.2.3.4. Development Evidence for Sprint Review
 
+Durante esta etapa de implementación, el proyecto presentó avances significativos en la consolidación de la plataforma EduSpace, tanto en la aplicación móvil como en los componentes asociados al monitoreo IoT. Se integraron mejoras funcionales orientadas a la experiencia del usuario, como la incorporación del logo de la aplicación, el soporte de traducción mediante i18n y el desarrollo del módulo de notificaciones, incluyendo alertas relacionadas con áreas compartidas. Asimismo, se realizaron ajustes técnicos para mantener la estabilidad del proyecto, como la regeneración y corrección del archivo pubspec.lock luego de los procesos de integración entre ramas.
+
+En paralelo, se fortaleció el dashboard administrativo y el sistema de monitoreo IoT mediante correcciones visuales y funcionales. Entre los principales avances se encuentran la mejora en la disposición de tarjetas e indicadores KPI, la actualización automática de lecturas cada 15 segundos, la correcta atribución de alertas al sensor correspondiente y el ajuste del selector de rangos temporales en los gráficos. Además, se incorporaron pruebas de aceptación en formato Gherkin con pytest-bdd para validar las historias de usuario US1, US2 y US3, reforzando la calidad del desarrollo y la verificación de los criterios funcionales establecidos.
+
 **Repository: eduspace-frontend-web-app**
 
 |Secuencia|Repository| Branch | Commit Id | Commit Message | Commit Message Body | Committed on |
